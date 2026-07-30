@@ -28,3 +28,32 @@ body {
   color: var(--foreground);
   font-family: var(--font-inter), system-ui, sans-serif;
 }
+
+.logo-slider-mask {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+}
+
+.logo-slider-track {
+  animation: logo-scroll-right 40s linear infinite;
+}
+
+@keyframes logo-scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-slider-track {
+    animation: none;
+  }
+}
