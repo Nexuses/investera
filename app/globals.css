@@ -57,3 +57,98 @@ body {
     animation: none;
   }
 }
+
+/* Who We Serve — floating dashboard widgets */
+@keyframes who-float-a {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(3px, -10px);
+  }
+}
+
+@keyframes who-float-b {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-4px, -8px);
+  }
+}
+
+@keyframes who-float-c {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(5px, -12px);
+  }
+}
+
+.who-float-a {
+  animation: who-float-a 4.2s ease-in-out infinite alternate;
+}
+
+.who-float-b {
+  animation: who-float-b 5.1s ease-in-out infinite alternate;
+  animation-delay: 0.4s;
+}
+
+.who-float-c {
+  animation: who-float-c 3.8s ease-in-out infinite alternate;
+  animation-delay: 0.8s;
+}
+
+.group:hover .who-float-a {
+  animation-duration: 3.2s;
+}
+
+.group:hover .who-float-b {
+  animation-duration: 3.8s;
+}
+
+.group:hover .who-float-c {
+  animation-duration: 3s;
+}
+
+/* Who We Serve — partner logo marquee */
+@keyframes who-marquee-ltr {
+  0% {
+    transform: translateX(-33.333%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes who-marquee-rtl {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+.who-marquee-ltr {
+  animation: who-marquee-ltr 28s linear infinite;
+}
+
+.who-marquee-rtl {
+  animation: who-marquee-rtl 30s linear infinite;
+}
+
+.who-marquee-area:hover .who-marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .who-float-a,
+  .who-float-b,
+  .who-float-c,
+  .who-marquee-ltr,
+  .who-marquee-rtl {
+    animation: none;
+  }
+}
