@@ -16,9 +16,9 @@ export default function BookDemoCtaSection() {
             className="object-cover object-center"
           />
 
-          <div className="relative z-[1] grid h-full items-center gap-8 px-8 py-8 sm:px-9 sm:py-9 lg:grid-cols-[42%_58%] lg:gap-0 lg:py-0 lg:pl-9 lg:pr-0">
+          <div className="relative z-[1] grid h-full items-center gap-6 py-8 pl-8 pr-0 sm:gap-8 sm:py-9 sm:pl-9 lg:grid-cols-[42%_58%] lg:gap-0 lg:py-0 lg:pl-9">
             {/* Left content — static text, no animation */}
-            <div className="flex max-w-[420px] flex-col justify-center">
+            <div className="flex max-w-[420px] flex-col justify-center pr-8 sm:pr-9 lg:pr-0">
               <h1 className="text-[28px] font-normal leading-[1.25] tracking-[-0.01em] text-[#222222] sm:text-[34px] lg:text-[38px]">
                 Unlock Better
                 <br />
@@ -40,15 +40,15 @@ export default function BookDemoCtaSection() {
             </div>
 
             {/* Right devices visual — flush to right edge */}
-            <div className="relative mx-auto flex min-h-[200px] w-full items-end justify-end lg:mx-0 lg:h-full">
-              <div className="relative w-full max-w-[480px] lg:absolute lg:bottom-0 lg:right-0 lg:max-w-none lg:w-[88%]">
+            <div className="relative -mr-0 flex min-h-[260px] w-full items-end justify-end lg:h-full">
+              <div className="relative w-full max-w-none lg:absolute lg:bottom-0 lg:right-0 lg:w-[88%]">
                 <Image
                   src="/images/cta/devices.png"
                   alt="Laptop and mobile showing Investera investment dashboard and AI assistant"
                   width={594}
                   height={449}
                   unoptimized
-                  className="h-auto max-h-[280px] w-full object-contain object-right-bottom lg:max-h-[390px]"
+                  className="h-auto max-h-[360px] w-full scale-[1.08] origin-bottom-right object-contain object-right-bottom lg:max-h-[390px] lg:scale-100"
                 />
               </div>
             </div>

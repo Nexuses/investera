@@ -4,24 +4,63 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+function QuoteBlock({
+  className = "",
+  compact = false,
+}: {
+  className?: string;
+  compact?: boolean;
+}) {
+  return (
+    <div className={className}>
+      <Image
+        src="/images/investment-hero/quote-marks.png"
+        alt=""
+        width={150}
+        height={109}
+        unoptimized
+        aria-hidden="true"
+        className="mb-3 h-auto w-[52px] sm:w-[64px] lg:w-[68px]"
+      />
+      {compact ? (
+        <p className="max-w-[320px] text-[15px] font-normal leading-[1.4] text-[#4A5F73] sm:text-[17px]">
+          Make faster, smarter investment decisions
+          <br />
+          with clarity, control, and confidence
+        </p>
+      ) : (
+        <p className="text-[15px] font-normal leading-[1.4] text-[#4A5F73] sm:text-[17px] lg:text-[18px] xl:text-[20px]">
+          Make faster, smarter
+          <br />
+          investment decisions
+          <br />
+          with clarity, control,
+          <br />
+          and confidence
+        </p>
+      )}
+    </div>
+  );
+}
+
 export default function InvestmentHero() {
   return (
     <section className="overflow-hidden bg-[#D9EEF7]">
-      <div className="relative mx-auto max-w-[1440px] px-6 py-12 lg:h-[600px] lg:px-16 lg:py-0">
-        <div className="grid h-full items-center gap-10 lg:grid-cols-[minmax(0,48%)_minmax(0,52%)] lg:gap-6">
+      <div className="relative mx-auto max-w-[1440px] px-6 pt-12 pb-0 lg:h-[600px] lg:px-16 lg:py-0">
+        <div className="grid h-full items-center gap-8 lg:grid-cols-[minmax(0,48%)_minmax(0,52%)] lg:gap-6">
           {/* Left content */}
           <div className="relative z-10 flex max-w-[560px] flex-col justify-center">
-            <p className="text-[28px] font-normal leading-none tracking-[-0.01em] text-[#0c2d57]">
+            <p className="text-[16px] font-normal leading-none tracking-[-0.01em] text-[#0c2d57] lg:text-[28px]">
               For Investment Professionals
             </p>
 
-            <h2 className="mt-5 text-[40px] font-normal leading-[1.12] tracking-[-0.02em] text-[#0c2d57] lg:mt-6">
+            <h4 className="mt-5 text-[40px] font-normal leading-[1.12] tracking-[-0.02em] text-[#0c2d57] lg:mt-6">
               Investment Management
               <br />
               Shouldn&apos;t Be Scattered Across
               <br />
               Multiple Systems
-            </h2>
+            </h4>
 
             <p className="mt-5 max-w-[480px] text-[18px] leading-[1.55] text-[#5B6F86] lg:mt-6">
               Bring portfolios, transactions, valuations,
@@ -55,16 +94,19 @@ export default function InvestmentHero() {
                 </span>
               </div>
             </div>
+
+            {/* Phone: quote after Since 2018 — 2 lines */}
+            <QuoteBlock compact className="mt-8 max-w-[320px] lg:hidden" />
           </div>
 
-          {/* Right: person + quote */}
-          <div className="relative min-h-[420px] w-full sm:min-h-[480px] lg:h-full lg:min-h-0">
+          {/* Right: person (+ desktop quote) */}
+          <div className="relative -mt-[30px] min-h-[290px] w-full sm:min-h-[320px] lg:mt-0 lg:h-full lg:min-h-0">
             <motion.div
               initial={{ opacity: 0, y: 80, scale: 0.95 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 1.2, ease: "easeOut" }}
-              className="absolute bottom-0 left-1/2 w-[min(100%,565px)] -translate-x-[calc(50%+180px)]"
+              className="absolute bottom-0 left-1/2 w-[min(100%,420px)] -translate-x-1/2 sm:w-[min(100%,480px)] lg:w-[min(100%,565px)] lg:-translate-x-[calc(50%+180px)]"
             >
               <Image
                 src="/images/investment-hero/person.png"
@@ -73,30 +115,12 @@ export default function InvestmentHero() {
                 height={595}
                 unoptimized
                 priority
-                className="h-auto w-full max-w-[565px] object-contain object-bottom lg:h-[595px] lg:w-[565px]"
+                className="mx-auto h-auto w-full max-w-[565px] object-contain object-bottom lg:h-[595px] lg:w-[565px]"
               />
             </motion.div>
 
-            <div className="absolute right-0 top-[calc(26%+80px)] z-10 w-[44%] max-w-[240px] sm:max-w-[260px] lg:right-0 lg:top-[calc(28%+80px)] lg:w-[38%] xl:max-w-[280px]">
-              <Image
-                src="/images/investment-hero/quote-marks.png"
-                alt=""
-                width={150}
-                height={109}
-                unoptimized
-                aria-hidden="true"
-                className="mb-3 h-auto w-[52px] sm:w-[64px] lg:w-[68px]"
-              />
-              <p className="text-[15px] font-normal leading-[1.4] text-[#4A5F73] sm:text-[17px] lg:text-[18px] xl:text-[20px]">
-                Make faster, smarter
-                <br />
-                investment decisions
-                <br />
-                with clarity, control,
-                <br />
-                and confidence
-              </p>
-            </div>
+            {/* Desktop quote overlay */}
+            <QuoteBlock className="absolute right-0 top-[calc(28%+80px)] z-10 hidden w-[38%] max-w-[280px] lg:block xl:max-w-[280px]" />
           </div>
         </div>
       </div>

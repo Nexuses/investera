@@ -27,7 +27,7 @@ const floatingUi = [
     src: "/images/who-we-serve/ui-1.png",
     alt: "Won Deals dashboard widget",
     className:
-      "left-[4%] top-[calc(48%-60px)] w-[42%] max-w-[190px] sm:left-[6%] sm:top-[calc(46%-60px)] lg:left-[5%] lg:top-[calc(44%-60px)]",
+      "left-[4%] top-[calc(48%-30px)] w-[42%] max-w-[190px] sm:left-[6%] sm:top-[calc(46%-30px)] lg:left-[5%] lg:top-[calc(44%-60px)]",
     anim: "who-float-a",
   },
   {

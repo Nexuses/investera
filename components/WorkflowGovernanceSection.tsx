@@ -23,7 +23,7 @@ export default function WorkflowGovernanceSection({
         >
           <div className="grid h-full grid-cols-1 lg:grid-cols-[38%_62%] lg:justify-between">
             {/* Left content */}
-            <div className="flex flex-col justify-center px-8 pt-8 pb-8 lg:pb-0">
+            <div className="flex flex-col justify-center px-6 pt-6 pb-4 sm:px-8 sm:pt-8 lg:pb-0">
               <h3 className="text-[28px] font-normal leading-[1.15] text-[#1e293b] sm:text-[32px] lg:text-[36px]">
                 Workflow &
                 <br />
@@ -35,13 +35,14 @@ export default function WorkflowGovernanceSection({
             </div>
 
             {/* Right dashboard preview */}
-            <div className="relative min-h-[200px] lg:min-h-0">
-              <div className="relative px-6 pb-6 pt-2 lg:absolute lg:inset-0 lg:px-0 lg:pb-0 lg:pt-0">
+            <div className="relative lg:min-h-0 lg:flex-1">
+              <div className="relative px-4 pt-1 sm:px-6 lg:absolute lg:inset-0 lg:px-0 lg:pt-0">
                 <DashboardPreview
                   src={image}
                   alt="Consolidated dashboard with asset allocation charts and investment metrics"
                   delay={0.15}
-                  className="relative mx-auto w-full lg:absolute lg:bottom-0 lg:right-0 lg:w-[84%] lg:translate-y-[8%]"
+                  className="relative -mb-1 mx-auto w-full translate-y-4 sm:translate-y-5 lg:absolute lg:bottom-0 lg:right-0 lg:mb-0 lg:w-[84%] lg:translate-y-[8%]"
+                  imageClassName="h-auto w-full rounded-t-xl rounded-b-none lg:rounded-xl"
                 />
               </div>
             </div>

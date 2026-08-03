@@ -10,6 +10,7 @@ type DashboardPreviewProps = {
   className?: string;
   width?: number;
   height?: number;
+  imageClassName?: string;
 };
 
 export default function DashboardPreview({
@@ -19,6 +20,7 @@ export default function DashboardPreview({
   className = "",
   width = 720,
   height = 480,
+  imageClassName = "h-auto w-full rounded-xl",
 }: DashboardPreviewProps) {
   return (
     <motion.div
@@ -34,7 +36,7 @@ export default function DashboardPreview({
         width={width}
         height={height}
         unoptimized
-        className="h-auto w-full rounded-xl"
+        className={imageClassName}
       />
     </motion.div>
   );
