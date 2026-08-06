@@ -36,13 +36,13 @@ export default function InvestmentSolutionsSection() {
     <section className="bg-[#17467B] py-14 lg:py-20">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
         <div className="mx-auto max-w-[1180px]">
-          <h2 className="text-center text-[28px] font-normal leading-tight text-white sm:text-[36px] lg:text-[48px]">
+          <h2 className="text-center text-[40px] font-normal leading-tight text-white">
             Investment Management{" "}
             <span className="font-bold">Solutions</span> for{" "}
             <span className="font-bold">Every Stakeholder</span>
           </h2>
 
-          <p className="mx-auto mt-5 max-w-[750px] text-center text-[15px] leading-relaxed text-white/90 sm:text-[17px] lg:text-[18px]">
+          <p className="mx-auto mt-5 max-w-[750px] text-center text-[18px] leading-relaxed text-white/90">
             Purpose-built solutions that help investment professionals manage
             portfolios, opportunities, workflows, and reporting through one
             unified platform.

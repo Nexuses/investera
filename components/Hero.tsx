@@ -15,12 +15,12 @@ export default function Hero() {
 
       <div className="relative z-10 mx-auto flex max-w-[1440px] flex-col items-center px-6 pt-8 pb-[20px] lg:px-16 lg:pt-12">
         <div className="flex max-w-[860px] flex-col items-center text-center">
-          <h1 className="text-[34px] font-normal leading-[1.15] tracking-[-0.01em] text-[#0c2d57] sm:text-[42px] lg:text-[50px]">
+          <h1 className="text-[55px] font-normal leading-[1.15] tracking-[-0.01em] text-[#0c2d57]">
             Bringing Investment
             <br />
             Management Together
           </h1>
-          <p className="mt-5 max-w-[720px] text-[15px] leading-[1.75] text-[#64748b] sm:text-base lg:mt-6 lg:text-[17px]">
+          <p className="mt-5 max-w-[720px] text-[18px] leading-[1.75] text-[#64748b] lg:mt-6">
             Manage portfolios, deals, transactions, reporting, and investment
             data through one unified platform built for greater visibility,
             accuracy, and control.

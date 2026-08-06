@@ -4,12 +4,10 @@ import { motion } from "framer-motion";
 import DashboardPreview from "./DashboardPreview";
 
 type WorkflowGovernanceSectionProps = {
-  description?: string;
   image?: string;
 };
 
 export default function WorkflowGovernanceSection({
-  description = "Streamline investment processes with configurable workflows, approval controls, and governance frameworks that improve consistency, oversight, and operational control.",
   image = "/images/workflow-governance/dashboard.png",
 }: WorkflowGovernanceSectionProps) {
   return (
@@ -24,13 +22,17 @@ export default function WorkflowGovernanceSection({
           <div className="grid h-full grid-cols-1 lg:grid-cols-[38%_62%] lg:justify-between">
             {/* Left content */}
             <div className="flex flex-col justify-center px-6 pt-6 pb-4 sm:px-8 sm:pt-8 lg:pb-0">
-              <h3 className="text-[28px] font-normal leading-[1.15] text-[#1e293b] sm:text-[32px] lg:text-[36px]">
+              <h3 className="text-[34px] font-normal leading-[1.15] text-[#1e293b]">
                 Workflow &
                 <br />
                 <span className="font-bold text-[#0c2d57]">Governance Controls</span>
               </h3>
-              <p className="mt-4 max-w-[320px] text-[13px] leading-[1.5] text-[#333333] lg:mt-5">
-                {description}
+              <p className="mt-4 max-w-[320px] text-[16px] leading-[1.5] text-[#333333] lg:mt-5">
+                Streamline investment processes with configurable workflows,
+                <br />
+                approval controls, and governance frameworks that improve
+                <br />
+                consistency, oversight, and operational control.
               </p>
             </div>
 

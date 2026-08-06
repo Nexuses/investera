@@ -31,8 +31,8 @@ function LogoItem({ logo }: { logo: (typeof logos)[number] }) {
 
 export default function LogoSlider() {
   return (
-    <section className="relative w-full overflow-hidden border-b-2 border-[#0c2d57] bg-white">
-      <div className="logo-slider-mask relative py-5 lg:py-6">
+    <section className="relative w-full overflow-hidden bg-white">
+      <div className="logo-slider-mask relative py-[35px] lg:py-[39px]">
         <div className="logo-slider-track flex w-max items-center">
           {[...logos, ...logos].map((logo, index) => (
             <LogoItem key={`${logo.alt}-${index}`} logo={logo} />

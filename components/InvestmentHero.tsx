@@ -23,13 +23,13 @@ function QuoteBlock({
         className="mb-3 h-auto w-[52px] sm:w-[64px] lg:w-[68px]"
       />
       {compact ? (
-        <p className="max-w-[320px] text-[15px] font-normal leading-[1.4] text-[#4A5F73] sm:text-[17px]">
+        <p className="max-w-[320px] text-[16px] font-normal leading-[1.4] text-[#4A5F73] lg:text-[18px]">
           Make faster, smarter investment decisions
           <br />
           with clarity, control, and confidence
         </p>
       ) : (
-        <p className="text-[15px] font-normal leading-[1.4] text-[#4A5F73] sm:text-[17px] lg:text-[18px] xl:text-[20px]">
+        <p className="text-[16px] font-normal leading-[1.4] text-[#4A5F73] lg:text-[18px]">
           Make faster, smarter
           <br />
           investment decisions
@@ -54,7 +54,7 @@ export default function InvestmentHero() {
               For Investment Professionals
             </p>
 
-            <h4 className="mt-5 text-[40px] font-normal leading-[1.12] tracking-[-0.02em] text-[#0c2d57] lg:mt-6">
+            <h4 className="mt-5 text-[28px] font-normal leading-[1.12] tracking-[-0.02em] text-[#0c2d57] lg:mt-6">
               Investment Management
               <br />
               Shouldn&apos;t Be Scattered Across
@@ -62,7 +62,7 @@ export default function InvestmentHero() {
               Multiple Systems
             </h4>
 
-            <p className="mt-5 max-w-[480px] text-[18px] leading-[1.55] text-[#5B6F86] lg:mt-6">
+            <p className="mt-5 max-w-[480px] text-[16px] leading-[1.55] text-[#5B6F86] lg:mt-6 lg:text-[18px]">
               Bring portfolios, transactions, valuations,
               <br className="hidden sm:block" />
               documents, and reporting together in one

@@ -53,7 +53,7 @@ export default function Footer() {
               />
             </Link>
 
-            <p className="mt-5 text-[15px] font-normal text-white sm:text-[16px]">
+            <p className="mt-5 text-[16px] font-normal text-white lg:text-[18px]">
               Subscribe to our newsletter
             </p>
 
@@ -83,15 +83,15 @@ export default function Footer() {
 
           {/* Primary links */}
           <div>
-            <h2 className="text-[16px] font-bold text-white sm:text-[17px]">
+            <h6 className="text-[22px] font-bold text-white">
               Home
-            </h2>
+            </h6>
             <ul className="mt-4 space-y-3">
               {primaryLinks.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-[15px] font-normal text-white/95 transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                    className="text-[16px] font-normal text-white/95 transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                   >
                     {link.label}
                   </Link>
@@ -107,7 +107,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-[15px] font-normal text-white/95 transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                    className="text-[16px] font-normal text-white/95 transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                   >
                     {link.label}
                   </Link>
@@ -117,7 +117,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <p className="mt-14 text-center text-[13px] font-normal text-white/90 sm:mt-16 sm:text-[14px]">
+        <p className="mt-14 text-center text-[16px] font-normal text-white/90 sm:mt-16">
           @ 2026 Investera. All rights reserved
         </p>
       </div>

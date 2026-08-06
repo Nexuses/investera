@@ -9,6 +9,16 @@
   --gold-hover: #b08f2e;
   --text-muted: #64748b;
   --nav-text: #3d4f5f;
+
+  /* Type scale */
+  --text-h1: 55px;
+  --text-h2: 40px;
+  --text-h3: 34px;
+  --text-h4: 28px;
+  --text-h5: 24px;
+  --text-h6: 22px;
+  --text-p1: 18px;
+  --text-p2: 16px;
 }
 
 @theme inline {

@@ -118,7 +118,7 @@ export default function FeatureTabs() {
                 }`}
               >
                 <div className="overflow-hidden">
-                  <p className="text-[13px] leading-relaxed text-[#64748b] sm:pl-[56px] sm:text-[14px]">
+                  <p className="text-[18px] leading-relaxed text-[#64748b] sm:pl-[56px]">
                     {feature.description}
                   </p>
                 </div>

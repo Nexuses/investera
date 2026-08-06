@@ -11,17 +11,21 @@ const features = [
   "Manage investor relationships, interactions, and onboarding through integrated CRM workflows.",
 ];
 
-export default function InvesteraProSection() {
+export default function InvesteraProSection({
+  className = "bg-white pt-14 pb-0 lg:pt-20 lg:pb-0",
+}: {
+  className?: string;
+}) {
   return (
-    <section className="bg-white pt-14 pb-0 lg:pt-20 lg:pb-0">
+    <section className={className}>
       <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
         {/* Header */}
         <div className="mx-auto max-w-[820px] text-center">
-          <h2 className="text-[32px] font-normal leading-tight text-[#1e293b] sm:text-[38px] lg:text-[42px]">
+          <h2 className="text-[40px] font-normal leading-tight text-[#1e293b]">
             Meet{" "}
             <span className="font-bold text-[#0c2d57]">Investera Pro</span>
           </h2>
-          <p className="mx-auto mt-5 max-w-[760px] text-[15px] leading-relaxed text-[#64748b] sm:text-base lg:text-[17px]">
+          <p className="mx-auto mt-5 max-w-[760px] text-[18px] leading-relaxed text-[#64748b]">
             An end-to-end investment management platform that unifies portfolios,
             transactions, workflows, reporting, and documents for greater
             visibility and control.
@@ -38,7 +42,7 @@ export default function InvesteraProSection() {
           <div className="grid items-end gap-8 lg:grid-cols-[38%_62%] lg:gap-0">
             {/* Left content */}
             <div className="px-8 py-8 sm:py-10 lg:py-14">
-              <h3 className="text-[28px] font-normal leading-[1.15] text-[#1e293b] sm:text-[32px] lg:text-[36px]">
+              <h3 className="text-[34px] font-normal leading-[1.15] text-[#1e293b]">
                 Portfolio &
                 <br />
                 <span className="font-bold text-[#0c2d57]">Deal Management</span>
@@ -48,7 +52,7 @@ export default function InvesteraProSection() {
                 {features.map((feature) => (
                   <li
                     key={feature}
-                    className="text-[14px] leading-relaxed text-[#475569] sm:text-[15px]"
+                    className="text-[16px] leading-relaxed text-[#475569]"
                   >
                     {feature}
                   </li>
@@ -57,7 +61,7 @@ export default function InvesteraProSection() {
 
               <Link
                 href="#portfolio-management"
-                className="mt-8 inline-flex items-center gap-1 text-[15px] font-semibold text-[#0c2d57] transition-opacity hover:opacity-80"
+                className="mt-8 inline-flex items-center gap-1 text-[16px] font-semibold text-[#0c2d57] transition-opacity hover:opacity-80"
               >
                 Explore Portfolio Management
                 <span aria-hidden="true">→</span>

@@ -32,10 +32,10 @@ export default function InsightsSection() {
       <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
         {/* Static heading — no animation */}
         <div className="mx-auto flex max-w-[760px] flex-col items-center text-center">
-          <h2 className="text-[34px] font-semibold leading-tight text-white md:text-[40px] lg:text-[48px]">
+          <h2 className="text-[40px] font-semibold leading-tight text-white">
             Insights
           </h2>
-          <p className="mt-6 text-[17px] leading-[1.4] text-white/90 md:text-[19px] lg:text-[21px]">
+          <p className="mt-6 text-[16px] leading-[1.4] text-white/90 lg:text-[18px]">
             Explore perspectives on investment management, financial technology,
             market trends, and the evolving investment landscape.
           </p>
@@ -66,9 +66,9 @@ export default function InsightsSection() {
                 </div>
 
                 <div className="flex flex-1 flex-col px-4 pb-5 pt-4">
-                  <h3 className="text-[22px] font-semibold leading-[1.2] text-[#111111] sm:text-[24px] lg:text-[26px]">
+                  <h5 className="text-[24px] font-semibold leading-[1.2] text-[#111111]">
                     {insight.title}
-                  </h3>
+                  </h5>
                   <p className="mt-3 text-[16px] leading-[1.4] text-[#4A4A4A] lg:text-[18px]">
                     {insight.description}
                   </p>

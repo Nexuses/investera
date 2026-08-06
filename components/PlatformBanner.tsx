@@ -19,13 +19,13 @@ export default function PlatformBanner() {
       <div className="mx-auto flex max-w-[1440px] flex-col gap-10 px-6 py-12 lg:flex-row lg:items-center lg:gap-12 lg:px-16 lg:py-14">
         {/* Left heading */}
         <div className="shrink-0 text-white lg:w-[34%] lg:pr-4">
-          <p className="text-[28px] font-normal leading-[1.1] sm:text-[32px] lg:text-[36px]">
+          <h2 className="text-[40px] font-normal leading-[1.1]">
             One Platform.
-          </p>
-          <h2 className="mt-1 text-[28px] font-bold leading-[1.1] sm:text-[32px] lg:text-[36px]">
-            Complete Investment
-            <br />
-            Control
+            <span className="mt-1 block font-bold">
+              Complete Investment
+              <br />
+              Control
+            </span>
           </h2>
         </div>
 
@@ -40,12 +40,12 @@ export default function PlatformBanner() {
                 />
               )}
               <div className="text-white">
-                <h3 className="text-[18px] font-bold leading-tight sm:text-[19px] lg:text-[20px]">
+                <h4 className="text-[28px] font-bold leading-tight">
                   {column.title[0]}
                   <br />
                   {column.title[1]}
-                </h3>
-                <p className="mt-2 max-w-[220px] text-[13px] font-normal leading-snug text-white/90 sm:text-[14px]">
+                </h4>
+                <p className="mt-2 max-w-[220px] text-[18px] font-normal leading-snug text-white/90">
                   {column.subtitle}
                 </p>
               </div>

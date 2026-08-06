@@ -54,12 +54,12 @@ export default function CaseStudyCard({
             className="h-10 w-auto object-contain sm:h-11"
           />
         ) : (
-          <h3 className="text-[17px] font-bold leading-snug text-[#0c2d57] sm:text-[18px]">
+          <h4 className="text-[28px] font-bold leading-snug text-[#0c2d57]">
             {title}
-          </h3>
+          </h4>
         )}
 
-        <p className="mt-5 flex-1 text-[13px] leading-[1.65] text-[#475569] sm:text-[14px]">
+        <p className="mt-5 flex-1 text-[16px] leading-[1.65] text-[#475569] lg:text-[18px]">
           {description}
         </p>
 

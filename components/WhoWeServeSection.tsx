@@ -101,12 +101,12 @@ export default function WhoWeServeSection() {
               Who We Serve
             </span>
 
-            <h2 className="mt-5 text-[34px] font-normal leading-tight text-[#1e293b] lg:text-[46px]">
+            <h2 className="mt-5 text-[40px] font-normal leading-tight text-[#1e293b]">
               Solutions for{" "}
               <span className="font-bold text-[#17477F]">Every Investor</span>
             </h2>
 
-            <p className="mt-4 max-w-[1000px] text-[16px] leading-relaxed text-[#4A4A4A] sm:text-[18px]">
+            <p className="mt-4 max-w-[1000px] text-[18px] leading-relaxed text-[#4A4A4A]">
               Purpose-built investment management solutions for professionals and
               organizations managing complex, multi-asset portfolios.
             </p>
@@ -123,7 +123,7 @@ export default function WhoWeServeSection() {
               className="group relative flex min-h-[600px] flex-col overflow-hidden rounded-2xl border border-[#E8E8E8] bg-white lg:h-[640px]"
             >
               <div className="relative z-10 p-7 pb-4">
-                <h3 className="text-[24px] font-normal leading-snug text-[#1e293b] sm:text-[28px]">
+                <h3 className="text-[34px] font-normal leading-snug text-[#1e293b]">
                   Built for{" "}
                   <span className="font-bold text-[#17477F]">
                     Investment Professionals
@@ -134,7 +134,7 @@ export default function WhoWeServeSection() {
                   {audience.map((item) => (
                     <li
                       key={item}
-                      className="flex items-center gap-3 text-[15px] text-[#4A4A4A] sm:text-[16px]"
+                      className="flex items-center gap-3 text-[18px] text-[#4A4A4A]"
                     >
                       <Image
                         src="/images/who-we-serve/tick.png"
@@ -198,10 +198,10 @@ export default function WhoWeServeSection() {
               className="relative flex min-h-[620px] flex-col overflow-hidden rounded-2xl bg-[#17477F] lg:h-[640px]"
             >
               <div className="relative z-10 px-7 pt-7">
-                <h3 className="text-[24px] font-normal leading-snug text-white sm:text-[28px]">
+                <h3 className="text-[34px] font-normal leading-snug text-white">
                   Our <span className="font-bold">Technology Partners</span>
                 </h3>
-                <p className="mt-4 max-w-[500px] text-[14px] leading-relaxed text-white/90 sm:text-[15px]">
+                <p className="mt-4 max-w-[500px] text-[18px] leading-relaxed text-white/90">
                   Integrate Investera with leading technology, market data,
                   document, and business platforms to create a connected
                   investment management ecosystem.

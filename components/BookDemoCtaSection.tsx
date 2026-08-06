@@ -19,13 +19,13 @@ export default function BookDemoCtaSection() {
           <div className="relative z-[1] grid h-full items-center gap-6 py-8 pl-8 pr-0 sm:gap-8 sm:py-9 sm:pl-9 lg:grid-cols-[42%_58%] lg:gap-0 lg:py-0 lg:pl-9">
             {/* Left content — static text, no animation */}
             <div className="flex max-w-[420px] flex-col justify-center pr-8 sm:pr-9 lg:pr-0">
-              <h1 className="text-[28px] font-normal leading-[1.25] tracking-[-0.01em] text-[#222222] sm:text-[34px] lg:text-[38px]">
+              <h1 className="text-[55px] font-normal leading-[1.25] tracking-[-0.01em] text-[#222222]">
                 Unlock Better
                 <br />
                 <span className="font-semibold text-[#17477F]">Opportunities.</span>
               </h1>
 
-              <p className="mt-4 max-w-[360px] text-[13px] leading-[1.45] text-[#555555] sm:text-[14px]">
+              <p className="mt-4 max-w-[360px] text-[18px] leading-[1.45] text-[#555555]">
                 Bring portfolios, deals, reporting, workflows, and investment
                 data together in one connected platform built for greater
                 efficiency, visibility, and control.
