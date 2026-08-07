@@ -11,6 +11,7 @@ type DashboardPreviewProps = {
   width?: number;
   height?: number;
   imageClassName?: string;
+  float?: boolean;
 };
 
 export default function DashboardPreview({
@@ -21,6 +22,7 @@ export default function DashboardPreview({
   width = 720,
   height = 480,
   imageClassName = "h-auto w-full rounded-xl",
+  float = true,
 }: DashboardPreviewProps) {
   return (
     <motion.div
@@ -30,14 +32,28 @@ export default function DashboardPreview({
       transition={{ duration: 0.75, ease: "easeOut", delay }}
       className={className}
     >
-      <Image
-        src={src}
-        alt={alt}
-        width={width}
-        height={height}
-        unoptimized
-        className={imageClassName}
-      />
+      <motion.div
+        animate={float ? { y: [0, -12, 0] } : undefined}
+        transition={
+          float
+            ? {
+                duration: 4.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 0.4,
+              }
+            : undefined
+        }
+      >
+        <Image
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          unoptimized
+          className={imageClassName}
+        />
+      </motion.div>
     </motion.div>
   );
 }

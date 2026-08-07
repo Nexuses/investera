@@ -1,8 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import DashboardImage from "./features/DashboardImage";
 
 const features = [
   "Manage investment opportunities through configurable deal pipelines and customized stages.",
@@ -68,17 +68,34 @@ export default function InvesteraProSection({
               </Link>
             </div>
 
-            {/* Right dashboard image */}
+            {/* Right dashboard image — screening panel floats */}
             <div className="relative flex min-w-0 justify-end self-end overflow-visible pr-[12px] pt-6 lg:pt-10">
-              <DashboardImage
-                src="/images/investera-pro/pipeline-dashboard.png"
-                alt="Investera Pro pipeline dashboard showing deal tracking and portfolio management"
-                width={1400}
-                height={965}
-                delay={0.15}
-                className="w-full max-w-[1400px] shrink-0"
-                imageClassName="h-auto w-full max-w-[1400px] shrink-0 translate-x-4 object-contain object-right-bottom lg:translate-x-8"
-              />
+              <motion.div
+                initial={{ opacity: 0, y: 50, scale: 0.96 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.85, ease: "easeOut", delay: 0.15 }}
+                className="relative w-full max-w-[1400px] shrink-0"
+              >
+                <motion.div
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{
+                    duration: 4.5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 0.8,
+                  }}
+                >
+                  <Image
+                    src="/images/investera-pro/pipeline-dashboard.png"
+                    alt="Investera Pro pipeline dashboard showing deal tracking and portfolio management"
+                    width={1400}
+                    height={965}
+                    unoptimized
+                    className="h-auto w-full max-w-[1400px] shrink-0 translate-x-4 object-contain object-right-bottom lg:translate-x-8"
+                  />
+                </motion.div>
+              </motion.div>
             </div>
           </div>
         </motion.div>

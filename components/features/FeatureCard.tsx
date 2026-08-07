@@ -49,6 +49,7 @@ export default function FeatureCard({
             src={image}
             alt={imageAlt}
             delay={delay + imageDelay}
+            floatDelay={delay * 0.5}
           />
         </div>
       </div>

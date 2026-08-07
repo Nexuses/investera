@@ -50,7 +50,7 @@ export default function BusinessDataSection() {
           <h2 className="max-w-[720px] text-[40px] font-normal leading-[1.2] tracking-[-0.02em] text-[#111111]">
             Multi-Asset-Class
             <br />
-            <span className="font-semibold">Investment Management</span>
+            <span className="font-semibold text-[#143F73]">Investment Management</span>
           </h2>
 
           <div className="flex flex-wrap items-center gap-3">

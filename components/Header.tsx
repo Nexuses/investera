@@ -2,12 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About Us", href: "#about" },
-  { label: "Products", href: "#products" },
-  { label: "Features", href: "#features" },
-  { label: "Why Choose Investera", href: "#why-choose-investera" },
-  { label: "Media", href: "#media" },
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about-us" },
+  { label: "Products", href: "/#products" },
+  { label: "Features", href: "/#features" },
+  { label: "Why Choose Investera", href: "/#why-choose-investera" },
+  { label: "Media", href: "/#media" },
 ];
 
 export default function Header() {
@@ -39,7 +39,7 @@ export default function Header() {
           </nav>
 
           <Link
-            href="#demo"
+            href="/#demo"
             className="shrink-0 rounded-full bg-[#c4a035] px-5 py-2 text-[13px] font-medium text-white transition-colors hover:bg-[#b08f2e] lg:px-6 lg:py-2.5"
           >
             Request A Demo

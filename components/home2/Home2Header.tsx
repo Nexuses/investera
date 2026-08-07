@@ -12,34 +12,59 @@ function AssetAllocationCard() {
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.7, ease: "easeOut", delay: 0.25 }}
     >
-      <motion.div
-        initial={{ clipPath: "circle(0% at 50% 48%)" }}
-        animate={{ clipPath: "circle(80% at 50% 48%)" }}
-        transition={{ duration: 1.35, ease: "easeOut", delay: 0.35 }}
-      >
-        <Image
-          src="/images/home-2/card-1.png"
-          alt="Total Asset Allocation chart"
-          width={600}
-          height={520}
-          unoptimized
-          className="h-auto w-full"
-        />
-      </motion.div>
+      <Image
+        src="/images/home-2/card-allocation.png"
+        alt="Total Asset Allocation chart"
+        width={600}
+        height={520}
+        unoptimized
+        className="h-auto w-full"
+      />
 
-      {/* Rotating highlight on donut */}
+      {/* Pie/donut draw-in overlay */}
+      <svg
+        viewBox="0 0 120 120"
+        className="pointer-events-none absolute left-1/2 top-[38%] h-[48%] w-[48%] -translate-x-1/2 -translate-y-1/2 -rotate-90"
+        aria-hidden
+      >
+        {[
+          { color: "#0c2d57", len: 72, delay: 0.35 },
+          { color: "#CBA400", len: 113, delay: 0.5 },
+          { color: "#1F6F6A", len: 85, delay: 0.65 },
+          { color: "#6B7C93", len: 44, delay: 0.8 },
+        ].map((seg, index) => (
+          <motion.circle
+            key={seg.color}
+            cx="60"
+            cy="60"
+            r="36"
+            fill="none"
+            stroke={seg.color}
+            strokeWidth="14"
+            strokeDasharray={`${seg.len} 314`}
+            strokeDashoffset={-[0, 72, 185, 270][index]}
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{ pathLength: 1, opacity: [0, 0.55, 0] }}
+            transition={{ duration: 1.1, delay: seg.delay, ease: "easeOut" }}
+          />
+        ))}
+      </svg>
+
+      {/* Circular reveal sweep */}
       <motion.div
         aria-hidden
-        className="pointer-events-none absolute left-1/2 top-[46%] h-[46%] w-[46%] -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-[#CBA400]/40"
-        initial={{ scale: 0.6, opacity: 0, rotate: -30 }}
-        animate={{ scale: 1, opacity: [0, 0.7, 0], rotate: 40 }}
-        transition={{ duration: 1.6, delay: 0.5, ease: "easeOut" }}
+        className="pointer-events-none absolute left-1/2 top-[38%] h-[52%] w-[52%] -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-[#CBA400]/50"
+        initial={{ scale: 0.4, opacity: 0, rotate: -40 }}
+        animate={{ scale: 1.05, opacity: [0, 0.8, 0], rotate: 50 }}
+        transition={{ duration: 1.5, delay: 0.4, ease: "easeOut" }}
       />
     </motion.div>
   );
 }
 
 function GainersCard() {
+  const bars = [100, 78, 28, 16, 14];
+
   return (
     <motion.div
       className="relative w-[210px] overflow-hidden rounded-2xl bg-white shadow-[0_20px_50px_rgba(20,10,60,0.28)] sm:w-[240px]"
@@ -47,14 +72,13 @@ function GainersCard() {
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
     >
-      {/* Bars grow upward via clip-path */}
       <motion.div
         initial={{ clipPath: "inset(100% 0 0 0)" }}
         animate={{ clipPath: "inset(0% 0 0 0)" }}
-        transition={{ duration: 1.25, ease: [0.22, 1, 0.36, 1], delay: 0.45 }}
+        transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
       >
         <Image
-          src="/images/home-2/card-2.png"
+          src="/images/home-2/card-gainers.png"
           alt="Top 5 Gainers and Top 5 Losers chart"
           width={640}
           height={480}
@@ -63,17 +87,17 @@ function GainersCard() {
         />
       </motion.div>
 
-      {/* Sequential bar pulse accents */}
-      <div className="pointer-events-none absolute bottom-[16%] left-[14%] right-[6%] flex h-[42%] items-end gap-[6%]">
-        {[100, 78, 28, 16, 14].map((height, index) => (
+      {/* Staggered bar grow accents */}
+      <div className="pointer-events-none absolute bottom-[18%] left-[10%] right-[8%] flex h-[48%] items-end justify-between gap-[4%]">
+        {bars.map((height, index) => (
           <motion.div
-            key={height}
-            className="flex-1 origin-bottom rounded-t-sm bg-[#0c2d57]/25"
+            key={`${height}-${index}`}
+            className="flex-1 origin-bottom rounded-t-md bg-[#3d4454]/35"
             initial={{ scaleY: 0, opacity: 0 }}
-            animate={{ scaleY: 1, opacity: [0, 0.45, 0] }}
+            animate={{ scaleY: 1, opacity: [0, 0.5, 0] }}
             transition={{
-              duration: 0.9,
-              delay: 0.7 + index * 0.1,
+              duration: 0.85,
+              delay: 0.65 + index * 0.1,
               ease: "easeOut",
             }}
             style={{ height: `${height}%` }}
@@ -105,7 +129,7 @@ export default function Home2Header() {
               initial={{ opacity: 0, y: 40, x: -20 }}
               animate={{ opacity: 1, y: 0, x: 0 }}
               transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
-              className="absolute left-0 top-[12%] hidden xl:block"
+              className="absolute left-0 top-[calc(12%+40px)] hidden xl:block"
             >
               <motion.div
                 animate={{ y: [0, -10, 0] }}
@@ -120,7 +144,7 @@ export default function Home2Header() {
               initial={{ opacity: 0, y: 40, x: 20 }}
               animate={{ opacity: 1, y: 0, x: 0 }}
               transition={{ duration: 0.9, ease: "easeOut", delay: 0.35 }}
-              className="absolute right-0 top-[18%] hidden xl:block"
+              className="absolute right-0 top-[calc(18%+40px)] hidden xl:block"
             >
               <motion.div
                 animate={{ y: [0, 12, 0] }}

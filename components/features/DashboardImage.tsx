@@ -11,6 +11,8 @@ type DashboardImageProps = {
   width?: number;
   height?: number;
   imageClassName?: string;
+  float?: boolean;
+  floatDelay?: number;
 };
 
 export default function DashboardImage({
@@ -21,6 +23,8 @@ export default function DashboardImage({
   width = 560,
   height = 360,
   imageClassName = "h-auto w-full object-cover object-top",
+  float = true,
+  floatDelay = 0,
 }: DashboardImageProps) {
   return (
     <motion.div
@@ -30,14 +34,28 @@ export default function DashboardImage({
       transition={{ duration: 0.75, ease: "easeOut", delay }}
       className={`relative w-full ${className}`}
     >
-      <Image
-        src={src}
-        alt={alt}
-        width={width}
-        height={height}
-        unoptimized
-        className={imageClassName}
-      />
+      <motion.div
+        animate={float ? { y: [0, -10, 0] } : undefined}
+        transition={
+          float
+            ? {
+                duration: 4.2,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: floatDelay,
+              }
+            : undefined
+        }
+      >
+        <Image
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          unoptimized
+          className={imageClassName}
+        />
+      </motion.div>
     </motion.div>
   );
 }

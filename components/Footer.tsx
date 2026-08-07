@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const primaryLinks = [
-  { label: "About Us", href: "#about" },
+  { label: "About Us", href: "/about-us" },
   { label: "Products", href: "#products" },
   { label: "Features", href: "#features" },
 ];
