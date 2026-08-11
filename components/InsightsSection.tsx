@@ -5,6 +5,8 @@ const insights = [
   {
     title: "Investment Trends",
     description: "Family Offices and Their Challenges in the MENA Region",
+    subtitle:
+      "Explore the key portfolio, reporting, and governance challenges facing family offices across MENA.",
     image: "/images/insights/card-1.png",
     imageAlt:
       "Family office meeting discussing investment trends in the MENA region",
@@ -13,6 +15,8 @@ const insights = [
   {
     title: "FinTech",
     description: "Digital Assets in FinTech",
+    subtitle:
+      "Discover how digital assets are reshaping FinTech while creating new risks and opportunities.",
     image: "/images/insights/card-2.png",
     imageAlt: "Digital assets and FinTech technology visualization",
     href: "#insight-fintech",
@@ -20,6 +24,8 @@ const insights = [
   {
     title: "Real Estate PropTech",
     description: "The Disruptive Force in Real Estate",
+    subtitle:
+      "Explore how PropTech is transforming real estate through data, automation, and smarter insights.",
     image: "/images/insights/card-3.png",
     imageAlt: "Modern real estate PropTech and property technology",
     href: "#insight-proptech",
@@ -91,6 +97,9 @@ export default function InsightsSection() {
                   <h3 className="text-[20px] font-bold leading-[1.3] tracking-[-0.01em] text-[#0c2d57] sm:text-[22px]">
                     {insight.description}
                   </h3>
+                  <p className="mt-2 text-[16px] leading-[1.3] text-[#6B7280]">
+                    {insight.subtitle}
+                  </p>
                 </div>
               </Link>
             </article>

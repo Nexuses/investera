@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function BookDemoCtaSection() {
   return (
-    <section className="bg-white py-16 lg:py-24">
+    <section className="bg-white pt-10 pb-16 lg:pt-14 lg:pb-24">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
         <div className="relative overflow-hidden rounded-[16px] border border-[#F0E8DA] bg-[#F6EFE3] lg:h-[430px]">
           {/* Soft beige card background */}

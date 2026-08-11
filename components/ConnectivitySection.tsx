@@ -62,9 +62,8 @@ export default function ConnectivitySection() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="mx-auto flex max-w-[720px] flex-col items-center text-center"
         >
-          <h2 className="text-[36px] font-normal leading-tight tracking-[-0.02em] text-white sm:text-[44px] lg:text-[52px]">
-            Our{" "}
-            <span className="font-bold">Technology Partners</span>
+          <h2 className="text-[40px] font-normal leading-tight text-white">
+            Our <span className="font-bold">Technology Partners</span>
           </h2>
 
           <p className="mt-5 max-w-[560px] text-[16px] leading-[1.3] text-[#94A3B8]">

@@ -50,7 +50,7 @@ export default function InvestmentHero() {
         <div className="grid h-full items-center gap-8 lg:grid-cols-[minmax(0,48%)_minmax(0,52%)] lg:gap-6">
           {/* Left content */}
           <div className="relative z-10 flex max-w-[560px] flex-col justify-center">
-            <h5 className="text-[22px] font-normal leading-none tracking-[-0.01em] text-[#0c2d57]">
+            <h5 className="text-[22px] font-medium leading-none tracking-[-0.01em] text-[#0c2d57]">
               For Investment Professionals
             </h5>
 

@@ -44,7 +44,7 @@ const cards = [
 
 export default function BusinessDataSection() {
   return (
-    <section className="bg-white py-16 lg:py-24">
+    <section className="bg-white py-10 lg:py-14">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           <h2 className="max-w-[720px] text-[40px] font-normal leading-[1.2] tracking-[-0.02em] text-[#111111]">
