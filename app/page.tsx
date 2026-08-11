@@ -1,17 +1,16 @@
 import type { Metadata } from "next";
 import BookDemoCtaSection from "@/components/BookDemoCtaSection";
 import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import BusinessDataSection from "@/components/home2/BusinessDataSection";
-import AbstractVideoSection from "@/components/home2/AbstractVideoSection";
 import CorePhilosophySection from "@/components/home2/CorePhilosophySection";
-import Home2Header from "@/components/home2/Home2Header";
+import DarkHomeHero from "@/components/home2/DarkHomeHero";
 import InsightsSection from "@/components/InsightsSection";
 import InvestmentFeatureSection from "@/components/features/InvestmentFeatureSection";
 import InvestmentHero from "@/components/InvestmentHero";
 import InvestmentSolutionsSection from "@/components/InvestmentSolutionsSection";
 import InvesteraProSection from "@/components/InvesteraProSection";
 import LogoSlider from "@/components/LogoSlider";
+import ConnectivitySection from "@/components/ConnectivitySection";
 import WhoWeServeSection from "@/components/WhoWeServeSection";
 import WorkflowGovernanceSection from "@/components/WorkflowGovernanceSection";
 
@@ -24,18 +23,17 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
-      <Header />
-      <Home2Header />
+      <DarkHomeHero />
       <LogoSlider />
       <CorePhilosophySection />
       <BusinessDataSection />
-      <AbstractVideoSection />
-      <InvesteraProSection className="bg-white pt-[30px] pb-0" />
+      <InvesteraProSection className="bg-white pt-16 pb-0 lg:pt-24 lg:pb-0" />
       <InvestmentFeatureSection />
       <WorkflowGovernanceSection />
       <InvestmentSolutionsSection />
       <InvestmentHero />
       <WhoWeServeSection />
+      <ConnectivitySection />
       <InsightsSection />
       <BookDemoCtaSection />
       <Footer />

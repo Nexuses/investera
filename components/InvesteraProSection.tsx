@@ -17,7 +17,7 @@ export default function InvesteraProSection({
   className?: string;
 }) {
   return (
-    <section className={className}>
+    <section id="products" className={className}>
       <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
         {/* Header */}
         <div className="mx-auto max-w-[820px] text-center">
@@ -25,7 +25,7 @@ export default function InvesteraProSection({
             Meet{" "}
             <span className="font-bold text-[#0c2d57]">Investera Pro</span>
           </h2>
-          <p className="mx-auto mt-5 max-w-[760px] text-[18px] leading-relaxed text-[#64748b]">
+          <p className="mx-auto mt-5 max-w-[760px] text-[16px] leading-[1.3] text-[#64748b]">
             An end-to-end investment management platform that unifies portfolios,
             transactions, workflows, reporting, and documents for greater
             visibility and control.
@@ -52,7 +52,7 @@ export default function InvesteraProSection({
                 {features.map((feature) => (
                   <li
                     key={feature}
-                    className="text-[16px] leading-relaxed text-[#475569]"
+                    className="text-[16px] leading-[1.3] text-[#475569]"
                   >
                     {feature}
                   </li>

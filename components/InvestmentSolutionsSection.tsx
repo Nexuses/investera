@@ -33,7 +33,7 @@ const caseStudies = [
 
 export default function InvestmentSolutionsSection() {
   return (
-    <section className="bg-[#17467B] py-14 lg:py-20">
+    <section className="bg-[#050B1F] py-16 lg:py-24">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
         <div className="mx-auto max-w-[1180px]">
           <h2 className="text-center text-[40px] font-normal leading-tight text-white">
@@ -42,13 +42,13 @@ export default function InvestmentSolutionsSection() {
             <span className="font-bold">Every Stakeholder</span>
           </h2>
 
-          <p className="mx-auto mt-5 max-w-[750px] text-center text-[18px] leading-relaxed text-white/90">
+          <p className="mx-auto mt-5 max-w-[750px] text-center text-[16px] leading-[1.3] text-white/90">
             Purpose-built solutions that help investment professionals manage
             portfolios, opportunities, workflows, and reporting through one
             unified platform.
           </p>
 
-          <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:mt-14 lg:grid-cols-3 lg:gap-10">
+          <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 lg:mt-14 lg:grid-cols-3 lg:gap-5">
             {caseStudies.map((study, index) => (
               <CaseStudyCard
                 key={study.title ?? study.logoAlt ?? `case-study-${index}`}

@@ -11,7 +11,7 @@ export default function WorkflowGovernanceSection({
   image = "/images/workflow-governance/dashboard.png",
 }: WorkflowGovernanceSectionProps) {
   return (
-    <section className="bg-white pt-5 pb-14 lg:pb-20">
+    <section className="bg-white pt-5 pb-20 lg:pb-28">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -27,12 +27,10 @@ export default function WorkflowGovernanceSection({
                 <br />
                 <span className="font-bold text-[#0c2d57]">Governance Controls</span>
               </h3>
-              <p className="mt-4 max-w-[320px] text-[16px] leading-[1.5] text-[#333333] lg:mt-5">
-                Streamline investment processes with configurable workflows,
-                <br />
-                approval controls, and governance frameworks that improve
-                <br />
-                consistency, oversight, and operational control.
+              <p className="mt-4 max-w-[560px] text-[16px] leading-[1.3] text-[#333333] lg:mt-5">
+                Streamline investment processes with configurable workflows, approval
+                controls, and governance frameworks that improve consistency, oversight,
+                and operational control.
               </p>
             </div>
 

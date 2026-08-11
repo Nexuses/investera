@@ -44,7 +44,7 @@ const cards = [
 
 export default function BusinessDataSection() {
   return (
-    <section className="bg-white pt-5 pb-16 lg:pb-24">
+    <section className="bg-white py-16 lg:py-24">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           <h2 className="max-w-[720px] text-[40px] font-normal leading-[1.2] tracking-[-0.02em] text-[#111111]">
@@ -79,10 +79,10 @@ export default function BusinessDataSection() {
                 {card.icon}
               </span>
               <div>
-                <h4 className="text-[28px] font-semibold leading-snug tracking-[-0.02em] text-[#111111]">
+                <h5 className="text-[22px] font-semibold leading-snug tracking-[-0.02em] text-[#111111]">
                   {card.title}
-                </h4>
-                <p className="mt-2 text-[14px] leading-[1.5] text-[#6B7280]">
+                </h5>
+                <p className="mt-2 text-[16px] leading-[1.3] text-[#6B7280]">
                   {card.description}
                 </p>
               </div>

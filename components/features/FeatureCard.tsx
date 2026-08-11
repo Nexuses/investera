@@ -40,7 +40,7 @@ export default function FeatureCard({
         <h3 className="text-[34px] font-normal leading-[1.15] text-[#1e293b]">
           {title}
         </h3>
-        <p className="mt-4 w-[85%] text-[16px] leading-[1.5] text-[#333333] lg:mt-5">
+        <p className="mt-4 w-[85%] text-[16px] leading-[1.3] text-[#333333] lg:mt-5">
           {description}
         </p>
 

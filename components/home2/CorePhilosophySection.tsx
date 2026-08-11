@@ -13,7 +13,7 @@ const growthPoints = "4,42 28,36 52,48 76,28 100,34 124,18 148,24 172,12";
 
 export default function CorePhilosophySection() {
   return (
-    <section className="bg-white py-16 lg:py-24">
+    <section id="platform" className="bg-white py-20 lg:py-28">
       <div className="mx-auto grid max-w-[1440px] items-center gap-12 px-6 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,0.75fr)] lg:gap-10 lg:px-16">
         {/* Left copy */}
         <motion.div
@@ -34,7 +34,7 @@ export default function CorePhilosophySection() {
             </span>
           </h2>
 
-          <p className="mt-6 text-[18px] leading-[1.65] text-[#1f1f1f]">
+          <p className="mt-6 text-[16px] leading-[1.3] text-[#1f1f1f]">
             Manage diverse asset classes, portfolios, transactions, valuations,
             and performance through one centralized platform designed for greater
             visibility and control.

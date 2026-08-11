@@ -60,22 +60,19 @@ export default function GrowthCtaSection() {
 
           <div className="relative z-10 mx-auto max-w-[820px]">
             <h2 className="text-[32px] font-bold leading-[1.15] tracking-[-0.02em] text-white sm:text-[40px] lg:text-[48px]">
-              Transform scattered marketing
-              <br className="hidden sm:block" />{" "}
-              into predictable growth
+              Bring Your Investment Operations Into One Intelligent Platform
             </h2>
 
             <p className="mx-auto mt-5 max-w-[640px] text-[15px] leading-[1.6] text-white/95 sm:mt-6 sm:text-[17px] lg:text-[18px]">
-              The only Allbound agency that seamlessly combines inbound
-              attraction with outbound acceleration for SMEs generating €50K+
-              monthly revenue.
+              Centralize portfolios, deals, reporting, workflows, and insights
+              with Investera Pro.
             </p>
 
             <Link
               href="/#demo"
               className="mt-8 inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-[14px] font-semibold text-[#020B2A] transition-transform hover:scale-[1.03] sm:mt-10 sm:px-9 sm:py-4 sm:text-[15px]"
             >
-              Get started now
+              Book a Demo
             </Link>
           </div>
         </motion.div>

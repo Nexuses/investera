@@ -30,13 +30,13 @@
   --color-gold-hover: var(--gold-hover);
   --color-text-muted: var(--text-muted);
   --color-nav-text: var(--nav-text);
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-plus-jakarta-sans);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-inter), system-ui, sans-serif;
+  font-family: var(--font-plus-jakarta-sans), system-ui, sans-serif;
 }
 
 .logo-slider-mask {
@@ -122,43 +122,10 @@ body {
   animation-duration: 3s;
 }
 
-/* Who We Serve — partner logo marquee */
-@keyframes who-marquee-ltr {
-  0% {
-    transform: translateX(-33.333%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
-}
-
-@keyframes who-marquee-rtl {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-33.333%);
-  }
-}
-
-.who-marquee-ltr {
-  animation: who-marquee-ltr 28s linear infinite;
-}
-
-.who-marquee-rtl {
-  animation: who-marquee-rtl 30s linear infinite;
-}
-
-.who-marquee-area:hover .who-marquee-track {
-  animation-play-state: paused;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .who-float-a,
   .who-float-b,
-  .who-float-c,
-  .who-marquee-ltr,
-  .who-marquee-rtl {
+  .who-float-c {
     animation: none;
   }
 }

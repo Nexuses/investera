@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function BookDemoCtaSection() {
   return (
-    <section className="bg-white py-14 lg:py-20">
+    <section className="bg-white py-16 lg:py-24">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
         <div className="relative overflow-hidden rounded-[16px] border border-[#F0E8DA] bg-[#F6EFE3] lg:h-[430px]">
           {/* Soft beige card background */}
@@ -25,7 +25,7 @@ export default function BookDemoCtaSection() {
                 <span className="font-semibold text-[#17477F]">Opportunities.</span>
               </h1>
 
-              <p className="mt-4 max-w-[360px] text-[18px] leading-[1.45] text-[#555555]">
+              <p className="mt-4 max-w-[360px] text-[16px] leading-[1.3] text-[#555555]">
                 Bring portfolios, deals, reporting, workflows, and investment
                 data together in one connected platform built for greater
                 efficiency, visibility, and control.
@@ -39,11 +39,11 @@ export default function BookDemoCtaSection() {
               </Link>
             </div>
 
-            {/* Right devices visual — flush to right edge */}
-            <div className="relative -mr-0 flex min-h-[260px] w-full items-end justify-end lg:h-full">
-              <div className="relative w-full max-w-none lg:absolute lg:bottom-0 lg:right-0 lg:w-[88%]">
+            {/* Right devices visual — 40px from right edge */}
+            <div className="relative flex min-h-[260px] w-full items-end justify-end pr-[40px] lg:h-full">
+              <div className="relative w-full max-w-none lg:absolute lg:bottom-0 lg:right-[40px] lg:w-[88%]">
                 <Image
-                  src="/images/cta/devices.png"
+                  src="https://investera.s3.us-east-2.amazonaws.com/CTA_Laptop_1786445622098_h9pb.png"
                   alt="Laptop and mobile showing Investera investment dashboard and AI assistant"
                   width={594}
                   height={449}

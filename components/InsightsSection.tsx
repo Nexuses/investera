@@ -28,50 +28,69 @@ const insights = [
 
 export default function InsightsSection() {
   return (
-    <section className="bg-[#17477F] pt-[72px] pb-[80px] lg:pt-[95px] lg:pb-[105px]">
+    <section id="insights" className="bg-white py-20 sm:py-24 lg:py-28">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
-        {/* Static heading — no animation */}
-        <div className="mx-auto flex max-w-[760px] flex-col items-center text-center">
-          <h2 className="text-[40px] font-semibold leading-tight text-white">
-            Insights
-          </h2>
-          <p className="mt-6 text-[16px] leading-[1.4] text-white/90 lg:text-[18px]">
-            Explore perspectives on investment management, financial technology,
-            market trends, and the evolving investment landscape.
-          </p>
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between lg:gap-10">
+          <div className="max-w-[720px]">
+            <h2 className="text-[34px] font-bold leading-[1.15] tracking-[-0.02em] text-[#0c2d57] sm:text-[40px] lg:text-[44px]">
+              Insights
+            </h2>
+            <p className="mt-4 max-w-[560px] text-[16px] leading-[1.3] text-[#6B7280]">
+              Explore perspectives on investment management, financial
+              technology, market trends, and the evolving investment landscape.
+            </p>
+          </div>
+
+          <Link
+            href="#insights"
+            className="inline-flex w-fit shrink-0 items-center justify-center rounded-full border border-[#D1D5DB] bg-white px-5 py-2.5 text-[14px] font-semibold text-[#111111] transition-colors hover:border-[#9CA3AF] hover:bg-[#F9FAFB]"
+          >
+            All insights
+          </Link>
         </div>
 
-        <div className="mt-11 grid grid-cols-1 gap-5 md:mt-16 md:grid-cols-2 lg:mt-[85px] lg:grid-cols-3 lg:gap-5">
+        <div className="mt-10 grid grid-cols-1 gap-5 sm:mt-12 md:grid-cols-2 lg:mt-14 lg:grid-cols-3 lg:gap-6">
           {insights.map((insight) => (
             <article
               key={insight.title}
-              className="group flex h-auto flex-col overflow-hidden rounded-[20px] border border-[#EEEEEE] bg-white transition-all duration-300 motion-safe:hover:-translate-y-[5px] motion-safe:hover:shadow-[0_12px_28px_rgba(0,0,0,0.08)] lg:h-[390px]"
+              className="group flex flex-col overflow-hidden rounded-[18px] border border-[#E5E7EB] bg-white transition-all duration-300 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-[0_12px_28px_rgba(12,45,87,0.08)] sm:rounded-[20px]"
             >
               <Link
                 href={insight.href}
-                className="flex h-full flex-col focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                className="flex h-full flex-col focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0c2d57]"
               >
-                <div className="mx-3.5 mt-3.5 overflow-hidden rounded-[18px]">
-                  <div className="relative h-[190px] w-full overflow-hidden lg:h-[215px]">
-                    <Image
-                      src={insight.image}
-                      alt={insight.imageAlt}
-                      fill
-                      unoptimized
-                      loading="lazy"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover object-center transition-transform duration-300 motion-safe:group-hover:scale-[1.02]"
-                    />
-                  </div>
+                <div className="relative h-[200px] w-full overflow-hidden sm:h-[220px]">
+                  <Image
+                    src={insight.image}
+                    alt={insight.imageAlt}
+                    fill
+                    unoptimized
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover object-center transition-transform duration-300 motion-safe:group-hover:scale-[1.03]"
+                  />
+                  <div
+                    aria-hidden
+                    className="absolute inset-0 bg-[#0c2d57]/45 mix-blend-multiply"
+                  />
+                  <div
+                    aria-hidden
+                    className="pointer-events-none absolute inset-0 opacity-40"
+                    style={{
+                      backgroundImage:
+                        "linear-gradient(to right, rgba(255,255,255,0.22) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.22) 1px, transparent 1px)",
+                      backgroundSize: "28px 28px",
+                    }}
+                  />
+                  <span className="absolute left-4 top-4 rounded-full bg-white px-3 py-1 text-[11px] font-medium uppercase tracking-[0.06em] text-[#0c2d57]">
+                    {insight.title}
+                  </span>
                 </div>
 
-                <div className="flex flex-1 flex-col px-4 pb-5 pt-4">
-                  <h5 className="text-[24px] font-semibold leading-[1.2] text-[#111111]">
-                    {insight.title}
-                  </h5>
-                  <p className="mt-3 text-[16px] leading-[1.4] text-[#4A4A4A] lg:text-[18px]">
+                <div className="flex flex-1 flex-col px-5 py-5 sm:px-6 sm:py-6">
+                  <h3 className="text-[20px] font-bold leading-[1.3] tracking-[-0.01em] text-[#0c2d57] sm:text-[22px]">
                     {insight.description}
-                  </p>
+                  </h3>
                 </div>
               </Link>
             </article>

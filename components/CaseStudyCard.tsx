@@ -54,20 +54,23 @@ export default function CaseStudyCard({
             className="h-10 w-auto object-contain sm:h-11"
           />
         ) : (
-          <h4 className="text-[28px] font-bold leading-snug text-[#0c2d57]">
+          <h5 className="text-[22px] font-bold leading-snug text-[#0c2d57]">
             {title}
-          </h4>
+          </h5>
         )}
 
-        <p className="mt-5 flex-1 text-[16px] leading-[1.65] text-[#475569] lg:text-[18px]">
+        <p className="mt-5 flex-1 text-[16px] leading-[1.3] text-[#475569]">
           {description}
         </p>
 
         <Link
           href={href}
-          className="mt-6 text-[11px] font-semibold tracking-[0.12em] text-[#0c2d57] transition-all duration-300 hover:tracking-[0.18em] sm:text-[12px]"
+          className="mt-6 inline-flex items-center gap-1.5 text-[18px] font-semibold tracking-normal text-[#0c2d57] transition-opacity duration-300 hover:opacity-80"
         >
           READ FULL CASE STUDY
+          <span aria-hidden="true" className="text-[16px]">
+            →
+          </span>
         </Link>
       </div>
     </motion.article>

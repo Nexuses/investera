@@ -23,13 +23,13 @@ function QuoteBlock({
         className="mb-3 h-auto w-[52px] sm:w-[64px] lg:w-[68px]"
       />
       {compact ? (
-        <p className="max-w-[320px] text-[16px] font-normal leading-[1.4] text-[#4A5F73] lg:text-[18px]">
+        <p className="max-w-[320px] text-[16px] font-normal leading-[1.3] text-[#4A5F73]">
           Make faster, smarter investment decisions
           <br />
           with clarity, control, and confidence
         </p>
       ) : (
-        <p className="text-[16px] font-normal leading-[1.4] text-[#4A5F73] lg:text-[18px]">
+        <p className="text-[16px] font-normal leading-[1.3] text-[#4A5F73]">
           Make faster, smarter
           <br />
           investment decisions
@@ -45,14 +45,14 @@ function QuoteBlock({
 
 export default function InvestmentHero() {
   return (
-    <section className="overflow-hidden bg-[#D9EEF7]">
+    <section className="overflow-hidden bg-[#D9EEF7] pt-14 pb-0 lg:pt-20 lg:pb-0">
       <div className="relative mx-auto max-w-[1440px] px-6 pt-12 pb-0 lg:h-[600px] lg:px-16 lg:py-0">
         <div className="grid h-full items-center gap-8 lg:grid-cols-[minmax(0,48%)_minmax(0,52%)] lg:gap-6">
           {/* Left content */}
           <div className="relative z-10 flex max-w-[560px] flex-col justify-center">
-            <h4 className="text-[28px] font-normal leading-none tracking-[-0.01em] text-[#0c2d57]">
+            <h5 className="text-[22px] font-normal leading-none tracking-[-0.01em] text-[#0c2d57]">
               For Investment Professionals
-            </h4>
+            </h5>
 
             <h4 className="mt-5 text-[28px] font-normal leading-[1.12] tracking-[-0.02em] text-[#0c2d57] lg:mt-6">
               Investment Management
@@ -62,7 +62,7 @@ export default function InvestmentHero() {
               Multiple Systems
             </h4>
 
-            <p className="mt-5 max-w-[480px] text-[16px] leading-[1.55] text-[#5B6F86] lg:mt-6 lg:text-[18px]">
+            <p className="mt-5 max-w-[480px] text-[16px] leading-[1.3] text-[#5B6F86] lg:mt-6">
               Bring portfolios, transactions, valuations,
               <br className="hidden sm:block" />
               documents, and reporting together in one
@@ -109,7 +109,7 @@ export default function InvestmentHero() {
               className="absolute bottom-0 left-1/2 w-[min(100%,420px)] -translate-x-1/2 sm:w-[min(100%,480px)] lg:w-[min(100%,565px)] lg:-translate-x-[calc(50%+180px)]"
             >
               <Image
-                src="/images/investment-hero/person.png"
+                src="https://investera.s3.us-east-2.amazonaws.com/Investera_111_1786445546670_hgir.png"
                 alt="Investment professional"
                 width={565}
                 height={595}
