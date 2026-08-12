@@ -108,7 +108,7 @@ export default function CoreValuesSection() {
           <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-[#3B82F6] sm:text-[13px]">
             What We Do
           </p>
-          <h2 className="mt-4 text-[32px] leading-[1.2] tracking-[-0.02em] sm:text-[40px] lg:text-[44px]">
+          <h2 className="mt-4 text-[40px] font-normal leading-tight tracking-[-0.02em]">
             <span className="font-normal text-[#1a1a1a]">Our </span>
             <span className="font-bold text-[#0c2d57]">Core Capabilities</span>
           </h2>
@@ -126,12 +126,12 @@ export default function CoreValuesSection() {
                 ease: "easeOut",
                 delay: 0.08 + index * 0.07,
               }}
-              className="rounded-[20px] bg-white px-6 py-7 shadow-[0_10px_30px_rgba(12,45,87,0.08)] sm:rounded-[24px] sm:px-7 sm:py-8"
+              className="rounded-[12px] bg-white px-6 py-7 shadow-[0_10px_30px_rgba(12,45,87,0.08)] sm:px-7 sm:py-8"
             >
               <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#DBEAFE] text-[#2563EB]">
                 {value.icon}
               </div>
-              <h3 className="mt-6 text-[18px] font-bold leading-[1.25] tracking-[-0.01em] text-[#111111] sm:text-[20px]">
+              <h3 className="mt-6 text-[22px] font-semibold leading-[1.25] tracking-[-0.01em] text-[#111111]">
                 {"titleLines" in value && value.titleLines
                   ? value.titleLines.map((line, i) => (
                       <span key={line}>
@@ -141,7 +141,7 @@ export default function CoreValuesSection() {
                     ))
                   : value.title}
               </h3>
-              <p className="mt-3 text-[14px] leading-[1.55] text-[#6B7280] sm:text-[15px]">
+              <p className="mt-3 text-[16px] leading-[1.3] text-[#6B7280]">
                 {value.description}
               </p>
             </motion.article>

@@ -4,32 +4,32 @@ import { motion } from "framer-motion";
 
 export default function IdentityVisionSection() {
   return (
-    <section className="mx-auto max-w-[1440px] bg-white px-4 pb-10 pt-4 sm:px-6 sm:pb-14 sm:pt-6 lg:px-[44px] lg:pb-16">
+    <section className="mx-auto max-w-[1440px] bg-white px-4 pb-[55px] pt-4 sm:px-6 sm:pt-6 lg:px-[44px]">
       <motion.h2
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.55, ease: "easeOut" }}
-        className="text-center text-[34px] leading-[1.2] tracking-[-0.02em] sm:text-[40px]"
+        className="text-center text-[40px] font-normal leading-tight tracking-[-0.02em] text-[#1a1a1a]"
       >
         <span className="font-normal text-[#1a1a1a]">Our Identity,</span>
         <br />
         <span className="font-bold text-[#0c2d57]">Vision and Values</span>
       </motion.h2>
 
-      <div className="relative mx-auto mt-10 max-w-[1100px] pt-20 sm:mt-12 sm:pt-24 lg:pt-28">
+      <div className="relative mx-auto mt-[-5px] max-w-[1100px] pt-20 sm:mt-[3px] sm:pt-24 lg:pt-28">
         {/* Identity card — overlaps white card */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.35 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.08 }}
-          className="absolute left-1/2 top-0 z-10 w-[min(100%,880px)] -translate-x-1/2 rounded-[20px] bg-[#0c2d57] px-6 py-7 text-center sm:rounded-[24px] sm:px-10 sm:py-8 lg:px-14 lg:py-9"
+          className="absolute left-1/2 top-0 z-10 w-[min(100%,880px)] -translate-x-1/2 rounded-[12px] bg-[#0c2d57] px-6 py-7 text-center sm:px-10 sm:py-8 lg:px-14 lg:py-9"
         >
           <h4 className="text-[28px] font-semibold leading-[1.25] tracking-[-0.02em] text-white">
             Bringing Multi-Asset Investment Together
           </h4>
-          <p className="mt-4 text-[18px] leading-[1.55] text-white/95">
+          <p className="mt-4 text-[16px] leading-[1.3] text-white/95">
             A secure, unified investment management platform that brings
             portfolios, deals, reporting, workflows, documents, and insights
             together for faster, informed decisions.
@@ -42,7 +42,7 @@ export default function IdentityVisionSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.65, ease: "easeOut", delay: 0.15 }}
-          className="rounded-[22px] bg-white px-6 pb-10 pt-36 shadow-[0_18px_50px_rgba(12,45,87,0.10)] sm:rounded-[28px] sm:px-10 sm:pb-12 sm:pt-40 lg:px-14 lg:pb-14 lg:pt-44"
+          className="rounded-[12px] bg-white px-6 pb-10 pt-28 shadow-[0_18px_50px_rgba(12,45,87,0.10)] sm:px-10 sm:pb-12 sm:pt-32 lg:px-14 lg:pb-14 lg:pt-36"
         >
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-0">
             {/* Vision */}
@@ -72,7 +72,7 @@ export default function IdentityVisionSection() {
                   Vision
                 </h3>
               </div>
-              <p className="mt-5 text-[16px] leading-[1.55] text-[#1a1a1a] sm:text-[17px]">
+              <p className="mt-5 text-[16px] leading-[1.3] text-[#1a1a1a]">
                 Enable investment organizations to manage complex, multi-asset
                 portfolios with greater visibility, efficiency, transparency,
                 and control.
@@ -124,7 +124,7 @@ export default function IdentityVisionSection() {
                   Mission
                 </h3>
               </div>
-              <p className="mt-5 text-[16px] leading-[1.55] text-[#1a1a1a] sm:text-[17px]">
+              <p className="mt-5 text-[16px] leading-[1.3] text-[#1a1a1a]">
                 Centralize investment information, reduce manual processes,
                 strengthen governance, and support better-informed investment
                 decisions.

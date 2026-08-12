@@ -71,8 +71,9 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.55, ease: "easeOut" }}
           className="text-center"
         >
-          <h2 className="text-[34px] font-bold leading-[1.2] tracking-[-0.02em] text-[#0c2d57] sm:text-[40px]">
-            Real Outcomes with Investera Pro
+          <h2 className="text-[34px] font-normal leading-[1.2] tracking-[-0.02em] sm:text-[40px]">
+            <span className="font-normal text-[#1a1a1a]">Real Outcomes with </span>
+            <span className="font-bold text-[#0c2d57]">Investera Pro</span>
           </h2>
           <p className="mt-3 text-[16px] text-[#64748B] sm:text-[18px]">
             You don&apos;t have to trust our word

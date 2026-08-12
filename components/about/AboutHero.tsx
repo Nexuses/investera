@@ -7,12 +7,12 @@ const HERO_VIDEO =
 
 export default function AboutHero() {
   return (
-    <section className="mx-auto max-w-[1440px] bg-white px-4 pb-8 pt-1 sm:px-6 sm:pb-10 sm:pt-2 lg:px-[44px] lg:pb-12">
+    <section className="mx-auto max-w-[1440px] bg-white px-4 pb-8 pt-[118px] sm:px-6 sm:pb-10 lg:px-[44px] lg:pb-12">
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-        className="relative h-[min(72vh,620px)] min-h-[380px] overflow-hidden rounded-[24px] shadow-[0_24px_50px_rgba(0,0,0,0.16)] sm:rounded-[32px] lg:rounded-[40px]"
+        className="relative h-[450px] overflow-hidden rounded-[12px] shadow-[0_24px_50px_rgba(0,0,0,0.16)]"
       >
         <video
           className="absolute inset-0 h-full w-full object-cover"
@@ -36,7 +36,7 @@ export default function AboutHero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
-            className="text-center text-[44px] font-normal leading-none tracking-[-0.03em] text-white sm:text-[60px] lg:text-[72px]"
+            className="text-center text-[42px] font-normal leading-[1.12] tracking-[-0.03em] text-white sm:text-[56px] lg:text-[68px]"
           >
             About Investera
           </motion.h1>

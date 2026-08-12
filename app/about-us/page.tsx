@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default function AboutUsPage() {
   return (
     <div className="min-h-screen bg-white">
-      <Header />
+      <Header variant="light" />
       <AboutHero />
       <PrinciplesSection />
       <IdentityVisionSection />

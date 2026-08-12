@@ -13,7 +13,7 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      <div className="relative z-10 mx-auto flex max-w-[1440px] flex-col items-center px-6 pt-8 pb-[20px] lg:px-16 lg:pt-12">
+      <div className="relative z-10 mx-auto flex max-w-[1440px] flex-col items-center px-6 pt-[96px] pb-[20px] lg:px-16 lg:pt-[112px]">
         <div className="flex max-w-[860px] flex-col items-center text-center">
           <h1 className="text-[55px] font-normal leading-[1.15] tracking-[-0.01em] text-[#0c2d57]">
             Bringing Investment

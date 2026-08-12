@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const cards = [
   {
     title: "Family Offices & High Net Worth Individuals",
-    titleLines: ["Family Offices & High Net", "Worth Individuals"],
+    titleLines: ["Family Offices & High", "Net Worth Individuals"],
     description:
       "Maintain consolidated visibility across diverse personal and family investment holdings.",
     image: "/images/about/advantage/card-1.png",
@@ -49,11 +49,11 @@ export default function AdvantageSection() {
           transition={{ duration: 0.55, ease: "easeOut" }}
           className="mx-auto max-w-[760px] text-center"
         >
-          <h2 className="text-[32px] leading-[1.2] tracking-[-0.02em] sm:text-[40px] lg:text-[44px]">
+          <h2 className="text-[40px] font-normal leading-tight tracking-[-0.02em]">
             <span className="font-normal text-[#1a1a1a]">Who </span>
             <span className="font-bold text-[#0c2d57]">We Support</span>
           </h2>
-          <p className="mx-auto mt-5 max-w-[640px] text-[15px] leading-[1.65] text-[#4B5563] sm:mt-6 sm:text-[16px]">
+          <p className="mx-auto mt-5 max-w-[640px] text-[16px] leading-[1.3] text-[#4B5563] sm:mt-6">
             Built for Investment Professionals
           </p>
         </motion.div>
@@ -70,22 +70,21 @@ export default function AdvantageSection() {
                 ease: "easeOut",
                 delay: 0.08 + index * 0.07,
               }}
-              className="flex flex-col overflow-hidden rounded-[20px] bg-white shadow-[0_10px_30px_rgba(12,45,87,0.08)] sm:rounded-[24px]"
+              className="flex flex-col overflow-hidden rounded-[12px] bg-white shadow-[0_10px_30px_rgba(12,45,87,0.08)]"
             >
               <div className="flex flex-1 flex-col px-5 pt-5 sm:px-6 sm:pt-6">
-                <h3 className="text-[18px] font-bold leading-[1.25] tracking-[-0.01em] text-[#111111] sm:text-[20px]">
-                  {card.titleLines.map((line, i) => (
-                    <span key={line}>
-                      {i > 0 && <br />}
+                <h3 className="text-[22px] font-semibold leading-[1.25] tracking-[-0.01em] text-[#111111]">
+                  {card.titleLines.map((line) => (
+                    <span key={line} className="block">
                       {line}
                     </span>
                   ))}
                 </h3>
-                <p className="mt-3 flex-1 text-[13px] leading-[1.6] text-[#6B7280] sm:text-[14px]">
+                <p className="mt-3 flex-1 text-[16px] leading-[1.3] text-[#6B7280]">
                   {card.description}
                 </p>
               </div>
-              <div className="relative mt-5 aspect-[4/3] w-full overflow-hidden rounded-t-[14px] sm:mt-6 sm:rounded-t-[16px]">
+              <div className="relative mt-5 aspect-[4/3] w-full overflow-hidden sm:mt-6">
                 <Image
                   src={card.image}
                   alt={card.imageAlt}

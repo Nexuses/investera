@@ -73,7 +73,7 @@ const principles = [
 export default function PrinciplesSection() {
   return (
     <section className="mx-auto max-w-[1440px] bg-white px-4 pb-8 sm:px-6 sm:pb-10 lg:px-[44px] lg:pb-12">
-      <div className="rounded-[28px] bg-[#F3F3F3] px-6 py-10 sm:rounded-[32px] sm:px-10 sm:py-12 lg:rounded-[36px] lg:px-14 lg:py-14">
+      <div className="rounded-[12px] bg-[#F3F3F3] px-6 py-10 sm:px-10 sm:py-12 lg:px-14 lg:py-14">
         <motion.span
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -89,12 +89,10 @@ export default function PrinciplesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.08 }}
-          className="mt-6 w-full text-[28px] font-semibold leading-[1.35] tracking-[-0.02em] text-[#111111]"
+          className="mt-6 w-full text-[28px] font-normal leading-[1.3] tracking-[-0.02em] text-[#111111]"
         >
           Investera Business Solutions develops financial technology and
-          <br />
           data-driven business applications that help investment professionals
-          <br />
           manage complex investment activities with greater efficiency,
           transparency, and control.
         </motion.h4>
@@ -111,15 +109,15 @@ export default function PrinciplesSection() {
                 ease: "easeOut",
                 delay: 0.12 + index * 0.08,
               }}
-              className="rounded-[22px] bg-white px-7 py-8 sm:px-8 sm:py-9"
+              className="rounded-[12px] bg-white px-7 py-8 sm:px-8 sm:py-9"
             >
               <div className="flex h-10 w-10 items-center justify-center rounded-[10px] bg-[#143F73] text-white">
                 {item.icon}
               </div>
-              <h3 className="mt-7 text-[22px] font-semibold tracking-[-0.01em] text-[#111111] sm:text-[24px]">
+              <h3 className="mt-7 text-[22px] font-semibold leading-[1.25] tracking-[-0.01em] text-[#111111]">
                 {item.title}
               </h3>
-              <p className="mt-3 text-[16px] leading-[1.55] text-[#6B7280]">
+              <p className="mt-3 text-[16px] leading-[1.3] text-[#6B7280]">
                 {item.description}
               </p>
             </motion.article>
