@@ -221,7 +221,7 @@ export default function ContactPage() {
           </p>
         </div>
 
-        <div className="flex flex-1 flex-col items-center justify-center">
+        <div className="-ml-6 w-[calc(100%+1.5rem)] flex flex-1 flex-col items-center justify-center lg:-ml-[max(4rem,calc((100vw-1440px)/2+4rem))] lg:w-[calc(100%+max(4rem,calc((100vw-1440px)/2+4rem)))]">
           <ContactCarousel />
         </div>
 
