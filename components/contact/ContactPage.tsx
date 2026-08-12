@@ -205,7 +205,7 @@ export default function ContactPage() {
     <>
     <div className="flex min-h-screen flex-col pt-[88px] lg:flex-row">
       <div
-        className="relative flex min-h-[420px] w-full flex-col justify-between px-4 py-10 sm:px-6 sm:py-12 lg:min-h-[calc(100vh-88px)] lg:w-3/5 lg:px-8 lg:py-14"
+        className="relative flex min-h-[420px] w-full flex-col justify-between px-6 py-10 sm:py-12 lg:min-h-[calc(100vh-88px)] lg:w-3/5 lg:pl-[max(4rem,calc((100vw-1440px)/2+4rem))] lg:pr-8 lg:py-14"
         style={{ backgroundColor: PANEL_BG }}
       >
         <div className="mb-8 w-full max-w-[720px] text-left lg:mb-10">
