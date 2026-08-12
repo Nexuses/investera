@@ -38,7 +38,7 @@ export default function GrowthCtaSection() {
           className="relative overflow-hidden rounded-[24px] px-6 py-16 text-center sm:rounded-[28px] sm:px-10 sm:py-20 lg:rounded-[32px] lg:px-16 lg:py-24"
           style={{
             background:
-              "radial-gradient(ellipse 80% 70% at 50% 45%, #2563EB 0%, #1D4ED8 35%, #0B2A7A 70%, #04103D 100%)",
+              "radial-gradient(ellipse 80% 70% at 50% 45%, #1A5A9E 0%, #143F73 45%, #0F325C 80%, #0A2748 100%)",
           }}
         >
           {/* Scattered square pattern */}

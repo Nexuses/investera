@@ -47,7 +47,7 @@ export default function DarkHomeHero() {
           >
             <Link
               href="/#demo"
-              className="rounded-full bg-white px-7 py-3 text-[14px] font-semibold text-[#050B1F] transition-transform hover:scale-[1.03]"
+              className="rounded-full bg-[#CCA400] px-7 py-3 text-[14px] font-semibold text-white transition-transform hover:scale-[1.03]"
             >
               Book a demo
             </Link>

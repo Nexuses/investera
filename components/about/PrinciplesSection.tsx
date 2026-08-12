@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 const principles = [
@@ -7,66 +8,19 @@ const principles = [
     title: "Connected Management",
     description:
       "Centralize portfolio management, deal tracking, investment reporting, and due diligence activities",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="h-[18px] w-[18px]"
-        aria-hidden
-      >
-        <path d="M3 7V5a2 2 0 0 1 2-2h2" />
-        <path d="M17 3h2a2 2 0 0 1 2 2v2" />
-        <path d="M21 17v2a2 2 0 0 1-2 2h-2" />
-        <path d="M7 21H5a2 2 0 0 1-2-2v-2" />
-        <circle cx="12" cy="12" r="3" />
-      </svg>
-    ),
+    icon: "https://investera.s3.us-east-2.amazonaws.com/fi_2889666-1_1786534353217_txg9.png",
   },
   {
     title: "Smarter Automation",
     description:
       "Simplify document management and investment processes through structured workflow automation",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="h-[18px] w-[18px]"
-        aria-hidden
-      >
-        <path d="M21 12a9 9 0 0 0-15.5-6.36" />
-        <path d="M3 4v5h5" />
-        <path d="M3 12a9 9 0 0 0 15.5 6.36" />
-        <path d="M21 20v-5h-5" />
-      </svg>
-    ),
+    icon: "https://investera.s3.us-east-2.amazonaws.com/vdfv_1786534299376_o7iv.png",
   },
   {
     title: "AI-Powered Insights",
     description:
       "Access AI-powered market intelligence and investment information through connected mobile applications.",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="h-[18px] w-[18px]"
-        aria-hidden
-      >
-        <path d="M12 3l1.4 4.2L18 9l-4.6 1.8L12 15l-1.4-4.2L6 9l4.6-1.8L12 3z" />
-        <path d="M19 14l.7 2.1L22 17l-2.3.9L19 20l-.7-2.1L16 17l2.3-.9L19 14z" />
-      </svg>
-    ),
+    icon: "https://investera.s3.us-east-2.amazonaws.com/fi_2889666-2_1786534382145_0gm0.png",
   },
 ];
 
@@ -111,8 +65,14 @@ export default function PrinciplesSection() {
               }}
               className="rounded-[12px] bg-white px-7 py-8 sm:px-8 sm:py-9"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-[10px] bg-[#143F73] text-white">
-                {item.icon}
+              <div className="relative h-10 w-10 overflow-hidden rounded-[10px]">
+                <Image
+                  src={item.icon}
+                  alt=""
+                  fill
+                  unoptimized
+                  className="object-cover"
+                />
               </div>
               <h3 className="mt-7 text-[22px] font-semibold leading-[1.25] tracking-[-0.01em] text-[#111111]">
                 {item.title}

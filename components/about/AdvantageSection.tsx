@@ -9,7 +9,7 @@ const cards = [
     titleLines: ["Family Offices & High", "Net Worth Individuals"],
     description:
       "Maintain consolidated visibility across diverse personal and family investment holdings.",
-    image: "/images/about/advantage/card-1.png",
+    image: "https://investera.s3.us-east-2.amazonaws.com/0101_1786536522790_c6qf.jpg",
     imageAlt: "Professionals collaborating with a tablet in an office",
   },
   {
@@ -17,7 +17,7 @@ const cards = [
     titleLines: ["Private Equity", "Firms"],
     description:
       "Manage investments, valuations, portfolio companies, and deal activities with improved control.",
-    image: "/images/about/advantage/card-2.png",
+    image: "https://investera.s3.us-east-2.amazonaws.com/0202_1786536522790_zuil.jpg",
     imageAlt: "Business partners reviewing plans on a tablet",
   },
   {
@@ -25,7 +25,7 @@ const cards = [
     titleLines: ["Portfolio & Fund", "Managers"],
     description:
       "Track investment pipelines, operations, reporting, performance, and portfolio oversight.",
-    image: "/images/about/advantage/card-3.png",
+    image: "https://investera.s3.us-east-2.amazonaws.com/0303_1786536522790_nva8.jpg",
     imageAlt: "Professionals smiling while reviewing work on a tablet",
   },
   {
@@ -33,7 +33,7 @@ const cards = [
     titleLines: ["Holding", "Companies"],
     description:
       "Simplify investment workflows, reporting, and governance across diverse business holdings.",
-    image: "/images/about/advantage/card-1.png",
+    image: "https://investera.s3.us-east-2.amazonaws.com/0404_1786536522790_g36e.jpg",
     imageAlt: "Professionals collaborating in a modern office",
   },
 ];
@@ -84,7 +84,7 @@ export default function AdvantageSection() {
                   {card.description}
                 </p>
               </div>
-              <div className="relative mt-5 aspect-[4/3] w-full overflow-hidden sm:mt-6">
+              <div className="relative mt-5 w-full overflow-hidden pt-[calc(75%-80px)] sm:mt-6">
                 <Image
                   src={card.image}
                   alt={card.imageAlt}

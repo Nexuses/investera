@@ -134,11 +134,7 @@ export default function Header({ variant = "dark" }: HeaderProps) {
           </Link>
           <Link
             href="/#demo"
-            className={`rounded-full px-5 py-2.5 text-[13px] font-semibold transition-transform hover:scale-[1.03] ${
-              isLight
-                ? "bg-[#0c2d57] text-white"
-                : "bg-white text-[#050B1F]"
-            }`}
+            className="rounded-full bg-[#CCA400] px-5 py-2.5 text-[13px] font-semibold text-white transition-transform hover:scale-[1.03]"
           >
             Book a demo
           </Link>
@@ -146,9 +142,7 @@ export default function Header({ variant = "dark" }: HeaderProps) {
 
         <Link
           href="/#demo"
-          className={`rounded-full px-4 py-2 text-[12px] font-semibold xl:hidden ${
-            isLight ? "bg-[#0c2d57] text-white" : "bg-white text-[#050B1F]"
-          }`}
+          className="rounded-full bg-[#CCA400] px-4 py-2 text-[12px] font-semibold text-white xl:hidden"
         >
           Book a demo
         </Link>

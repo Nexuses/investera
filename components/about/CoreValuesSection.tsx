@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 const values = [
@@ -7,90 +8,26 @@ const values = [
     title: "Portfolio & Deal Management",
     description:
       "Track opportunities, transactions, valuations, holdings, and portfolio performance across the investment lifecycle.",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.7"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="h-5 w-5"
-        aria-hidden
-      >
-        <path d="M9 18h6" />
-        <path d="M10 21h4" />
-        <path d="M12 3a6 6 0 0 0-4 10.5V15a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1.5A6 6 0 0 0 12 3Z" />
-        <circle cx="12" cy="10" r="1.5" fill="currentColor" stroke="none" />
-      </svg>
-    ),
+    icon: "https://investera.s3.us-east-2.amazonaws.com/fi_2889666_1786534403165_5s3e.png",
   },
   {
     title: "Reporting & Dashboards",
     description:
       "Turn investment data into actionable insights through configurable reports, dashboards, and performance metrics.",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.7"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="h-5 w-5"
-        aria-hidden
-      >
-        <circle cx="6.5" cy="12" r="2.5" />
-        <circle cx="17.5" cy="7" r="2.5" />
-        <circle cx="17.5" cy="17" r="2.5" />
-        <path d="M8.7 10.8 15.3 8.2" />
-        <path d="M8.7 13.2 15.3 15.8" />
-      </svg>
-    ),
+    icon: "https://investera.s3.us-east-2.amazonaws.com/fi_1828765_1786534433452_knxn.png",
   },
   {
     title: "Documents & Workflows",
     description:
       "Securely manage investment documents, due diligence, approvals, e-signatures, and maker-checker controls.",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.7"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="h-5 w-5"
-        aria-hidden
-      >
-        <path d="M8 13c0 1.5 1.5 3 4 3s4-1.5 4-3c0-3-4-2.5-4-5" />
-        <path d="M11 18h2" />
-        <circle cx="8" cy="8" r="2.5" />
-        <circle cx="16" cy="8" r="2.5" />
-        <path d="M10 9.2c.6.5 1.3.8 2 .8s1.4-.3 2-.8" />
-      </svg>
-    ),
+    icon: "https://investera.s3.us-east-2.amazonaws.com/fi_8211294_1786534458109_7oxb.png",
   },
   {
     title: "Investment Intelligence",
     titleLines: ["Investment", "Intelligence"],
     description:
       "Connect market data, portfolio analytics, risk monitoring, benchmarks, and AI-powered insights in one view.",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.7"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="h-5 w-5"
-        aria-hidden
-      >
-        <path d="M12 3 4.5 6.5v5.2c0 4.6 3.2 8.5 7.5 9.8 4.3-1.3 7.5-5.2 7.5-9.8V6.5L12 3Z" />
-        <path d="m9 12 2 2 4-4" />
-      </svg>
-    ),
+    icon: "https://investera.s3.us-east-2.amazonaws.com/fi_3427119_1786534481129_41d4.png",
   },
 ];
 
@@ -128,8 +65,14 @@ export default function CoreValuesSection() {
               }}
               className="rounded-[12px] bg-white px-6 py-7 shadow-[0_10px_30px_rgba(12,45,87,0.08)] sm:px-7 sm:py-8"
             >
-              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#DBEAFE] text-[#2563EB]">
-                {value.icon}
+              <div className="relative h-11 w-11 overflow-hidden">
+                <Image
+                  src={value.icon}
+                  alt=""
+                  fill
+                  unoptimized
+                  className="object-contain"
+                />
               </div>
               <h3 className="mt-6 text-[22px] font-semibold leading-[1.25] tracking-[-0.01em] text-[#111111]">
                 {"titleLines" in value && value.titleLines
