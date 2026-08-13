@@ -26,7 +26,13 @@ const squares = [
   { top: "58%", left: "74%", size: 16, opacity: 0.11 },
 ];
 
-export default function GrowthCtaSection() {
+export default function GrowthCtaSection({
+  title = "Bring Your Investment Operations Into One Intelligent Platform",
+  description = "Centralize portfolios, deals, reporting, workflows, and insights with Investera Pro.",
+}: {
+  title?: string;
+  description?: string;
+}) {
   return (
     <section className="bg-[#020B2A] px-4 py-8 sm:px-6 sm:py-10 lg:px-[44px] lg:py-12">
       <div className="mx-auto max-w-[1440px]">
@@ -60,12 +66,11 @@ export default function GrowthCtaSection() {
 
           <div className="relative z-10 mx-auto max-w-[820px]">
             <h2 className="text-[32px] font-bold leading-[1.15] tracking-[-0.02em] text-white sm:text-[40px] lg:text-[48px]">
-              Bring Your Investment Operations Into One Intelligent Platform
+              {title}
             </h2>
 
             <p className="mx-auto mt-5 max-w-[640px] text-[15px] leading-[1.6] text-white/95 sm:mt-6 sm:text-[17px] lg:text-[18px]">
-              Centralize portfolios, deals, reporting, workflows, and insights
-              with Investera Pro.
+              {description}
             </p>
 
             <Link

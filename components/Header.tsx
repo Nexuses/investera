@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about-us" },
-  { label: "Platform", href: "/#platform" },
+  { label: "Platform", href: "/platform" },
 ];
 
 const COLORED_LOGO =

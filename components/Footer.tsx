@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const platformLinks = [
-  { label: "Investera Pro", href: "#products" },
+  { label: "Investera Pro", href: "/platform" },
   { label: "Portfolio management", href: "#platform" },
   { label: "Reporting & dashboards", href: "#platform" },
   { label: "Document management", href: "#platform" },
