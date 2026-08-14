@@ -32,7 +32,7 @@ export default function BookDemoCtaSection() {
               </p>
 
               <Link
-                href="#demo"
+                href="/book-a-demo"
                 className="mt-5 inline-flex w-fit items-center justify-center rounded-full bg-[#D8A900] px-6 py-2.5 text-[12px] font-semibold tracking-[0.08em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C49A00] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#17477F] sm:mt-6 sm:text-[13px]"
               >
                 BOOK A DEMO

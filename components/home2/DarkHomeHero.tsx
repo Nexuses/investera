@@ -46,13 +46,13 @@ export default function DarkHomeHero() {
             className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:mt-9 sm:gap-4"
           >
             <Link
-              href="/#demo"
+              href="/book-a-demo"
               className="rounded-full bg-[#CCA400] px-7 py-3 text-[14px] font-semibold text-white transition-transform hover:scale-[1.03]"
             >
               Book a demo
             </Link>
             <Link
-              href="/#platform"
+              href="/platform"
               className="rounded-full border border-white/40 bg-transparent px-7 py-3 text-[14px] font-semibold text-white transition-colors hover:border-white hover:bg-white/5"
             >
               Discover the platform

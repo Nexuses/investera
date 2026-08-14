@@ -73,7 +73,7 @@ export default function ConnectivitySection() {
           </p>
 
           <Link
-            href="#partners"
+            href="/contact"
             className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/35 bg-transparent px-6 py-2.5 text-[14px] font-medium text-white transition-colors hover:border-white hover:bg-white/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           >
             Partner with Us

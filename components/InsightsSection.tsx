@@ -10,7 +10,7 @@ const insights = [
     image: "/images/insights/card-1.png",
     imageAlt:
       "Family office meeting discussing investment trends in the MENA region",
-    href: "#insight-investment-trends",
+    href: "/blog",
   },
   {
     title: "FinTech",
@@ -19,7 +19,7 @@ const insights = [
       "Discover how digital assets are reshaping FinTech while creating new risks and opportunities.",
     image: "/images/insights/card-2.png",
     imageAlt: "Digital assets and FinTech technology visualization",
-    href: "#insight-fintech",
+    href: "/blog",
   },
   {
     title: "Real Estate PropTech",
@@ -28,7 +28,7 @@ const insights = [
       "Explore how PropTech is transforming real estate through data, automation, and smarter insights.",
     image: "/images/insights/card-3.png",
     imageAlt: "Modern real estate PropTech and property technology",
-    href: "#insight-proptech",
+    href: "/blog",
   },
 ];
 

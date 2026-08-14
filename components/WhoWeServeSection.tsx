@@ -94,7 +94,7 @@ export default function WhoWeServeSection() {
               </ul>
 
               <Link
-                href="#solutions"
+                href="/platform"
                 className="mt-10 inline-flex w-fit items-center gap-2 rounded-full bg-[#D8A900] px-6 py-3 text-[15px] font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C49A00] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#17477F]"
               >
                 Explore Solutions

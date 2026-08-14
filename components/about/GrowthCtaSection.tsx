@@ -74,7 +74,7 @@ export default function GrowthCtaSection({
             </p>
 
             <Link
-              href="/#demo"
+              href="/book-a-demo"
               className="mt-8 inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-[14px] font-semibold text-[#020B2A] transition-transform hover:scale-[1.03] sm:mt-10 sm:px-9 sm:py-4 sm:text-[15px]"
             >
               Book a Demo

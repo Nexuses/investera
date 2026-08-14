@@ -133,7 +133,7 @@ export default function Header({ variant = "dark" }: HeaderProps) {
             Sign in
           </Link>
           <Link
-            href="/#demo"
+            href="/book-a-demo"
             className="rounded-full bg-[#CCA400] px-5 py-2.5 text-[13px] font-semibold text-white transition-transform hover:scale-[1.03]"
           >
             Book a demo
@@ -141,7 +141,7 @@ export default function Header({ variant = "dark" }: HeaderProps) {
         </div>
 
         <Link
-          href="/#demo"
+          href="/book-a-demo"
           className="rounded-full bg-[#CCA400] px-4 py-2 text-[12px] font-semibold text-white xl:hidden"
         >
           Book a demo

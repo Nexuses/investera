@@ -55,7 +55,7 @@ export default function BusinessDataSection() {
 
           <div className="flex flex-wrap items-center gap-3">
             <Link
-              href="#discover"
+              href="/platform"
               className="inline-flex w-fit shrink-0 items-center justify-center rounded-full bg-white px-7 py-3 text-[13px] font-semibold text-[#1a4570] ring-1 ring-[#1a4570]/25 transition-opacity hover:opacity-90"
             >
               Discover Now

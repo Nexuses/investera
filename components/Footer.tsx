@@ -22,7 +22,7 @@ const companyLinks = [
   { label: "Why choose Investera", href: "#insights" },
   { label: "Insights", href: "/blog" },
   { label: "Media", href: "/blog" },
-  { label: "Book a demo", href: "#demo" },
+  { label: "Book a demo", href: "/book-a-demo" },
 ];
 
 const socialLinks = [

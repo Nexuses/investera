@@ -27,7 +27,7 @@ export default function Hero() {
           </p>
 
           <Link
-            href="#demo"
+            href="/book-a-demo"
             id="demo"
             className="mt-8 rounded-full bg-[#c4a035] px-11 py-3.5 text-[13px] font-bold tracking-[0.14em] text-white transition-colors hover:bg-[#b08f2e] lg:mt-10 lg:px-12 lg:py-4"
           >

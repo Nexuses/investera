@@ -3,8 +3,6 @@
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 
-const PANEL_BG = "#143F73";
-
 type Slide = {
   titleLines: [string, string];
   image: string;
@@ -205,8 +203,11 @@ export default function ContactPage() {
     <>
     <div className="flex min-h-screen flex-col pt-[88px] lg:flex-row">
       <div
-        className="relative flex min-h-[420px] w-full flex-col justify-between px-6 py-10 sm:py-12 lg:min-h-[calc(100vh-88px)] lg:w-3/5 lg:pl-[max(4rem,calc((100vw-1440px)/2+4rem))] lg:pr-8 lg:py-14"
-        style={{ backgroundColor: PANEL_BG }}
+        className="relative flex min-h-[420px] w-full flex-col justify-between bg-[#050B1F] bg-cover bg-center bg-no-repeat px-6 py-10 sm:py-12 lg:min-h-[calc(100vh-88px)] lg:w-3/5 lg:pl-[max(4rem,calc((100vw-1440px)/2+4rem))] lg:pr-8 lg:py-14"
+        style={{
+          backgroundImage:
+            "url('https://investera.s3.us-east-2.amazonaws.com/Platform_BG_1786612003256_5z5e.png')",
+        }}
       >
         <div className="mb-8 w-full max-w-[720px] text-left lg:mb-10">
           <h1 className="text-[42px] font-normal leading-tight tracking-[-0.03em] text-white sm:text-[55px]">

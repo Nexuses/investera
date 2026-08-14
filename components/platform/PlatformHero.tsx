@@ -48,7 +48,7 @@ export default function PlatformHero() {
               Request A Demo
             </Link>
             <Link
-              href="/#demo"
+              href="/book-a-demo"
               className="inline-flex h-[48px] items-center justify-center rounded-[10px] bg-[#CCA400] px-7 text-[16px] font-semibold text-white transition-opacity hover:opacity-90 sm:min-w-[188px]"
             >
               Start A Free Trial
