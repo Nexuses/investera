@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
+import FadeIn from "@/components/FadeIn";
 
 type Slide = {
   titleLines: [string, string];
@@ -218,7 +219,7 @@ export default function ContactPage() {
           <p className="mt-4 text-[16px] leading-[1.3] text-white/80">
             Connect with our team to see how Investera can unify your
             portfolios, deals, documents, workflows, reporting, and insights on
-            one secure platform—tailored to your investment needs.
+            one secure platform, tailored to your investment needs.
           </p>
         </div>
 
@@ -327,18 +328,20 @@ export default function ContactPage() {
 
     <section className="bg-white py-16 sm:py-20">
       <div className="mx-auto max-w-[1200px] px-6 lg:px-10">
+        <FadeIn>
         <h2 className="text-[40px] font-normal leading-tight tracking-[-0.02em]">
           <span className="font-normal text-[#1a1a1a]">Get in </span>
           <span className="font-bold text-[#0c2d57]">Touch</span>
         </h2>
+        </FadeIn>
 
         <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6">
           <a
             href="tel:+97123093880"
             className="flex flex-col items-center rounded-[10px] border border-[#0c2d57] bg-[#F8F9FB] px-6 py-8 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#0a2540] hover:bg-white hover:shadow-[0_12px_30px_rgba(12,45,87,0.12)]"
           >
-            <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#0c2d57]/10">
-              <svg viewBox="0 0 24 24" fill="none" className="h-7 w-7 text-[#0c2d57]" aria-hidden>
+            <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#2F6FE4]">
+              <svg viewBox="0 0 24 24" fill="none" className="h-7 w-7 text-white" aria-hidden>
                 <path
                   d="M6.5 3.8h2.2c.4 0 .8.3.9.7l.8 2.3c.1.4 0 .8-.3 1.1L8.6 9.4c1.2 2.3 3.1 4.2 5.4 5.4l1.5-1.5c.3-.3.7-.4 1.1-.3l2.3.8c.4.1.7.5.7.9v2.2c0 .5-.4.9-.9.9C10.8 19.8 4.2 13.2 4.2 4.7c0-.5.4-.9.9-.9Z"
                   stroke="currentColor"
@@ -355,8 +358,8 @@ export default function ContactPage() {
             href="mailto:info@investera.com"
             className="flex flex-col items-center rounded-[10px] border border-[#0c2d57] bg-[#F8F9FB] px-6 py-8 text-center transition-all duration-300 hover:-translate-y-1 hover:border-[#0a2540] hover:bg-white hover:shadow-[0_12px_30px_rgba(12,45,87,0.12)]"
           >
-            <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#0c2d57]/10">
-              <svg viewBox="0 0 24 24" fill="none" className="h-7 w-7 text-[#0c2d57]" aria-hidden>
+            <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#2F6FE4]">
+              <svg viewBox="0 0 24 24" fill="none" className="h-7 w-7 text-white" aria-hidden>
                 <rect x="3.5" y="5.5" width="17" height="13" rx="2" stroke="currentColor" strokeWidth="1.7" />
                 <path
                   d="M4 7l8 6 8-6"
@@ -439,7 +442,7 @@ export default function ContactPage() {
 
         <div className="overflow-hidden rounded-[12px] bg-white shadow-[0_12px_40px_rgba(12,45,87,0.10)]">
           <iframe
-            title="Investera office — CI Tower, Abu Dhabi"
+            title="Investera office, CI Tower, Abu Dhabi"
             src="https://maps.google.com/maps?q=CI%20Tower%20Abu%20Dhabi%20UAE&t=&z=15&ie=UTF8&iwloc=&output=embed"
             className="h-[360px] w-full border-0 sm:h-[420px]"
             loading="lazy"

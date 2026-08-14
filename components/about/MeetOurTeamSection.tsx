@@ -58,7 +58,7 @@ export default function MeetOurTeamSection() {
               <div className="relative h-[120px] w-[120px] overflow-hidden rounded-full shadow-[0_8px_24px_rgba(12,45,87,0.12)] sm:h-[140px] sm:w-[140px]">
                 <Image
                   src={member.image}
-                  alt={`${member.name} — ${member.role}`}
+                  alt={`${member.name}, ${member.role}`}
                   fill
                   unoptimized
                   className="object-cover object-center"

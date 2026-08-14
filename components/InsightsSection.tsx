@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import FadeIn from "@/components/FadeIn";
 
 const insights = [
   {
@@ -46,7 +47,7 @@ export default function InsightsSection({
     >
       <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
         {!compact && (
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between lg:gap-10">
+          <FadeIn className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between lg:gap-10">
             <div className="max-w-[720px]">
               <h2 className="text-[34px] font-bold leading-[1.15] tracking-[-0.02em] text-[#0c2d57] sm:text-[40px] lg:text-[44px]">
                 Insights
@@ -63,7 +64,7 @@ export default function InsightsSection({
             >
               All insights
             </Link>
-          </div>
+          </FadeIn>
         )}
 
         <div
@@ -71,10 +72,10 @@ export default function InsightsSection({
             compact ? "" : "mt-10 sm:mt-12 lg:mt-14"
           }`}
         >
-          {insights.map((insight) => (
+          {insights.map((insight, index) => (
+            <FadeIn key={insight.title} delay={index * 0.1}>
             <article
-              key={insight.title}
-              className="group flex flex-col overflow-hidden rounded-[18px] border border-[#E5E7EB] bg-white transition-all duration-300 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-[0_12px_28px_rgba(12,45,87,0.08)] sm:rounded-[20px]"
+              className="group flex h-full flex-col overflow-hidden rounded-[18px] border border-[#E5E7EB] bg-white transition-all duration-300 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-[0_12px_28px_rgba(12,45,87,0.08)] sm:rounded-[20px]"
             >
               <Link
                 href={insight.href}
@@ -124,6 +125,7 @@ export default function InsightsSection({
                 </div>
               </Link>
             </article>
+            </FadeIn>
           ))}
         </div>
       </div>

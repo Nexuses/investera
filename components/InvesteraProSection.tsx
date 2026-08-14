@@ -35,7 +35,8 @@ export default function InvesteraProSection({
         {/* Feature card */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.15 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0 }}
           className="relative mt-12 overflow-visible rounded-[28px] bg-[url('/images/investera-pro/dashboard.png')] bg-cover bg-center lg:mt-14 lg:rounded-[32px]"
         >

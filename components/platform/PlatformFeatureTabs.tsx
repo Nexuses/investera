@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import FadeIn from "@/components/FadeIn";
 
 const tabs = [
   {
@@ -88,7 +89,7 @@ function CheckIcon() {
       aria-hidden
       className="mt-[2px] shrink-0"
     >
-      <circle cx="9" cy="9" r="9" fill="#0c2d57" />
+      <circle cx="9" cy="9" r="9" fill="#2F6FE4" />
       <path
         d="M5.5 9.2L7.7 11.4L12.5 6.6"
         stroke="white"
@@ -132,7 +133,7 @@ export default function PlatformFeatureTabs() {
           </div>
         </div>
 
-        <div className="mt-12 grid items-center gap-10 lg:mt-16 lg:grid-cols-2 lg:gap-16">
+        <FadeIn className="mt-12 grid items-center gap-10 lg:mt-16 lg:grid-cols-2 lg:gap-16">
           <div className="max-w-[560px]">
             <h2 className="text-[32px] font-normal leading-tight tracking-[-0.02em] sm:text-[40px]">
               <span className="font-normal text-[#1a1a1a]">{tab.titleLines[0]}</span>
@@ -174,7 +175,7 @@ export default function PlatformFeatureTabs() {
               className="h-auto w-full max-w-[520px] object-contain"
             />
           </div>
-        </div>
+        </FadeIn>
       </div>
     </section>
   );

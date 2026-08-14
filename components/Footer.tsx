@@ -1,27 +1,30 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import FadeIn from "@/components/FadeIn";
 
 const platformLinks = [
   { label: "Investera Pro", href: "/platform" },
-  { label: "Portfolio management", href: "#platform" },
-  { label: "Reporting & dashboards", href: "#platform" },
-  { label: "Document management", href: "#platform" },
-  { label: "Workflow & governance", href: "#platform" },
+  { label: "Market Intelligence", href: "/platform" },
+  { label: "Investments Hub", href: "/platform" },
+  { label: "Reporting & dashboards", href: "/platform" },
+  { label: "Document management", href: "/platform" },
 ];
 
 const solutionsLinks = [
-  { label: "Portfolio managers", href: "#who-we-serve" },
-  { label: "Family offices", href: "#who-we-serve" },
-  { label: "Private equity & VC", href: "#who-we-serve" },
-  { label: "Fund managers", href: "#who-we-serve" },
-  { label: "Technology partners", href: "#connectivity" },
+  { label: "Portfolio managers", href: "/#who-we-serve" },
+  { label: "Family offices", href: "/#who-we-serve" },
+  { label: "Private equity & VC", href: "/#who-we-serve" },
+  { label: "Fund managers", href: "/#who-we-serve" },
+  { label: "Technology partners", href: "/#connectivity" },
 ];
 
 const companyLinks = [
   { label: "About us", href: "/about-us" },
-  { label: "Why choose Investera", href: "#insights" },
-  { label: "Insights", href: "/blog" },
-  { label: "Media", href: "/blog" },
+  { label: "Why Investera", href: "/platform" },
+  { label: "Blog & Insights", href: "/blog" },
+  { label: "Contact", href: "/contact" },
   { label: "Book a demo", href: "/book-a-demo" },
 ];
 
@@ -52,7 +55,7 @@ export default function Footer() {
   return (
     <footer className="bg-white">
       <div className="mx-auto max-w-[1440px] border-t border-[#EAECF0] px-6 py-12 lg:px-16 lg:py-14">
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1.25fr_1fr_1fr_1fr] lg:gap-12">
+        <FadeIn className="grid grid-cols-1 gap-10 lg:grid-cols-[1.25fr_1fr_1fr_1fr] lg:gap-12">
           <div>
             <Link href="/" className="inline-flex items-center">
               <Image
@@ -66,8 +69,8 @@ export default function Footer() {
             </Link>
 
             <p className="mt-4 max-w-[320px] text-[16px] leading-[1.5] text-[#667085]">
-              Investment management, unified. One platform for portfolios, deals,
-              reporting and documents.
+              One connected platform for portfolios, market intelligence, deals,
+              reporting, and documents.
             </p>
 
             <div className="mt-5 flex max-w-[320px] items-center gap-2 rounded-full border border-[#E6E8EC] bg-white p-1">
@@ -78,7 +81,7 @@ export default function Footer() {
               />
               <button
                 type="button"
-                className="h-[40px] shrink-0 rounded-full bg-[#0B1E3D] px-5 text-[14px] font-semibold text-white transition-opacity hover:opacity-90"
+                className="h-[40px] shrink-0 rounded-full bg-[#0c2d57] px-5 text-[14px] font-semibold text-white transition-opacity hover:opacity-90"
               >
                 Subscribe
               </button>
@@ -92,7 +95,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="flex h-8 w-8 items-center justify-center rounded-full border border-[#EAECF0] transition-opacity hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0B1E3D]"
+                  className="flex h-8 w-8 items-center justify-center rounded-full border border-[#EAECF0] bg-[#F7F8FA] transition-opacity hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0c2d57]"
                 >
                   <Image
                     src={social.icon}
@@ -102,6 +105,10 @@ export default function Footer() {
                     unoptimized
                     aria-hidden="true"
                     className="h-4 w-4 object-contain"
+                    style={{
+                      filter:
+                        "brightness(0) saturate(100%) invert(14%) sepia(38%) saturate(1840%) hue-rotate(191deg) brightness(92%) contrast(97%)",
+                    }}
                   />
                 </Link>
               ))}
@@ -109,7 +116,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h6 className="text-[18px] font-semibold tracking-normal text-[#143F73]">
+            <h6 className="text-[18px] font-semibold tracking-normal text-[#0c2d57]">
               Platform
             </h6>
             <ul className="mt-4 space-y-3">
@@ -117,7 +124,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-[16px] leading-[1.3] font-normal text-[#344054] transition-colors hover:text-[#101828] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0B1E3D]"
+                    className="text-[16px] leading-[1.3] font-normal text-[#667085] transition-colors hover:text-[#0c2d57] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0c2d57]"
                   >
                     {link.label}
                   </Link>
@@ -127,7 +134,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h6 className="text-[18px] font-semibold tracking-normal text-[#143F73]">
+            <h6 className="text-[18px] font-semibold tracking-normal text-[#0c2d57]">
               Solutions
             </h6>
             <ul className="mt-4 space-y-3">
@@ -135,7 +142,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-[16px] leading-[1.3] font-normal text-[#344054] transition-colors hover:text-[#101828] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0B1E3D]"
+                    className="text-[16px] leading-[1.3] font-normal text-[#667085] transition-colors hover:text-[#0c2d57] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0c2d57]"
                   >
                     {link.label}
                   </Link>
@@ -145,7 +152,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h6 className="text-[18px] font-semibold tracking-normal text-[#143F73]">
+            <h6 className="text-[18px] font-semibold tracking-normal text-[#0c2d57]">
               Company
             </h6>
             <ul className="mt-4 space-y-3">
@@ -153,7 +160,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-[16px] leading-[1.3] font-normal text-[#344054] transition-colors hover:text-[#101828] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0B1E3D]"
+                    className="text-[16px] leading-[1.3] font-normal text-[#667085] transition-colors hover:text-[#0c2d57] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0c2d57]"
                   >
                     {link.label}
                   </Link>
@@ -161,16 +168,16 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-        </div>
+        </FadeIn>
 
         <div className="mt-10 border-t border-[#EAECF0] pt-6">
           <div className="flex flex-col gap-3 text-[13px] text-[#98A2B3] sm:flex-row sm:items-center sm:justify-between">
             <p>© 2026 Investera. All rights reserved.</p>
             <div className="flex items-center gap-6">
-              <Link href="#" className="transition-colors hover:text-[#667085]">
+              <Link href="/contact" className="transition-colors hover:text-[#667085]">
                 Privacy policy
               </Link>
-              <Link href="#" className="transition-colors hover:text-[#667085]">
+              <Link href="/contact" className="transition-colors hover:text-[#667085]">
                 Terms of service
               </Link>
             </div>

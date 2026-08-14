@@ -1,4 +1,5 @@
 import Image from "next/image";
+import FadeIn from "@/components/FadeIn";
 
 const cards = [
   {
@@ -33,10 +34,10 @@ export default function PlatformInsightCards() {
     <section className="bg-white py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-          {cards.map((card) => (
+          {cards.map((card, index) => (
+            <FadeIn key={card.title} delay={index * 0.1}>
             <article
-              key={card.title}
-              className="flex flex-col overflow-hidden rounded-[12px] bg-white shadow-[0_12px_32px_rgba(15,23,42,0.10)]"
+              className="flex h-full flex-col overflow-hidden rounded-[12px] bg-white shadow-[0_12px_32px_rgba(15,23,42,0.10)]"
             >
               <div
                 className={`relative bg-[#EBF5FF] pt-4 sm:pt-5 ${
@@ -68,6 +69,7 @@ export default function PlatformInsightCards() {
                 </p>
               </div>
             </article>
+            </FadeIn>
           ))}
         </div>
       </div>

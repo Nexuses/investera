@@ -15,7 +15,8 @@ export default function WorkflowGovernanceSection({
       <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="relative h-auto overflow-hidden rounded-[18px] border border-[#F1E6D5] bg-gradient-to-r from-[#FFF3DF] to-white shadow-[0_15px_40px_rgba(0,0,0,0.05)] lg:h-[260px]"
         >

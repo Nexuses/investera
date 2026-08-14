@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import FadeIn from "@/components/FadeIn";
 
 export default function BookDemoCtaSection() {
   return (
     <section className="bg-white pt-10 pb-16 lg:pt-14 lg:pb-24">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
-        <div className="relative overflow-hidden rounded-[16px] border border-[#F0E8DA] bg-[#F6EFE3] lg:h-[430px]">
-          {/* Soft beige card background */}
+        <FadeIn className="relative overflow-hidden rounded-[16px] border border-[#F0E8DA] bg-[#F6EFE3] lg:h-[430px]">
           <Image
             src="/images/cta/card-bg.png"
             alt=""
@@ -17,7 +17,6 @@ export default function BookDemoCtaSection() {
           />
 
           <div className="relative z-[1] grid h-full items-center gap-6 py-8 pl-8 pr-0 sm:gap-8 sm:py-9 sm:pl-9 lg:grid-cols-[42%_58%] lg:gap-0 lg:py-0 lg:pl-9">
-            {/* Left content — static text, no animation */}
             <div className="flex max-w-[420px] flex-col justify-center pr-8 sm:pr-9 lg:pr-0">
               <h1 className="text-[55px] font-normal leading-[1.25] tracking-[-0.01em] text-[#222222]">
                 Unlock Better
@@ -39,7 +38,6 @@ export default function BookDemoCtaSection() {
               </Link>
             </div>
 
-            {/* Right devices visual — 40px from right edge */}
             <div className="relative flex min-h-[260px] w-full items-end justify-end pr-[40px] lg:h-full">
               <div className="relative w-full max-w-none lg:absolute lg:bottom-0 lg:right-[40px] lg:w-[88%]">
                 <Image
@@ -53,7 +51,7 @@ export default function BookDemoCtaSection() {
               </div>
             </div>
           </div>
-        </div>
+        </FadeIn>
       </div>
     </section>
   );

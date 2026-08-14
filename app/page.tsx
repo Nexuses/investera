@@ -17,7 +17,7 @@ import WorkflowGovernanceSection from "@/components/WorkflowGovernanceSection";
 export const metadata: Metadata = {
   title: "Investera | Bringing Investment Management Together",
   description:
-    "Innovating Finance, Empowering Success — smart financial tools designed to streamline operations and drive better decision-making.",
+    "Innovating Finance, Empowering Success. Smart financial tools designed to streamline operations and drive better decision-making.",
 };
 
 export default function Home() {

@@ -65,7 +65,7 @@ export default function CorePhilosophySection() {
                 transition={{ duration: 0.55, delay: 0.2 }}
                 className="flex h-fit items-center gap-3 self-start rounded-2xl bg-white px-4 py-3 shadow-[0_12px_30px_rgba(15,23,42,0.08)]"
               >
-                <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#1f2937] text-white">
+                <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#2F6FE4] text-white">
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
                     <path
                       d="M7 11V3M7 3L3.5 6.5M7 3L10.5 6.5"
@@ -194,7 +194,7 @@ export default function CorePhilosophySection() {
                 transition={{ duration: 0.6, delay: 0.42 }}
                 className="col-span-2 flex items-center gap-4 rounded-2xl bg-white px-4 py-3.5 shadow-[0_12px_30px_rgba(15,23,42,0.08)] sm:gap-5 sm:px-5"
               >
-                <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#374151] text-[18px] font-semibold text-white">
+                <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#2F6FE4] text-[18px] font-semibold text-white">
                   9.8
                 </span>
                 <div className="flex min-w-0 flex-1 flex-col gap-2">

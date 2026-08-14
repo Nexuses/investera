@@ -1,3 +1,8 @@
+"use client";
+
+import FadeIn from "@/components/FadeIn";
+import { motion } from "framer-motion";
+
 const cards = [
   {
     title: "One Dynamic Workspace",
@@ -68,7 +73,7 @@ export default function WhyInvesteraSection() {
   return (
     <section className="bg-[#F7F8FA] py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
-        <div className="mx-auto max-w-[720px] text-center">
+        <FadeIn className="mx-auto max-w-[720px] text-center">
           <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-[#CCA400] sm:text-[13px]">
             Why Investera?
           </p>
@@ -76,15 +81,19 @@ export default function WhyInvesteraSection() {
             <span className="font-normal text-[#1a1a1a]">A More Connected Way </span>
             <span className="font-bold text-[#0c2d57]">to Invest</span>
           </h2>
-        </div>
+        </FadeIn>
 
         <div className="mt-12 grid grid-cols-1 gap-5 sm:mt-14 sm:grid-cols-2 sm:gap-6 lg:mt-16 lg:grid-cols-4">
-          {cards.map((card) => (
-            <article
+          {cards.map((card, index) => (
+            <motion.article
               key={card.title}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.55, ease: "easeOut", delay: index * 0.1 }}
               className="flex flex-col rounded-[16px] bg-white px-7 py-8 shadow-[0_10px_30px_rgba(12,45,87,0.08)] sm:px-8 sm:py-9"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#ECE8F8] text-[#0c2d57]">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#2F6FE4] text-white">
                 {card.icon}
               </div>
               <h3 className="mt-6 text-[22px] font-semibold leading-[1.25] tracking-[-0.01em] text-[#0c2d57]">
@@ -93,7 +102,7 @@ export default function WhyInvesteraSection() {
               <p className="mt-3 text-[16px] leading-[1.3] text-[#4B5563]">
                 {card.description}
               </p>
-            </article>
+            </motion.article>
           ))}
         </div>
       </div>

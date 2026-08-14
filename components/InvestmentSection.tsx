@@ -47,7 +47,7 @@ export default function InvestmentSection() {
                 Discover Now
               </Link>
               <Link
-                href="#free"
+                href="/book-a-demo"
                 className="rounded-full bg-[#c4a035] px-7 py-3 text-[13px] font-semibold text-white transition-colors hover:bg-[#b08f2e]"
               >
                 Start for Free

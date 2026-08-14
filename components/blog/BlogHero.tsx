@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import FadeIn from "@/components/FadeIn";
 
 const filters = [
   "All",
@@ -29,12 +30,14 @@ export default function BlogHero() {
   return (
     <section className="bg-white py-[60px]">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
+        <FadeIn>
         <h1 className="text-[40px] font-normal leading-tight tracking-[-0.02em]">
           <span className="font-normal text-[#1a1a1a]">Blogs & </span>
           <span className="font-bold text-[#0c2d57]">Insights</span>
         </h1>
+        </FadeIn>
 
-        <div className="mt-6 flex flex-wrap items-center gap-2.5 sm:mt-8 sm:gap-3">
+        <FadeIn delay={0.08} className="mt-6 flex flex-wrap items-center gap-2.5 sm:mt-8 sm:gap-3">
           {filters.map((filter) => {
             const isActive = filter === active;
             return (
@@ -52,8 +55,9 @@ export default function BlogHero() {
               </button>
             );
           })}
-        </div>
+        </FadeIn>
 
+        <FadeIn delay={0.14}>
         <article className="mt-10 grid items-center gap-8 lg:mt-14 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
           <div className="relative aspect-[16/10] overflow-hidden rounded-[20px] sm:rounded-[24px]">
             <Image
@@ -84,6 +88,7 @@ export default function BlogHero() {
             </Link>
           </div>
         </article>
+        </FadeIn>
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 "use client";
 
 import CaseStudyCard from "./CaseStudyCard";
+import FadeIn from "@/components/FadeIn";
 
 const caseStudies = [
   {
@@ -36,6 +37,7 @@ export default function InvestmentSolutionsSection() {
     <section className="bg-[#050B1F] py-16 lg:py-24">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
         <div className="mx-auto max-w-[1180px]">
+          <FadeIn>
           <h2 className="text-center text-[40px] font-normal leading-tight text-white">
             Investment Management{" "}
             <span className="font-bold">Solutions</span> for{" "}
@@ -47,6 +49,7 @@ export default function InvestmentSolutionsSection() {
             portfolios, opportunities, workflows, and reporting through one
             unified platform.
           </p>
+          </FadeIn>
 
           <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 lg:mt-14 lg:grid-cols-3 lg:gap-5">
             {caseStudies.map((study, index) => (

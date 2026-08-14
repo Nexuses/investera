@@ -6,9 +6,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const TABLET =
-  "https://investera.s3.us-east-2.amazonaws.com/Frame_1000003810_1786628568796_7q3v.png";
-const AUM_CARD =
-  "https://investera.s3.us-east-2.amazonaws.com/Frame_2147255965_1786628568795_wib3.png";
+  "https://investera.s3.us-east-2.amazonaws.com/Group_1000005978_1786688998844_qgh7.png";
 const UAE_CARD =
   "https://investera.s3.us-east-2.amazonaws.com/screencapture-investera-investorapp-base44-app-home-2026-07-27-14_47_33_9_1786628568796_1xnc.png";
 const US_CARD =
@@ -53,13 +51,13 @@ export default function PlatformCtaSection() {
         <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:mt-9 sm:flex-row sm:items-center sm:gap-4">
           <Link
             href="/contact"
-            className="inline-flex h-[48px] items-center justify-center rounded-[8px] border border-white bg-transparent px-7 text-[15px] font-semibold text-white transition-colors hover:bg-white/10 sm:min-w-[188px]"
+            className="rounded-full border border-white/40 bg-transparent px-7 py-3 text-[14px] font-semibold text-white transition-colors hover:border-white hover:bg-white/5"
           >
-            Request A Demo
+            Contact Us
           </Link>
           <Link
             href="/book-a-demo"
-            className="inline-flex h-[48px] items-center justify-center rounded-[8px] bg-[#CCA400] px-7 text-[15px] font-semibold text-white transition-opacity hover:opacity-90 sm:min-w-[188px]"
+            className="rounded-full bg-[#CCA400] px-7 py-3 text-[14px] font-semibold text-white transition-transform hover:scale-[1.03]"
           >
             Start A Free Trial
           </Link>
@@ -93,17 +91,16 @@ export default function PlatformCtaSection() {
                 className="relative z-[1] h-auto w-full mix-blend-screen"
               />
 
-              <div className="pointer-events-none absolute bottom-[31%] left-[19%] right-[3.8%] top-[17.2%] z-[2]">
-                <Image
-                  src={AUM_CARD}
-                  alt="Total assets under management"
-                  fill
-                  unoptimized
-                  className="object-contain object-left-top mix-blend-screen"
-                />
-              </div>
-
-              <div className="pointer-events-none absolute right-[-2.5%] top-[33%] z-[3] w-[23%] sm:right-[-3%] sm:top-[32%] sm:w-[22%] lg:w-[21%]">
+              <motion.div
+                className="pointer-events-none absolute right-[-2.5%] top-[33%] z-[3] w-[23%] sm:right-[-3%] sm:top-[32%] sm:w-[22%] lg:w-[21%]"
+                animate={{ y: [0, -12, 0] }}
+                transition={{
+                  duration: 4.2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.3,
+                }}
+              >
                 <Image
                   src={UAE_CARD}
                   alt="UAE allocation 100 percent"
@@ -112,9 +109,18 @@ export default function PlatformCtaSection() {
                   unoptimized
                   className="h-auto w-full mix-blend-screen drop-shadow-[0_18px_40px_rgba(0,0,0,0.45)]"
                 />
-              </div>
+              </motion.div>
 
-              <div className="pointer-events-none absolute right-[-0.5%] top-[48%] z-[3] w-[21.5%] sm:right-[-1%] sm:top-[47%] sm:w-[20.5%] lg:w-[19.5%]">
+              <motion.div
+                className="pointer-events-none absolute right-[-0.5%] top-[48%] z-[3] w-[21.5%] sm:right-[-1%] sm:top-[47%] sm:w-[20.5%] lg:w-[19.5%]"
+                animate={{ y: [0, -8, 0] }}
+                transition={{
+                  duration: 5.1,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.7,
+                }}
+              >
                 <Image
                   src={US_CARD}
                   alt="US allocation 0 percent"
@@ -123,7 +129,7 @@ export default function PlatformCtaSection() {
                   unoptimized
                   className="h-auto w-full mix-blend-screen drop-shadow-[0_18px_40px_rgba(0,0,0,0.45)]"
                 />
-              </div>
+              </motion.div>
             </div>
           </div>
         </motion.div>

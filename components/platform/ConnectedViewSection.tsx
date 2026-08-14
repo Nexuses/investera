@@ -1,3 +1,5 @@
+import FadeIn from "@/components/FadeIn";
+
 const BG_VIDEO =
   "https://investera.s3.us-east-2.amazonaws.com/Untitled_design_1786616764409_9m9f.mp4";
 
@@ -18,10 +20,12 @@ export default function ConnectedViewSection() {
       <div aria-hidden className="pointer-events-none absolute inset-0 bg-[#050B1F]/25" />
 
       <div className="relative z-10 mx-auto w-full max-w-[1440px] px-6 pt-[120px] lg:px-16">
+        <FadeIn>
         <h2 className="text-center text-[32px] leading-tight tracking-[-0.02em] text-white sm:text-[40px]">
           <span className="font-bold">One Connected View</span>{" "}
           <span className="font-normal">of Your Investments</span>
         </h2>
+        </FadeIn>
       </div>
     </section>
   );

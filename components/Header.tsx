@@ -123,16 +123,6 @@ export default function Header({ variant = "dark" }: HeaderProps) {
 
         <div className="hidden items-center gap-5 xl:flex">
           <Link
-            href="/#signin"
-            className={`text-[14px] font-medium transition-colors ${
-              isLight
-                ? "text-[#344054] hover:text-[#0c2d57]"
-                : "text-white/90 hover:text-white"
-            }`}
-          >
-            Sign in
-          </Link>
-          <Link
             href="/book-a-demo"
             className="rounded-full bg-[#CCA400] px-5 py-2.5 text-[13px] font-semibold text-white transition-transform hover:scale-[1.03]"
           >

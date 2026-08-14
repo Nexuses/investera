@@ -36,20 +36,20 @@ export default function PlatformHero() {
           <p className="mt-6 max-w-[900px] text-[16px] leading-[1.45] text-white/80 sm:mt-7 sm:text-[18px] lg:text-[19px]">
             Investera Pro brings portfolios, deals, reporting, documents,
             workflows, and investment insights into one secure
-            platform—helping investment teams save time, improve visibility,
+            platform, helping investment teams save time, improve visibility,
             and make informed decisions faster.
           </p>
 
           <div className="mt-8 flex w-full max-w-[420px] flex-col items-stretch gap-3 sm:mt-9 sm:max-w-none sm:w-auto sm:flex-row sm:items-center sm:justify-center sm:gap-4">
             <Link
               href="/contact"
-              className="inline-flex h-[48px] items-center justify-center rounded-[10px] border border-white bg-transparent px-7 text-[16px] font-semibold text-white transition-colors hover:bg-white/10 sm:min-w-[188px]"
+              className="rounded-full border border-white/40 bg-transparent px-7 py-3 text-[14px] font-semibold text-white transition-colors hover:border-white hover:bg-white/5"
             >
-              Request A Demo
+              Contact Us
             </Link>
             <Link
               href="/book-a-demo"
-              className="inline-flex h-[48px] items-center justify-center rounded-[10px] bg-[#CCA400] px-7 text-[16px] font-semibold text-white transition-opacity hover:opacity-90 sm:min-w-[188px]"
+              className="rounded-full bg-[#CCA400] px-7 py-3 text-[14px] font-semibold text-white transition-transform hover:scale-[1.03]"
             >
               Start A Free Trial
             </Link>

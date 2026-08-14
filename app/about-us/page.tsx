@@ -13,7 +13,7 @@ import Header from "@/components/Header";
 export const metadata: Metadata = {
   title: "About Us | Investera",
   description:
-    "Learn about Investera — bringing investment management together with greater visibility, accuracy, and control.",
+    "Learn about Investera, bringing investment management together with greater visibility, accuracy, and control.",
 };
 
 export default function AboutUsPage() {

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import FadeIn from "@/components/FadeIn";
 
 const cards = [
   {
@@ -46,7 +47,7 @@ export default function BusinessDataSection() {
   return (
     <section className="bg-white py-10 lg:py-14">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
-        <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <FadeIn className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           <h2 className="max-w-[720px] text-[40px] font-normal leading-[1.2] tracking-[-0.02em] text-[#111111]">
             Multi-Asset-Class
             <br />
@@ -61,19 +62,19 @@ export default function BusinessDataSection() {
               Discover Now
             </Link>
             <Link
-              href="#free"
+              href="/book-a-demo"
               className="inline-flex w-fit shrink-0 items-center justify-center rounded-full bg-[#c4a035] px-7 py-3 text-[13px] font-semibold text-white transition-colors hover:bg-[#b08f2e]"
             >
               Start for Free
             </Link>
           </div>
-        </div>
+        </FadeIn>
 
         <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6">
-          {cards.map((card) => (
+          {cards.map((card, index) => (
+            <FadeIn key={card.title} delay={index * 0.1}>
             <article
-              key={card.title}
-              className="flex items-start gap-4 rounded-[16px] border border-[#EAEAEA] bg-white px-5 py-5 sm:px-6"
+              className="flex h-full items-start gap-4 rounded-[16px] border border-[#EAEAEA] bg-white px-5 py-5 sm:px-6"
             >
               <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#2F6FE4] text-white">
                 {card.icon}
@@ -87,6 +88,7 @@ export default function BusinessDataSection() {
                 </p>
               </div>
             </article>
+            </FadeIn>
           ))}
         </div>
       </div>
