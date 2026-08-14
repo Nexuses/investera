@@ -174,7 +174,7 @@ export default function Footer() {
           <div className="flex flex-col gap-3 text-[13px] text-[#98A2B3] sm:flex-row sm:items-center sm:justify-between">
             <p>© 2026 Investera. All rights reserved.</p>
             <div className="flex items-center gap-6">
-              <Link href="/contact" className="transition-colors hover:text-[#667085]">
+              <Link href="/privacy-policy" className="transition-colors hover:text-[#667085]">
                 Privacy policy
               </Link>
               <Link href="/contact" className="transition-colors hover:text-[#667085]">
