@@ -20,8 +20,8 @@ const solutionsLinks = [
 const companyLinks = [
   { label: "About us", href: "/about-us" },
   { label: "Why choose Investera", href: "#insights" },
-  { label: "Insights", href: "#insights" },
-  { label: "Media", href: "#insights" },
+  { label: "Insights", href: "/blog" },
+  { label: "Media", href: "/blog" },
   { label: "Book a demo", href: "#demo" },
 ];
 

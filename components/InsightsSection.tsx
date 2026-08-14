@@ -32,30 +32,45 @@ const insights = [
   },
 ];
 
-export default function InsightsSection() {
+export default function InsightsSection({
+  allInsightsHref = "/blog",
+  compact = false,
+}: {
+  allInsightsHref?: string;
+  compact?: boolean;
+}) {
   return (
-    <section id="insights" className="bg-white py-20 sm:py-24 lg:py-28">
+    <section
+      id="insights"
+      className={`${compact ? "bg-[#F4F4F4] py-[60px]" : "bg-white py-20 sm:py-24 lg:py-28"}`}
+    >
       <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between lg:gap-10">
-          <div className="max-w-[720px]">
-            <h2 className="text-[34px] font-bold leading-[1.15] tracking-[-0.02em] text-[#0c2d57] sm:text-[40px] lg:text-[44px]">
-              Insights
-            </h2>
-            <p className="mt-4 max-w-[560px] text-[16px] leading-[1.3] text-[#6B7280]">
-              Explore perspectives on investment management, financial
-              technology, market trends, and the evolving investment landscape.
-            </p>
+        {!compact && (
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between lg:gap-10">
+            <div className="max-w-[720px]">
+              <h2 className="text-[34px] font-bold leading-[1.15] tracking-[-0.02em] text-[#0c2d57] sm:text-[40px] lg:text-[44px]">
+                Insights
+              </h2>
+              <p className="mt-4 max-w-[560px] text-[16px] leading-[1.3] text-[#6B7280]">
+                Explore perspectives on investment management, financial
+                technology, market trends, and the evolving investment landscape.
+              </p>
+            </div>
+
+            <Link
+              href={allInsightsHref}
+              className="inline-flex w-fit shrink-0 items-center justify-center rounded-full border border-[#D1D5DB] bg-white px-5 py-2.5 text-[14px] font-semibold text-[#111111] transition-colors hover:border-[#9CA3AF] hover:bg-[#F9FAFB]"
+            >
+              All insights
+            </Link>
           </div>
+        )}
 
-          <Link
-            href="#insights"
-            className="inline-flex w-fit shrink-0 items-center justify-center rounded-full border border-[#D1D5DB] bg-white px-5 py-2.5 text-[14px] font-semibold text-[#111111] transition-colors hover:border-[#9CA3AF] hover:bg-[#F9FAFB]"
-          >
-            All insights
-          </Link>
-        </div>
-
-        <div className="mt-10 grid grid-cols-1 gap-5 sm:mt-12 md:grid-cols-2 lg:mt-14 lg:grid-cols-3 lg:gap-6">
+        <div
+          className={`grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-6 ${
+            compact ? "" : "mt-10 sm:mt-12 lg:mt-14"
+          }`}
+        >
           {insights.map((insight) => (
             <article
               key={insight.title}
@@ -97,9 +112,15 @@ export default function InsightsSection() {
                   <h3 className="text-[20px] font-bold leading-[1.3] tracking-[-0.01em] text-[#0c2d57] sm:text-[22px]">
                     {insight.description}
                   </h3>
-                  <p className="mt-2 text-[16px] leading-[1.3] text-[#6B7280]">
+                  <p className="mt-2 flex-1 text-[16px] leading-[1.3] text-[#6B7280]">
                     {insight.subtitle}
                   </p>
+                  <span className="mt-5 inline-flex items-center gap-1.5 text-[16px] font-semibold tracking-[0.04em] text-[#0c2d57] transition-opacity group-hover:opacity-80">
+                    READ MORE
+                    <span aria-hidden="true" className="text-[15px]">
+                      →
+                    </span>
+                  </span>
                 </div>
               </Link>
             </article>

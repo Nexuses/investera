@@ -99,7 +99,7 @@ export default function Header({ variant = "dark" }: HeaderProps) {
             {resourcesOpen && (
               <div className={dropdownClass}>
                 <Link
-                  href="/#insights"
+                  href="/blog"
                   className={dropdownLinkClass}
                   onClick={() => setResourcesOpen(false)}
                 >
