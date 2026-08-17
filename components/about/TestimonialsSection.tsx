@@ -1,32 +1,46 @@
 "use client";
 
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const testimonials = [
   {
     quote:
-      "Investera Pro helped save significant time in day-to-day work, improve the handling of investment data and reports, provide responsive support, and enhance confidence in data security.",
-    name: "Sophie",
-    title: "Head of Investment",
-    avatar: "/images/about/testimonials/helen.png",
+      "Investera has made portfolio management more efficient and user-friendly. Its comprehensive reporting gives us valuable insights and supports better investment decisions.",
+    name: "Hafiz A.",
+    title: "Shared Services Administrator, Saudi Arabia",
   },
   {
     quote:
-      "Investera Pro helped save significant time in day-to-day work, improve the handling of investment data and reports, provide responsive support, and enhance confidence in data security.",
-    name: "Sophie",
-    title: "Head of Investment",
-    avatar: "/images/about/testimonials/helen.png",
+      "Investera has streamlined my day-to-day portfolio management and saved considerable time. The responsive support and strong data security provide additional confidence.",
+    name: "Joseph",
+    title: "Head of Investment, Singapore",
   },
   {
     quote:
-      "Investera Pro helped save significant time in day-to-day work, improve the handling of investment data and reports, provide responsive support, and enhance confidence in data security.",
-    name: "Sophie",
-    title: "Head of Investment",
-    avatar: "/images/about/testimonials/helen.png",
+      "The platform is easy to use, supports multiple asset classes, and is backed by a helpful support team. We have relied on it for more than two years.",
+    name: "Uday",
+    title: "Analyst, UAE",
+  },
+  {
+    quote:
+      "Investera has become an important asset for our investment team. Its customization, integration, portfolio monitoring, and risk assessment capabilities address our core business requirements.",
+    name: "Omar",
+    title: "CFO, UAE",
   },
 ];
+
+function Stars() {
+  return (
+    <div className="flex items-center gap-1" aria-label="5 star rating">
+      {Array.from({ length: 5 }).map((_, i) => (
+        <svg key={i} width="16" height="16" viewBox="0 0 16 16" fill="#CCA400" aria-hidden>
+          <path d="M8 1.2 9.9 5.3l4.5.4-3.4 2.9 1 4.4L8 11.2 3.9 13l1-4.4L1.6 5.7l4.5-.4L8 1.2Z" />
+        </svg>
+      ))}
+    </div>
+  );
+}
 
 function PaginationDots({
   active,
@@ -54,7 +68,16 @@ function PaginationDots({
 
 export default function TestimonialsSection() {
   const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
   const current = testimonials[active];
+
+  useEffect(() => {
+    if (paused) return undefined;
+    const id = window.setInterval(() => {
+      setActive((index) => (index + 1) % testimonials.length);
+    }, 7000);
+    return () => window.clearInterval(id);
+  }, [paused, active]);
 
   const goTo = (index: number) => {
     const next = (index + testimonials.length) % testimonials.length;
@@ -83,7 +106,11 @@ export default function TestimonialsSection() {
         <div className="mx-auto mt-10 max-w-[820px] sm:mt-12">
           <PaginationDots active={active} onSelect={setActive} />
 
-          <div className="relative mt-6 flex items-center gap-3 sm:mt-8 sm:gap-5">
+          <div
+            className="relative mt-6 flex items-center gap-3 sm:mt-8 sm:gap-5"
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
+          >
             <button
               type="button"
               aria-label="Previous testimonial"
@@ -106,29 +133,21 @@ export default function TestimonialsSection() {
               </svg>
             </button>
 
-            <div className="relative min-h-[240px] flex-1 overflow-hidden rounded-[20px] bg-white px-7 py-8 shadow-[0_16px_40px_rgba(12,45,87,0.08)] sm:min-h-[220px] sm:px-10 sm:py-9 lg:rounded-[24px]">
+            <div className="relative min-h-[240px] flex-1 overflow-hidden rounded-[20px] bg-white px-7 py-8 shadow-[0_16px_40px_rgba(12,45,87,0.08)] sm:min-h-[260px] sm:px-10 sm:py-9 lg:rounded-[24px]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={active}
                   initial={{ opacity: 0, x: 24 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -24 }}
-                  transition={{ duration: 0.35, ease: "easeOut" }}
+                  transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                  className="flex min-h-[176px] flex-col sm:min-h-[196px]"
                 >
                   <p className="text-[18px] font-semibold leading-[1.45] tracking-[-0.01em] text-[#0c2d57] sm:text-[20px] lg:text-[22px]">
                     &ldquo;{current.quote}&rdquo;
                   </p>
 
-                  <div className="mt-8 flex items-center gap-3">
-                    <div className="relative h-11 w-11 overflow-hidden rounded-full sm:h-12 sm:w-12">
-                      <Image
-                        src={current.avatar}
-                        alt={current.name}
-                        fill
-                        unoptimized
-                        className="object-cover"
-                      />
-                    </div>
+                  <div className="mt-auto flex items-end justify-between gap-4 pt-8">
                     <div>
                       <p className="text-[15px] font-bold text-[#0c2d57] sm:text-[16px]">
                         {current.name}
@@ -137,6 +156,7 @@ export default function TestimonialsSection() {
                         {current.title}
                       </p>
                     </div>
+                    <Stars />
                   </div>
                 </motion.div>
               </AnimatePresence>

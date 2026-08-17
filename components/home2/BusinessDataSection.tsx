@@ -3,7 +3,6 @@ import FadeIn from "@/components/FadeIn";
 
 const cards = [
   {
-    badge: "PV",
     badgeLabel: "Private investments",
     word: "Private.",
     categories: "Equity · Real Estate · Funds",
@@ -13,7 +12,6 @@ const cards = [
     theme: "private" as const,
   },
   {
-    badge: "PB",
     badgeLabel: "Public investments",
     word: "Public.",
     categories: "Listed · Fixed Income · Funds",
@@ -23,7 +21,6 @@ const cards = [
     theme: "public" as const,
   },
   {
-    badge: "CM",
     badgeLabel: "Cash management",
     word: "Cash.",
     categories: "Inflows · Outflows · Liquidity",
@@ -36,17 +33,10 @@ const cards = [
 
 function VisualPanel({
   theme,
-  badge,
   badgeLabel,
   word,
   categories,
 }: (typeof cards)[number]) {
-  const badgeColor =
-    theme === "private"
-      ? "bg-[#C4A035]"
-      : theme === "public"
-        ? "bg-[#2F6FE4]"
-        : "bg-[#22C55E]";
   const badgeText =
     theme === "private" ? "text-[#5C4A32]" : "text-white";
   const badgeWrap =
@@ -96,13 +86,8 @@ function VisualPanel({
       ) : null}
 
       <span
-        className={`relative z-[1] inline-flex w-fit items-center gap-2 rounded-full py-1 pl-1 pr-3 backdrop-blur-sm ${badgeWrap}`}
+        className={`relative z-[1] inline-flex w-fit items-center rounded-full px-3 py-1 backdrop-blur-sm ${badgeWrap}`}
       >
-        <span
-          className={`flex h-6 w-6 items-center justify-center rounded-full text-[10px] font-bold text-white ${badgeColor}`}
-        >
-          {badge}
-        </span>
         <span className={`text-[12px] font-medium ${badgeText}`}>{badgeLabel}</span>
       </span>
 

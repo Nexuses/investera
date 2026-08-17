@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import FadeIn from "@/components/FadeIn";
 
 const studies = [
   {
@@ -44,17 +45,19 @@ export default function InvestmentSolutionsSection() {
   return (
     <section id="case-studies" className="bg-white">
       <div className="bg-white px-6 pt-16 pb-[50px] lg:px-16 lg:pt-24 lg:pb-[50px]">
-        <h2 className="text-center text-[40px] font-normal leading-tight text-[#111111]">
-          Investment Management{" "}
-          <span className="heading-accent text-[#0c2d57]">
-            Solutions for Every Stakeholder
-          </span>
-        </h2>
-        <p className="mx-auto mt-5 max-w-[750px] text-center text-[16px] leading-[1.3] text-[#6B7280]">
-          Purpose-built solutions that help investment professionals manage
-          portfolios, opportunities, workflows, and reporting through one
-          unified platform.
-        </p>
+        <FadeIn>
+          <h2 className="text-center text-[40px] font-normal leading-tight text-[#111111]">
+            Investment Management{" "}
+            <span className="heading-accent text-[#0c2d57]">
+              Solutions for Every Stakeholder
+            </span>
+          </h2>
+          <p className="mx-auto mt-5 max-w-[750px] text-center text-[16px] leading-[1.3] text-[#6B7280]">
+            Purpose-built solutions that help investment professionals manage
+            portfolios, opportunities, workflows, and reporting through one
+            unified platform.
+          </p>
+        </FadeIn>
       </div>
 
       <div className="grid grid-cols-2 border-b border-[#E5E7EB]">
@@ -91,7 +94,10 @@ export default function InvestmentSolutionsSection() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2">
-        <div className="flex min-h-[420px] flex-col justify-center bg-white px-8 py-14 sm:px-12 sm:py-16 lg:min-h-[560px] lg:px-20 lg:py-24 xl:px-28">
+        <FadeIn
+          key={`${study.name}-copy`}
+          className="flex min-h-[420px] flex-col justify-center bg-white px-8 py-14 sm:px-12 sm:py-16 lg:min-h-[560px] lg:px-20 lg:py-24 xl:px-28"
+        >
           <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-[#8A94A6]">
             {study.tag}
           </p>
@@ -111,18 +117,21 @@ export default function InvestmentSolutionsSection() {
             Read full case study
             <span aria-hidden="true">→</span>
           </Link>
-        </div>
+        </FadeIn>
 
-        <div className="relative min-h-[320px] sm:min-h-[420px] lg:min-h-full">
+        <FadeIn
+          key={`${study.name}-image`}
+          delay={0.12}
+          className="relative min-h-[320px] sm:min-h-[420px] lg:min-h-full"
+        >
           <Image
-            key={study.image}
             src={study.image}
             alt={study.imageAlt}
             fill
             unoptimized
             className="object-cover"
           />
-        </div>
+        </FadeIn>
       </div>
     </section>
   );

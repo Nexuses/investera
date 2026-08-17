@@ -181,6 +181,13 @@ export default function PlatformFeatureTabs() {
       <div className="h-[420vh]">
         <div className="sticky top-[88px] flex min-h-[calc(100vh-88px)] items-center py-10 lg:py-14">
           <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-16">
+            <h2 className="-mt-[30px] mb-8 text-center text-[32px] font-normal leading-[1.15] tracking-[-0.02em] text-[#111111] sm:mb-10 sm:text-[40px]">
+              One Platform.{" "}
+              <span className="heading-accent text-[#0c2d57]">
+                Complete Investment Intelligence.
+              </span>
+            </h2>
+
             <div className="border-b border-[#E5E7EB]">
               <div className="flex flex-wrap items-end justify-center gap-x-5 gap-y-2 lg:gap-x-8">
                 {tabs.map((item, index) => {

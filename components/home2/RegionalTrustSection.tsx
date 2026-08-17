@@ -1,38 +1,37 @@
-import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 
 const quotes = [
   {
-    lead: "Private, public and cash finally sit side by side.",
-    rest: " I can answer an allocation question in the meeting instead of promising to send it later.",
-    role: "Portfolio Manager",
-    org: "Investment company · U.A.E.",
-    avatar: "/images/about/testimonials/helen-2.png",
+    lead: "Investera has made portfolio management more efficient and user-friendly.",
+    rest: " Its comprehensive reporting gives us valuable insights and supports better investment decisions.",
+    name: "Hafiz A.",
+    role: "Shared Services Administrator",
+    org: "Saudi Arabia",
     verified: true,
   },
   {
-    lead: "This is the first software our board has actually asked to see.",
-    rest: " The reporting comes straight out of the underlying records, so nobody spends the meeting arguing about which number is right.",
-    role: "Group CFO",
-    org: "Diversified holding · Saudi Arabia",
-    avatar: "/images/about/team/member-3.png",
+    lead: "Investera has streamlined my day-to-day portfolio management and saved considerable time.",
+    rest: " The responsive support and strong data security provide additional confidence.",
+    name: "Joseph",
+    role: "Head of Investment",
+    org: "Singapore",
     verified: true,
   },
   {
-    lead: "Cut our valuation cycle from three weeks down to six days.",
-    rest: "",
-    role: "Finance Director",
-    org: "Private equity firm · Bahrain",
-    avatar: "/images/about/team/member-2.png",
-    verified: false,
+    lead: "The platform is easy to use, supports multiple asset classes, and is backed by a helpful support team.",
+    rest: " We have relied on it for more than two years.",
+    name: "Uday",
+    role: "Analyst",
+    org: "UAE",
+    verified: true,
     beige: true,
   },
   {
-    lead: "Every approval has a name and a timestamp against it.",
-    rest: " When the auditors ask how a decision was made, the answer is already in the system.",
-    role: "Fund Operations Lead",
-    org: "Asset manager · Qatar",
-    avatar: "/images/about/testimonials/helen-3.png",
+    lead: "Investera has become an important asset for our investment team.",
+    rest: " Its customization, integration, portfolio monitoring, and risk assessment capabilities address our core business requirements.",
+    name: "Omar",
+    role: "CFO",
+    org: "UAE",
     verified: true,
   },
 ];
@@ -98,9 +97,9 @@ export default function RegionalTrustSection() {
 function QuoteCard({
   lead,
   rest,
+  name,
   role,
   org,
-  avatar,
   verified,
   beige,
   delay = 0,
@@ -112,24 +111,17 @@ function QuoteCard({
           beige ? "bg-[#F6EFE3]" : "border border-[#EEF0F3] bg-white"
         }`}
       >
-        {!beige ? <Stars /> : null}
-        <p
-          className={`text-[16px] leading-[1.5] ${
-            beige ? "mt-0 font-semibold text-[#111111]" : "mt-4 text-[#111111]"
-          }`}
-        >
+        <Stars />
+        <p className="mt-4 text-[16px] leading-[1.5] text-[#111111]">
           {lead}
           {rest ? <span className="text-[#6B7280]">{rest}</span> : null}
         </p>
         <div className="mt-5 flex items-center justify-between gap-3">
-          <div className="flex min-w-0 items-center gap-3">
-            <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full">
-              <Image src={avatar} alt="" fill unoptimized className="object-cover" />
-            </div>
-            <div className="min-w-0">
-              <p className="text-[14px] font-semibold text-[#111111]">{role}</p>
-              <p className="text-[13px] text-[#6B7280]">{org}</p>
-            </div>
+          <div className="min-w-0">
+            <p className="text-[14px] font-semibold text-[#111111]">{name}</p>
+            <p className="text-[13px] text-[#6B7280]">
+              {role} · {org}
+            </p>
           </div>
           {verified ? <Verified /> : null}
         </div>
