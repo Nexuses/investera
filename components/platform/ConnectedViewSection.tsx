@@ -22,7 +22,7 @@ export default function ConnectedViewSection() {
       <div className="relative z-10 mx-auto w-full max-w-[1440px] px-6 pt-[120px] lg:px-16">
         <FadeIn>
         <h2 className="text-center text-[32px] leading-tight tracking-[-0.02em] text-white sm:text-[40px]">
-          <span className="font-bold">One Connected View</span>{" "}
+          <span className="heading-accent">One Connected View</span>{" "}
           <span className="font-normal">of Your Investments</span>
         </h2>
         </FadeIn>

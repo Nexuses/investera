@@ -27,9 +27,11 @@ export default function CorePhilosophySection() {
             Comprehensive
             <br />
             Investment{" "}
-            <span className="font-bold text-[#143F73]">Management Across</span>
+            <span className="heading-accent text-[#143F73]">
+              Management Across
+            </span>
             <br />
-            <span className="font-bold text-[#143F73]">
+            <span className="heading-accent text-[#143F73]">
               the Complete Investment Lifecycle
             </span>
           </h2>

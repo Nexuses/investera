@@ -51,7 +51,7 @@ export default function AdvantageSection() {
         >
           <h2 className="text-[40px] font-normal leading-tight tracking-[-0.02em]">
             <span className="font-normal text-[#1a1a1a]">Who </span>
-            <span className="font-bold text-[#0c2d57]">We Support</span>
+            <span className="heading-accent text-[#0c2d57]">We Support</span>
           </h2>
           <p className="mx-auto mt-5 max-w-[640px] text-[16px] leading-[1.3] text-[#4B5563] sm:mt-6">
             Built for Investment Professionals

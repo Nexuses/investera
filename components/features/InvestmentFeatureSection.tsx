@@ -13,7 +13,7 @@ export default function InvestmentFeatureSection() {
               <>
                 Reporting &
                 <br />
-                <span className="font-bold text-[#0c2d57]">Dashboards</span>
+                <span className="heading-accent text-[#0c2d57]">Dashboards</span>
               </>
             }
             description="Gain clear visibility into portfolio performance with customizable dashboards, key metrics, and comprehensive investment reports for faster, informed decisions."
@@ -29,7 +29,7 @@ export default function InvestmentFeatureSection() {
               <>
                 Secure
                 <br />
-                <span className="font-bold text-[#0c2d57]">Document Management</span>
+                <span className="heading-accent text-[#0c2d57]">Document Management</span>
               </>
             }
             description="Centralize investment documents in a secure repository with controlled access, structured storage, and easy retrieval across portfolios and transactions."

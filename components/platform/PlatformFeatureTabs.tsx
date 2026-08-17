@@ -217,7 +217,7 @@ export default function PlatformFeatureTabs() {
                 <h2 className="text-[32px] font-normal leading-tight tracking-[-0.02em] sm:text-[40px]">
                   <span className="font-normal text-[#1a1a1a]">{tab.titleLines[0]}</span>
                   <br />
-                  <span className="font-bold text-[#0c2d57]">{tab.titleLines[1]}</span>
+                  <span className="heading-accent text-[#0c2d57]">{tab.titleLines[1]}</span>
                 </h2>
                 <p className="mt-5 text-[16px] leading-[1.3] text-[#4B5563] sm:mt-6">
                   {tab.description}

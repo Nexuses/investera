@@ -214,7 +214,7 @@ export default function ContactPage() {
           <h1 className="text-[42px] font-normal leading-tight tracking-[-0.03em] text-white sm:text-[55px]">
             <span className="font-normal">Let&apos;s Transform the Way</span>
             <br />
-            <span className="font-bold">You Manage Investments</span>
+            <span className="heading-accent">You Manage Investments</span>
           </h1>
           <p className="mt-4 text-[16px] leading-[1.3] text-white/80">
             Connect with our team to see how Investera can unify your
@@ -254,7 +254,7 @@ export default function ContactPage() {
               <h3 className="text-[34px] font-normal leading-tight tracking-[-0.02em] text-[#1a1a1a]">
                 <span className="font-normal text-[#1a1a1a]">Speak With Our</span>
                 <br />
-                <span className="font-bold text-[#0c2d57]">
+                <span className="heading-accent text-[#0c2d57]">
                   Investment Technology Experts
                 </span>
               </h3>
@@ -331,7 +331,7 @@ export default function ContactPage() {
         <FadeIn>
         <h2 className="text-[40px] font-normal leading-tight tracking-[-0.02em]">
           <span className="font-normal text-[#1a1a1a]">Get in </span>
-          <span className="font-bold text-[#0c2d57]">Touch</span>
+          <span className="heading-accent text-[#0c2d57]">Touch</span>
         </h2>
         </FadeIn>
 
@@ -381,7 +381,7 @@ export default function ContactPage() {
       <div className="mx-auto grid max-w-[1200px] grid-cols-1 items-start gap-10 px-6 lg:grid-cols-2 lg:gap-14 lg:px-10">
         <div>
           <h2 className="text-[40px] font-normal leading-tight tracking-[-0.02em]">
-            <span className="font-bold text-[#0c2d57]">Office</span>
+            <span className="heading-accent text-[#0c2d57]">Office</span>
           </h2>
           <p className="mt-4 max-w-[480px] text-[16px] leading-[1.3] text-[#4B5563]">
             Visit our headquarters or get in touch for the nearest location to

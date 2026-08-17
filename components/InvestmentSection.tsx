@@ -15,7 +15,7 @@ export default function InvestmentSection() {
         <div className="mx-auto max-w-[900px] text-center">
           <h2 className="text-[40px] font-normal leading-[1.25] text-white">
             Comprehensive Investment{" "}
-            <span className="font-bold">
+            <span className="heading-accent">
               Management Across the Complete Investment Lifecycle
             </span>
           </h2>
@@ -33,7 +33,7 @@ export default function InvestmentSection() {
             <h3 className="text-[34px] font-normal leading-snug text-white">
               Multi-Asset-Class{" "}
               <br />
-              <span className="font-bold">Investment Management</span>
+              <span className="heading-accent">Investment Management</span>
             </h3>
             <p className="mt-4 max-w-[480px] text-[18px] leading-relaxed text-white/85">
               Investera Pro enables organizations to manage multiple investment

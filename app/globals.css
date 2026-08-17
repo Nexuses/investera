@@ -46,10 +46,7 @@ label,
 input,
 textarea,
 button,
-a {
-  font-family: var(--font-roboto), system-ui, sans-serif;
-}
-
+a,
 h1,
 h2,
 h3,
@@ -57,6 +54,13 @@ h4,
 h5,
 h6 {
   font-family: var(--font-plus-jakarta-sans), system-ui, sans-serif;
+}
+
+.heading-accent {
+  font-family: Georgia, Times, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
 }
 
 .logo-slider-mask {

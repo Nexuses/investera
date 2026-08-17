@@ -14,7 +14,7 @@ export default function BookDemoPage() {
             </p>
             <h1 className="mt-4 text-[40px] font-normal leading-tight tracking-[-0.02em]">
               <span className="font-normal text-[#1a1a1a]">Discuss Your </span>
-              <span className="font-bold text-[#0c2d57]">Investment Platform Needs</span>
+              <span className="heading-accent text-[#0c2d57]">Investment Platform Needs</span>
             </h1>
             <p className="mt-4 text-[16px] leading-[1.3] text-[#4B5563]">
               Looking for a connected way to manage portfolios, deals, and

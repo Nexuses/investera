@@ -21,7 +21,7 @@ export default function PlatformBanner() {
         <div className="shrink-0 text-white lg:w-[34%] lg:pr-4">
           <h2 className="text-[40px] font-normal leading-[1.1]">
             One Platform.
-            <span className="mt-1 block font-bold">
+            <span className="mt-1 block heading-accent">
               Complete Investment
               <br />
               Control

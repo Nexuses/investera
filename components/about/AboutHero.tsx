@@ -38,7 +38,7 @@ export default function AboutHero() {
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
             className="text-center text-[42px] font-normal leading-[1.12] tracking-[-0.03em] text-white sm:text-[56px] lg:text-[68px]"
           >
-            About Investera
+            About <span className="heading-accent">Investera</span>
           </motion.h1>
         </div>
       </motion.div>

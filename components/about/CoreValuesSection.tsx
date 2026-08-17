@@ -47,7 +47,7 @@ export default function CoreValuesSection() {
           </p>
           <h2 className="mt-4 text-[40px] font-normal leading-tight tracking-[-0.02em]">
             <span className="font-normal text-[#1a1a1a]">Our </span>
-            <span className="font-bold text-[#0c2d57]">Core Capabilities</span>
+            <span className="heading-accent text-[#0c2d57]">Core Capabilities</span>
           </h2>
         </motion.div>
 

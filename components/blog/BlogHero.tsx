@@ -33,7 +33,7 @@ export default function BlogHero() {
         <FadeIn>
         <h1 className="text-[40px] font-normal leading-tight tracking-[-0.02em]">
           <span className="font-normal text-[#1a1a1a]">Blogs & </span>
-          <span className="font-bold text-[#0c2d57]">Insights</span>
+          <span className="heading-accent text-[#0c2d57]">Insights</span>
         </h1>
         </FadeIn>
 

@@ -30,7 +30,7 @@ export default function PlatformHero() {
         <div className="mx-auto flex max-w-[980px] flex-col items-center text-center">
           <h1 className="text-[40px] font-normal leading-[1.12] tracking-[-0.03em] text-white sm:text-[56px] lg:text-[64px]">
             <span className="block font-normal">Bring Every</span>
-            <span className="block font-bold">Investment Together</span>
+            <span className="block heading-accent">Investment Together</span>
           </h1>
 
           <p className="mt-6 max-w-[900px] text-[16px] leading-[1.45] text-white/80 sm:mt-7 sm:text-[18px] lg:text-[19px]">

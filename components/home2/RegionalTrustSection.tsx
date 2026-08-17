@@ -74,7 +74,9 @@ export default function RegionalTrustSection() {
         <FadeIn>
           <h2 className="max-w-[640px] text-[32px] font-normal leading-[1.2] tracking-[-0.02em] sm:text-[40px]">
             <span className="font-normal text-[#1a1a1a]">Investment teams across the region </span>
-            <span className="font-bold text-[#0c2d57]">trust Investera</span>
+            <span className="heading-accent text-[#0c2d57]">
+              trust Investera
+            </span>
           </h2>
         </FadeIn>
 

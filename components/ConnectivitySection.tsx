@@ -63,7 +63,10 @@ export default function ConnectivitySection() {
           className="mx-auto flex max-w-[720px] flex-col items-center text-center"
         >
           <h2 className="text-[40px] font-normal leading-tight text-white">
-            Our <span className="font-bold">Technology Partners</span>
+            Our{" "}
+            <span className="heading-accent">
+              Technology Partners
+            </span>
           </h2>
 
           <p className="mt-5 max-w-[560px] text-[16px] leading-[1.3] text-[#94A3B8]">

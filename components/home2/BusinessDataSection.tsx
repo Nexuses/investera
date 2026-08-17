@@ -123,7 +123,37 @@ function VisualPanel({
 
 export default function BusinessDataSection() {
   return (
-    <section className="bg-[#F6F7F9] py-20 lg:py-28">
+    <>
+      <section className="bg-[#F4F4F4] pt-[60px] pb-10 lg:pt-[92px] lg:pb-14">
+        <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
+          <FadeIn className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+            <h2 className="max-w-[720px] text-[40px] font-normal leading-[1.2] tracking-[-0.02em] text-[#111111]">
+              Multi-Asset-Class
+              <br />
+              <span className="heading-accent text-[#143F73]">
+                Investment Management
+              </span>
+            </h2>
+
+            <div className="flex flex-wrap items-center gap-3">
+              <Link
+                href="/platform"
+                className="inline-flex w-fit shrink-0 items-center justify-center rounded-full bg-white px-7 py-3 text-[13px] font-semibold text-[#1a4570] ring-1 ring-[#1a4570]/25 transition-opacity hover:opacity-90"
+              >
+                Discover Now
+              </Link>
+              <Link
+                href="/book-a-demo"
+                className="inline-flex w-fit shrink-0 items-center justify-center rounded-full bg-[#c4a035] px-7 py-3 text-[13px] font-semibold text-white transition-colors hover:bg-[#b08f2e]"
+              >
+                Start for Free
+              </Link>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      <section className="bg-[#F6F7F9] pt-0 pb-20 lg:pt-0 lg:pb-28">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-7">
           {cards.map((card, index) => (
@@ -149,6 +179,7 @@ export default function BusinessDataSection() {
           ))}
         </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 }

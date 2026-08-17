@@ -21,7 +21,9 @@ export default function BookDemoCtaSection() {
               <h1 className="text-[55px] font-normal leading-[1.25] tracking-[-0.01em] text-[#222222]">
                 Unlock Better
                 <br />
-                <span className="font-semibold text-[#17477F]">Opportunities.</span>
+                <span className="heading-accent text-[#17477F]">
+                  Opportunities.
+                </span>
               </h1>
 
               <p className="mt-4 max-w-[360px] text-[16px] leading-[1.3] text-[#555555]">

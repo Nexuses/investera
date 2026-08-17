@@ -59,7 +59,7 @@ export default function InvestmentHero() {
               <br />
               Shouldn&apos;t Be Scattered Across
               <br />
-              Multiple Systems
+              <span className="heading-accent">Multiple Systems</span>
             </h4>
 
             <p className="mt-5 max-w-[480px] text-[16px] leading-[1.3] text-[#5B6F86] lg:mt-6">

@@ -15,7 +15,7 @@ export default function ProcessControlSection() {
             <h2 className="text-[40px] font-normal leading-tight tracking-[-0.02em]">
               <span className="font-normal text-[#1a1a1a]">See the Full Picture,</span>
               <br />
-              <span className="font-bold text-[#0c2d57]">Instantly</span>
+              <span className="heading-accent text-[#0c2d57]">Instantly</span>
             </h2>
             <p className="mt-5 text-[16px] leading-[1.3] text-[#4B5563] sm:mt-6">
               Replace scattered reports and spreadsheets with one centralized

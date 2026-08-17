@@ -38,7 +38,7 @@ export default function MeetOurTeamSection() {
           className="text-center text-[34px] leading-[1.2] tracking-[-0.02em] sm:text-[40px]"
         >
           <span className="font-normal text-[#1a1a1a]">Meet </span>
-          <span className="font-bold text-[#0c2d57]">Our Team</span>
+          <span className="heading-accent text-[#0c2d57]">Our Team</span>
         </motion.h2>
 
         <div className="mt-12 flex flex-wrap items-start justify-center gap-x-10 gap-y-12 sm:mt-14 sm:gap-x-14 lg:mt-16 lg:gap-x-20 xl:gap-x-24">

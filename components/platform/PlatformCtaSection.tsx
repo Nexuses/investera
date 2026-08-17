@@ -39,7 +39,7 @@ export default function PlatformCtaSection() {
       <div className="relative z-20 mx-auto max-w-[1440px] px-6 pt-16 text-center sm:pt-20 lg:px-16 lg:pt-24">
         <h2 className="text-[36px] font-normal leading-[1.12] tracking-[-0.03em] text-white sm:text-[48px] lg:text-[56px]">
           <span className="block font-normal">Transform Investment</span>
-          <span className="block font-bold">Data into Strategy</span>
+          <span className="block heading-accent">Data into Strategy</span>
         </h2>
 
         <p className="mx-auto mt-5 max-w-[720px] text-[15px] leading-[1.5] text-white/82 sm:mt-6 sm:text-[17px] lg:text-[18px]">

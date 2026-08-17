@@ -14,7 +14,7 @@ export default function IdentityVisionSection() {
       >
         <span className="font-normal text-[#1a1a1a]">Our Identity,</span>
         <br />
-        <span className="font-bold text-[#0c2d57]">Vision and Values</span>
+        <span className="heading-accent text-[#0c2d57]">Vision and Values</span>
       </motion.h2>
 
       <div className="relative mx-auto mt-[-5px] max-w-[1100px] pt-20 sm:mt-[3px] sm:pt-24 lg:pt-28">
@@ -26,8 +26,9 @@ export default function IdentityVisionSection() {
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.08 }}
           className="absolute left-1/2 top-0 z-10 w-[min(100%,880px)] -translate-x-1/2 rounded-[12px] bg-[#0c2d57] px-6 py-7 text-center sm:px-10 sm:py-8 lg:px-14 lg:py-9"
         >
-          <h4 className="text-[28px] font-semibold leading-[1.25] tracking-[-0.02em] text-white">
-            Bringing Multi-Asset Investment Together
+          <h4 className="text-[28px] font-normal leading-[1.25] tracking-[-0.02em] text-white">
+            Bringing Multi-Asset Investment{" "}
+            <span className="heading-accent">Together</span>
           </h4>
           <p className="mt-4 text-[16px] leading-[1.3] text-white/95">
             A secure, unified investment management platform that brings

@@ -27,7 +27,7 @@ const squares = [
 ];
 
 export default function GrowthCtaSection({
-  title = "Bring Your Investment Operations Into One Intelligent Platform",
+  title: _title = "Bring Your Investment Operations Into One Intelligent Platform",
   description = "Centralize portfolios, deals, reporting, workflows, and insights with Investera Pro.",
 }: {
   title?: string;
@@ -65,8 +65,9 @@ export default function GrowthCtaSection({
           </div>
 
           <div className="relative z-10 mx-auto max-w-[820px]">
-            <h2 className="text-[32px] font-bold leading-[1.15] tracking-[-0.02em] text-white sm:text-[40px] lg:text-[48px]">
-              {title}
+            <h2 className="text-[40px] font-normal leading-[1.15] tracking-[-0.02em] text-white">
+              Bring Your Investment Operations Into{" "}
+              <span className="heading-accent">One Intelligent Platform</span>
             </h2>
 
             <p className="mx-auto mt-5 max-w-[640px] text-[15px] leading-[1.6] text-white/95 sm:mt-6 sm:text-[17px] lg:text-[18px]">

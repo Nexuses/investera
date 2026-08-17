@@ -11,7 +11,7 @@ export default function PrivacyPolicyPage() {
         <FadeIn>
           <h1 className="text-[40px] font-normal leading-tight tracking-[-0.02em] sm:text-[48px]">
             <span className="font-normal text-[#1a1a1a]">Privacy </span>
-            <span className="font-bold text-[#0c2d57]">Policy</span>
+            <span className="heading-accent text-[#0c2d57]">Policy</span>
           </h1>
           <p className="mt-3 text-[14px] font-medium leading-[1.3] text-[#CCA400]">
             Updated 19 May 2019

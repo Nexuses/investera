@@ -169,7 +169,7 @@ export default function Home2Header() {
               <h1 className="text-[55px] font-normal leading-[1.15] tracking-[-0.01em] text-[#0c2d57]">
                 Innovating Finance,
                 <br />
-                Empowering Success
+                <span className="heading-accent">Empowering Success</span>
               </h1>
 
               <p className="mx-auto mt-6 max-w-[560px] text-[18px] leading-[1.75] text-[#64748b]">

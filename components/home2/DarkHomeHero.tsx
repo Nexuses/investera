@@ -30,7 +30,7 @@ export default function DarkHomeHero() {
           >
             Bringing Investment
             <br />
-            <span className="font-[Georgia,Times,'Times_New_Roman',serif] font-normal italic tracking-normal">
+            <span className="heading-accent">
               management together
             </span>
           </motion.h1>

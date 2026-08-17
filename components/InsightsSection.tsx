@@ -49,8 +49,8 @@ export default function InsightsSection({
         {!compact && (
           <FadeIn className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between lg:gap-10">
             <div className="max-w-[720px]">
-              <h2 className="text-[34px] font-bold leading-[1.15] tracking-[-0.02em] text-[#0c2d57] sm:text-[40px] lg:text-[44px]">
-                Insights
+              <h2 className="text-[40px] font-normal leading-[1.15] tracking-[-0.02em] text-[#111111]">
+                <span className="heading-accent text-[#0c2d57]">Insights</span>
               </h2>
               <p className="mt-4 max-w-[560px] text-[16px] leading-[1.3] text-[#6B7280]">
                 Explore perspectives on investment management, financial

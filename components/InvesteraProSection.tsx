@@ -23,7 +23,9 @@ export default function InvesteraProSection({
         <div className="mx-auto max-w-[820px] text-center">
           <h2 className="text-[40px] font-normal leading-tight text-[#1e293b]">
             Meet{" "}
-            <span className="font-bold text-[#0c2d57]">Investera Pro</span>
+            <span className="heading-accent text-[#0c2d57]">
+              Investera Pro
+            </span>
           </h2>
           <p className="mx-auto mt-5 max-w-[760px] text-[16px] leading-[1.3] text-[#64748b]">
             An end-to-end investment management platform that unifies portfolios,
@@ -46,7 +48,7 @@ export default function InvesteraProSection({
               <h3 className="text-[34px] font-normal leading-[1.15] text-[#1e293b]">
                 Portfolio &
                 <br />
-                <span className="font-bold text-[#0c2d57]">Deal Management</span>
+                <span className="heading-accent text-[#0c2d57]">Deal Management</span>
               </h3>
 
               <ul className="mt-6 space-y-4">

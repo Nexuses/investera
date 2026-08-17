@@ -10,11 +10,13 @@ const studies = [
     logo: "https://investera.s3.us-east-2.amazonaws.com/image_994_1786952976419_agxe.png",
     logoWidth: 220,
     logoHeight: 56,
-    tag: "Multi-asset portfolio",
-    title: "One View Across a Diversified Investment Portfolio",
+    tag: "Dimah Capital",
+    titleLead: "One View Across a",
+    titleAccent: "Diversified Investment Portfolio",
     description:
       "Centralized multi-asset data, reporting, and governance for stronger portfolio visibility and investment oversight.",
-    image: "/images/stakeholder-solutions/card-1-image.png",
+    image:
+      "https://investera.s3.us-east-2.amazonaws.com/image__2__1786961662080_w9ot.png",
     imageAlt:
       "Dimah Capital headquarters representing a diversified investment portfolio",
   },
@@ -23,13 +25,15 @@ const studies = [
     logo: "https://investera.s3.us-east-2.amazonaws.com/PhotoshopExtension_Image_1786952692009_thxq.png",
     logoWidth: 240,
     logoHeight: 56,
-    tag: "Portfolio management",
-    title: "Turning Portfolio Data into Better Investment Oversight",
+    tag: "Al Kifah Holding",
+    titleLead: "Turning Portfolio Data into",
+    titleAccent: "Better Investment Oversight",
     description:
       "A centralized PMS for performance tracking, structured reporting, and more efficient investment decision-making.",
-    image: "/images/about/advantage/card-1.png",
+    image:
+      "https://investera.s3.us-east-2.amazonaws.com/SYVpecYPAb4ElFC9_1786962061440_2wgk.jpg",
     imageAlt:
-      "Investment team reviewing portfolio performance and reporting together",
+      "Al Kifah Holding headquarters building",
   },
 ];
 
@@ -42,8 +46,9 @@ export default function InvestmentSolutionsSection() {
       <div className="bg-white px-6 pt-16 pb-[50px] lg:px-16 lg:pt-24 lg:pb-[50px]">
         <h2 className="text-center text-[40px] font-normal leading-tight text-[#111111]">
           Investment Management{" "}
-          <span className="font-bold text-[#0c2d57]">Solutions</span> for{" "}
-          <span className="font-bold text-[#0c2d57]">Every Stakeholder</span>
+          <span className="heading-accent text-[#0c2d57]">
+            Solutions for Every Stakeholder
+          </span>
         </h2>
         <p className="mx-auto mt-5 max-w-[750px] text-center text-[16px] leading-[1.3] text-[#6B7280]">
           Purpose-built solutions that help investment professionals manage
@@ -90,8 +95,11 @@ export default function InvestmentSolutionsSection() {
           <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-[#8A94A6]">
             {study.tag}
           </p>
-          <h3 className="mt-4 max-w-[480px] text-[32px] font-bold leading-[1.15] tracking-[-0.02em] text-[#0c2d57] sm:text-[40px]">
-            {study.title}
+          <h3 className="mt-4 max-w-[480px] text-[40px] font-normal leading-[1.15] tracking-[-0.02em] text-[#111111]">
+            {study.titleLead}{" "}
+            <span className="heading-accent text-[#0c2d57]">
+              {study.titleAccent}
+            </span>
           </h3>
           <p className="mt-5 max-w-[460px] text-[16px] leading-[1.3] text-[#6B7280]">
             {study.description}

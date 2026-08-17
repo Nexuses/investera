@@ -79,7 +79,7 @@ export default function WhyInvesteraSection() {
           </p>
           <h2 className="mt-4 text-[32px] font-normal leading-tight tracking-[-0.02em] sm:text-[40px]">
             <span className="font-normal text-[#1a1a1a]">A More Connected Way </span>
-            <span className="font-bold text-[#0c2d57]">to Invest</span>
+            <span className="heading-accent text-[#0c2d57]">to Invest</span>
           </h2>
         </FadeIn>
 

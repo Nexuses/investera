@@ -26,7 +26,7 @@ export default function WorkflowGovernanceSection({
               <h3 className="text-[34px] font-normal leading-[1.15] text-[#1e293b]">
                 Workflow &
                 <br />
-                <span className="font-bold text-[#0c2d57]">Governance Controls</span>
+                <span className="heading-accent text-[#0c2d57]">Governance Controls</span>
               </h3>
               <p className="mt-4 max-w-[560px] text-[16px] leading-[1.3] text-[#333333] lg:mt-5">
                 Streamline investment processes with configurable workflows, approval

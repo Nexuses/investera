@@ -47,7 +47,9 @@ export default function WhoWeServeSection() {
 
             <h2 className="mt-5 text-[40px] font-normal leading-tight text-[#1e293b]">
               Solutions for{" "}
-              <span className="font-bold text-[#17477F]">Every Investor</span>
+              <span className="heading-accent text-[#17477F]">
+                Every Investor
+              </span>
             </h2>
 
             <p className="mt-4 max-w-[1000px] text-[16px] leading-[1.3] text-[#4A4A4A]">
@@ -68,7 +70,7 @@ export default function WhoWeServeSection() {
               <h3 className="text-[34px] font-normal leading-[1.2] text-[#1e293b] lg:text-[40px]">
                 Built for
                 <br />
-                <span className="font-bold text-[#17477F]">
+                <span className="heading-accent text-[#17477F]">
                   Investment Professionals
                 </span>
               </h3>
