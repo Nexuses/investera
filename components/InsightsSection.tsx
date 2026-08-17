@@ -43,7 +43,7 @@ export default function InsightsSection({
   return (
     <section
       id="insights"
-      className={`${compact ? "bg-[#F4F4F4] py-[60px]" : "bg-white py-20 sm:py-24 lg:py-28"}`}
+      className={`${compact ? "bg-[#F4F4F4] py-[60px]" : "bg-[#F4F4F4] py-20 sm:py-24 lg:py-28"}`}
     >
       <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
         {!compact && (

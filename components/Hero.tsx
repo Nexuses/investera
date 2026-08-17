@@ -18,7 +18,9 @@ export default function Hero() {
           <h1 className="text-[55px] font-normal leading-[1.15] tracking-[-0.01em] text-[#0c2d57]">
             Bringing Investment
             <br />
-            Management Together
+            <span className="font-[Georgia,Times,'Times_New_Roman',serif] font-normal italic tracking-normal">
+              management together
+            </span>
           </h1>
           <p className="mt-5 max-w-[720px] text-[18px] leading-[1.75] text-[#64748b] lg:mt-6">
             Manage portfolios, deals, transactions, reporting, and investment

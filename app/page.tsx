@@ -11,6 +11,7 @@ import InvestmentSolutionsSection from "@/components/InvestmentSolutionsSection"
 import InvesteraProSection from "@/components/InvesteraProSection";
 import LogoSlider from "@/components/LogoSlider";
 import ConnectivitySection from "@/components/ConnectivitySection";
+import RegionalTrustSection from "@/components/home2/RegionalTrustSection";
 import WhoWeServeSection from "@/components/WhoWeServeSection";
 import WorkflowGovernanceSection from "@/components/WorkflowGovernanceSection";
 
@@ -34,6 +35,7 @@ export default function Home() {
       <InvestmentHero />
       <WhoWeServeSection />
       <ConnectivitySection />
+      <RegionalTrustSection />
       <InsightsSection />
       <BookDemoCtaSection />
       <Footer />
