@@ -57,10 +57,14 @@ h6 {
 }
 
 .heading-accent {
-  font-family: Georgia, Times, "Times New Roman", serif;
-  font-style: italic;
-  font-weight: 400;
-  letter-spacing: 0;
+  font-family: var(--font-plus-jakarta-sans), system-ui, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.subheading {
+  font-family: var(--font-inter), system-ui, sans-serif;
 }
 
 .logo-slider-mask {

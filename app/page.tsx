@@ -13,6 +13,7 @@ import LogoSlider from "@/components/LogoSlider";
 import ConnectivitySection from "@/components/ConnectivitySection";
 import RegionalTrustSection from "@/components/home2/RegionalTrustSection";
 import WhoWeServeSection from "@/components/WhoWeServeSection";
+import InvestorStoriesSection from "@/components/home2/InvestorStoriesSection";
 import WorkflowGovernanceSection from "@/components/WorkflowGovernanceSection";
 
 export const metadata: Metadata = {
@@ -34,6 +35,7 @@ export default function Home() {
       <InvestmentSolutionsSection />
       <InvestmentHero />
       <WhoWeServeSection />
+      <InvestorStoriesSection />
       <ConnectivitySection />
       <RegionalTrustSection />
       <InsightsSection />

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { plusJakartaSans, roboto } from "./fonts";
+import { inter, plusJakartaSans, roboto } from "./fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${plusJakartaSans.variable} ${roboto.variable} h-full antialiased`}
+      className={`${plusJakartaSans.variable} ${roboto.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

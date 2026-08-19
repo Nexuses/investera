@@ -1,4 +1,3 @@
-import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 
 const cards = [
@@ -92,7 +91,7 @@ function VisualPanel({
       </span>
 
       <p
-        className={`relative z-[1] flex flex-1 items-center justify-center text-center font-[Georgia,Times,'Times_New_Roman',serif] text-[40px] font-bold leading-none tracking-[-0.03em] sm:text-[44px] ${wordColor}`}
+        className={`relative z-[1] flex flex-1 items-center justify-center text-center text-[40px] font-bold leading-none tracking-[-0.03em] sm:text-[44px] ${wordColor}`}
       >
         {word}
       </p>
@@ -111,7 +110,7 @@ export default function BusinessDataSection() {
     <>
       <section className="bg-[#F4F4F4] pt-[60px] pb-10 lg:pt-[92px] lg:pb-14">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
-          <FadeIn className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+          <FadeIn>
             <h2 className="max-w-[720px] text-[40px] font-normal leading-[1.2] tracking-[-0.02em] text-[#111111]">
               Multi-Asset-Class
               <br />
@@ -119,21 +118,6 @@ export default function BusinessDataSection() {
                 Investment Management
               </span>
             </h2>
-
-            <div className="flex flex-wrap items-center gap-3">
-              <Link
-                href="/platform"
-                className="inline-flex w-fit shrink-0 items-center justify-center rounded-full bg-white px-7 py-3 text-[13px] font-semibold text-[#1a4570] ring-1 ring-[#1a4570]/25 transition-opacity hover:opacity-90"
-              >
-                Discover Now
-              </Link>
-              <Link
-                href="/book-a-demo"
-                className="inline-flex w-fit shrink-0 items-center justify-center rounded-full bg-[#c4a035] px-7 py-3 text-[13px] font-semibold text-white transition-colors hover:bg-[#b08f2e]"
-              >
-                Start for Free
-              </Link>
-            </div>
           </FadeIn>
         </div>
       </section>
@@ -152,12 +136,6 @@ export default function BusinessDataSection() {
                   <p className="mt-3 flex-1 text-[16px] leading-[1.5] text-[#4B5563]">
                     {card.description}
                   </p>
-                  <Link
-                    href="/book-a-demo"
-                    className="mt-6 inline-flex h-[48px] w-full items-center justify-center rounded-full bg-[#0c2d57] text-[15px] font-semibold text-white transition-opacity hover:opacity-90"
-                  >
-                    Start for free
-                  </Link>
                 </div>
               </article>
             </FadeIn>

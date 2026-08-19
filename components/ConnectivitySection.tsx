@@ -19,7 +19,7 @@ const partnerIconImages = [
 
 function IconTile({ src, index }: { src: string; index: number }) {
   return (
-    <div className="flex h-[72px] w-[72px] shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-white p-2 sm:h-[80px] sm:w-[80px]">
+    <div className="flex h-[96px] w-[96px] shrink-0 items-center justify-center overflow-hidden rounded-[22px] border border-white/10 bg-white p-2.5 sm:h-[112px] sm:w-[112px] lg:h-[120px] lg:w-[120px] lg:p-3">
       <img
         src={src}
         alt={`Technology partner ${index + 1}`}
@@ -36,7 +36,7 @@ export default function ConnectivitySection() {
   return (
     <section
       id="connectivity"
-      className="relative overflow-hidden bg-[#020817] py-24 lg:py-32"
+      className="relative overflow-hidden bg-[#020817] py-32 sm:py-40 lg:py-48"
     >
       {/* Vertical grid lines */}
       <div
@@ -51,7 +51,7 @@ export default function ConnectivitySection() {
       {/* Soft radial glow */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-[38%] h-[520px] w-[720px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(40,90,180,0.22)_0%,transparent_68%)]"
+        className="pointer-events-none absolute left-1/2 top-[42%] h-[640px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(40,90,180,0.22)_0%,transparent_68%)]"
       />
 
       <div className="relative z-[1] mx-auto max-w-[1440px] px-6 lg:px-16">
@@ -60,16 +60,20 @@ export default function ConnectivitySection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.35 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="mx-auto flex max-w-[720px] flex-col items-center text-center"
+          className="mx-auto flex max-w-[780px] flex-col items-center text-center"
         >
-          <h2 className="text-[40px] font-normal leading-tight text-white">
+          <span className="inline-flex items-center rounded-full border border-[#3B82F6]/35 bg-[#0B1F4A] px-4 py-1.5 text-[13px] font-medium tracking-wide text-[#93C5FD]">
+            Connectivity
+          </span>
+
+          <h2 className="mt-7 text-[40px] font-semibold leading-[1.15] tracking-[-0.02em] text-white sm:text-[48px] lg:text-[55px]">
             Our{" "}
             <span className="heading-accent">
               Technology Partners
             </span>
           </h2>
 
-          <p className="mt-5 max-w-[560px] text-[16px] leading-[1.3] text-[#94A3B8]">
+          <p className="mt-6 max-w-[620px] text-[16px] leading-[1.5] text-[#94A3B8] sm:text-[18px]">
             Integrate Investera with leading technology, market data, document,
             and business platforms to create a connected investment management
             ecosystem.
@@ -77,7 +81,7 @@ export default function ConnectivitySection() {
 
           <Link
             href="/contact"
-            className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/35 bg-transparent px-6 py-2.5 text-[14px] font-medium text-white transition-colors hover:border-white hover:bg-white/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            className="mt-10 inline-flex items-center gap-2 rounded-full border border-white/40 bg-transparent px-7 py-3 text-[15px] font-medium text-white transition-colors hover:border-white hover:bg-white/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           >
             Partner with Us
             <span aria-hidden="true">→</span>
@@ -89,13 +93,13 @@ export default function ConnectivitySection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.12 }}
-          className="relative mt-14 lg:mt-16"
+          className="relative mt-20 lg:mt-28"
         >
-          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-[#020817] to-transparent sm:w-16" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-[#020817] to-transparent sm:w-16" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-[#020817] to-transparent sm:w-20 lg:w-28" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-[#020817] to-transparent sm:w-20 lg:w-28" />
 
           <div className="connectivity-marquee overflow-hidden">
-            <div className="connectivity-marquee-track flex w-max gap-3 sm:gap-4">
+            <div className="connectivity-marquee-track flex w-max gap-4 sm:gap-5">
               {marqueeLogos.map((src, i) => (
                 <IconTile key={`${src}-${i}`} src={src} index={i % partnerIconImages.length} />
               ))}
