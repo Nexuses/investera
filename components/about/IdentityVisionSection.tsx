@@ -18,7 +18,7 @@ export default function IdentityVisionSection() {
       </motion.h2>
 
       <div className="relative mx-auto mt-[-5px] max-w-[1100px] pt-20 sm:mt-[3px] sm:pt-24 lg:pt-28">
-        {/* Identity card — overlaps white card */}
+        {/* Identity card - overlaps white card */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import BookDemoCtaSection from "@/components/BookDemoCtaSection";
 import Footer from "@/components/Footer";
 import BusinessDataSection from "@/components/home2/BusinessDataSection";
 import CorePhilosophySection from "@/components/home2/CorePhilosophySection";
@@ -15,6 +14,7 @@ import RegionalTrustSection from "@/components/home2/RegionalTrustSection";
 import WhoWeServeSection from "@/components/WhoWeServeSection";
 import InvestorStoriesSection from "@/components/home2/InvestorStoriesSection";
 import WorkflowGovernanceSection from "@/components/WorkflowGovernanceSection";
+import PlatformCtaSection from "@/components/platform/PlatformCtaSection";
 
 export const metadata: Metadata = {
   title: "Investera | Bringing Investment Management Together",
@@ -39,7 +39,17 @@ export default function Home() {
       <ConnectivitySection />
       <RegionalTrustSection />
       <InsightsSection />
-      <BookDemoCtaSection />
+      <PlatformCtaSection
+        titleLine1="Unlock Better"
+        titleLine2="Opportunities."
+        titleSingleLine
+        backgroundVariant="hero"
+        description="Bring portfolios, deals, reporting, workflows, and investment data together in one connected platform built for greater efficiency, visibility, and control."
+        deviceImage="https://investera.s3.us-east-2.amazonaws.com/CTA_Laptop_1786445622098_h9pb.png"
+        deviceImageAlt="Laptop and mobile showing Investera investment dashboard and AI assistant"
+        deviceImageClassName="relative z-[1] mx-auto h-auto w-[80%] max-w-[760px] object-contain sm:w-[76%] lg:w-[70%]"
+        showOverlayCards={false}
+      />
       <Footer />
     </div>
   );

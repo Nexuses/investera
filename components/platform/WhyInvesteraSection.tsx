@@ -71,7 +71,7 @@ const cards = [
 
 export default function WhyInvesteraSection() {
   return (
-    <section className="bg-[#F7F8FA] py-16 sm:py-20 lg:py-24">
+    <section id="why-investera" className="bg-white py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
         <FadeIn className="mx-auto max-w-[720px] text-center">
           <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-[#CCA400] sm:text-[13px]">

@@ -5,24 +5,14 @@ import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 
 const platformLinks = [
-  { label: "Investera Pro", href: "/platform" },
-  { label: "Market Intelligence", href: "/platform" },
-  { label: "Investments Hub", href: "/platform" },
-  { label: "Reporting & dashboards", href: "/platform" },
-  { label: "Document management", href: "/platform" },
-];
-
-const solutionsLinks = [
-  { label: "Portfolio managers", href: "/#who-we-serve" },
-  { label: "Family offices", href: "/#who-we-serve" },
-  { label: "Private equity & VC", href: "/#who-we-serve" },
-  { label: "Fund managers", href: "/#who-we-serve" },
-  { label: "Technology partners", href: "/#connectivity" },
+  { label: "Everything You Need", href: "/platform#platform-insights" },
+  { label: "One Platform.", href: "/platform#platform-features" },
+  { label: "Why Investera?", href: "/platform#why-investera" },
 ];
 
 const companyLinks = [
   { label: "About us", href: "/about-us" },
-  { label: "Why Investera", href: "/platform" },
+  { label: "Why Investera", href: "/platform#why-investera" },
   { label: "Blog & Insights", href: "/blog" },
   { label: "Contact", href: "/contact" },
   { label: "Book a demo", href: "/book-a-demo" },
@@ -55,7 +45,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#050B1F]">
       <div className="mx-auto max-w-[1440px] px-6 py-12 lg:px-16 lg:py-14">
-        <FadeIn className="grid grid-cols-1 gap-10 lg:grid-cols-[1.25fr_1fr_1fr_1fr] lg:gap-12">
+        <FadeIn className="grid grid-cols-1 gap-10 lg:grid-cols-[1.4fr_1fr_1fr] lg:gap-12">
           <div>
             <Link href="/" className="inline-flex items-center">
               <Image
@@ -120,24 +110,6 @@ export default function Footer() {
             </h6>
             <ul className="mt-4 space-y-3">
               {platformLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-[16px] leading-[1.3] font-normal text-white/65 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h6 className="text-[18px] font-semibold tracking-normal text-white">
-              Solutions
-            </h6>
-            <ul className="mt-4 space-y-3">
-              {solutionsLinks.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}

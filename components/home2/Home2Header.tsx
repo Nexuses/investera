@@ -124,7 +124,7 @@ export default function Home2Header() {
         <div className="relative z-10 mx-auto h-full max-w-[1240px] px-[60px]">
           {/* Hero composition */}
           <div className="relative flex h-full items-center justify-center py-8">
-            {/* Left floating card — asset allocation */}
+            {/* Left floating card - asset allocation */}
             <motion.div
               initial={{ opacity: 0, y: 40, x: -20 }}
               animate={{ opacity: 1, y: 0, x: 0 }}
@@ -139,7 +139,7 @@ export default function Home2Header() {
               </motion.div>
             </motion.div>
 
-            {/* Right floating card — top gainers */}
+            {/* Right floating card - top gainers */}
             <motion.div
               initial={{ opacity: 0, y: 40, x: 20 }}
               animate={{ opacity: 1, y: 0, x: 0 }}

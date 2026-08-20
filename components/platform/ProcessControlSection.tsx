@@ -8,7 +8,7 @@ const AUM_CARD =
 
 export default function ProcessControlSection() {
   return (
-    <section className="bg-[#F5F7FA] py-16 sm:py-20 lg:py-24">
+    <section id="full-picture" className="bg-[#F5F7FA] py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <FadeIn className="max-w-[560px]">

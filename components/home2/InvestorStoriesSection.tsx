@@ -8,29 +8,29 @@ const stories = [
     heading: "Portfolio Managers",
     body: "Track investment pipelines, opportunities, valuations, and portfolio performance. Gain centralized visibility for faster, informed decisions.",
     image:
-      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1400&q=80",
-    imageAlt: "Investment professionals collaborating in a meeting",
+      "https://investera.s3.us-east-2.amazonaws.com/image__3__1787224535026_i1d4.png",
+    imageAlt: "Portfolio manager reviewing market data on a trading desk",
   },
   {
     heading: "Family Offices",
     body: "Centralize diverse investments and wealth-management activities in one secure platform. Access a consolidated, real-time view of holdings and performance.",
     image:
-      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1400&q=80",
-    imageAlt: "Family office leadership meeting around a conference table",
+      "https://investera.s3.us-east-2.amazonaws.com/image__4__1787224619077_5ly3.png",
+    imageAlt: "Abstract visualization of investment growth and market momentum",
   },
   {
     heading: "Private Equity & VC Firms",
     body: "Manage deals, portfolio companies, valuations, and due diligence across the investment lifecycle. Strengthen oversight with structured workflows and reporting.",
     image:
-      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=80",
-    imageAlt: "Private equity team discussing portfolio strategy",
+      "https://investera.s3.us-east-2.amazonaws.com/image__5__1787224662945_8qi9.png",
+    imageAlt: "Investor reviewing portfolio performance on mobile and laptop",
   },
   {
     heading: "Investment & Fund Managers",
     body: "Streamline investment operations, performance tracking, and reporting. Improve portfolio oversight with greater efficiency, transparency, and control.",
     image:
-      "https://images.unsplash.com/photo-1573164574572-cb89e39749b4?auto=format&fit=crop&w=1400&q=80",
-    imageAlt: "Fund manager reviewing performance on a laptop",
+      "https://investera.s3.us-east-2.amazonaws.com/133407090_a17e1cc3-64aa-440a-80ce-3cfbd992f77a_1787224581466_7yva.jpg",
+    imageAlt: "Emirates Towers and modern financial district plaza in Dubai",
   },
 ];
 

@@ -77,10 +77,10 @@ function VisualPanel({
             className="absolute inset-0 bg-cover bg-center"
             style={{
               backgroundImage:
-                "url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80')",
+                "url('https://investera.s3.us-east-2.amazonaws.com/2044_1787214052175_37rs.jpg')",
             }}
           />
-          <div aria-hidden className="absolute inset-0 bg-[#0c2d57]/55" />
+          <div aria-hidden className="absolute inset-0 bg-[#0c2d57]/35" />
         </>
       ) : null}
 

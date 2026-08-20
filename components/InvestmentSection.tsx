@@ -4,7 +4,7 @@ import FeatureTabs from "@/components/FeatureTabs";
 export default function InvestmentSection() {
   return (
     <section className="relative min-h-[990px] overflow-hidden bg-[#1a4570] lg:min-h-[1070px]">
-      {/* Fixed background image — does not move with tab card */}
+      {/* Fixed background image - does not move with tab card */}
       <div
         className="pointer-events-none absolute inset-x-0 top-[570px] z-0 h-[360px] bg-[url('/images/investment/background.png')] bg-cover bg-bottom bg-no-repeat sm:top-[590px] sm:h-[400px] lg:top-[610px] lg:h-[460px]"
         aria-hidden="true"

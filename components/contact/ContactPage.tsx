@@ -92,16 +92,29 @@ function SlideCard({
   );
 }
 
+const LOOP = [...slides, ...slides, ...slides];
+const SET_SIZE = slides.length;
+
 function ContactCarousel() {
-  const [activeSlide, setActiveSlide] = useState(0);
+  const [activeSlide, setActiveSlide] = useState(SET_SIZE);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [animate, setAnimate] = useState(true);
+
+  const normalizedIndex = ((activeSlide % SET_SIZE) + SET_SIZE) % SET_SIZE;
 
   const goPrev = useCallback(() => {
-    setActiveSlide((i) => (i === 0 ? slides.length - 1 : i - 1));
+    setAnimate(true);
+    setActiveSlide((i) => i - 1);
   }, []);
 
   const goNext = useCallback(() => {
-    setActiveSlide((i) => (i === slides.length - 1 ? 0 : i + 1));
+    setAnimate(true);
+    setActiveSlide((i) => i + 1);
+  }, []);
+
+  const goToSlide = useCallback((index: number) => {
+    setAnimate(true);
+    setActiveSlide(SET_SIZE + index);
   }, []);
 
   useEffect(() => {
@@ -110,17 +123,46 @@ function ContactCarousel() {
     return () => window.clearInterval(timer);
   }, [isPlaying, goNext]);
 
+  useEffect(() => {
+    if (activeSlide >= SET_SIZE && activeSlide < SET_SIZE * 2) return;
+
+    const timeout = window.setTimeout(() => {
+      setAnimate(false);
+      setActiveSlide((i) => {
+        if (i < SET_SIZE) return i + SET_SIZE;
+        if (i >= SET_SIZE * 2) return i - SET_SIZE;
+        return i;
+      });
+    }, 520);
+
+    return () => window.clearTimeout(timeout);
+  }, [activeSlide]);
+
+  useEffect(() => {
+    if (!animate) {
+      const id = window.requestAnimationFrame(() => setAnimate(true));
+      return () => window.cancelAnimationFrame(id);
+    }
+  }, [animate]);
+
   return (
     <div className="w-full">
       <div className="relative overflow-hidden px-1 sm:px-2">
         <div
-          className="flex items-center transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
+          className={`flex items-center ${
+            animate
+              ? "transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
+              : ""
+          }`}
           style={{
             transform: `translateX(calc(50% - ${activeSlide * 56}% - 28% - ${activeSlide * 8}px))`,
           }}
         >
-          {slides.map((slide, index) => (
-            <div key={slide.imageAlt} className="w-[56%] shrink-0 px-1.5 sm:px-2">
+          {LOOP.map((slide, index) => (
+            <div
+              key={`${slide.imageAlt}-${index}`}
+              className="w-[56%] shrink-0 px-1.5 sm:px-2"
+            >
               <SlideCard slide={slide} isActive={index === activeSlide} />
             </div>
           ))}
@@ -168,9 +210,9 @@ function ContactCarousel() {
               key={i}
               type="button"
               aria-label={`Go to slide ${i + 1}`}
-              onClick={() => setActiveSlide(i)}
+              onClick={() => goToSlide(i)}
               className={`rounded-full transition-all ${
-                i === activeSlide
+                i === normalizedIndex
                   ? "h-2.5 w-2.5 bg-white"
                   : "h-2 w-2 bg-white/40 hover:bg-white/60"
               }`}

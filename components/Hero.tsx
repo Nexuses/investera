@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-white">
-      {/* Wave background — full hero height, stops below header */}
+      {/* Wave background - full hero height, stops below header */}
       <div
         className="pointer-events-none absolute inset-0 bg-[url('/images/hero-section-ref.png')] bg-bottom bg-no-repeat bg-[length:100%_100%]"
         aria-hidden="true"
@@ -19,7 +19,7 @@ export default function Hero() {
             Bringing Investment
             <br />
             <span className="heading-accent">
-              management together
+              Management Together
             </span>
           </h1>
           <p className="mt-5 max-w-[720px] text-[18px] leading-[1.75] text-[#64748b] lg:mt-6">

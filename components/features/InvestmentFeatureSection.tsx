@@ -11,14 +11,15 @@ export default function InvestmentFeatureSection() {
             background="/images/features/card-bg-1.png"
             title={
               <>
-                Reporting &
+                Portfolio &
                 <br />
-                <span className="heading-accent text-[#0c2d57]">Dashboards</span>
+                <span className="heading-accent text-[#0c2d57]">Deal Management</span>
               </>
             }
-            description="Gain clear visibility into portfolio performance with customizable dashboards, key metrics, and comprehensive investment reports for faster, informed decisions."
+            description="Centralize deal management, portfolio tracking, and valuations. Gain unified visibility across investments and investors."
             image="/images/features/reporting-dashboard.png"
-            imageAlt="Reporting and dashboards interface with portfolio documents"
+            imageAlt="Portfolio and deal management interface with investment dashboards"
+            imageClassName="h-auto w-full translate-y-[20px] object-cover object-top"
           />
 
           <FeatureCard

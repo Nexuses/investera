@@ -12,6 +12,7 @@ type FeatureCardProps = {
   background: string;
   delay?: number;
   imageDelay?: number;
+  imageClassName?: string;
 };
 
 export default function FeatureCard({
@@ -22,6 +23,7 @@ export default function FeatureCard({
   background,
   delay = 0,
   imageDelay = 0.15,
+  imageClassName,
 }: FeatureCardProps) {
   return (
     <motion.article
@@ -51,6 +53,9 @@ export default function FeatureCard({
             alt={imageAlt}
             delay={delay + imageDelay}
             floatDelay={delay * 0.5}
+            imageClassName={
+              imageClassName ?? "h-auto w-full object-cover object-top"
+            }
           />
         </div>
       </div>

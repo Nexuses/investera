@@ -103,7 +103,7 @@ export default function Header({ variant = "dark" }: HeaderProps) {
                   className={dropdownLinkClass}
                   onClick={() => setResourcesOpen(false)}
                 >
-                  Blog
+                  Blog & Insights
                 </Link>
                 <Link
                   href="/case-study"

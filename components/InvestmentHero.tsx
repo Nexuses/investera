@@ -95,7 +95,7 @@ export default function InvestmentHero() {
               </div>
             </div>
 
-            {/* Phone: quote after Since 2018 — 2 lines */}
+            {/* Phone: quote after Since 2018 - 2 lines */}
             <QuoteBlock compact className="mt-8 max-w-[320px] lg:hidden" />
           </div>
 

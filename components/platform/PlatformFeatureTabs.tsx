@@ -177,7 +177,7 @@ export default function PlatformFeatureTabs() {
         : "flex h-[320px] items-end justify-end overflow-hidden rounded-[24px] pl-6 pt-8 sm:h-[400px] sm:pl-10 sm:pt-10 lg:h-[460px]";
 
   return (
-    <section ref={sectionRef} className="relative bg-white">
+    <section id="platform-features" ref={sectionRef} className="relative bg-[#F4F4F4]">
       <div className="h-[420vh]">
         <div className="sticky top-[88px] flex min-h-[calc(100vh-88px)] items-center py-10 lg:py-14">
           <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-16">

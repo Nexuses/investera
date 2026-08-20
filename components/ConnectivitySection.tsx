@@ -4,22 +4,16 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 const partnerIconImages = [
-  "https://investera.s3.us-east-2.amazonaws.com/image_1004_1786433598852_23e7.png",
-  "https://investera.s3.us-east-2.amazonaws.com/image_1005_1786433598852_7a7c.png",
-  "https://investera.s3.us-east-2.amazonaws.com/image_1006_1786433598852_ofcl.png",
-  "https://investera.s3.us-east-2.amazonaws.com/image_1007_1786433598852_2mpl.png",
-  "https://investera.s3.us-east-2.amazonaws.com/Investera_Deck_2026_1_1786433598852_k0rx.png",
-  "https://investera.s3.us-east-2.amazonaws.com/Investera_Deck_2026_3_1786433598852_z3vk.png",
-  "https://investera.s3.us-east-2.amazonaws.com/Investera_Deck_2026_4_1786433598852_rgat.png",
-  "https://investera.s3.us-east-2.amazonaws.com/Investera_Deck_2026_6_1786433598852_c7zg.png",
-  "https://investera.s3.us-east-2.amazonaws.com/Frame_2147255953_1786433598852_7msk.png",
-  "https://investera.s3.us-east-2.amazonaws.com/image_1003_1786433598852_p3sv.png",
-  "https://investera.s3.us-east-2.amazonaws.com/Investera_Deck_2026_7_1786433637842_6h1j.png",
+  "https://investera.s3.us-east-2.amazonaws.com/image_997_1787222106497_l78r.png",
+  "https://investera.s3.us-east-2.amazonaws.com/image_998_1787222106497_u2uf.png",
+  "https://investera.s3.us-east-2.amazonaws.com/image_999_1787222106497_vod8.png",
+  "https://investera.s3.us-east-2.amazonaws.com/image_1000_1787222106497_dx0m.png",
+  "https://investera.s3.us-east-2.amazonaws.com/image_1001_1787222106497_v71f.png",
 ];
 
 function IconTile({ src, index }: { src: string; index: number }) {
   return (
-    <div className="flex h-[96px] w-[96px] shrink-0 items-center justify-center overflow-hidden rounded-[22px] border border-white/10 bg-white p-2.5 sm:h-[112px] sm:w-[112px] lg:h-[120px] lg:w-[120px] lg:p-3">
+    <div className="flex h-[120px] w-[120px] shrink-0 items-center justify-center overflow-hidden rounded-[22px] border border-white/10 bg-white p-3 sm:h-[140px] sm:w-[140px] sm:p-3.5 lg:h-[160px] lg:w-[160px] lg:rounded-[26px] lg:p-4">
       <img
         src={src}
         alt={`Technology partner ${index + 1}`}
@@ -31,7 +25,12 @@ function IconTile({ src, index }: { src: string; index: number }) {
 }
 
 export default function ConnectivitySection() {
-  const marqueeLogos = [...partnerIconImages, ...partnerIconImages];
+  const marqueeLogos = [
+    ...partnerIconImages,
+    ...partnerIconImages,
+    ...partnerIconImages,
+    ...partnerIconImages,
+  ];
 
   return (
     <section
@@ -101,31 +100,16 @@ export default function ConnectivitySection() {
           <div className="connectivity-marquee overflow-hidden">
             <div className="connectivity-marquee-track flex w-max gap-4 sm:gap-5">
               {marqueeLogos.map((src, i) => (
-                <IconTile key={`${src}-${i}`} src={src} index={i % partnerIconImages.length} />
+                <IconTile
+                  key={`${src}-${i}`}
+                  src={src}
+                  index={i % partnerIconImages.length}
+                />
               ))}
             </div>
           </div>
         </motion.div>
       </div>
-
-      <style jsx>{`
-        .connectivity-marquee-track {
-          animation: connectivity-marquee 28s linear infinite;
-        }
-
-        .connectivity-marquee:hover .connectivity-marquee-track {
-          animation-play-state: paused;
-        }
-
-        @keyframes connectivity-marquee {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-      `}</style>
     </section>
   );
 }
