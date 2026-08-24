@@ -80,7 +80,7 @@ export default function Header({ variant = "dark" }: HeaderProps) {
               className={`flex items-center gap-1.5 ${linkClass}`}
               aria-expanded={resourcesOpen}
             >
-              Resources
+              Insights
               <svg
                 viewBox="0 0 12 12"
                 className={`h-3 w-3 transition-transform ${resourcesOpen ? "rotate-180" : ""}`}

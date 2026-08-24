@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
-import ContactPage2 from "@/components/contact/ContactPage2";
+import ContactPage from "@/components/contact/ContactPage";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 
 export const metadata: Metadata = {
-  title: "Contact | Investera",
+  title: "Contact 2 | Investera",
   description:
     "Get in touch with Investera. Book a demo, reach our team, and learn how we bring investment management together.",
 };
 
-export default function Contact() {
+export default function Contact2() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       <Header variant="light" />
-      <ContactPage2 />
+      <ContactPage />
       <Footer />
     </div>
   );
