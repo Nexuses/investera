@@ -17,7 +17,7 @@ const studies = [
     description:
       "Centralized multi-asset data, reporting, and governance for stronger portfolio visibility and investment oversight.",
     image:
-      "https://investera.s3.us-east-2.amazonaws.com/image__2__1786961662080_w9ot.png",
+      "https://investera.s3.us-east-2.amazonaws.com/Dimah_Capital_1787720937292_8jwu.png",
     imageAlt:
       "Dimah Capital headquarters representing a diversified investment portfolio",
   },
@@ -32,7 +32,7 @@ const studies = [
     description:
       "A centralized PMS for performance tracking, structured reporting, and more efficient investment decision-making.",
     image:
-      "https://investera.s3.us-east-2.amazonaws.com/SYVpecYPAb4ElFC9_1786962061440_2wgk.jpg",
+      "https://investera.s3.us-east-2.amazonaws.com/KIAFH_1787720937292_dlpr.png",
     imageAlt:
       "Al Kifah Holding headquarters building",
   },
