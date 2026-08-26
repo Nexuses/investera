@@ -8,6 +8,7 @@ const navLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about-us" },
   { label: "Platform", href: "/platform" },
+  { label: "Pricing", href: "/pricing" },
 ];
 
 const COLORED_LOGO =

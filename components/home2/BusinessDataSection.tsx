@@ -5,7 +5,7 @@ const cards = [
     badgeLabel: "Private investments",
     word: "Private.",
     categories: "Equity · Real Estate · Funds",
-    title: "Every private holding, tracked to the cent",
+    title: "Every Private Holding, Tracked To The Cent",
     description:
       "Manage private equity, real estate and other private assets with centralised tracking of valuations, cash flows and performance.",
     theme: "private" as const,
@@ -14,7 +14,7 @@ const cards = [
     badgeLabel: "Public investments",
     word: "Public.",
     categories: "Listed · Fixed Income · Funds",
-    title: "Listed positions, valued as the market moves",
+    title: "Listed Positions, Valued As The Market Moves",
     description:
       "Monitor listed securities, market valuations, transactions and portfolio performance through a unified investment view.",
     theme: "public" as const,
@@ -23,7 +23,7 @@ const cards = [
     badgeLabel: "Cash management",
     word: "Cash.",
     categories: "Inflows · Outflows · Liquidity",
-    title: "Liquidity you can see coming",
+    title: "Liquidity You Can See Coming",
     description:
       "Track cash positions, inflows, outflows and investment-related transactions for better liquidity visibility and control.",
     theme: "cash" as const,
@@ -105,10 +105,17 @@ function VisualPanel({
   );
 }
 
-export default function BusinessDataSection() {
+export default function BusinessDataSection({
+  background = "muted",
+}: {
+  background?: "muted" | "white";
+}) {
+  const headingBg = background === "white" ? "bg-white" : "bg-[#F4F4F4]";
+  const cardsBg = background === "white" ? "bg-white" : "bg-[#F4F4F4]";
+
   return (
     <>
-      <section className="bg-[#F4F4F4] pt-[60px] pb-10 lg:pt-[92px] lg:pb-14">
+      <section className={`${headingBg} pt-[60px] pb-10 lg:pt-[92px] lg:pb-14`}>
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
           <FadeIn>
             <h2 className="max-w-[720px] text-[40px] font-normal leading-[1.2] tracking-[-0.02em] text-[#111111]">
@@ -122,7 +129,7 @@ export default function BusinessDataSection() {
         </div>
       </section>
 
-      <section className="bg-[#F6F7F9] pt-0 pb-20 lg:pt-0 lg:pb-28">
+      <section className={`${cardsBg} pt-0 pb-20 lg:pt-0 lg:pb-28`}>
       <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-7">
           {cards.map((card, index) => (

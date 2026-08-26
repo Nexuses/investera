@@ -8,6 +8,7 @@ const platformLinks = [
   { label: "Everything You Need", href: "/platform#platform-insights" },
   { label: "One Platform.", href: "/platform#platform-features" },
   { label: "Why Investera?", href: "/platform#why-investera" },
+  { label: "Pricing", href: "/pricing" },
 ];
 
 const companyLinks = [
