@@ -31,7 +31,7 @@ export default function FeatureCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.8, ease: "easeOut", delay }}
-      className="relative flex h-auto min-h-0 flex-col overflow-hidden rounded-[18px] border border-[#eeeeee] px-8 pt-8 pb-0 lg:h-[520px]"
+      className="relative flex h-auto min-h-0 flex-col overflow-hidden rounded-[28px] border border-[#eeeeee] px-8 pt-8 pb-0 lg:h-[520px]"
     >
       <div
         aria-hidden

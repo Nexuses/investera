@@ -67,6 +67,7 @@ function ArrowButton({
 export default function InvestorStoriesSection() {
   const scrollerRef = useRef<HTMLDivElement>(null);
   const jumpingRef = useRef(false);
+  const pausedRef = useRef(false);
   const [activeIndex, setActiveIndex] = useState(SET_SIZE);
 
   const cards = () =>
@@ -117,6 +118,14 @@ export default function InvestorStoriesSection() {
     }
   }, [closestIndex, scrollToIndex]);
 
+  const scrollByCard = useCallback(
+    (direction: 1 | -1) => {
+      scrollToIndex(closestIndex() + direction, true);
+      window.setTimeout(normalizeLoop, 450);
+    },
+    [closestIndex, normalizeLoop, scrollToIndex],
+  );
+
   useEffect(() => {
     const scroller = scrollerRef.current;
     if (!scroller) return;
@@ -140,14 +149,40 @@ export default function InvestorStoriesSection() {
     };
   }, [normalizeLoop, scrollToIndex]);
 
-  const scrollByCard = (direction: 1 | -1) => {
-    scrollToIndex(closestIndex() + direction, true);
-    window.setTimeout(normalizeLoop, 450);
+  useEffect(() => {
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    if (reduceMotion) return;
+
+    const id = window.setInterval(() => {
+      if (pausedRef.current || document.hidden) return;
+      scrollByCard(1);
+    }, 4500);
+
+    return () => window.clearInterval(id);
+  }, [scrollByCard]);
+
+  const pauseAuto = () => {
+    pausedRef.current = true;
+  };
+  const resumeAuto = () => {
+    pausedRef.current = false;
   };
 
   return (
     <section className="bg-white pt-10 pb-16 sm:pt-12 sm:pb-20 lg:pt-14 lg:pb-24">
-      <div className="relative">
+      <div
+        className="relative"
+        onMouseEnter={pauseAuto}
+        onMouseLeave={resumeAuto}
+        onFocusCapture={pauseAuto}
+        onBlurCapture={(e) => {
+          if (!e.currentTarget.contains(e.relatedTarget as Node | null)) {
+            resumeAuto();
+          }
+        }}
+      >
         <div
           ref={scrollerRef}
           className="flex snap-x snap-mandatory gap-5 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
@@ -155,6 +190,7 @@ export default function InvestorStoriesSection() {
             paddingLeft: "max(24px, calc(50% - 270px))",
             paddingRight: "max(24px, calc(50% - 270px))",
           }}
+          onPointerDown={pauseAuto}
         >
           {LOOP.map((story, index) => (
             <article

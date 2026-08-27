@@ -21,6 +21,8 @@ type PlatformCtaSectionProps = {
   deviceImage?: string;
   deviceImageAlt?: string;
   deviceImageClassName?: string;
+  deviceAreaClassName?: string;
+  deviceFrameClassName?: string;
   showOverlayCards?: boolean;
   titleSingleLine?: boolean;
   backgroundVariant?: "default" | "hero";
@@ -37,6 +39,8 @@ export default function PlatformCtaSection({
   deviceImage = TABLET,
   deviceImageAlt = "Investera investor portal on tablet",
   deviceImageClassName = "relative z-[1] h-auto w-full mix-blend-screen",
+  deviceAreaClassName = "relative z-10 mx-auto mt-8 h-[300px] w-full max-w-[1080px] overflow-hidden sm:mt-10 sm:h-[420px] lg:mt-12 lg:h-[520px]",
+  deviceFrameClassName = "relative mx-auto w-[92%] sm:w-[88%] lg:w-[84%]",
   showOverlayCards = true,
   titleSingleLine = false,
   backgroundVariant = "default",
@@ -107,20 +111,20 @@ export default function PlatformCtaSection({
         </div>
       </div>
 
-      <div className="relative z-10 mx-auto mt-8 h-[300px] w-full max-w-[1080px] sm:mt-10 sm:h-[420px] lg:mt-12 lg:h-[520px]">
+      <div className={deviceAreaClassName}>
         <div
           aria-hidden
           className="pointer-events-none absolute left-1/2 top-[8%] h-[70%] w-[78%] -translate-x-1/2 rounded-full bg-[#4CC9F0]/12 blur-[70px]"
         />
 
         <motion.div
-          className="absolute inset-x-0 top-0 will-change-transform"
+          className="relative will-change-transform"
           initial={{ opacity: 0, y: 80, scale: 0.94 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.9, ease: appleEase }}
         >
-          <div className="relative mx-auto w-[92%] sm:w-[88%] lg:w-[84%]">
+          <div className={deviceFrameClassName}>
             <div className="relative drop-shadow-[0_40px_80px_rgba(0,0,0,0.55)]">
               {deviceComposition ? (
                 <div className="relative mx-auto flex w-full max-w-[900px] items-end justify-center pb-2">

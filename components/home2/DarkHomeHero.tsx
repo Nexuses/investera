@@ -41,14 +41,6 @@ export default function DarkHomeHero() {
       <section className="relative overflow-hidden bg-[#020817] pt-[88px]">
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0"
-          style={{
-            backgroundImage:
-              "repeating-linear-gradient(90deg, rgba(100,140,200,0.07) 0, rgba(100,140,200,0.07) 1px, transparent 1px, transparent 80px)",
-          }}
-        />
-        <div
-          aria-hidden
           className="pointer-events-none absolute left-1/2 top-[42%] h-[640px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(40,90,180,0.22)_0%,transparent_68%)]"
         />
 

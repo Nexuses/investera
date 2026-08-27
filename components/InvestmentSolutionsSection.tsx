@@ -17,9 +17,8 @@ const studies = [
     description:
       "Centralized multi-asset data, reporting, and governance for stronger portfolio visibility and investment oversight.",
     image:
-      "https://investera.s3.us-east-2.amazonaws.com/Dimah_Capital_1787720937292_8jwu.png",
-    imageAlt:
-      "Dimah Capital headquarters representing a diversified investment portfolio",
+      "https://investera.s3.us-east-2.amazonaws.com/dimah_1787819201472_1wn2.png",
+    imageAlt: "Dimah Capital logo",
   },
   {
     name: "Al Kifah Holding",
@@ -32,9 +31,8 @@ const studies = [
     description:
       "A centralized PMS for performance tracking, structured reporting, and more efficient investment decision-making.",
     image:
-      "https://investera.s3.us-east-2.amazonaws.com/KIAFH_1787720937292_dlpr.png",
-    imageAlt:
-      "Al Kifah Holding headquarters building",
+      "https://investera.s3.us-east-2.amazonaws.com/KAIFH_1787819201472_9ebx.png",
+    imageAlt: "Al Kifah Holding logo",
   },
 ];
 
@@ -122,14 +120,14 @@ export default function InvestmentSolutionsSection() {
         <FadeIn
           key={`${study.name}-image`}
           delay={0.12}
-          className="relative min-h-[320px] sm:min-h-[420px] lg:min-h-full"
+          className="relative min-h-[320px] bg-[#F4F4F4] sm:min-h-[420px] lg:min-h-full"
         >
           <Image
             src={study.image}
             alt={study.imageAlt}
             fill
             unoptimized
-            className="object-cover"
+            className="object-contain p-10 sm:p-14 lg:p-16"
           />
         </FadeIn>
       </div>

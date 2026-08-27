@@ -45,9 +45,11 @@ export default function Home() {
         titleSingleLine
         backgroundVariant="hero"
         description="Bring portfolios, deals, reporting, workflows, and investment data together in one connected platform built for greater efficiency, visibility, and control."
-        deviceImage="https://investera.s3.us-east-2.amazonaws.com/CTA_Laptop_1786445622098_h9pb.png"
-        deviceImageAlt="Laptop and mobile showing Investera investment dashboard and AI assistant"
-        deviceImageClassName="relative z-[1] mx-auto h-auto w-[80%] max-w-[760px] object-contain sm:w-[76%] lg:w-[70%]"
+        deviceImage="https://investera.s3.us-east-2.amazonaws.com/Frame_2147255961_1787818355163_ymyb.png"
+        deviceImageAlt="Investera dashboard showing total assets under management and live trend"
+        deviceImageClassName="relative z-[1] mx-auto h-auto w-full max-w-[1400px] object-contain"
+        deviceAreaClassName="relative z-10 mx-auto mt-8 w-full max-w-[1440px] pb-0 sm:mt-10 lg:mt-12"
+        deviceFrameClassName="relative mx-auto w-full px-4 sm:px-6 lg:px-8"
         showOverlayCards={false}
       />
       <Footer />
