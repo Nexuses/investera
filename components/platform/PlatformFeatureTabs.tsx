@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 
 type FeatureTab = {
@@ -139,8 +139,17 @@ function CheckIcon() {
 
 export default function PlatformFeatureTabs() {
   const [active, setActive] = useState(0);
+  const [scrollDriven, setScrollDriven] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const tab = tabs[active];
+
+  useEffect(() => {
+    const media = window.matchMedia("(min-width: 1024px)");
+    const sync = () => setScrollDriven(media.matches);
+    sync();
+    media.addEventListener("change", sync);
+    return () => media.removeEventListener("change", sync);
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -148,6 +157,7 @@ export default function PlatformFeatureTabs() {
   });
 
   useMotionValueEvent(scrollYProgress, "change", (value) => {
+    if (!scrollDriven) return;
     const next = Math.min(
       tabs.length - 1,
       Math.max(0, Math.floor(value * tabs.length)),
@@ -157,6 +167,8 @@ export default function PlatformFeatureTabs() {
 
   const goToTab = (index: number) => {
     setActive(index);
+    if (!scrollDriven) return;
+
     const el = sectionRef.current;
     if (!el) return;
     const start = el.getBoundingClientRect().top + window.scrollY;
@@ -178,8 +190,14 @@ export default function PlatformFeatureTabs() {
 
   return (
     <section id="platform-features" ref={sectionRef} className="relative bg-[#F4F4F4]">
-      <div className="h-[420vh]">
-        <div className="sticky top-[88px] flex min-h-[calc(100vh-88px)] items-center py-10 lg:py-14">
+      <div className={scrollDriven ? "h-[420vh]" : "h-auto"}>
+        <div
+          className={
+            scrollDriven
+              ? "sticky top-[88px] flex min-h-[calc(100vh-88px)] items-center py-10 lg:py-14"
+              : "flex items-center py-14 sm:py-16"
+          }
+        >
           <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-16">
             <h2 className="-mt-[30px] mb-8 text-center text-[32px] font-normal leading-[1.15] tracking-[-0.02em] text-[#111111] sm:mb-10 sm:text-[40px]">
               One Platform.{" "}
@@ -216,10 +234,10 @@ export default function PlatformFeatureTabs() {
             <div className="mt-10 grid items-center gap-10 lg:mt-14 lg:grid-cols-2 lg:gap-16">
               <motion.div
                 key={`copy-${active}`}
-                initial={{ opacity: 0, y: 16 }}
+                initial={scrollDriven ? { opacity: 0, y: 16 } : false}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.45, ease: "easeOut" }}
-                className="max-w-[560px]"
+                transition={{ duration: scrollDriven ? 0.45 : 0, ease: "easeOut" }}
+                className="mx-auto max-w-[560px] text-center lg:mx-0 lg:text-left"
               >
                 <h2 className="text-[32px] font-normal leading-tight tracking-[-0.02em] sm:text-[40px]">
                   <span className="font-normal text-[#1a1a1a]">{tab.titleLines[0]}</span>
@@ -229,7 +247,7 @@ export default function PlatformFeatureTabs() {
                 <p className="mt-5 text-[16px] leading-[1.3] text-[#4B5563] sm:mt-6">
                   {tab.description}
                 </p>
-                <ul className="mt-6 space-y-3">
+                <ul className="mt-6 inline-flex flex-col items-center space-y-3 lg:items-start">
                   {tab.points.map((point) => (
                     <li
                       key={point}
@@ -250,9 +268,12 @@ export default function PlatformFeatureTabs() {
 
               <motion.div
                 key={`panel-${active}`}
-                initial={{ opacity: 0, y: 28, scale: 0.96 }}
+                initial={scrollDriven ? { opacity: 0, y: 28, scale: 0.96 } : false}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                transition={{
+                  duration: scrollDriven ? 0.55 : 0,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
                 className={panelClass}
                 style={{ backgroundColor: tab.panel }}
               >
@@ -266,10 +287,12 @@ export default function PlatformFeatureTabs() {
                   <motion.div
                     className="relative flex h-full max-h-full items-end justify-center"
                     animate={
-                      tab.align === "inset" ? { y: [0, -10, 0] } : undefined
+                      scrollDriven && tab.align === "inset"
+                        ? { y: [0, -10, 0] }
+                        : undefined
                     }
                     transition={
-                      tab.align === "inset"
+                      scrollDriven && tab.align === "inset"
                         ? { duration: 5.2, repeat: Infinity, ease: "easeInOut" }
                         : undefined
                     }
@@ -292,13 +315,17 @@ export default function PlatformFeatureTabs() {
                           tab.overlay.className ??
                           "right-0 top-[22%] w-[58%] sm:top-[20%] sm:w-[54%]"
                         }`}
-                        animate={{ y: [0, -14, 0] }}
-                        transition={{
-                          duration: 4.4,
-                          repeat: Infinity,
-                          ease: "easeInOut",
-                          delay: 0.35,
-                        }}
+                        animate={scrollDriven ? { y: [0, -14, 0] } : undefined}
+                        transition={
+                          scrollDriven
+                            ? {
+                                duration: 4.4,
+                                repeat: Infinity,
+                                ease: "easeInOut",
+                                delay: 0.35,
+                              }
+                            : undefined
+                        }
                       >
                         <Image
                           src={tab.overlay.src}

@@ -258,9 +258,18 @@ export default function PricingPage() {
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-6 xl:gap-8">
             <div className="relative z-10 max-w-[640px]">
               <h1 className="text-[40px] font-normal leading-[1.12] tracking-[-0.03em] text-white sm:text-[52px] lg:text-[60px]">
-                <span className="block">Pricing Built</span>
-                <span className="heading-accent block whitespace-nowrap text-white">
-                  Around Your Portfolio
+                <span className="block sm:hidden">
+                  <span className="block">Pricing</span>
+                  <span className="block">Built Around</span>
+                  <span className="heading-accent block text-white">
+                    Your Portfolio
+                  </span>
+                </span>
+                <span className="hidden sm:block">
+                  <span className="block">Pricing Built</span>
+                  <span className="heading-accent block whitespace-nowrap text-white">
+                    Around Your Portfolio
+                  </span>
                 </span>
               </h1>
               <p className="mt-5 max-w-[540px] text-[16px] leading-[1.3] text-white/80">

@@ -100,7 +100,7 @@ export default function InvestmentHero() {
           </div>
 
           {/* Right: person (+ desktop quote) */}
-          <div className="relative -mt-[30px] min-h-[290px] w-full sm:min-h-[320px] lg:mt-0 lg:h-full lg:min-h-0">
+          <div className="relative mt-10 min-h-[320px] w-full sm:mt-12 sm:min-h-[360px] lg:mt-0 lg:h-full lg:min-h-0">
             <motion.div
               initial={{ opacity: 0, y: 80, scale: 0.95 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}

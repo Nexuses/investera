@@ -18,7 +18,7 @@ export default function ContactPage2() {
     <div className="bg-[#F7F8FA] pt-[88px]">
       <div className="relative mx-auto max-w-[1440px] px-6 pt-[30px] lg:px-16">
         <div
-          className="relative overflow-hidden rounded-t-[24px] bg-[#050B1F] bg-cover bg-center bg-no-repeat px-6 py-14 sm:px-10 sm:py-16 lg:min-h-[400px] lg:px-16 lg:py-[72px]"
+          className="relative overflow-hidden rounded-t-[24px] bg-[#050B1F] bg-cover bg-center bg-no-repeat px-6 pb-20 pt-14 sm:px-10 sm:pb-24 sm:pt-16 lg:min-h-[400px] lg:px-16 lg:py-[72px]"
           style={{
             backgroundImage:
               "url('https://investera.s3.us-east-2.amazonaws.com/Platform_BG_1786612003256_5z5e.png')",
@@ -44,7 +44,7 @@ export default function ContactPage2() {
 
         <form
           onSubmit={handleSubmit}
-          className="relative z-20 mx-auto mt-8 w-full max-w-[480px] rounded-[16px] bg-white px-6 py-7 shadow-[0_18px_50px_rgba(15,23,42,0.16)] sm:px-8 sm:py-8 lg:absolute lg:right-24 lg:top-[118px] lg:mx-0 lg:mt-0 lg:w-[440px] xl:right-28"
+          className="relative z-20 mx-auto -mt-12 w-full max-w-[480px] rounded-[16px] bg-white px-6 py-7 shadow-[0_18px_50px_rgba(15,23,42,0.16)] sm:-mt-14 sm:px-8 sm:py-8 lg:absolute lg:right-24 lg:top-[118px] lg:mx-0 lg:mt-0 lg:w-[440px] xl:right-28"
         >
           <div className="space-y-4">
             <div>

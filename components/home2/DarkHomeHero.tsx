@@ -49,7 +49,7 @@ export default function DarkHomeHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-[42px] font-semibold leading-[1.15] tracking-[-0.03em] text-white sm:text-[56px] lg:text-[68px]"
+            className="text-[42px] font-normal leading-[1.15] tracking-[-0.03em] text-white sm:text-[56px] lg:text-[68px]"
           >
             Bringing Investment
             <br />

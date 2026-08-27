@@ -16,6 +16,8 @@ const LEFT_ARROW =
   "https://investera.s3.us-east-2.amazonaws.com/Vector_69_1786617498790_6eg1.png";
 const BUSINESSMAN =
   "https://investera.s3.us-east-2.amazonaws.com/ChatGPT_Image_Aug_13__2026__09_52_55_AM_1_1786617498790_095e.png";
+const MOBILE_HERO =
+  "https://investera.s3.us-east-2.amazonaws.com/Group_1000005977_1787831556547_7ucy.png";
 
 export default function PlatformHero() {
   return (
@@ -56,12 +58,29 @@ export default function PlatformHero() {
           </div>
         </div>
 
-        <div className="relative mx-auto mt-12 h-[360px] w-full max-w-[1020px] sm:mt-14 sm:h-[480px] lg:mt-16 lg:h-[560px]">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+          className="relative mx-auto mt-10 w-full max-w-[520px] sm:hidden"
+        >
+          <Image
+            src={MOBILE_HERO}
+            alt="Investment professional reviewing portfolios with floating analytics"
+            width={1040}
+            height={1200}
+            priority
+            unoptimized
+            className="h-auto w-full"
+          />
+        </motion.div>
+
+        <div className="relative mx-auto mt-12 hidden h-[360px] w-full max-w-[1020px] sm:mt-14 sm:block sm:h-[480px] lg:mt-16 lg:h-[560px]">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.35, ease: "easeOut" }}
-            className="pointer-events-none absolute left-[34%] top-[1%] z-[8] hidden w-[34%] sm:block"
+            className="pointer-events-none absolute left-[34%] top-[1%] z-[8] w-[34%]"
           >
             <Image
               src={TOP_ARROW}
@@ -77,7 +96,7 @@ export default function PlatformHero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.45, ease: "easeOut" }}
-            className="pointer-events-none absolute left-[7%] top-[38%] z-[8] hidden w-[13%] sm:block"
+            className="pointer-events-none absolute left-[7%] top-[38%] z-[8] w-[13%]"
           >
             <Image
               src={LEFT_ARROW}

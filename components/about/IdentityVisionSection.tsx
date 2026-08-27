@@ -17,7 +17,7 @@ export default function IdentityVisionSection() {
         <span className="heading-accent text-[#0c2d57]">Vision and Values</span>
       </motion.h2>
 
-      <div className="relative mx-auto mt-[-5px] max-w-[1100px] pt-20 sm:mt-[3px] sm:pt-24 lg:pt-28">
+      <div className="relative mx-auto mt-8 max-w-[1100px] pt-24 sm:mt-[3px] sm:pt-24 lg:pt-28">
         {/* Identity card - overlaps white card */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -43,7 +43,7 @@ export default function IdentityVisionSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.65, ease: "easeOut", delay: 0.15 }}
-          className="rounded-[12px] bg-white px-6 pb-10 pt-28 shadow-[0_18px_50px_rgba(12,45,87,0.10)] sm:px-10 sm:pb-12 sm:pt-32 lg:px-14 lg:pb-14 lg:pt-36"
+          className="rounded-[12px] bg-white px-6 pb-10 pt-[220px] shadow-[0_18px_50px_rgba(12,45,87,0.10)] sm:px-10 sm:pb-12 sm:pt-32 lg:px-14 lg:pb-14 lg:pt-36"
         >
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-0">
             {/* Vision */}

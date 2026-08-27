@@ -14,45 +14,46 @@ const growthPoints = "4,42 28,36 52,48 76,28 100,34 124,18 148,24 172,12";
 export default function CorePhilosophySection() {
   return (
     <section id="platform" className="bg-white py-20 lg:py-28">
-      <div className="mx-auto grid max-w-[1440px] items-center gap-12 px-6 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,0.75fr)] lg:gap-10 lg:px-16">
-        {/* Left copy */}
-        <motion.div
-          initial={{ opacity: 0, x: -24 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.35 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="max-w-[660px]"
-        >
-          <h2 className="text-[40px] font-normal leading-[1.15] tracking-[-0.02em] text-[#111111]">
-            Comprehensive
-            <br />
-            Investment{" "}
-            <span className="heading-accent text-[#143F73]">
-              Management Across
-            </span>
-            <br />
-            <span className="heading-accent text-[#143F73]">
-              the Complete Investment Lifecycle
-            </span>
-          </h2>
+      <div className="mx-auto max-w-[1440px] px-5 sm:px-6 lg:px-16">
+        <div className="flex flex-col items-center gap-12 lg:grid lg:grid-cols-[minmax(0,1.25fr)_minmax(0,0.75fr)] lg:items-center lg:gap-10">
+          {/* Left copy */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.35 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="w-full max-w-[660px] lg:max-w-none"
+          >
+            <h2 className="text-[40px] font-normal leading-[1.15] tracking-[-0.02em] text-[#111111]">
+              Comprehensive
+              <br />
+              Investment{" "}
+              <span className="heading-accent text-[#143F73]">
+                Management Across
+              </span>
+              <br />
+              <span className="heading-accent text-[#143F73]">
+                the Complete Investment Lifecycle
+              </span>
+            </h2>
 
-          <p className="mt-6 text-[16px] leading-[1.3] text-[#1f1f1f]">
-            Manage diverse asset classes, portfolios, transactions, valuations,
-            and performance through one centralized platform designed for greater
-            visibility and control.
-          </p>
-        </motion.div>
+            <p className="mt-6 text-[16px] leading-[1.3] text-[#1f1f1f]">
+              Manage diverse asset classes, portfolios, transactions, valuations,
+              and performance through one centralized platform designed for greater
+              visibility and control.
+            </p>
+          </motion.div>
 
-        {/* Right dashboard composition */}
-        <motion.div
-          initial={{ opacity: 0, x: 24 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-          className="relative mx-auto w-full max-w-[560px]"
-        >
-          {/* Soft glow panel */}
-          <div className="relative overflow-hidden rounded-[28px] bg-[#EAF2FF] px-5 py-8 sm:px-8 sm:py-10">
+          {/* Right dashboard composition */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+            className="w-full max-w-[560px] lg:max-w-none lg:justify-self-end"
+          >
+            {/* Soft glow panel */}
+            <div className="relative overflow-hidden rounded-[28px] bg-[#EAF2FF] px-4 py-7 sm:px-8 sm:py-10">
             <div
               aria-hidden
               className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_60%_45%,rgba(120,90,255,0.28),transparent_55%),radial-gradient(ellipse_at_35%_70%,rgba(56,189,248,0.35),transparent_50%),radial-gradient(ellipse_at_75%_75%,rgba(74,222,128,0.22),transparent_45%)]"
@@ -221,7 +222,8 @@ export default function CorePhilosophySection() {
               </motion.div>
             </div>
           </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -13,6 +13,8 @@ const UAE =
   "https://investera.s3.us-east-2.amazonaws.com/screencapture-investera-investorapp-base44-app-home-2026-07-27-14_47_33_8_1786967280008_bkzu.png";
 const MARKET =
   "https://investera.s3.us-east-2.amazonaws.com/screencapture-investera-investorapp-base44-app-home-2026-07-27-14_47_33_9_1786967280008_yz3a.png";
+const MOBILE_HERO =
+  "https://investera.s3.us-east-2.amazonaws.com/Frame_2147255962_1787832463327_nt1m.png";
 
 const PLATFORM_BG =
   "https://investera.s3.us-east-2.amazonaws.com/Platform_BG_1786612003256_5z5e.png";
@@ -92,7 +94,24 @@ export default function CaseStudyHero() {
           </p>
         </motion.div>
 
-        <div className="relative mx-auto h-[400px] w-full max-w-[680px] sm:h-[500px] lg:mx-0 lg:h-[580px] lg:max-w-none">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
+          className="relative mx-auto w-full max-w-[560px] sm:hidden"
+        >
+          <Image
+            src={MOBILE_HERO}
+            alt="Total assets under management with allocation, market intelligence, and regional exposure"
+            width={1120}
+            height={1200}
+            priority
+            unoptimized
+            className="h-auto w-full"
+          />
+        </motion.div>
+
+        <div className="relative mx-auto hidden h-[400px] w-full max-w-[680px] sm:block sm:h-[500px] lg:mx-0 lg:h-[580px] lg:max-w-none">
           <motion.div
             className="absolute z-0"
             style={{

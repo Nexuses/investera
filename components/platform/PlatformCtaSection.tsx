@@ -38,9 +38,9 @@ export default function PlatformCtaSection({
   description = "Monitor your portfolio, evaluate exposure, stay ahead of market developments, and capitalize on new opportunities through one connected investor portal.",
   deviceImage = TABLET,
   deviceImageAlt = "Investera investor portal on tablet",
-  deviceImageClassName = "relative z-[1] h-auto w-full mix-blend-screen",
-  deviceAreaClassName = "relative z-10 mx-auto mt-8 h-[300px] w-full max-w-[1080px] overflow-hidden sm:mt-10 sm:h-[420px] lg:mt-12 lg:h-[520px]",
-  deviceFrameClassName = "relative mx-auto w-[92%] sm:w-[88%] lg:w-[84%]",
+  deviceImageClassName = "relative z-[1] h-full w-full object-cover object-top mix-blend-screen sm:h-auto sm:object-contain sm:object-center",
+  deviceAreaClassName = "relative z-10 mx-auto mt-8 h-[210px] w-full max-w-[1080px] overflow-hidden sm:mt-10 sm:h-[420px] lg:mt-12 lg:h-[520px]",
+  deviceFrameClassName = "relative mx-auto h-full w-[92%] sm:h-auto sm:w-[88%] lg:w-[84%]",
   showOverlayCards = true,
   titleSingleLine = false,
   backgroundVariant = "default",
@@ -118,14 +118,14 @@ export default function PlatformCtaSection({
         />
 
         <motion.div
-          className="relative will-change-transform"
+          className="relative h-full will-change-transform sm:h-auto"
           initial={{ opacity: 0, y: 80, scale: 0.94 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.9, ease: appleEase }}
         >
           <div className={deviceFrameClassName}>
-            <div className="relative drop-shadow-[0_40px_80px_rgba(0,0,0,0.55)]">
+            <div className="relative h-full drop-shadow-[0_40px_80px_rgba(0,0,0,0.55)] sm:h-auto">
               {deviceComposition ? (
                 <div className="relative mx-auto flex w-full max-w-[900px] items-end justify-center pb-2">
                   <Image
