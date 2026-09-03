@@ -5,24 +5,22 @@ import { motion } from "framer-motion";
 
 const team = [
   {
-    name: "ISSAC",
-    role: "Finance & Admin",
-    image: "/images/about/team/avatar-placeholder.png",
+    name: "Diana Sabaa",
+    role: "General Manager",
+    image:
+      "https://investera.s3.us-east-2.amazonaws.com/1787072738254__1__1788419180709_bvho.jpg",
   },
   {
-    name: "ISSAC",
-    role: "Finance & Admin",
-    image: "/images/about/team/avatar-placeholder.png",
+    name: "Himanshu Suryawanshi",
+    role: "Product Manager",
+    image:
+      "https://investera.s3.us-east-2.amazonaws.com/Himanshu_1788419240473_ikmm.jpeg",
   },
   {
-    name: "ISSAC",
-    role: "Finance & Admin",
-    image: "/images/about/team/avatar-placeholder.png",
-  },
-  {
-    name: "ISSAC",
-    role: "Finance & Admin",
-    image: "/images/about/team/avatar-placeholder.png",
+    name: "Akram Tawabty",
+    role: "Sales Executive",
+    image:
+      "https://investera.s3.us-east-2.amazonaws.com/Akram_1788419294659_9mie.jpeg",
   },
 ];
 
@@ -64,8 +62,13 @@ export default function MeetOurTeamSection() {
                   className="object-cover object-center"
                 />
               </div>
-              <h3 className="mt-5 text-[15px] font-bold uppercase tracking-[0.04em] text-[#111111] sm:text-[16px]">
-                {member.name}
+              <h3 className="mt-5 text-[15px] font-bold uppercase leading-[1.25] tracking-[0.04em] text-[#111111] sm:text-[16px]">
+                {member.name.split(" ").map((part, partIndex, parts) => (
+                  <span key={`${part}-${partIndex}`}>
+                    {part}
+                    {partIndex < parts.length - 1 ? <br /> : null}
+                  </span>
+                ))}
               </h3>
               <p className="mt-1.5 text-[14px] font-normal text-[#111111] sm:text-[15px]">
                 {member.role}

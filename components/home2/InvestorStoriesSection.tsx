@@ -37,6 +37,66 @@ const stories = [
 const LOOP = [...stories, ...stories, ...stories];
 const SET_SIZE = stories.length;
 
+function StoryCard({
+  story,
+  active = false,
+  compact = false,
+  className = "",
+}: {
+  story: (typeof stories)[number];
+  active?: boolean;
+  compact?: boolean;
+  className?: string;
+}) {
+  return (
+    <article
+      className={`relative shrink-0 snap-center overflow-hidden rounded-[20px] ${
+        compact
+          ? "h-[360px] w-full max-w-none lg:h-[380px]"
+          : "h-[460px] w-[86vw] max-w-[540px] sm:h-[540px] sm:w-[480px]"
+      } ${className}`}
+    >
+      <Image
+        src={story.image}
+        alt={story.imageAlt}
+        fill
+        unoptimized
+        className="object-cover"
+      />
+      <div
+        aria-hidden
+        className={`absolute inset-0 transition-colors duration-300 ${
+          active
+            ? "bg-gradient-to-t from-black/80 via-black/25 to-black/20"
+            : "bg-gradient-to-t from-black/75 via-black/35 to-black/25"
+        }`}
+      />
+      <h3
+        className={`absolute left-5 top-5 max-w-[85%] font-semibold leading-[1.15] tracking-[-0.02em] text-white ${
+          compact
+            ? "text-[22px] sm:text-[24px]"
+            : "text-[28px] sm:left-6 sm:top-6 sm:text-[34px]"
+        }`}
+      >
+        {story.heading}
+      </h3>
+      <div
+        className={`absolute inset-x-0 bottom-0 ${
+          compact ? "px-5 pb-5" : "px-7 pb-8"
+        }`}
+      >
+        <p
+          className={`leading-[1.4] text-white ${
+            compact ? "text-[14px] sm:text-[15px]" : "text-[16px]"
+          }`}
+        >
+          {story.body}
+        </p>
+      </div>
+    </article>
+  );
+}
+
 function ArrowButton({
   direction,
   onClick,
@@ -172,8 +232,14 @@ export default function InvestorStoriesSection() {
 
   return (
     <section className="bg-white pt-10 pb-16 sm:pt-12 sm:pb-20 lg:pt-14 lg:pb-24">
+      <div className="mx-auto hidden max-w-[1440px] grid-cols-2 gap-5 px-6 lg:grid xl:grid-cols-4 lg:px-16">
+        {stories.map((story) => (
+          <StoryCard key={story.heading} story={story} compact />
+        ))}
+      </div>
+
       <div
-        className="relative"
+        className="relative lg:hidden"
         onMouseEnter={pauseAuto}
         onMouseLeave={resumeAuto}
         onFocusCapture={pauseAuto}
@@ -193,47 +259,24 @@ export default function InvestorStoriesSection() {
           onPointerDown={pauseAuto}
         >
           {LOOP.map((story, index) => (
-            <article
+            <StoryCard
               key={`${story.heading}-${index}`}
-              className="relative h-[460px] w-[86vw] max-w-[540px] shrink-0 snap-center overflow-hidden rounded-[20px] sm:h-[540px] sm:w-[480px] lg:h-[580px] lg:w-[520px]"
-            >
-              <Image
-                src={story.image}
-                alt={story.imageAlt}
-                fill
-                unoptimized
-                className="object-cover"
-              />
-              {index === activeIndex ? (
-                <>
-                  <div
-                    aria-hidden
-                    className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/20"
-                  />
-                  <h3 className="absolute left-5 top-5 max-w-[80%] text-[28px] font-semibold leading-[1.15] tracking-[-0.02em] text-white sm:left-6 sm:top-6 sm:text-[34px]">
-                    {story.heading}
-                  </h3>
-                  <div className="absolute inset-x-0 bottom-0 px-7 pb-8">
-                    <p className="text-[16px] leading-[1.4] text-white">
-                      {story.body}
-                    </p>
-                  </div>
-                </>
-              ) : null}
-            </article>
+              story={story}
+              active={index === activeIndex}
+            />
           ))}
         </div>
 
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white via-white/80 to-transparent sm:w-24 lg:w-36"
+          className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white via-white/80 to-transparent sm:w-24"
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white via-white/80 to-transparent sm:w-24 lg:w-36"
+          className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white via-white/80 to-transparent sm:w-24"
         />
 
-        <div className="pointer-events-none absolute inset-y-0 left-0 right-0 z-20 flex items-center justify-between px-3 lg:px-8">
+        <div className="pointer-events-none absolute inset-y-0 left-0 right-0 z-20 flex items-center justify-between px-3">
           <div className="pointer-events-auto">
             <ArrowButton direction="prev" onClick={() => scrollByCard(-1)} />
           </div>

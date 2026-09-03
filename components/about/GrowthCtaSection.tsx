@@ -27,14 +27,23 @@ const squares = [
 ];
 
 export default function GrowthCtaSection({
-  title: _title = "Bring Your Investment Operations Into One Intelligent Platform",
+  titleLine1 = "Bring Your Investment Operations Into",
+  titleLine2 = "One Intelligent Platform",
   description = "Centralize portfolios, deals, reporting, workflows, and insights with Investera Pro.",
+  backgroundVariant = "default",
+  buttonVariant = "demo",
 }: {
-  title?: string;
+  titleLine1?: string;
+  titleLine2?: string;
   description?: string;
+  backgroundVariant?: "default" | "hero";
+  buttonVariant?: "demo" | "platform";
 }) {
+  const sectionBg =
+    backgroundVariant === "hero" ? "bg-[#050B1F]" : "bg-[#020B2A]";
+
   return (
-    <section className="bg-[#020B2A] px-4 py-8 sm:px-6 sm:py-10 lg:px-[44px] lg:py-12">
+    <section className={`${sectionBg} px-4 py-8 sm:px-6 sm:py-10 lg:px-[44px] lg:py-12`}>
       <div className="mx-auto max-w-[1440px]">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -66,20 +75,37 @@ export default function GrowthCtaSection({
 
           <div className="relative z-10 mx-auto max-w-[820px]">
             <h2 className="text-[40px] font-normal leading-[1.15] tracking-[-0.02em] text-white">
-              Bring Your Investment Operations Into{" "}
-              <span className="heading-accent">One Intelligent Platform</span>
+              {titleLine1}{" "}
+              <span className="heading-accent">{titleLine2}</span>
             </h2>
 
             <p className="mx-auto mt-5 max-w-[640px] text-[15px] leading-[1.6] text-white/95 sm:mt-6 sm:text-[17px] lg:text-[18px]">
               {description}
             </p>
 
-            <Link
-              href="/book-a-demo"
-              className="mt-8 inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-[14px] font-semibold text-[#020B2A] transition-transform hover:scale-[1.03] sm:mt-10 sm:px-9 sm:py-4 sm:text-[15px]"
-            >
-              Book a Demo
-            </Link>
+            {buttonVariant === "platform" ? (
+              <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:mt-10 sm:flex-row sm:items-center sm:justify-center sm:gap-4">
+                <Link
+                  href="/contact"
+                  className="rounded-full border border-white/40 bg-transparent px-7 py-3 text-center text-[14px] font-semibold text-white transition-colors hover:border-white hover:bg-white/5"
+                >
+                  Contact Us
+                </Link>
+                <Link
+                  href="/book-a-demo"
+                  className="rounded-full bg-[#CCA400] px-7 py-3 text-center text-[14px] font-semibold text-white transition-transform hover:scale-[1.03]"
+                >
+                  Start A Free Trial
+                </Link>
+              </div>
+            ) : (
+              <Link
+                href="/book-a-demo"
+                className="mt-8 inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-[14px] font-semibold text-[#020B2A] transition-transform hover:scale-[1.03] sm:mt-10 sm:px-9 sm:py-4 sm:text-[15px]"
+              >
+                Book a Demo
+              </Link>
+            )}
           </div>
         </motion.div>
       </div>

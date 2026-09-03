@@ -15,6 +15,7 @@ import WhoWeServeSection from "@/components/WhoWeServeSection";
 import InvestorStoriesSection from "@/components/home2/InvestorStoriesSection";
 import WorkflowGovernanceSection from "@/components/WorkflowGovernanceSection";
 import PlatformCtaSection from "@/components/platform/PlatformCtaSection";
+import GrowthCtaSection from "@/components/about/GrowthCtaSection";
 
 export const metadata: Metadata = {
   title: "Investera | Bringing Investment Management Together",
@@ -32,6 +33,21 @@ export default function Home() {
       <InvesteraProSection className="bg-white pt-16 pb-0 lg:pt-24 lg:pb-0" />
       <InvestmentFeatureSection />
       <WorkflowGovernanceSection />
+      <PlatformCtaSection
+        titleLine1="Transform How You"
+        titleLine2="Manage Investments"
+        titleSingleLine
+        layoutVariant="split"
+        backgroundVariant="hero"
+        showContactButton={false}
+        primaryCtaLabel="Discover the Platform"
+        primaryCtaHref="/platform"
+        primaryCtaVariant="link"
+        description="From deal discovery and portfolio management to reporting and collaboration, Investera Pro connects your entire investment ecosystem in one centralized platform built for modern family offices, PE firms, and investment teams."
+        deviceImage="https://investera.s3.us-east-2.amazonaws.com/cta_dashboard_1787822246702_1gov.png"
+        deviceImageAlt="Investera dashboard showing total assets under management and live trend"
+        showOverlayCards={false}
+      />
       <InvestmentSolutionsSection />
       <InvestmentHero />
       <WhoWeServeSection />
@@ -39,18 +55,12 @@ export default function Home() {
       <ConnectivitySection />
       <RegionalTrustSection />
       <InsightsSection />
-      <PlatformCtaSection
+      <GrowthCtaSection
         titleLine1="Unlock Better"
         titleLine2="Opportunities."
-        titleSingleLine
         backgroundVariant="hero"
+        buttonVariant="platform"
         description="Bring portfolios, deals, reporting, workflows, and investment data together in one connected platform built for greater efficiency, visibility, and control."
-        deviceImage="https://investera.s3.us-east-2.amazonaws.com/cta_dashboard_1787822246702_1gov.png"
-        deviceImageAlt="Investera dashboard showing total assets under management and live trend"
-        deviceImageClassName="relative z-[1] mx-auto h-auto w-full max-w-[1400px] object-contain"
-        deviceAreaClassName="relative z-10 mx-auto mt-8 w-full max-w-[1440px] pb-0 sm:mt-10 lg:mt-12"
-        deviceFrameClassName="relative mx-auto w-full px-4 sm:px-6 lg:px-8"
-        showOverlayCards={false}
       />
       <Footer />
     </div>

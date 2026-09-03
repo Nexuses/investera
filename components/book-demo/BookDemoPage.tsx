@@ -1,7 +1,44 @@
 "use client";
 
-import Script from "next/script";
+import { useEffect, useRef } from "react";
 import FadeIn from "@/components/FadeIn";
+
+const MEETINGS_EMBED_SRC =
+  "https://meetings-eu1.hubspot.com/meetings/diana-w-sabaa/discover-inbound-?embed=true";
+const MEETINGS_EMBED_SCRIPT =
+  "https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js";
+
+function HubSpotMeetingsEmbed() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) {
+      return;
+    }
+
+    const existingScript = document.querySelector<HTMLScriptElement>(
+      `script[src="${MEETINGS_EMBED_SCRIPT}"]`,
+    );
+    if (existingScript) {
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = MEETINGS_EMBED_SCRIPT;
+    script.async = true;
+    container.insertAdjacentElement("afterend", script);
+  }, []);
+
+  return (
+    <div
+      ref={containerRef}
+      className="meetings-iframe-container"
+      data-src={MEETINGS_EMBED_SRC}
+    />
+  );
+}
 
 export default function BookDemoPage() {
   return (
@@ -71,15 +108,7 @@ export default function BookDemoPage() {
           </FadeIn>
 
           <FadeIn delay={0.12} className="min-w-0">
-            <div
-              className="calendly-inline-widget overflow-hidden rounded-[24px] bg-white shadow-[0_16px_50px_rgba(15,23,42,0.10)]"
-              data-url="https://calendly.com/-investera/30min"
-              style={{ minWidth: 320, height: 700 }}
-            />
-            <Script
-              src="https://assets.calendly.com/assets/external/widget.js"
-              strategy="lazyOnload"
-            />
+            <HubSpotMeetingsEmbed />
           </FadeIn>
         </div>
       </div>

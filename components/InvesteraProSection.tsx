@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function InvesteraProSection({
@@ -51,14 +50,6 @@ export default function InvesteraProSection({
                 dashboards, key metrics, and comprehensive investment reports for
                 faster, informed decisions.
               </p>
-
-              <Link
-                href="#reporting-dashboards"
-                className="mt-6 inline-flex items-center gap-1 text-[16px] font-semibold text-[#0c2d57] transition-opacity hover:opacity-80"
-              >
-                Explore Reporting & Dashboards
-                <span aria-hidden="true">→</span>
-              </Link>
             </div>
 
             {/* Right dashboard image */}
