@@ -1,7 +1,7 @@
 "use client";
 
-import { FormEvent } from "react";
 import ContactOfficeSection from "@/components/contact/ContactOfficeSection";
+import { useContactForm } from "@/hooks/useContactForm";
 
 const fieldClass =
   "h-[42px] w-full border border-[#C9CDD3] px-3 text-[16px] leading-[1.3] text-[#1a1a1a] outline-none focus:border-[#0c2d57]";
@@ -10,9 +10,9 @@ const labelClass =
   "mb-1.5 block text-left text-[16px] font-medium leading-[1.3] text-[#1a1a1a]";
 
 export default function ContactPage2() {
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-  }
+  const { status, error, handleSubmit, isLoading } = useContactForm(
+    "Contact page (/contact)",
+  );
 
   return (
     <div className="bg-[#F7F8FA] pt-[88px]">
@@ -99,11 +99,21 @@ export default function ContactPage2() {
 
             <button
               type="submit"
-              className="h-[48px] w-full rounded-[4px] px-4 text-[16px] font-medium leading-[1.3] text-white transition-opacity hover:opacity-90"
+              disabled={isLoading}
+              className="h-[48px] w-full rounded-[4px] px-4 text-[16px] font-medium leading-[1.3] text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-70"
               style={{ backgroundColor: "#CCA400" }}
             >
-              Submit
+              {isLoading ? "Sending..." : "Submit"}
             </button>
+
+            {status === "success" ? (
+              <p className="text-[14px] leading-[1.4] text-[#059669]">
+                Thanks — your message was sent. Our team will get back to you soon.
+              </p>
+            ) : null}
+            {status === "error" ? (
+              <p className="text-[14px] leading-[1.4] text-[#DC2626]">{error}</p>
+            ) : null}
           </div>
         </form>
 

@@ -5,11 +5,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import FadeIn from "@/components/FadeIn";
-import BusinessDataSection from "@/components/home2/BusinessDataSection";
 import InvestorStoriesSection from "@/components/home2/InvestorStoriesSection";
 import WhoWeServeSection from "@/components/WhoWeServeSection";
-import ConnectivitySection from "@/components/ConnectivitySection";
-import InvestmentSolutionsSection from "@/components/InvestmentSolutionsSection";
 import RegionalTrustSection from "@/components/home2/RegionalTrustSection";
 import PricingTimelineSection from "@/components/pricing/PricingTimelineSection";
 
@@ -599,17 +596,10 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Asset coverage (homepage multi-asset section) */}
-      <BusinessDataSection />
-
       <WhoWeServeSection />
       <InvestorStoriesSection />
 
       <PricingTimelineSection />
-
-      <InvestmentSolutionsSection />
-
-      <ConnectivitySection />
 
       <RegionalTrustSection />
 

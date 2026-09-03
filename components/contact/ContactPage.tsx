@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import FadeIn from "@/components/FadeIn";
 import ContactOfficeSection from "@/components/contact/ContactOfficeSection";
+import { useContactForm } from "@/hooks/useContactForm";
 
 type Slide = {
   titleLines: [string, string];
@@ -243,6 +244,10 @@ function ContactCarousel() {
 }
 
 export default function ContactPage() {
+  const { status, error, handleSubmit, isLoading } = useContactForm(
+    "Contact page (/contact-2)",
+  );
+
   return (
     <>
     <div className="flex min-h-screen flex-col pt-[88px] lg:flex-row">
@@ -308,46 +313,86 @@ export default function ContactPage() {
               </p>
             </div>
 
-            <form className="mt-8 space-y-4">
+            <form className="mt-8 space-y-4" onSubmit={handleSubmit}>
               <div>
-                <label className="mb-1.5 block text-left text-[16px] font-medium leading-[1.3] text-[#1a1a1a]">
+                <label
+                  htmlFor="contact-first-name"
+                  className="mb-1.5 block text-left text-[16px] font-medium leading-[1.3] text-[#1a1a1a]"
+                >
                   First Name <span className="text-[#DC2626]">*</span>
                 </label>
-                <input className="h-[42px] w-full border border-[#C9CDD3] px-3 text-[16px] leading-[1.3] text-[#1a1a1a] outline-none focus:border-[#0c2d57]" />
+                <input
+                  id="contact-first-name"
+                  name="firstName"
+                  required
+                  className="h-[42px] w-full border border-[#C9CDD3] px-3 text-[16px] leading-[1.3] text-[#1a1a1a] outline-none focus:border-[#0c2d57]"
+                />
               </div>
 
               <div>
-                <label className="mb-1.5 block text-left text-[16px] font-medium leading-[1.3] text-[#1a1a1a]">
+                <label
+                  htmlFor="contact-last-name"
+                  className="mb-1.5 block text-left text-[16px] font-medium leading-[1.3] text-[#1a1a1a]"
+                >
                   Last Name <span className="text-[#DC2626]">*</span>
                 </label>
-                <input className="h-[42px] w-full border border-[#C9CDD3] px-3 text-[16px] leading-[1.3] text-[#1a1a1a] outline-none focus:border-[#0c2d57]" />
+                <input
+                  id="contact-last-name"
+                  name="lastName"
+                  required
+                  className="h-[42px] w-full border border-[#C9CDD3] px-3 text-[16px] leading-[1.3] text-[#1a1a1a] outline-none focus:border-[#0c2d57]"
+                />
               </div>
 
               <div>
-                <label className="mb-1.5 block text-left text-[16px] font-medium leading-[1.3] text-[#1a1a1a]">
+                <label
+                  htmlFor="contact-email"
+                  className="mb-1.5 block text-left text-[16px] font-medium leading-[1.3] text-[#1a1a1a]"
+                >
                   Email <span className="text-[#DC2626]">*</span>
                 </label>
-                <input className="h-[42px] w-full border border-[#C9CDD3] px-3 text-[16px] leading-[1.3] text-[#1a1a1a] outline-none focus:border-[#0c2d57]" />
+                <input
+                  id="contact-email"
+                  name="email"
+                  type="email"
+                  required
+                  className="h-[42px] w-full border border-[#C9CDD3] px-3 text-[16px] leading-[1.3] text-[#1a1a1a] outline-none focus:border-[#0c2d57]"
+                />
               </div>
 
               <div>
-                <label className="mb-1.5 block text-left text-[16px] font-medium leading-[1.3] text-[#1a1a1a]">
+                <label
+                  htmlFor="contact-phone"
+                  className="mb-1.5 block text-left text-[16px] font-medium leading-[1.3] text-[#1a1a1a]"
+                >
                   Phone Number
                 </label>
-                <input className="h-[42px] w-full border border-[#C9CDD3] px-3 text-[16px] leading-[1.3] text-[#1a1a1a] outline-none focus:border-[#0c2d57]" />
+                <input
+                  id="contact-phone"
+                  name="phone"
+                  type="tel"
+                  className="h-[42px] w-full border border-[#C9CDD3] px-3 text-[16px] leading-[1.3] text-[#1a1a1a] outline-none focus:border-[#0c2d57]"
+                />
               </div>
 
               <div>
-                <label className="mb-1.5 block text-left text-[16px] font-medium leading-[1.3] text-[#1a1a1a]">
+                <label
+                  htmlFor="contact-message"
+                  className="mb-1.5 block text-left text-[16px] font-medium leading-[1.3] text-[#1a1a1a]"
+                >
                   Message
                 </label>
-                <textarea className="min-h-[90px] w-full resize-y border border-[#C9CDD3] px-3 py-2 text-[16px] leading-[1.3] text-[#1a1a1a] outline-none focus:border-[#0c2d57]" />
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  className="min-h-[90px] w-full resize-y border border-[#C9CDD3] px-3 py-2 text-[16px] leading-[1.3] text-[#1a1a1a] outline-none focus:border-[#0c2d57]"
+                />
               </div>
 
               <div className="flex w-full items-center justify-between border border-[#D1D5DB] px-3 py-2">
                 <div className="flex items-center gap-2">
                   <span className="h-5 w-5 border border-[#4B5563]" />
-                  <span className="text-[16px] leading-[1.3] text-[#1a1a1a]">I'm not a robot</span>
+                  <span className="text-[16px] leading-[1.3] text-[#1a1a1a]">I&apos;m not a robot</span>
                 </div>
                 <div className="text-right text-[10px] text-[#6B7280]">
                   <div className="ml-auto h-7 w-7 rounded bg-[#E5E7EB]" />
@@ -357,11 +402,21 @@ export default function ContactPage() {
 
               <button
                 type="submit"
-                className="h-[48px] w-full rounded-[4px] px-4 text-[16px] font-medium leading-[1.3] text-white"
+                disabled={isLoading}
+                className="h-[48px] w-full rounded-[4px] px-4 text-[16px] font-medium leading-[1.3] text-white disabled:cursor-not-allowed disabled:opacity-70"
                 style={{ backgroundColor: "#CCA400" }}
               >
-                Submit
+                {isLoading ? "Sending..." : "Submit"}
               </button>
+
+              {status === "success" ? (
+                <p className="text-[14px] leading-[1.4] text-[#059669]">
+                  Thanks — your message was sent. Our team will get back to you soon.
+                </p>
+              ) : null}
+              {status === "error" ? (
+                <p className="text-[14px] leading-[1.4] text-[#DC2626]">{error}</p>
+              ) : null}
             </form>
 
           </div>
