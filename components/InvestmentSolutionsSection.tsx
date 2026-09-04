@@ -20,6 +20,7 @@ const studies = [
       "Investment data was spread across multiple portfolios and entities. Complex reporting and governance requirements made oversight difficult.",
     solution:
       "Investera centralised investment data, performance tracking and reporting. Role-based controls and workflows improved portfolio governance and visibility.",
+    href: "https://investera.s3.us-east-2.amazonaws.com/Dimah_Capital_Case_study_1788498077238_7hxq.pdf",
   },
   {
     name: "Al Kifah Holding",
@@ -39,6 +40,7 @@ const studies = [
       "An expanding portfolio increased reporting and monitoring complexity. Manual processes limited visibility and slowed investment decisions.",
     solution:
       "Investera centralised multi-asset portfolio data and reporting on one platform, and streamlined workflows, access controls and portfolio monitoring.",
+    href: "https://investera.s3.us-east-2.amazonaws.com/Al_Kaifah_Case_study_1788498041555_07h6.pdf",
   },
 ];
 
@@ -124,7 +126,9 @@ function CaseStudyFlipCard({
           </div>
 
           <Link
-            href="/case-study"
+            href={study.href}
+            target={study.href.startsWith("http") ? "_blank" : undefined}
+            rel={study.href.startsWith("http") ? "noopener noreferrer" : undefined}
             className="inline-flex w-fit items-center gap-1.5 text-[13px] font-bold uppercase tracking-[0.06em] text-[#0c2d57] transition-opacity hover:opacity-70"
           >
             Read full case study

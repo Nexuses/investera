@@ -12,23 +12,23 @@ const US_CARD =
 
 const trustAvatars = [
   {
-    src: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&h=120&q=80",
+    src: "https://investera.s3.us-east-2.amazonaws.com/629_1788522406122_jdp6.jpg",
     alt: "Investment professional",
   },
   {
-    src: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=120&h=120&q=80",
+    src: "https://investera.s3.us-east-2.amazonaws.com/59335_1788522406122_cepg.jpg",
     alt: "Portfolio manager",
   },
   {
-    src: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=120&h=120&q=80",
+    src: "https://investera.s3.us-east-2.amazonaws.com/56066_1788522406122_jq4w.jpg",
     alt: "Family office advisor",
   },
   {
-    src: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=120&h=120&q=80",
+    src: "https://investera.s3.us-east-2.amazonaws.com/129417_1788522406123_1pf8.jpg",
     alt: "Fund manager",
   },
   {
-    src: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=120&h=120&q=80",
+    src: "https://investera.s3.us-east-2.amazonaws.com/1497_1788522406123_mxlf.jpg",
     alt: "Investment analyst",
   },
 ];

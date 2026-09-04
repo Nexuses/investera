@@ -24,7 +24,9 @@ const mobileNavLinks = [
 ];
 
 const COLORED_LOGO =
-  "https://investera.s3.us-east-2.amazonaws.com/Investera_logo_colored_2_1786434355587_no0s.png";
+  "https://investera.s3.us-east-2.amazonaws.com/Group_1000005956_1788521419921_sf5o.png";
+const WHITE_LOGO =
+  "https://investera.s3.us-east-2.amazonaws.com/Group_1000005957_1788521419921_l4cp.png";
 
 type HeaderProps = {
   variant?: "dark" | "light";
@@ -101,7 +103,7 @@ export default function Header({ variant = "dark" }: HeaderProps) {
         <div className="mx-auto flex max-w-[1440px] items-center justify-between px-6 py-5 lg:px-16 lg:py-6">
           <Link href="/" className="shrink-0">
             <Image
-              src={isLight ? COLORED_LOGO : "/images/logo-white.png"}
+              src={isLight ? COLORED_LOGO : WHITE_LOGO}
               alt="Investera"
               width={160}
               height={40}

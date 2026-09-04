@@ -31,13 +31,11 @@ const CheckIcon = () => (
 const features = [
   {
     title: "Portfolio & Deal Management",
-    description:
-      "Manage investments and opportunities across the complete lifecycle, from screening to exit.",
+    description: "Manage investments from screening to exit.",
     items: [
-      "Private and listed holdings with full drill-down",
-      "Configurable deal pipelines and stages",
-      "Transactions, valuations and capital events",
-      "Integrated CRM for leads, investors and onboarding",
+      "Holdings & deal pipelines",
+      "Valuations & transactions",
+      "CRM & investor onboarding",
     ],
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -53,13 +51,11 @@ const features = [
   },
   {
     title: "Reporting & Dashboards",
-    description:
-      "Turn investment data into clear, actionable performance insight for every audience.",
+    description: "Convert investment data into actionable insights.",
     items: [
-      "Customisable consolidated KPI dashboards",
-      "Public and private investment reporting",
-      "TWR, IRR, Sharpe, DPI, TVPI and more",
-      "Reconciliation and allocation reports",
+      "KPI dashboards",
+      "Performance reporting",
+      "IRR, TWR, DPI & TVPI analytics",
     ],
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -75,13 +71,11 @@ const features = [
   },
   {
     title: "Secure Document Management",
-    description:
-      "Centralise and protect investment information in one controlled environment.",
+    description: "Protect and manage investment documents.",
     items: [
-      "Encrypted, permissioned document repository",
-      "Role-based access and user permissions",
-      "Documents linked to deals, diligence and approvals",
-      "E-signature workflows via DocuSign",
+      "Encrypted repository",
+      "Role-based access",
+      "Deal-linked approvals & e-signatures",
     ],
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -102,13 +96,11 @@ const features = [
   },
   {
     title: "Workflow & Governance",
-    description:
-      "Build structured, controlled and transparent investment processes across the team.",
+    description: "Create structured investment processes.",
     items: [
-      "Configurable approval workflows",
-      "Maker-checker validation and review",
-      "Due diligence tracking and sign-off",
-      "Automated alerts, reminders and notifications",
+      "Approval workflows",
+      "Due diligence tracking",
+      "Automated alerts",
     ],
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -124,12 +116,11 @@ const features = [
   },
   {
     title: "AI Investment Intelligence",
-    description: "Move from manual analysis to faster, data-driven decisions.",
+    description: "Enable faster, data-driven decisions.",
     items: [
-      "AI assistant for natural-language portfolio questions",
-      "Smart OCR capture from statements and reports",
-      "Market intelligence and benchmarking",
-      "Automated summaries, alerts and portfolio updates",
+      "AI portfolio assistant",
+      "OCR data capture",
+      "Market insights & alerts",
     ],
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -145,12 +136,11 @@ const features = [
   },
   {
     title: "Market Data & Connectivity",
-    description: "Connect Investera to the systems your operation already runs on.",
+    description: "Connect with existing financial systems.",
     items: [
-      "Bloomberg market data for valuations and analysis",
-      "SAP for financial operations and data management",
-      "Multi-currency and FX handling",
-      "Bulk import and structured data feeds",
+      "Bloomberg & SAP integration",
+      "Multi-currency support",
+      "Data imports & feeds",
     ],
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -270,11 +260,9 @@ export default function PricingPage() {
                 </span>
               </h1>
               <p className="mt-5 max-w-[540px] text-[16px] leading-[1.3] text-white/80">
-                Every investment operation is different: the asset classes you
-                hold, the entities you report on, the people who need access. So
-                we price Investera Pro the same way: to the shape of your
-                business, not to a public list. One short call is all it takes
-                to get a firm number.
+                Investera Pro pricing is tailored to your investment structure,
+                reporting needs, and users. Get a clear quote with one quick
+                call.
               </p>
               <div className="mt-8 flex flex-wrap gap-3.5">
                 <Link

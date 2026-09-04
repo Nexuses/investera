@@ -86,17 +86,6 @@ export default function ContactPage2() {
               />
             </div>
 
-            <div className="flex w-full items-center justify-between border border-[#D1D5DB] px-3 py-2">
-              <div className="flex items-center gap-2">
-                <span className="h-5 w-5 border border-[#4B5563]" />
-                <span className="text-[16px] leading-[1.3] text-[#1a1a1a]">I&apos;m not a robot</span>
-              </div>
-              <div className="text-right text-[10px] text-[#6B7280]">
-                <div className="ml-auto h-7 w-7 rounded bg-[#E5E7EB]" />
-                reCAPTCHA
-              </div>
-            </div>
-
             <button
               type="submit"
               disabled={isLoading}

@@ -4,6 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 
+const WHITE_LOGO =
+  "https://investera.s3.us-east-2.amazonaws.com/Group_1000005957_1788521419921_l4cp.png";
+
 const platformLinks = [
   { label: "Everything You Need", href: "/platform#platform-insights" },
   { label: "One Platform.", href: "/platform#platform-features" },
@@ -50,7 +53,7 @@ export default function Footer() {
           <div>
             <Link href="/" className="inline-flex items-center">
               <Image
-                src="/images/logo-white.png"
+                src={WHITE_LOGO}
                 alt="Investera"
                 width={156}
                 height={34}
