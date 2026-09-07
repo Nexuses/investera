@@ -36,6 +36,8 @@ const stories = [
 
 const LOOP = [...stories, ...stories, ...stories];
 const SET_SIZE = stories.length;
+const AUTO_MS = 4500;
+const RESUME_MS = 6000;
 
 function StoryCard({
   story,
@@ -128,6 +130,7 @@ export default function InvestorStoriesSection() {
   const scrollerRef = useRef<HTMLDivElement>(null);
   const jumpingRef = useRef(false);
   const pausedRef = useRef(false);
+  const resumeTimerRef = useRef<number | null>(null);
   const [activeIndex, setActiveIndex] = useState(SET_SIZE);
 
   const cards = () =>
@@ -165,23 +168,48 @@ export default function InvestorStoriesSection() {
       left: centerOf(card, scroller),
       behavior: smooth ? "smooth" : "auto",
     });
+    setActiveIndex(index);
   }, []);
 
+  /** Keep scroll position in the middle copy so prev/next can loop forever. */
   const normalizeLoop = useCallback(() => {
     const index = closestIndex();
     if (index < SET_SIZE) {
       jumpingRef.current = true;
       scrollToIndex(index + SET_SIZE, false);
-    } else if (index >= SET_SIZE * 2) {
+      return index + SET_SIZE;
+    }
+    if (index >= SET_SIZE * 2) {
       jumpingRef.current = true;
       scrollToIndex(index - SET_SIZE, false);
+      return index - SET_SIZE;
     }
+    return index;
   }, [closestIndex, scrollToIndex]);
 
   const scrollByCard = useCallback(
     (direction: 1 | -1) => {
-      scrollToIndex(closestIndex() + direction, true);
-      window.setTimeout(normalizeLoop, 450);
+      let index = closestIndex();
+
+      // Snap into the middle set first so we never hit a dead end.
+      if (index < SET_SIZE) {
+        jumpingRef.current = true;
+        index += SET_SIZE;
+        scrollToIndex(index, false);
+      } else if (index >= SET_SIZE * 2) {
+        jumpingRef.current = true;
+        index -= SET_SIZE;
+        scrollToIndex(index, false);
+      }
+
+      const next = index + direction;
+      // Defer smooth scroll one frame after an instant jump so browsers apply both.
+      window.requestAnimationFrame(() => {
+        scrollToIndex(next, true);
+        window.setTimeout(() => {
+          normalizeLoop();
+        }, 500);
+      });
     },
     [closestIndex, normalizeLoop, scrollToIndex],
   );
@@ -195,8 +223,10 @@ export default function InvestorStoriesSection() {
     const onScroll = () => {
       if (jumpingRef.current) {
         jumpingRef.current = false;
+        closestIndex();
         return;
       }
+      closestIndex();
       window.clearTimeout((onScroll as { t?: number }).t);
       (onScroll as { t?: number }).t = window.setTimeout(normalizeLoop, 80);
     };
@@ -207,7 +237,7 @@ export default function InvestorStoriesSection() {
       scroller.removeEventListener("scroll", onScroll);
       scroller.removeEventListener("scrollend", normalizeLoop);
     };
-  }, [normalizeLoop, scrollToIndex]);
+  }, [closestIndex, normalizeLoop, scrollToIndex]);
 
   useEffect(() => {
     const reduceMotion = window.matchMedia(
@@ -218,17 +248,37 @@ export default function InvestorStoriesSection() {
     const id = window.setInterval(() => {
       if (pausedRef.current || document.hidden) return;
       scrollByCard(1);
-    }, 4500);
+    }, AUTO_MS);
 
     return () => window.clearInterval(id);
   }, [scrollByCard]);
 
   const pauseAuto = () => {
     pausedRef.current = true;
+    if (resumeTimerRef.current !== null) {
+      window.clearTimeout(resumeTimerRef.current);
+    }
+    resumeTimerRef.current = window.setTimeout(() => {
+      pausedRef.current = false;
+      resumeTimerRef.current = null;
+    }, RESUME_MS);
   };
+
   const resumeAuto = () => {
+    if (resumeTimerRef.current !== null) {
+      window.clearTimeout(resumeTimerRef.current);
+      resumeTimerRef.current = null;
+    }
     pausedRef.current = false;
   };
+
+  useEffect(() => {
+    return () => {
+      if (resumeTimerRef.current !== null) {
+        window.clearTimeout(resumeTimerRef.current);
+      }
+    };
+  }, []);
 
   return (
     <section className="bg-white pt-10 pb-16 sm:pt-12 sm:pb-20 lg:pt-14 lg:pb-24">

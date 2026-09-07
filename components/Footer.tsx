@@ -4,8 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 
-const WHITE_LOGO =
-  "https://investera.s3.us-east-2.amazonaws.com/Group_1000005957_1788521419921_l4cp.png";
+const WHITE_LOGO = "/images/logo-white.png";
 
 const platformLinks = [
   { label: "Everything You Need", href: "/platform#platform-insights" },

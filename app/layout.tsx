@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "https://investera.s3.us-east-2.amazonaws.com/Frame_2147255963_1788589345036_ivvk.png",
+        url: "https://investera.s3.us-east-2.amazonaws.com/Investera_monogram_colored_1788763881815_bxuq.png",
         type: "image/png",
       },
     ],
     shortcut:
-      "https://investera.s3.us-east-2.amazonaws.com/Frame_2147255963_1788589345036_ivvk.png",
+      "https://investera.s3.us-east-2.amazonaws.com/Investera_monogram_colored_1788763881815_bxuq.png",
     apple:
-      "https://investera.s3.us-east-2.amazonaws.com/Frame_2147255963_1788589345036_ivvk.png",
+      "https://investera.s3.us-east-2.amazonaws.com/Investera_monogram_colored_1788763881815_bxuq.png",
   },
 };
 

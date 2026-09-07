@@ -24,9 +24,8 @@ const mobileNavLinks = [
 ];
 
 const COLORED_LOGO =
-  "https://investera.s3.us-east-2.amazonaws.com/Group_1000005956_1788521419921_sf5o.png";
-const WHITE_LOGO =
-  "https://investera.s3.us-east-2.amazonaws.com/Group_1000005957_1788521419921_l4cp.png";
+  "https://investera.s3.us-east-2.amazonaws.com/Investera_logo_colored_2_1786434355587_no0s.png";
+const WHITE_LOGO = "/images/logo-white.png";
 
 type HeaderProps = {
   variant?: "dark" | "light";

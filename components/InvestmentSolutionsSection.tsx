@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useLayoutEffect, useRef, useState, type ReactNode } from "react";
 import FadeIn from "@/components/FadeIn";
 
 const studies = [
@@ -44,96 +45,191 @@ const studies = [
   },
 ];
 
-function CaseStudyFlipCard({
+type Study = (typeof studies)[number];
+
+function CardShell({ children }: { children: ReactNode }) {
+  return (
+    <div className="flex h-full flex-col overflow-hidden rounded-[20px] border border-[#E5E7EB] bg-white shadow-[0_12px_40px_rgba(15,23,42,0.06)]">
+      {children}
+    </div>
+  );
+}
+
+function CaseStudyFront({
   study,
+  moreInfo,
 }: {
-  study: (typeof studies)[number];
+  study: Study;
+  moreInfo?: ReactNode;
 }) {
   return (
-    <div className="group w-full text-left [perspective:1200px]">
-      <div className="relative min-h-[460px] w-full transition-transform duration-700 ease-in-out [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] group-focus-within:[transform:rotateY(180deg)] sm:min-h-[480px]">
-        <div className="absolute inset-0 flex h-full flex-col overflow-hidden rounded-[20px] border border-[#E5E7EB] bg-white shadow-[0_12px_40px_rgba(15,23,42,0.06)] [backface-visibility:hidden]">
-          <div className="flex items-center justify-center border-b border-[#E5E7EB] bg-[#F4F4F4] px-6 py-8 sm:py-9">
-            <Image
-              src={study.logo}
-              alt={study.name}
-              width={study.logoWidth}
-              height={study.logoHeight}
-              unoptimized
-              className="h-14 w-auto max-w-[85%] object-contain sm:h-16 lg:h-[72px]"
-            />
-          </div>
+    <CardShell>
+      <div className="flex items-center justify-center border-b border-[#E5E7EB] bg-[#F4F4F4] px-6 py-8 sm:py-9">
+        <Image
+          src={study.logo}
+          alt={study.name}
+          width={study.logoWidth}
+          height={study.logoHeight}
+          unoptimized
+          className="h-14 w-auto max-w-[85%] object-contain sm:h-16 lg:h-[72px]"
+        />
+      </div>
 
-          <div className="flex flex-1 flex-col px-6 py-8 sm:px-8 sm:py-10">
-            <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-[#8A94A6]">
-              {study.tag}
-            </p>
-            <h3 className="mt-4 text-[28px] font-normal leading-[1.15] tracking-[-0.02em] text-[#111111] sm:text-[32px]">
-              {study.titleLines.map((line, index) => (
-                <span
-                  key={line}
-                  className={
-                    index === study.titleLines.length - 1
-                      ? "heading-accent block text-[#0c2d57]"
-                      : "block"
-                  }
-                >
-                  {line}
-                </span>
-              ))}
-            </h3>
-            <p className="mt-4 text-[16px] leading-[1.3] text-[#6B7280]">
-              {study.description}
-            </p>
+      <div className="flex flex-1 flex-col px-6 py-8 sm:px-8 sm:py-10">
+        <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-[#8A94A6]">
+          {study.tag}
+        </p>
+        <h3 className="mt-4 text-[28px] font-normal leading-[1.15] tracking-[-0.02em] text-[#111111] sm:text-[32px]">
+          {study.titleLines.map((line, index) => (
+            <span
+              key={line}
+              className={
+                index === study.titleLines.length - 1
+                  ? "heading-accent block text-[#0c2d57]"
+                  : "block"
+              }
+            >
+              {line}
+            </span>
+          ))}
+        </h3>
+        <p className="mt-4 text-[16px] leading-[1.3] text-[#6B7280]">
+          {study.description}
+        </p>
+        {moreInfo}
+      </div>
+    </CardShell>
+  );
+}
+
+function CaseStudyBack({ study }: { study: Study }) {
+  return (
+    <CardShell>
+      <div className="flex flex-1 flex-col justify-between px-6 py-8 sm:px-8 sm:py-10">
+        <div>
+          <p className="text-[11px] font-medium uppercase leading-relaxed tracking-[0.08em] text-[#8A94A6] sm:text-[12px] sm:tracking-[0.14em]">
+            {study.subtitle}
+          </p>
+          <h3 className="mt-3 text-[28px] font-normal leading-[1.12] tracking-[-0.02em] text-[#111111] sm:text-[36px]">
+            {study.name}
+          </h3>
+
+          <div className="mt-6 grid grid-cols-1 gap-6 border-t border-[#E5E7EB] pt-6 sm:mt-8 sm:grid-cols-2 sm:gap-10 sm:pt-8">
+            <div>
+              <p className="text-[14px] font-semibold uppercase tracking-[0.08em] text-[#0c2d57]">
+                Challenge
+              </p>
+              <span
+                aria-hidden
+                className="mt-2 block h-[3px] w-10 bg-[#CCA400]"
+              />
+              <p className="mt-4 text-[15px] leading-[1.45] text-[#4B5563] sm:text-[16px]">
+                {study.challenge}
+              </p>
+            </div>
+            <div>
+              <p className="text-[14px] font-semibold uppercase tracking-[0.08em] text-[#0c2d57]">
+                Solution
+              </p>
+              <span
+                aria-hidden
+                className="mt-2 block h-[3px] w-10 bg-[#CCA400]"
+              />
+              <p className="mt-4 text-[15px] leading-[1.45] text-[#4B5563] sm:text-[16px]">
+                {study.solution}
+              </p>
+            </div>
           </div>
         </div>
 
-        <div className="absolute inset-0 flex h-full flex-col justify-between overflow-hidden rounded-[20px] border border-[#E5E7EB] bg-white px-6 py-8 shadow-[0_12px_40px_rgba(15,23,42,0.06)] [backface-visibility:hidden] [transform:rotateY(180deg)] sm:px-8 sm:py-10">
-          <div>
-            <p className="text-[11px] font-medium uppercase tracking-[0.14em] text-[#8A94A6] sm:text-[12px]">
-              {study.subtitle}
-            </p>
-            <h3 className="mt-3 text-[32px] font-normal leading-[1.12] tracking-[-0.02em] text-[#111111] sm:text-[36px]">
-              {study.name}
-            </h3>
-
-            <div className="mt-8 grid grid-cols-1 gap-8 border-t border-[#E5E7EB] pt-8 sm:grid-cols-2 sm:gap-10">
-              <div>
-                <p className="text-[14px] font-semibold uppercase tracking-[0.08em] text-[#0c2d57]">
-                  Challenge
-                </p>
-                <span
-                  aria-hidden
-                  className="mt-2 block h-[3px] w-10 bg-[#CCA400]"
-                />
-                <p className="mt-4 text-[15px] leading-[1.45] text-[#4B5563] sm:text-[16px]">
-                  {study.challenge}
-                </p>
-              </div>
-              <div>
-                <p className="text-[14px] font-semibold uppercase tracking-[0.08em] text-[#0c2d57]">
-                  Solution
-                </p>
-                <span
-                  aria-hidden
-                  className="mt-2 block h-[3px] w-10 bg-[#CCA400]"
-                />
-                <p className="mt-4 text-[15px] leading-[1.45] text-[#4B5563] sm:text-[16px]">
-                  {study.solution}
-                </p>
-              </div>
-            </div>
-          </div>
-
+        <div className="mt-8 sm:mt-10">
           <Link
             href={study.href}
             target={study.href.startsWith("http") ? "_blank" : undefined}
-            rel={study.href.startsWith("http") ? "noopener noreferrer" : undefined}
+            rel={
+              study.href.startsWith("http") ? "noopener noreferrer" : undefined
+            }
+            onClick={(event) => event.stopPropagation()}
             className="inline-flex w-fit items-center gap-1.5 text-[13px] font-bold uppercase tracking-[0.06em] text-[#0c2d57] transition-opacity hover:opacity-70"
           >
             Read full case study
             <span aria-hidden="true">→</span>
           </Link>
+        </div>
+      </div>
+    </CardShell>
+  );
+}
+
+function CaseStudyFlipCard({ study }: { study: Study }) {
+  const [flipped, setFlipped] = useState(false);
+  const frontRef = useRef<HTMLDivElement>(null);
+  const backRef = useRef<HTMLDivElement>(null);
+  const [minHeight, setMinHeight] = useState<number>();
+
+  useLayoutEffect(() => {
+    const front = frontRef.current;
+    const back = backRef.current;
+    if (!front || !back) return;
+
+    const measure = () => {
+      setMinHeight(Math.max(front.offsetHeight, back.offsetHeight));
+    };
+
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(front);
+    observer.observe(back);
+    return () => observer.disconnect();
+  }, []);
+
+  const flip = () => {
+    if (
+      typeof window !== "undefined" &&
+      window.matchMedia("(min-width: 1024px)").matches
+    ) {
+      return;
+    }
+    setFlipped((value) => !value);
+  };
+
+  return (
+    <div
+      className="group w-full text-left [perspective:1200px] max-lg:cursor-pointer"
+      onClick={flip}
+    >
+      <div
+        className={`relative w-full min-h-[460px] transition-transform duration-700 ease-in-out [transform-style:preserve-3d] sm:min-h-[480px] lg:group-hover:[transform:rotateY(180deg)] lg:group-focus-within:[transform:rotateY(180deg)] ${
+          flipped ? "max-lg:[transform:rotateY(180deg)]" : ""
+        }`}
+        style={minHeight ? { minHeight } : undefined}
+      >
+        <div
+          ref={frontRef}
+          className="absolute inset-x-0 top-0 w-full [backface-visibility:hidden] [-webkit-backface-visibility:hidden]"
+        >
+          <CaseStudyFront
+            study={study}
+            moreInfo={
+              <button
+                type="button"
+                className="mt-auto inline-flex w-fit items-center gap-1.5 pt-6 text-[13px] font-bold uppercase tracking-[0.06em] text-[#0c2d57] transition-opacity hover:opacity-70 lg:hidden"
+                onClick={(event) => {
+                  event.stopPropagation();
+                  setFlipped(true);
+                }}
+              >
+                More Info
+                <span aria-hidden="true">→</span>
+              </button>
+            }
+          />
+        </div>
+        <div
+          ref={backRef}
+          className="absolute inset-x-0 top-0 w-full [backface-visibility:hidden] [transform:rotateY(180deg)] [-webkit-backface-visibility:hidden]"
+        >
+          <CaseStudyBack study={study} />
         </div>
       </div>
     </div>

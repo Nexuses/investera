@@ -16,9 +16,9 @@ export default function BookDemoCtaSection() {
             className="object-cover object-center"
           />
 
-          <div className="relative z-[1] grid h-full items-center gap-6 py-8 pl-8 pr-0 sm:gap-8 sm:py-9 sm:pl-9 lg:grid-cols-[42%_58%] lg:gap-0 lg:py-0 lg:pl-9">
-            <div className="flex max-w-[420px] flex-col justify-center pr-8 sm:pr-9 lg:pr-0">
-              <h1 className="text-[55px] font-normal leading-[1.25] tracking-[-0.01em] text-[#222222]">
+          <div className="relative z-[1] grid h-full min-w-0 items-center gap-6 px-6 py-8 sm:gap-8 sm:px-9 sm:py-9 lg:grid-cols-[42%_58%] lg:gap-0 lg:py-0 lg:pl-9 lg:pr-0">
+            <div className="flex min-w-0 max-w-[420px] flex-col justify-center">
+              <h1 className="text-[32px] font-normal leading-[1.2] tracking-[-0.01em] text-[#222222] sm:text-[42px] lg:text-[55px] lg:leading-[1.25]">
                 Unlock Better
                 <br />
                 <span className="heading-accent text-[#17477F]">
@@ -26,7 +26,7 @@ export default function BookDemoCtaSection() {
                 </span>
               </h1>
 
-              <p className="mt-4 max-w-[360px] text-[16px] leading-[1.3] text-[#555555]">
+              <p className="mt-4 max-w-[360px] text-[15px] leading-[1.35] text-[#555555] sm:text-[16px] sm:leading-[1.3]">
                 Bring portfolios, deals, reporting, workflows, and investment
                 data together in one connected platform built for greater
                 efficiency, visibility, and control.
@@ -40,15 +40,15 @@ export default function BookDemoCtaSection() {
               </Link>
             </div>
 
-            <div className="relative flex min-h-[260px] w-full items-end justify-end pr-[40px] lg:h-full">
-              <div className="relative w-full max-w-none lg:absolute lg:bottom-0 lg:right-[40px] lg:w-[88%]">
+            <div className="relative flex min-h-[220px] w-full min-w-0 items-end justify-center sm:min-h-[260px] sm:justify-end lg:h-full lg:pr-[40px]">
+              <div className="relative w-full max-w-[520px] lg:absolute lg:bottom-0 lg:right-[40px] lg:max-w-none lg:w-[88%]">
                 <Image
                   src="https://investera.s3.us-east-2.amazonaws.com/CTA_Laptop_1786445622098_h9pb.png"
                   alt="Laptop and mobile showing Investera investment dashboard and AI assistant"
                   width={594}
                   height={449}
                   unoptimized
-                  className="h-auto max-h-[360px] w-full scale-[1.08] origin-bottom-right object-contain object-right-bottom lg:max-h-[390px] lg:scale-100"
+                  className="h-auto max-h-[280px] w-full origin-bottom object-contain object-bottom sm:max-h-[360px] sm:origin-bottom-right sm:object-right-bottom lg:max-h-[390px]"
                 />
               </div>
             </div>
