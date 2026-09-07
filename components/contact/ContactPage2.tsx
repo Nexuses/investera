@@ -107,7 +107,7 @@ export default function ContactPage2() {
         </form>
 
         {/* Spacer area in screenshot: put quick contact info here on large screens */}
-        <div className="hidden rounded-b-[24px] bg-white lg:block h-[400px]">
+        <div className="hidden rounded-b-[24px] bg-white lg:block min-h-[460px]">
           <div className="mx-auto max-w-[1200px] px-6 lg:px-10">
             <div className="flex h-full items-start justify-between pt-16 pb-0">
               <div className="w-full max-w-[780px] -ml-[80px]">
@@ -117,10 +117,31 @@ export default function ContactPage2() {
                       Phone
                     </p>
                     <a
-                      href="tel:+97123093880"
-                      className="mt-2 block text-[16px] leading-[1.3] text-[#0c2d57] transition-opacity hover:opacity-80"
+                      href="https://wa.me/971502114603"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-2 inline-flex items-center gap-2.5 text-[16px] leading-[1.3] text-[#0c2d57] transition-opacity hover:opacity-80"
                     >
-                      +971 2 309 3880
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#0c2d57]">
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          className="h-4 w-4 text-white"
+                          aria-hidden
+                        >
+                          <path
+                            d="M12 3.5c-4.7 0-8.5 3.7-8.5 8.3 0 1.5.4 2.9 1.2 4.1L3.5 20.5l4.8-1.3c1.2.6 2.5 1 3.7 1 4.7 0 8.5-3.7 8.5-8.3S16.7 3.5 12 3.5Z"
+                            stroke="currentColor"
+                            strokeWidth="1.7"
+                            strokeLinejoin="round"
+                          />
+                          <path
+                            d="M9.3 9.4c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .5.3l.7 1.7c.1.2 0 .4-.1.5l-.4.5c-.1.1-.1.3 0 .4.4.7 1.1 1.4 1.9 1.8.2.1.3.1.4 0l.6-.4c.2-.1.4-.1.5 0l1.5.8c.2.1.3.3.2.5-.2.6-.8 1-1.4 1-.3 0-.6-.1-.9-.2-1.4-.5-2.7-1.4-3.7-2.6-.5-.6-.9-1.3-1.1-2-.1-.3-.2-.6-.2-.9 0-.5.2-1 .5-1.4Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </span>
+                      +971 50 211 4603
                     </a>
                   </div>
 
@@ -139,29 +160,17 @@ export default function ContactPage2() {
 
                   <div>
                     <p className="text-[22px] font-semibold leading-[1.25] tracking-[-0.01em] text-[#111111]">
-                      Email
-                    </p>
-                    <a
-                      href="mailto:info@investera.com"
-                      className="mt-2 block text-[16px] leading-[1.3] text-[#6B7280] transition-colors hover:text-[#0c2d57]"
-                    >
-                      info@investera.com
-                    </a>
-                  </div>
-
-                  <div>
-                    <p className="text-[22px] font-semibold leading-[1.25] tracking-[-0.01em] text-[#111111]">
                       Socials
                     </p>
-                    <div className="mt-4 flex items-center gap-5">
+                    <div className="mt-4 flex flex-wrap items-center gap-2.5">
                       <a
-                        href="https://linkedin.com"
+                        href="https://www.linkedin.com/company/investera-ad/"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="LinkedIn"
-                        className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0c2d57] transition-opacity hover:opacity-90"
+                        className="flex h-9 w-9 items-center justify-center rounded-full bg-[#0c2d57] transition-opacity hover:opacity-90"
                       >
-                        <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6 text-white" aria-hidden>
+                        <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4 text-white" aria-hidden>
                           <path d="M6.5 10.5V18" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
                           <path d="M6.5 6.5V7.2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
                           <path
@@ -181,13 +190,13 @@ export default function ContactPage2() {
                       </a>
 
                       <a
-                        href="https://instagram.com"
+                        href="https://www.instagram.com/investeraae/"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Instagram"
-                        className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0c2d57] transition-opacity hover:opacity-90"
+                        className="flex h-9 w-9 items-center justify-center rounded-full bg-[#0c2d57] transition-opacity hover:opacity-90"
                       >
-                        <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6 text-white" aria-hidden>
+                        <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4 text-white" aria-hidden>
                           <rect x="6.5" y="6.5" width="11" height="11" rx="3" stroke="currentColor" strokeWidth="1.8" />
                           <path
                             d="M15.8 8.6H15.7"
@@ -205,56 +214,175 @@ export default function ContactPage2() {
                       </a>
 
                       <a
-                        href="https://facebook.com"
+                        href="https://x.com/InvesteraAE"
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label="Facebook"
-                        className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0c2d57] transition-opacity hover:opacity-90"
+                        aria-label="X"
+                        className="flex h-9 w-9 items-center justify-center rounded-full bg-[#0c2d57] transition-opacity hover:opacity-90"
                       >
-                        <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6 text-white" aria-hidden>
-                          <path
-                            d="M14 8.2V6.6c0-.9.6-1.6 1.5-1.6H17"
-                            stroke="currentColor"
-                            strokeWidth="1.8"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                          <path
-                            d="M11.5 20V12H9.8V9.7h1.7V8.2c0-2 1.2-3.2 3-3.2h1.6V7h-1.2c-.7 0-1.1.4-1.1 1.2V9.7H17l-.4 2.3h-2.2V20"
-                            stroke="currentColor"
-                            strokeWidth="1.8"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
+                        <svg
+                          viewBox="0 0 1226.37 1226.37"
+                          className="h-3.5 w-3.5 text-white"
+                          fill="currentColor"
+                          aria-hidden
+                        >
+                          <path d="m727.348 519.284 446.727-519.284h-105.86l-387.893 450.887-309.809-450.887h-357.328l468.492 681.821-468.492 544.549h105.866l409.625-476.152 327.181 476.152h357.328l-485.863-707.086zm-144.998 168.544-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721h-162.604l-323.311-462.446z" />
                         </svg>
                       </a>
 
                       <a
-                        href="https://twitter.com"
+                        href="https://www.youtube.com/@investeraae6244"
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label="X"
-                        className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0c2d57] transition-opacity hover:opacity-90"
+                        aria-label="YouTube"
+                        className="flex h-9 w-9 items-center justify-center rounded-full bg-[#0c2d57] transition-opacity hover:opacity-90"
                       >
-                        <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6 text-white" aria-hidden>
+                        <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4 text-white" aria-hidden>
                           <path
-                            d="M7 17L17 7"
+                            d="M21.6 8.2a2.6 2.6 0 0 0-1.8-1.9C18.1 6 12 6 12 6s-6.1 0-7.8.3A2.6 2.6 0 0 0 2.4 8.2 27 27 0 0 0 2 12a27 27 0 0 0 .4 3.8 2.6 2.6 0 0 0 1.8 1.9C5.9 18 12 18 12 18s6.1 0 7.8-.3a2.6 2.6 0 0 0 1.8-1.9A27 27 0 0 0 22 12a27 27 0 0 0-.4-3.8Z"
                             stroke="currentColor"
-                            strokeWidth="1.8"
-                            strokeLinecap="round"
+                            strokeWidth="1.6"
+                            strokeLinejoin="round"
                           />
                           <path
-                            d="M7 7l10 10"
-                            stroke="currentColor"
-                            strokeWidth="1.8"
-                            strokeLinecap="round"
+                            d="M10.2 14.6 14.8 12l-4.6-2.6v5.2Z"
+                            fill="currentColor"
                           />
                         </svg>
                       </a>
                     </div>
                   </div>
+
+                  <div>
+                    <p className="text-[22px] font-semibold leading-[1.25] tracking-[-0.01em] text-[#111111]">
+                      Email
+                    </p>
+                    <a
+                      href="mailto:info@investera.com"
+                      className="mt-2 block text-[16px] leading-[1.3] text-[#6B7280] transition-colors hover:text-[#0c2d57]"
+                    >
+                      info@investera.com
+                    </a>
+                  </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="mx-auto max-w-[1440px] px-6 pb-10 pt-8 lg:hidden lg:px-16">
+        <div className="grid grid-cols-1 gap-6 rounded-[16px] bg-white p-6 shadow-[0_10px_30px_rgba(15,23,42,0.08)] sm:grid-cols-2">
+          <div>
+            <p className="text-[18px] font-semibold text-[#111111]">Phone</p>
+            <a
+              href="https://wa.me/971502114603"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-1 inline-flex items-center gap-2.5 text-[16px] text-[#0c2d57]"
+            >
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#0c2d57]">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  className="h-4 w-4 text-white"
+                  aria-hidden
+                >
+                  <path
+                    d="M12 3.5c-4.7 0-8.5 3.7-8.5 8.3 0 1.5.4 2.9 1.2 4.1L3.5 20.5l4.8-1.3c1.2.6 2.5 1 3.7 1 4.7 0 8.5-3.7 8.5-8.3S16.7 3.5 12 3.5Z"
+                    stroke="currentColor"
+                    strokeWidth="1.7"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M9.3 9.4c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .5.3l.7 1.7c.1.2 0 .4-.1.5l-.4.5c-.1.1-.1.3 0 .4.4.7 1.1 1.4 1.9 1.8.2.1.3.1.4 0l.6-.4c.2-.1.4-.1.5 0l1.5.8c.2.1.3.3.2.5-.2.6-.8 1-1.4 1-.3 0-.6-.1-.9-.2-1.4-.5-2.7-1.4-3.7-2.6-.5-.6-.9-1.3-1.1-2-.1-.3-.2-.6-.2-.9 0-.5.2-1 .5-1.4Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+              +971 50 211 4603
+            </a>
+          </div>
+          <div>
+            <p className="text-[18px] font-semibold text-[#111111]">Email</p>
+            <a href="mailto:info@investera.com" className="mt-1 block text-[16px] text-[#6B7280]">
+              info@investera.com
+            </a>
+          </div>
+          <div>
+            <p className="text-[18px] font-semibold text-[#111111]">Socials</p>
+            <div className="mt-3 flex flex-wrap items-center gap-2.5">
+              <a
+                href="https://www.linkedin.com/company/investera-ad/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-[#0c2d57]"
+              >
+                <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4 text-white" aria-hidden>
+                  <path d="M6.5 10.5V18" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                  <path d="M6.5 6.5V7.2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                  <path d="M10.5 18V10.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                  <path
+                    d="M10.5 13.2C11.2 11.9 12.4 10.8 14 10.8C16.2 10.8 17.2 12.3 17.2 14.5V18"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://www.instagram.com/investeraae/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-[#0c2d57]"
+              >
+                <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4 text-white" aria-hidden>
+                  <rect x="6.5" y="6.5" width="11" height="11" rx="3" stroke="currentColor" strokeWidth="1.8" />
+                  <path d="M15.8 8.6H15.7" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" />
+                  <path
+                    d="M12 10.2c-1.2 0-2.2 1-2.2 2.2S10.8 14.6 12 14.6s2.2-1 2.2-2.2S13.2 10.2 12 10.2Z"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://x.com/InvesteraAE"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-[#0c2d57]"
+              >
+                <svg
+                  viewBox="0 0 1226.37 1226.37"
+                  className="h-4 w-4 text-white"
+                  fill="currentColor"
+                  aria-hidden
+                >
+                  <path d="m727.348 519.284 446.727-519.284h-105.86l-387.893 450.887-309.809-450.887h-357.328l468.492 681.821-468.492 544.549h105.866l409.625-476.152 327.181 476.152h357.328l-485.863-707.086zm-144.998 168.544-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721h-162.604l-323.311-462.446z" />
+                </svg>
+              </a>
+              <a
+                href="https://www.youtube.com/@investeraae6244"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-[#0c2d57]"
+              >
+                <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4 text-white" aria-hidden>
+                  <path
+                    d="M21.6 8.2a2.6 2.6 0 0 0-1.8-1.9C18.1 6 12 6 12 6s-6.1 0-7.8.3A2.6 2.6 0 0 0 2.4 8.2 27 27 0 0 0 2 12a27 27 0 0 0 .4 3.8 2.6 2.6 0 0 0 1.8 1.9C5.9 18 12 18 12 18s6.1 0 7.8-.3a2.6 2.6 0 0 0 1.8-1.9A27 27 0 0 0 22 12a27 27 0 0 0-.4-3.8Z"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    strokeLinejoin="round"
+                  />
+                  <path d="M10.2 14.6 14.8 12l-4.6-2.6v5.2Z" fill="currentColor" />
+                </svg>
+              </a>
             </div>
           </div>
         </div>
