@@ -4,13 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 import { motion } from "framer-motion";
+import CurrencyExposureCard from "@/components/CurrencyExposureCard";
 
 const TABLET =
   "https://investera.s3.us-east-2.amazonaws.com/Group_1000005978_1786688998844_qgh7.png";
-const UAE_CARD =
-  "https://investera.s3.us-east-2.amazonaws.com/screencapture-investera-investorapp-base44-app-home-2026-07-27-14_47_33_9_1786628568796_1xnc.png";
-const US_CARD =
-  "https://investera.s3.us-east-2.amazonaws.com/screencapture-investera-investorapp-base44-app-home-2026-07-27-14_47_33_10_1786628568796_8kke.png";
 
 const appleEase = [0.16, 1, 0.3, 1] as const;
 
@@ -205,14 +202,7 @@ export default function PlatformCtaSection({
                     delay: 0.3,
                   }}
                 >
-                  <Image
-                    src={UAE_CARD}
-                    alt="UAE allocation 100 percent"
-                    width={420}
-                    height={180}
-                    unoptimized
-                    className="h-auto w-full mix-blend-screen drop-shadow-[0_18px_40px_rgba(0,0,0,0.45)]"
-                  />
+                  <CurrencyExposureCard codes={["USD", "EUR", "GBP", "JPY"]} />
                 </motion.div>
 
                 <motion.div
@@ -225,13 +215,9 @@ export default function PlatformCtaSection({
                     delay: 0.7,
                   }}
                 >
-                  <Image
-                    src={US_CARD}
-                    alt="US allocation 0 percent"
-                    width={400}
-                    height={170}
-                    unoptimized
-                    className="h-auto w-full mix-blend-screen drop-shadow-[0_18px_40px_rgba(0,0,0,0.45)]"
+                  <CurrencyExposureCard
+                    codes={["AED", "SAR", "KWD"]}
+                    startDelayMs={1400}
                   />
                 </motion.div>
               </>
@@ -271,7 +257,7 @@ export default function PlatformCtaSection({
 
       {isSplit ? (
         <div className="relative z-20 mx-auto grid max-w-[1440px] grid-cols-1 items-end gap-10 px-6 pt-14 sm:pt-16 lg:grid-cols-2 lg:gap-12 lg:px-16 lg:pt-20 lg:pb-0">
-          <div className="pb-14 text-left sm:pb-16 lg:pb-20">{copyBlock}</div>
+          <div className="-translate-y-[30px] pb-14 text-left sm:pb-16 lg:pb-20">{copyBlock}</div>
           {deviceBlock}
         </div>
       ) : (

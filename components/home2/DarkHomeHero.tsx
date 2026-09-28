@@ -3,12 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import CurrencyExposureCard from "@/components/CurrencyExposureCard";
 import Header from "@/components/Header";
-
-const UAE_CARD =
-  "https://investera.s3.us-east-2.amazonaws.com/screencapture-investera-investorapp-base44-app-home-2026-07-27-14_47_33_9_1786628568796_1xnc.png";
-const US_CARD =
-  "https://investera.s3.us-east-2.amazonaws.com/screencapture-investera-investorapp-base44-app-home-2026-07-27-14_47_33_10_1786628568796_8kke.png";
 
 const trustAvatars = [
   {
@@ -132,7 +128,7 @@ export default function DarkHomeHero() {
           <div className="relative mx-auto">
             <div className="overflow-hidden rounded-t-[20px] sm:rounded-t-[28px] lg:rounded-t-[32px]">
               <Image
-                src="https://investera.s3.us-east-2.amazonaws.com/dashboard_1787226251574_8y2l.png"
+                src="https://investera.s3.us-east-2.amazonaws.com/Hero_Dashboard__1__1790064047492_e095.png"
                 alt="Investera dashboard showing total assets under management and 30-day live trend"
                 width={1920}
                 height={1200}
@@ -157,14 +153,7 @@ export default function DarkHomeHero() {
                   delay: 0.3,
                 }}
               >
-                <Image
-                  src={UAE_CARD}
-                  alt="UAE allocation 100 percent"
-                  width={420}
-                  height={180}
-                  unoptimized
-                  className="h-auto w-full mix-blend-screen drop-shadow-[0_18px_40px_rgba(0,0,0,0.45)]"
-                />
+                <CurrencyExposureCard codes={["USD", "EUR", "GBP", "JPY"]} />
               </motion.div>
             </motion.div>
 
@@ -183,13 +172,9 @@ export default function DarkHomeHero() {
                   delay: 0.7,
                 }}
               >
-                <Image
-                  src={US_CARD}
-                  alt="US allocation 0 percent"
-                  width={400}
-                  height={170}
-                  unoptimized
-                  className="h-auto w-full mix-blend-screen drop-shadow-[0_18px_40px_rgba(0,0,0,0.45)]"
+                <CurrencyExposureCard
+                  codes={["AED", "SAR", "KWD"]}
+                  startDelayMs={1400}
                 />
               </motion.div>
             </motion.div>

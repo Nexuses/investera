@@ -5,9 +5,6 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import FadeIn from "@/components/FadeIn";
-import InvestorStoriesSection from "@/components/home2/InvestorStoriesSection";
-import WhoWeServeSection from "@/components/WhoWeServeSection";
-import RegionalTrustSection from "@/components/home2/RegionalTrustSection";
 import PricingTimelineSection from "@/components/pricing/PricingTimelineSection";
 
 const HERO_DASHBOARD =
@@ -30,6 +27,26 @@ const CheckIcon = () => (
 
 const features = [
   {
+    title: "Dashboards & Reporting",
+    description: "Convert investment data into actionable insights.",
+    items: [
+      "KPI dashboards",
+      "Performance reporting",
+      "IRR, TWR, DPI & TVPI analytics",
+    ],
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
+        <rect x="3" y="3.4" width="18" height="17.2" rx="2.4" stroke="#2F6FE4" strokeWidth="1.6" />
+        <path
+          d="M7.2 16.4v-3.6M12 16.4V8.6M16.8 16.4v-5.8"
+          stroke="#2F6FE4"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+        />
+      </svg>
+    ),
+  },
+  {
     title: "Portfolio & Deal Management",
     description: "Manage investments from screening to exit.",
     items: [
@@ -42,26 +59,6 @@ const features = [
         <rect x="2.8" y="6.6" width="18.4" height="13.2" rx="2.4" stroke="#2F6FE4" strokeWidth="1.6" />
         <path
           d="M8.4 6.4V5.2a2 2 0 0 1 2-2h3.2a2 2 0 0 1 2 2v1.2M2.8 12h18.4"
-          stroke="#2F6FE4"
-          strokeWidth="1.6"
-          strokeLinecap="round"
-        />
-      </svg>
-    ),
-  },
-  {
-    title: "Reporting & Dashboards",
-    description: "Convert investment data into actionable insights.",
-    items: [
-      "KPI dashboards",
-      "Performance reporting",
-      "IRR, TWR, DPI & TVPI analytics",
-    ],
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
-        <rect x="3" y="3.4" width="18" height="17.2" rx="2.4" stroke="#2F6FE4" strokeWidth="1.6" />
-        <path
-          d="M7.2 16.4v-3.6M12 16.4V8.6M16.8 16.4v-5.8"
           stroke="#2F6FE4"
           strokeWidth="1.6"
           strokeLinecap="round"
@@ -584,12 +581,7 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <WhoWeServeSection />
-      <InvestorStoriesSection />
-
       <PricingTimelineSection />
-
-      <RegionalTrustSection />
 
       {/* FAQ */}
       <section

@@ -65,12 +65,13 @@ function StoryCard({
         unoptimized
         className="object-cover"
       />
+      <div aria-hidden className="absolute inset-0 bg-black/20" />
       <div
         aria-hidden
         className={`absolute inset-0 transition-colors duration-300 ${
           active
-            ? "bg-gradient-to-t from-black/80 via-black/25 to-black/20"
-            : "bg-gradient-to-t from-black/75 via-black/35 to-black/25"
+            ? "bg-gradient-to-t from-black/80 via-black/25 to-black/45"
+            : "bg-gradient-to-t from-black/75 via-black/20 to-black/40"
         }`}
       />
       <h3

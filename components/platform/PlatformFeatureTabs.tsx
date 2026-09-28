@@ -13,7 +13,7 @@ type FeatureTab = {
   image: string;
   imageAlt: string;
   panel: string;
-  align?: "center" | "inset";
+  align?: "center" | "inset" | "corner";
   overlay?: { src: string; alt: string; className?: string };
   shift?: string;
 };
@@ -23,15 +23,15 @@ const tabs: FeatureTab[] = [
     label: "Market Intelligence",
     titleLines: ["Understand Markets", "Through Your Portfolio"],
     description:
-      "Bring market developments, global news, financial reports, and investment signals into one connected view. Investera helps you understand how external market changes impact your holdings and identify areas that may require attention.",
+      "Access relevant market data, global news, financial information, and macro signals alongside your portfolio. Investera helps you understand how external market changes impact your holdings and identify areas that may require attention.",
     points: [
       "Monitor Live Market Data",
       "Stay Updated with Global Insights",
       "Identify Emerging Trends",
     ],
     image:
-      "https://investera.s3.us-east-2.amazonaws.com/Frame_hjk_1786626912728_7jog.png",
-    imageAlt: "Portfolio performance dashboard",
+      "https://investera.s3.us-east-2.amazonaws.com/Frame_ghk_1786626912728_a6v7.png",
+    imageAlt: "Market intelligence trend chart",
     panel: "#E9F2FE",
   },
   {
@@ -113,6 +113,53 @@ const tabs: FeatureTab[] = [
       className: "left-[-22%] top-[8%] w-[95%] sm:left-[-26%] sm:top-[6%] sm:w-[90%]",
     },
   },
+  {
+    label: "Portfolio Performance",
+    titleLines: ["Track Portfolio", "Performance Clearly"],
+    description:
+      "Track total assets, portfolio growth, allocation, and performance through clear, interactive dashboards.",
+    points: [
+      "Monitor Total Assets & AUM",
+      "Track Portfolio Growth Trends",
+      "Review Allocation Dashboards",
+    ],
+    image:
+      "https://investera.s3.us-east-2.amazonaws.com/portfolio_1787227241834_mv7q.png",
+    imageAlt: "Portfolio breakdown table with market values",
+    panel: "#E9F2FE",
+  },
+  {
+    label: "AI-Powered Insights",
+    titleLines: ["Uncover Insights", "with AI Assistance"],
+    description:
+      "Ask investment questions, summarize deal metrics, and explore portfolio trends through an intuitive AI assistant.",
+    points: [
+      "Ask Investment Questions",
+      "Summarize Deal Metrics",
+      "Explore Portfolio Trends",
+    ],
+    image:
+      "https://investera.s3.us-east-2.amazonaws.com/Frame_10000hjk03850_1786626912728_rjlq.png",
+    imageAlt: "AI-powered asset allocation insights",
+    panel: "#E3F2FD",
+    align: "center" as const,
+  },
+  {
+    label: "See the Full Picture",
+    titleLines: ["See the Full", "Investment Picture"],
+    description:
+      "Replace scattered reports with a centralized dashboard to track AUM, portfolio growth, allocations, investment activity, and insights in one view.",
+    points: [
+      "Centralize AUM & Growth",
+      "Track Allocations & Activity",
+      "Unify Insights in One View",
+    ],
+    image:
+      "https://investera.s3.us-east-2.amazonaws.com/Frame_hjk_1786626912728_7jog.png",
+    imageAlt: "Investera dashboard with total assets under management",
+    panel: "#BEDBFF",
+    align: "corner" as const,
+  },
 ];
 
 function CheckIcon() {
@@ -141,14 +188,43 @@ export default function PlatformFeatureTabs() {
   const [active, setActive] = useState(0);
   const [scrollDriven, setScrollDriven] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+  const stickyContentRef = useRef<HTMLDivElement>(null);
   const tab = tabs[active];
 
   useEffect(() => {
-    const media = window.matchMedia("(min-width: 1024px)");
-    const sync = () => setScrollDriven(media.matches);
+    const widthMedia = window.matchMedia("(min-width: 1024px)");
+    const HEADER_OFFSET = 88;
+
+    const sync = () => {
+      if (!widthMedia.matches) {
+        setScrollDriven(false);
+        return;
+      }
+
+      const content = stickyContentRef.current;
+      if (!content) {
+        setScrollDriven(false);
+        return;
+      }
+
+      // Only pin + scroll-spy when the full panel (tabs, copy, image, CTA) fits.
+      const available = window.innerHeight - HEADER_OFFSET;
+      setScrollDriven(content.scrollHeight <= available - 16);
+    };
+
     sync();
-    media.addEventListener("change", sync);
-    return () => media.removeEventListener("change", sync);
+    widthMedia.addEventListener("change", sync);
+    window.addEventListener("resize", sync);
+
+    const content = stickyContentRef.current;
+    const observer = content ? new ResizeObserver(sync) : null;
+    if (content && observer) observer.observe(content);
+
+    return () => {
+      widthMedia.removeEventListener("change", sync);
+      window.removeEventListener("resize", sync);
+      observer?.disconnect();
+    };
   }, []);
 
   const { scrollYProgress } = useScroll({
@@ -186,11 +262,13 @@ export default function PlatformFeatureTabs() {
         }`
       : tab.align === "inset"
         ? "flex h-[320px] items-center justify-center overflow-visible rounded-[24px] p-5 sm:h-[400px] lg:h-[460px]"
-        : "flex h-[320px] items-end justify-end overflow-hidden rounded-[24px] pl-6 pt-8 sm:h-[400px] sm:pl-10 sm:pt-10 lg:h-[460px]";
+        : tab.align === "corner"
+          ? "flex h-[320px] items-end justify-end overflow-hidden rounded-[24px] sm:h-[400px] lg:h-[460px]"
+          : "flex h-[320px] items-end justify-end overflow-hidden rounded-[24px] pl-6 pt-8 sm:h-[400px] sm:pl-10 sm:pt-10 lg:h-[460px]";
 
   return (
-    <section id="platform-features" ref={sectionRef} className="relative bg-[#F4F4F4]">
-      <div className={scrollDriven ? "h-[420vh]" : "h-auto"}>
+    <section id="platform-features" ref={sectionRef} className="relative bg-white">
+      <div className={scrollDriven ? "h-[680vh]" : "h-auto"}>
         <div
           className={
             scrollDriven
@@ -198,7 +276,10 @@ export default function PlatformFeatureTabs() {
               : "flex items-center py-14 sm:py-16"
           }
         >
-          <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-16">
+          <div
+            ref={stickyContentRef}
+            className="mx-auto w-full max-w-[1440px] px-6 lg:px-16"
+          >
             <h2 className="-mt-[30px] mb-8 text-center text-[32px] font-normal leading-[1.15] tracking-[-0.02em] text-[#111111] sm:mb-10 sm:text-[40px]">
               One Platform.{" "}
               <span className="heading-accent text-[#0c2d57]">
@@ -212,7 +293,7 @@ export default function PlatformFeatureTabs() {
                   const isActive = index === active;
                   return (
                     <button
-                      key={item.label}
+                      key={`${item.label}-${index}`}
                       type="button"
                       onClick={() => goToTab(index)}
                       className={`relative whitespace-nowrap pb-4 text-[14px] leading-[1.3] transition-colors sm:text-[15px] ${
@@ -258,12 +339,6 @@ export default function PlatformFeatureTabs() {
                     </li>
                   ))}
                 </ul>
-                <Link
-                  href="/contact"
-                  className="mt-8 inline-flex items-center justify-center rounded-full bg-[#CCA400] px-7 py-3 text-[15px] font-semibold text-white transition-transform hover:scale-[1.03]"
-                >
-                  Discover More
-                </Link>
               </motion.div>
 
               <motion.div
@@ -285,7 +360,13 @@ export default function PlatformFeatureTabs() {
                   }
                 >
                   <motion.div
-                    className="relative flex h-full max-h-full items-end justify-center"
+                    className={`relative flex h-full max-h-full items-end ${
+                      tab.align === "corner"
+                        ? "w-full justify-end"
+                        : tab.align === "center" || tab.align === "inset"
+                          ? "justify-center"
+                          : "justify-end"
+                    }`}
                     animate={
                       scrollDriven && tab.align === "inset"
                         ? { y: [0, -10, 0] }
@@ -303,7 +384,11 @@ export default function PlatformFeatureTabs() {
                       width={900}
                       height={640}
                       unoptimized
-                      className={`h-full w-auto max-h-full max-w-full object-contain object-bottom ${
+                      className={`max-h-full max-w-full object-contain ${
+                        tab.align === "corner"
+                          ? "h-full w-full object-right-bottom drop-shadow-[0_24px_50px_rgba(12,45,87,0.28)]"
+                          : "h-full w-auto object-bottom"
+                      } ${
                         tab.align === "inset"
                           ? "drop-shadow-[0_24px_50px_rgba(12,45,87,0.28)]"
                           : ""
@@ -340,6 +425,15 @@ export default function PlatformFeatureTabs() {
                   </motion.div>
                 </div>
               </motion.div>
+            </div>
+
+            <div className="mt-8 flex -translate-y-[40px] justify-center lg:mt-10 lg:justify-start">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center rounded-full bg-[#CCA400] px-7 py-3 text-[15px] font-semibold text-white transition-transform hover:scale-[1.03]"
+              >
+                Discover More
+              </Link>
             </div>
           </div>
         </div>

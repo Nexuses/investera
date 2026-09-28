@@ -7,18 +7,24 @@ import FadeIn from "@/components/FadeIn";
 const WHITE_LOGO = "/images/logo-white.png";
 
 const platformLinks = [
-  { label: "Everything You Need", href: "/platform#platform-insights" },
+  { label: "Everything You Need", href: "/platform#platform-features" },
   { label: "One Platform.", href: "/platform#platform-features" },
   { label: "Why Investera?", href: "/platform#why-investera" },
-  { label: "Pricing", href: "/pricing" },
+];
+
+const pricingLinks = [
+  { label: "Your Quote", href: "/pricing#quote" },
+  { label: "What's Included", href: "/pricing#included" },
+  { label: "The Process", href: "/pricing#process" },
+  { label: "FAQ", href: "/pricing#faq" },
 ];
 
 const companyLinks = [
-  { label: "About us", href: "/about-us" },
-  { label: "Why Investera", href: "/platform#why-investera" },
-  { label: "Blog & Insights", href: "/blog" },
+  { label: "About Us", href: "/about-us" },
+  { label: "Blog", href: "/blog" },
+  { label: "Case Study", href: "/case-study" },
   { label: "Contact", href: "/contact" },
-  { label: "Book a demo", href: "/book-a-demo" },
+  { label: "Book a Demo", href: "/book-a-demo" },
 ];
 
 const socialLinks = [
@@ -48,7 +54,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#050B1F]">
       <div className="mx-auto max-w-[1440px] px-6 py-12 lg:px-16 lg:py-14">
-        <FadeIn className="grid grid-cols-1 gap-10 lg:grid-cols-[1.4fr_1fr_1fr] lg:gap-12">
+        <FadeIn className="grid grid-cols-1 gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr] lg:gap-12">
           <div>
             <Link href="/" className="inline-flex items-center">
               <Image
@@ -142,6 +148,24 @@ export default function Footer() {
             </h6>
             <ul className="mt-4 space-y-3">
               {platformLinks.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-[16px] leading-[1.3] font-normal text-white/65 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h6 className="text-[18px] font-semibold tracking-normal text-white">
+              Pricing
+            </h6>
+            <ul className="mt-4 space-y-3">
+              {pricingLinks.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}

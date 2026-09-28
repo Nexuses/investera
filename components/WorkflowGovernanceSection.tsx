@@ -8,7 +8,7 @@ type WorkflowGovernanceSectionProps = {
 };
 
 export default function WorkflowGovernanceSection({
-  image = "/images/workflow-governance/dashboard.png",
+  image = "https://investera.s3.us-east-2.amazonaws.com/Workflow___Governance_Controls__1__1790064232144_ffb3.png",
 }: WorkflowGovernanceSectionProps) {
   return (
     <section className="bg-white pt-5 pb-20 lg:pb-28">
@@ -43,7 +43,7 @@ export default function WorkflowGovernanceSection({
                   alt="Consolidated dashboard with asset allocation charts and investment metrics"
                   delay={0.15}
                   className="relative -mb-1 mx-auto w-full translate-y-4 sm:translate-y-5 lg:absolute lg:bottom-0 lg:right-0 lg:mb-0 lg:w-[84%] lg:translate-y-[8%]"
-                  imageClassName="h-auto w-full rounded-t-xl rounded-b-none lg:rounded-xl"
+                  imageClassName="h-auto w-full -translate-y-[20px] rounded-t-xl rounded-b-none lg:rounded-xl"
                 />
               </div>
             </div>

@@ -3,7 +3,6 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import PlatformHero from "@/components/platform/PlatformHero";
 import PlatformFeatureTabs from "@/components/platform/PlatformFeatureTabs";
-import PlatformInsightCards from "@/components/platform/PlatformInsightCards";
 import WhyInvesteraSection from "@/components/platform/WhyInvesteraSection";
 import PlatformCtaSection from "@/components/platform/PlatformCtaSection";
 
@@ -18,9 +17,8 @@ export default function PlatformPage() {
     <div className="min-h-screen bg-white">
       <Header variant="dark" />
       <PlatformHero />
-      <PlatformInsightCards />
-      <PlatformFeatureTabs />
       <WhyInvesteraSection />
+      <PlatformFeatureTabs />
       <PlatformCtaSection />
       <Footer />
     </div>

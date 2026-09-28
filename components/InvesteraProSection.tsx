@@ -40,9 +40,9 @@ export default function InvesteraProSection({
             {/* Left content */}
             <div className="flex flex-col justify-center px-8 py-8 sm:px-8 sm:py-8 lg:py-0">
               <h3 className="text-[34px] font-normal leading-[1.15] text-[#1e293b]">
-                Reporting &
+                Dashboards &
                 <br />
-                <span className="heading-accent text-[#0c2d57]">Dashboards</span>
+                <span className="heading-accent text-[#0c2d57]">Reporting</span>
               </h3>
 
               <p className="mt-4 text-[16px] leading-[1.3] text-[#475569] lg:mt-5">
@@ -71,7 +71,7 @@ export default function InvesteraProSection({
                   }}
                 >
                   <Image
-                    src="/images/investera-pro/pipeline-dashboard.png"
+                    src="https://investera.s3.us-east-2.amazonaws.com/Dashboards___Reporting__1__1790064098158_3f8a.png"
                     alt="Investera Pro pipeline dashboard showing deal tracking and portfolio management"
                     width={1400}
                     height={965}

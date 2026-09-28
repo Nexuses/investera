@@ -17,7 +17,7 @@ export default function InvestmentFeatureSection() {
               </>
             }
             description="Centralize deal management, portfolio tracking, and valuations. Gain unified visibility across investments and investors."
-            image="/images/features/reporting-dashboard.png"
+            image="https://investera.s3.us-east-2.amazonaws.com/Portfolio__1__1790064144621_fxw8.png"
             imageAlt="Portfolio and deal management interface with investment dashboards"
             imageClassName="h-auto w-full translate-y-[20px] object-cover object-top"
           />
@@ -34,8 +34,9 @@ export default function InvestmentFeatureSection() {
               </>
             }
             description="Centralize investment documents in a secure repository with controlled access, structured storage, and easy retrieval across portfolios and transactions."
-            image="/images/features/document-management.png"
+            image="https://investera.s3.us-east-2.amazonaws.com/Secure_Document_Management__1__1790064189314_sj5f.png"
             imageAlt="Document management analytics with charts and portfolio metrics"
+            imageClassName="h-auto w-full translate-y-[20px] object-cover object-top"
           />
         </div>
       </div>

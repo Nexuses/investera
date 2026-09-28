@@ -33,7 +33,7 @@ export default function InsightsSection({
           <FadeIn className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between lg:gap-10">
             <div className="max-w-[720px]">
               <h2 className="text-[40px] font-normal leading-[1.15] tracking-[-0.02em] text-[#111111]">
-                <span className="heading-accent text-[#0c2d57]">Insights</span>
+                <span className="heading-accent text-[#0c2d57]">Blog</span>
               </h2>
               <p className="mt-4 max-w-[560px] text-[16px] leading-[1.3] text-[#6B7280]">
                 Explore perspectives on investment management, financial
@@ -45,7 +45,7 @@ export default function InsightsSection({
               href={allInsightsHref}
               className="inline-flex w-fit shrink-0 items-center justify-center rounded-full border border-[#D1D5DB] bg-white px-5 py-2.5 text-[14px] font-semibold text-[#111111] transition-colors hover:border-[#9CA3AF] hover:bg-[#F9FAFB]"
             >
-              All insights
+              Explore More
             </Link>
           </FadeIn>
         )}

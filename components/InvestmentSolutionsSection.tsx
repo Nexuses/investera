@@ -21,6 +21,7 @@ const studies = [
       "Investment data was spread across multiple portfolios and entities. Complex reporting and governance requirements made oversight difficult.",
     solution:
       "Investera centralised investment data, performance tracking and reporting. Role-based controls and workflows improved portfolio governance and visibility.",
+    slug: "dimah-capital",
     href: "https://investera.s3.us-east-2.amazonaws.com/Dimah_Capital_Case_study_1788498077238_7hxq.pdf",
   },
   {
@@ -41,6 +42,7 @@ const studies = [
       "An expanding portfolio increased reporting and monitoring complexity. Manual processes limited visibility and slowed investment decisions.",
     solution:
       "Investera centralised multi-asset portfolio data and reporting on one platform, and streamlined workflows, access controls and portfolio monitoring.",
+    slug: "al-kifah-holding",
     href: "https://investera.s3.us-east-2.amazonaws.com/Al_Kaifah_Case_study_1788498041555_07h6.pdf",
   },
 ];
@@ -102,7 +104,13 @@ function CaseStudyFront({
   );
 }
 
-function CaseStudyBack({ study }: { study: Study }) {
+function CaseStudyBack({
+  study,
+  ctaHref,
+}: {
+  study: Study;
+  ctaHref: string;
+}) {
   return (
     <CardShell>
       <div className="flex flex-1 flex-col justify-between px-6 py-8 sm:px-8 sm:py-10">
@@ -144,10 +152,10 @@ function CaseStudyBack({ study }: { study: Study }) {
 
         <div className="mt-8 sm:mt-10">
           <Link
-            href={study.href}
-            target={study.href.startsWith("http") ? "_blank" : undefined}
+            href={ctaHref}
+            target={ctaHref.startsWith("http") ? "_blank" : undefined}
             rel={
-              study.href.startsWith("http") ? "noopener noreferrer" : undefined
+              ctaHref.startsWith("http") ? "noopener noreferrer" : undefined
             }
             onClick={(event) => event.stopPropagation()}
             className="inline-flex w-fit items-center gap-1.5 text-[13px] font-bold uppercase tracking-[0.06em] text-[#0c2d57] transition-opacity hover:opacity-70"
@@ -161,7 +169,13 @@ function CaseStudyBack({ study }: { study: Study }) {
   );
 }
 
-function CaseStudyFlipCard({ study }: { study: Study }) {
+function CaseStudyFlipCard({
+  study,
+  ctaHref,
+}: {
+  study: Study;
+  ctaHref: string;
+}) {
   const [flipped, setFlipped] = useState(false);
   const frontRef = useRef<HTMLDivElement>(null);
   const backRef = useRef<HTMLDivElement>(null);
@@ -195,7 +209,8 @@ function CaseStudyFlipCard({ study }: { study: Study }) {
 
   return (
     <div
-      className="group w-full text-left [perspective:1200px] max-lg:cursor-pointer"
+      id={study.slug}
+      className="group w-full scroll-mt-28 text-left [perspective:1200px] max-lg:cursor-pointer"
       onClick={flip}
     >
       <div
@@ -229,14 +244,18 @@ function CaseStudyFlipCard({ study }: { study: Study }) {
           ref={backRef}
           className="absolute inset-x-0 top-0 w-full [backface-visibility:hidden] [transform:rotateY(180deg)] [-webkit-backface-visibility:hidden]"
         >
-          <CaseStudyBack study={study} />
+          <CaseStudyBack study={study} ctaHref={ctaHref} />
         </div>
       </div>
     </div>
   );
 }
 
-export default function InvestmentSolutionsSection() {
+export default function InvestmentSolutionsSection({
+  caseStudyCta = "pdf",
+}: {
+  caseStudyCta?: "pdf" | "details";
+}) {
   return (
     <section id="case-studies" className="bg-white">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
@@ -259,7 +278,14 @@ export default function InvestmentSolutionsSection() {
         <div className="grid grid-cols-1 gap-6 pb-16 lg:grid-cols-2 lg:gap-8 lg:pb-24">
           {studies.map((study, index) => (
             <FadeIn key={study.name} delay={index * 0.08}>
-              <CaseStudyFlipCard study={study} />
+              <CaseStudyFlipCard
+                study={study}
+                ctaHref={
+                  caseStudyCta === "details"
+                    ? `/case-study#${study.slug}`
+                    : study.href
+                }
+              />
             </FadeIn>
           ))}
         </div>

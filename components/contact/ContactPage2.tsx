@@ -198,7 +198,7 @@ export default function ContactPage2() {
 
               <div className="flex flex-col">
                 <p className="text-[22px] font-semibold leading-[1.25] tracking-[-0.01em] text-[#111111]">
-                  WhatsApp No.
+                  WhatsApp
                 </p>
                 <div className="mt-2 flex min-h-9 items-center">
                   <a
@@ -237,7 +237,7 @@ export default function ContactPage2() {
             </a>
           </div>
           <div>
-            <p className="text-[18px] font-semibold text-[#111111]">WhatsApp No.</p>
+            <p className="text-[18px] font-semibold text-[#111111]">WhatsApp</p>
             <a
               href="https://wa.me/971502114603"
               target="_blank"

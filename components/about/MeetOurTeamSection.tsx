@@ -85,7 +85,7 @@ function TeamMemberCard({
           className="object-cover object-center"
         />
       </div>
-      <h3 className="mt-5 text-[15px] font-bold uppercase leading-[1.25] tracking-[0.04em] text-[#111111] sm:text-[16px]">
+      <h3 className="mt-5 text-[15px] font-bold leading-[1.25] tracking-[-0.01em] text-[#111111] sm:text-[16px]">
         {member.name.split(" ").map((part, partIndex, parts) => (
           <span key={`${part}-${partIndex}`}>
             {part}

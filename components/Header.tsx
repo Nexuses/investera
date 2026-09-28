@@ -17,7 +17,7 @@ const mobileNavLinks = [
   { label: "About Us", href: "/about-us" },
   { label: "Platform", href: "/platform" },
   { label: "Pricing", href: "/pricing" },
-  { label: "Blog & Insights", href: "/blog" },
+  { label: "Blog", href: "/blog" },
   { label: "Case Study", href: "/case-study" },
   { label: "Contact", href: "/contact" },
   { label: "Book a Demo", href: "/book-a-demo" },
@@ -149,7 +149,7 @@ export default function Header({ variant = "dark" }: HeaderProps) {
                     className={dropdownLinkClass}
                     onClick={() => setResourcesOpen(false)}
                   >
-                    Blog & Insights
+                    Blog
                   </Link>
                   <Link
                     href="/case-study"

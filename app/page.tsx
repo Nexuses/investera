@@ -44,11 +44,11 @@ export default function Home() {
         primaryCtaHref="/platform"
         primaryCtaVariant="link"
         description="From deal discovery and portfolio management to reporting and collaboration, Investera Pro connects your entire investment ecosystem in one centralized platform built for modern family offices, PE firms, and investment teams."
-        deviceImage="https://investera.s3.us-east-2.amazonaws.com/cta_dashboard_1787822246702_1gov.png"
-        deviceImageAlt="Investera dashboard showing total assets under management and live trend"
+        deviceImage="/images/cta/laptop-phone.png"
+        deviceImageAlt="Investera dashboard on a laptop and smartphone showing portfolio performance"
         showOverlayCards={false}
       />
-      <InvestmentSolutionsSection />
+      <InvestmentSolutionsSection caseStudyCta="details" />
       <InvestmentHero />
       <WhoWeServeSection />
       <InvestorStoriesSection />
