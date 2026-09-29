@@ -16,6 +16,7 @@ import InvestorStoriesSection from "@/components/home2/InvestorStoriesSection";
 import WorkflowGovernanceSection from "@/components/WorkflowGovernanceSection";
 import PlatformCtaSection from "@/components/platform/PlatformCtaSection";
 import GrowthCtaSection from "@/components/about/GrowthCtaSection";
+import BookDemoFormPreload from "@/components/book-demo/BookDemoFormPreload";
 
 export const metadata: Metadata = {
   title: "Investera | Bringing Investment Management Together",
@@ -26,13 +27,20 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
+      <BookDemoFormPreload />
       <DarkHomeHero />
       <LogoSlider />
       <CorePhilosophySection />
       <BusinessDataSection />
-      <InvesteraProSection className="bg-white pt-16 pb-0 lg:pt-24 lg:pb-0" />
+      <InvesteraProSection
+        className="bg-white pt-16 pb-0 lg:pt-24 lg:pb-0"
+        dashboardImage="https://investera.s3.us-east-2.amazonaws.com/2.Investor_Dashboard_1790658611691_8q3h.png"
+      />
       <InvestmentFeatureSection />
-      <WorkflowGovernanceSection />
+      <WorkflowGovernanceSection
+        matchDashboard
+        image="https://investera.s3.us-east-2.amazonaws.com/Workflow_Requests_1790659277798_em0g.png"
+      />
       <PlatformCtaSection
         titleLine1="Transform How You"
         titleLine2="Manage Investments"

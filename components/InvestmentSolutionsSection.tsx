@@ -22,7 +22,7 @@ const studies = [
     solution:
       "Investera centralised investment data, performance tracking and reporting. Role-based controls and workflows improved portfolio governance and visibility.",
     slug: "dimah-capital",
-    href: "https://investera.s3.us-east-2.amazonaws.com/Dimah_Capital_Case_study_1788498077238_7hxq.pdf",
+    href: "/case-study/dimah-capital",
   },
   {
     name: "Al Kifah Holding",
@@ -43,7 +43,7 @@ const studies = [
     solution:
       "Investera centralised multi-asset portfolio data and reporting on one platform, and streamlined workflows, access controls and portfolio monitoring.",
     slug: "al-kifah-holding",
-    href: "https://investera.s3.us-east-2.amazonaws.com/Al_Kaifah_Case_study_1788498041555_07h6.pdf",
+    href: "/case-study/al-kifah-holding",
   },
 ];
 
@@ -281,9 +281,11 @@ export default function InvestmentSolutionsSection({
               <CaseStudyFlipCard
                 study={study}
                 ctaHref={
-                  caseStudyCta === "details"
-                    ? `/case-study#${study.slug}`
-                    : study.href
+                  study.href.startsWith("/")
+                    ? study.href
+                    : caseStudyCta === "details"
+                      ? `/case-study#${study.slug}`
+                      : study.href
                 }
               />
             </FadeIn>

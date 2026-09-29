@@ -2,41 +2,24 @@
 
 import { useEffect, useRef } from "react";
 import FadeIn from "@/components/FadeIn";
-
-const MEETINGS_EMBED_SRC =
-  "https://meetings-eu1.hubspot.com/meetings/diana-w-sabaa/discover-inbound-?embed=true";
-const MEETINGS_EMBED_SCRIPT =
-  "https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js";
+import { mountMeetingsEmbed } from "@/components/book-demo/meetings-embed";
 
 function HubSpotMeetingsEmbed() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const slotRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const container = containerRef.current;
-    if (!container) {
+    const slot = slotRef.current;
+    if (!slot) {
       return;
     }
 
-    const existingScript = document.querySelector<HTMLScriptElement>(
-      `script[src="${MEETINGS_EMBED_SCRIPT}"]`,
-    );
-    if (existingScript) {
-      return;
-    }
-
-    const script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = MEETINGS_EMBED_SCRIPT;
-    script.async = true;
-    container.insertAdjacentElement("afterend", script);
+    return mountMeetingsEmbed(slot);
   }, []);
 
   return (
-    <div
-      ref={containerRef}
-      className="meetings-iframe-container"
-      data-src={MEETINGS_EMBED_SRC}
-    />
+    <div className="overflow-hidden rounded-[22px] border border-[#56708a] bg-[#415b76] shadow-[0_16px_40px_rgba(12,45,87,0.08)]">
+      <div ref={slotRef} className="h-[600px] bg-[#415b76]" />
+    </div>
   );
 }
 
@@ -44,7 +27,7 @@ export default function BookDemoPage() {
   return (
     <section className="px-4 py-10 sm:px-6 sm:py-14 lg:px-16 lg:py-16">
       <div className="mx-auto max-w-[1200px] rounded-[28px] bg-white px-6 py-10 shadow-[0_20px_60px_rgba(15,23,42,0.06)] sm:px-10 sm:py-12 lg:px-14 lg:py-16">
-        <div className="grid items-start gap-12 lg:grid-cols-[1fr_1.05fr] lg:gap-16">
+        <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,0.86fr)_minmax(0,1.08fr)] lg:gap-12">
           <FadeIn className="max-w-[460px]">
             <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-[#CCA400]">
               We&apos;re here to help you
@@ -97,10 +80,10 @@ export default function BookDemoPage() {
                 <div>
                   <p className="text-[16px] leading-[1.3] text-[#6B7280]">Phone number</p>
                   <a
-                    href="tel:+97123093880"
+                    href="tel:+971502114603"
                     className="mt-1 block text-[16px] font-semibold leading-[1.3] text-[#0c2d57]"
                   >
-                    +971 2 309 3880
+                    +971 50 211 4603
                   </a>
                 </div>
               </div>

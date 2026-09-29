@@ -5,10 +5,12 @@ import DashboardPreview from "./DashboardPreview";
 
 type WorkflowGovernanceSectionProps = {
   image?: string;
+  matchDashboard?: boolean;
 };
 
 export default function WorkflowGovernanceSection({
   image = "https://investera.s3.us-east-2.amazonaws.com/Workflow___Governance_Controls__1__1790064232144_ffb3.png",
+  matchDashboard = false,
 }: WorkflowGovernanceSectionProps) {
   return (
     <section className="bg-white pt-5 pb-20 lg:pb-28">
@@ -18,7 +20,7 @@ export default function WorkflowGovernanceSection({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative h-auto overflow-hidden rounded-[28px] border border-[#F1E6D5] bg-gradient-to-r from-[#FFF3DF] to-white shadow-[0_15px_40px_rgba(0,0,0,0.05)] lg:h-[260px]"
+          className={`relative h-auto overflow-hidden rounded-[28px] border border-[#F1E6D5] bg-gradient-to-r from-[#FFF3DF] to-white shadow-[0_15px_40px_rgba(0,0,0,0.05)] ${matchDashboard ? "lg:h-[320px]" : "lg:h-[260px]"}`}
         >
           <div className="grid h-full grid-cols-1 lg:grid-cols-[38%_62%] lg:justify-between">
             {/* Left content */}
@@ -40,10 +42,20 @@ export default function WorkflowGovernanceSection({
               <div className="relative px-4 pt-1 sm:px-6 lg:absolute lg:inset-0 lg:px-0 lg:pt-0">
                 <DashboardPreview
                   src={image}
-                  alt="Consolidated dashboard with asset allocation charts and investment metrics"
+                  alt="Workflow requests and governance controls"
                   delay={0.15}
-                  className="relative -mb-1 mx-auto w-full translate-y-4 sm:translate-y-5 lg:absolute lg:bottom-0 lg:right-0 lg:mb-0 lg:w-[84%] lg:translate-y-[8%]"
-                  imageClassName="h-auto w-full -translate-y-[20px] rounded-t-xl rounded-b-none lg:rounded-xl"
+                  width={matchDashboard ? 1400 : 720}
+                  height={matchDashboard ? 965 : 480}
+                  className={
+                    matchDashboard
+                      ? "relative w-full max-w-[900px] shrink-0 lg:absolute lg:bottom-0 lg:right-0 lg:w-[92%]"
+                      : "relative -mb-1 mx-auto w-full translate-y-4 sm:translate-y-5 lg:absolute lg:bottom-0 lg:right-0 lg:mb-0 lg:w-[84%] lg:translate-y-[8%]"
+                  }
+                  imageClassName={
+                    matchDashboard
+                      ? "aspect-[1400/965] h-auto w-full translate-x-10 object-cover object-[4%_top] lg:translate-x-16 lg:translate-y-[46%]"
+                      : "h-auto w-full -translate-y-[20px] rounded-t-xl rounded-b-none lg:rounded-xl"
+                  }
                 />
               </div>
             </div>

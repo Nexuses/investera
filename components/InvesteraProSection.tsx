@@ -3,13 +3,19 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+const defaultDashboardImage =
+  "https://investera.s3.us-east-2.amazonaws.com/Dashboards___Reporting__1__1790064098158_3f8a.png";
+
 export default function InvesteraProSection({
   className = "bg-white pt-14 pb-0 lg:pt-20 lg:pb-0",
   sectionId = "products",
+  dashboardImage,
 }: {
   className?: string;
   sectionId?: string;
+  dashboardImage?: string;
 }) {
+  const imageSrc = dashboardImage ?? defaultDashboardImage;
   return (
     <section id={sectionId || undefined} className={className}>
       <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
@@ -71,12 +77,16 @@ export default function InvesteraProSection({
                   }}
                 >
                   <Image
-                    src="https://investera.s3.us-east-2.amazonaws.com/Dashboards___Reporting__1__1790064098158_3f8a.png"
-                    alt="Investera Pro pipeline dashboard showing deal tracking and portfolio management"
+                    src={imageSrc}
+                    alt="Investera Pro dashboard showing portfolio performance and reporting"
                     width={1400}
                     height={965}
                     unoptimized
-                    className="h-auto w-full translate-x-2 object-contain object-right-bottom lg:translate-x-4 lg:translate-y-[18%]"
+                    className={
+                      dashboardImage
+                        ? "aspect-[1400/965] h-auto w-full translate-x-2 object-cover object-top lg:translate-x-4 lg:translate-y-[46%]"
+                        : "h-auto w-full translate-x-2 object-contain object-right-bottom lg:translate-x-4 lg:translate-y-[18%]"
+                    }
                   />
                 </motion.div>
               </motion.div>
