@@ -17,7 +17,9 @@ export default function InsightsSection({
   compact?: boolean;
   activeFilter?: InsightFilter;
 }) {
-  const visibleInsights = filterInsights(activeFilter);
+  // On the blog page (compact) the first post is already shown as the featured article.
+  const filtered = filterInsights(activeFilter);
+  const visibleInsights = compact ? filtered.slice(1) : filtered;
 
   if (compact && visibleInsights.length === 0) {
     return null;

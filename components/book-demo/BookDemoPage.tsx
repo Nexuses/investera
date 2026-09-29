@@ -1,11 +1,17 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import FadeIn from "@/components/FadeIn";
-import { mountMeetingsEmbed } from "@/components/book-demo/meetings-embed";
+import {
+  MEETINGS_EMBED_SRC,
+  mountMeetingsEmbed,
+} from "@/components/book-demo/meetings-embed";
+
+const DIRECT_BOOKING_URL = MEETINGS_EMBED_SRC.replace("?embed=true", "");
 
 function HubSpotMeetingsEmbed() {
   const slotRef = useRef<HTMLDivElement>(null);
+  const [failed, setFailed] = useState(false);
 
   useEffect(() => {
     const slot = slotRef.current;
@@ -13,12 +19,46 @@ function HubSpotMeetingsEmbed() {
       return;
     }
 
-    return mountMeetingsEmbed(slot);
+    const cleanup = mountMeetingsEmbed(slot);
+    // If the calendar hasn't rendered (e.g. blocked by an ad blocker), show a fallback.
+    const timer = window.setTimeout(() => {
+      if (!slot.querySelector("iframe")) {
+        setFailed(true);
+      }
+    }, 8000);
+
+    return () => {
+      window.clearTimeout(timer);
+      cleanup?.();
+    };
   }, []);
 
   return (
-    <div className="overflow-hidden rounded-[22px] border border-[#56708a] bg-[#415b76] shadow-[0_16px_40px_rgba(12,45,87,0.08)]">
+    <div className="relative overflow-hidden rounded-[22px] border border-[#56708a] bg-[#415b76] shadow-[0_16px_40px_rgba(12,45,87,0.08)]">
       <div ref={slotRef} className="h-[600px] bg-[#415b76]" />
+      {failed && (
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#415b76] px-8 text-center text-white">
+          <p className="text-[22px] font-semibold">The booking calendar didn&apos;t load</p>
+          <p className="mt-3 max-w-[380px] text-[15px] leading-[1.5] text-white/80">
+            This can happen when a browser extension blocks embedded calendars. You can
+            open the calendar directly or contact us and we&apos;ll arrange a time.
+          </p>
+          <a
+            href={DIRECT_BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 rounded-full bg-[#CCA400] px-6 py-3 text-[15px] font-semibold text-white transition-opacity hover:opacity-90"
+          >
+            Open booking calendar
+          </a>
+          <a
+            href="mailto:info@investera.com"
+            className="mt-4 text-[14px] font-medium text-white/85 underline underline-offset-2"
+          >
+            info@investera.com
+          </a>
+        </div>
+      )}
     </div>
   );
 }
@@ -56,7 +96,7 @@ export default function BookDemoPage() {
                   </svg>
                 </span>
                 <div>
-                  <p className="text-[16px] leading-[1.3] text-[#6B7280]">E-mail</p>
+                  <p className="text-[16px] leading-[1.3] text-[#6B7280]">Email</p>
                   <a
                     href="mailto:info@investera.com"
                     className="mt-1 block text-[16px] font-semibold leading-[1.3] text-[#0c2d57]"
@@ -78,7 +118,7 @@ export default function BookDemoPage() {
                   </svg>
                 </span>
                 <div>
-                  <p className="text-[16px] leading-[1.3] text-[#6B7280]">Phone number</p>
+                  <p className="text-[16px] leading-[1.3] text-[#6B7280]">Phone / WhatsApp</p>
                   <a
                     href="tel:+971502114603"
                     className="mt-1 block text-[16px] font-semibold leading-[1.3] text-[#0c2d57]"

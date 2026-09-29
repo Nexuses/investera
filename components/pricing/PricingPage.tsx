@@ -466,8 +466,8 @@ export default function PricingPage() {
                 />
                 <div className="relative flex h-full flex-col">
                   <h2 className="text-[32px] font-normal leading-tight tracking-[-0.02em] sm:text-[40px]">
-                    Included In{" "}
-                    <span className="font-bold">Every Plan</span>
+                    Included As{" "}
+                    <span className="font-bold">Standard</span>
                   </h2>
                   <div
                     aria-hidden
@@ -475,8 +475,7 @@ export default function PricingPage() {
                   />
                   <p className="mt-5 max-w-[42ch] text-[16px] leading-[1.3] text-white/70 sm:mt-6">
                     Regardless of size, no capability is held back behind a
-                    higher tier. Implementation is scoped separately and quoted
-                    upfront.
+                    higher tier. Every licence includes the full platform.
                   </p>
 
                   <ul className="mt-5 grid gap-2.5">

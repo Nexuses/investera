@@ -46,7 +46,7 @@ export default function AlKifahHoldingCaseStudyPage() {
         >
           <div className="mx-auto max-w-[920px]">
             <p className="text-[13px] font-semibold uppercase tracking-[0.16em] text-[#CCA400]">
-              Al Kifah Holding · KSA
+              Al Kifah Holding · Saudi Arabia
             </p>
             <h1 className="mt-5 text-[34px] font-semibold leading-[1.2] tracking-[-0.02em] text-white sm:text-[44px] lg:text-[52px]">
               Portfolio Management System (PMS) Implementation for Al Kifah Holding

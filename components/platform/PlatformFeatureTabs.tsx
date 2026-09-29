@@ -432,7 +432,7 @@ export default function PlatformFeatureTabs() {
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-full bg-[#CCA400] px-7 py-3 text-[15px] font-semibold text-white transition-transform hover:scale-[1.03]"
               >
-                Discover More
+                Talk to Our Team
               </Link>
             </div>
           </div>

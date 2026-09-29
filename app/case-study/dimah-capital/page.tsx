@@ -16,7 +16,7 @@ const capabilities = [
   "Consolidated reporting across asset classes",
   "Data migration and structured onboarding",
   "Configurable workflows and access controls",
-  "On-Premise Installation",
+  "On-Premises Installation",
   "Investor Mobile Application",
 ];
 
@@ -88,7 +88,7 @@ export default function DimahCapitalCaseStudyPage() {
           <section className="mt-14">
             <SectionTitle lead="Solution" accent="Approach" />
             <p className="mt-4 text-[16px] leading-[1.55] text-[#1f1f1f]">
-              Investera supports Dimah Capital Investment Company in its investment
+              Investera supports Dimah Capital in its investment
               management operations through a centralized investment management
               platform.
             </p>

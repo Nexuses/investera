@@ -48,7 +48,7 @@ export default function PlatformCtaSection({
   backgroundVariant = "default",
   layoutVariant = "stacked",
   showContactButton = true,
-  primaryCtaLabel = "Start A Free Trial",
+  primaryCtaLabel = "Request a Free Pilot",
   primaryCtaHref = "/book-a-demo",
   primaryCtaVariant = "button",
   deviceComposition,

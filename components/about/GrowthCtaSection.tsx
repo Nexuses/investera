@@ -95,7 +95,7 @@ export default function GrowthCtaSection({
                   href="/book-a-demo"
                   className="rounded-full bg-[#CCA400] px-7 py-3 text-center text-[14px] font-semibold text-white transition-transform hover:scale-[1.03]"
                 >
-                  Start A Free Trial
+                  Request a Free Pilot
                 </Link>
               </div>
             ) : (

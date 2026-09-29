@@ -21,7 +21,7 @@ import BookDemoFormPreload from "@/components/book-demo/BookDemoFormPreload";
 export const metadata: Metadata = {
   title: "Investera | Bringing Investment Management Together",
   description:
-    "Innovating Finance, Empowering Success. Smart financial tools designed to streamline operations and drive better decision-making.",
+    "Manage portfolios, deals, transactions, reporting, and investment data through one unified platform built for greater visibility, accuracy, and control.",
 };
 
 export default function Home() {

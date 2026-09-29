@@ -181,7 +181,7 @@ export default function PricingTimelineSection() {
   return (
     <section
       id="process"
-      className="scroll-mt-[90px] bg-white py-14 lg:py-16"
+      className="scroll-mt-[90px] overflow-x-clip bg-white py-14 lg:py-16"
     >
       <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
         <div className="mx-auto max-w-[720px] text-center">

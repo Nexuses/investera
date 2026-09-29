@@ -26,7 +26,7 @@ export default function BlogHero({
       <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
         <FadeIn>
           <h1 className="text-[40px] font-normal leading-tight tracking-[-0.02em]">
-            <span className="font-normal text-[#1a1a1a]">Blogs & </span>
+            <span className="font-normal text-[#1a1a1a]">Blog & </span>
             <span className="heading-accent text-[#0c2d57]">Insights</span>
           </h1>
         </FadeIn>

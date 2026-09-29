@@ -69,7 +69,7 @@ export default function InvestmentHero() {
               <br className="hidden sm:block" />
               unified platform built to save time and improve
               <br className="hidden sm:block" />
-              information accuracy
+              information accuracy.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-5 lg:mt-10 lg:gap-7">

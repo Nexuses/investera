@@ -45,7 +45,7 @@ export default function PrinciplesSection() {
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.08 }}
           className="mt-6 w-full text-[28px] font-normal leading-[1.3] tracking-[-0.02em] text-[#111111]"
         >
-          Investera Business Solutions develops financial technology and
+          Investera develops financial technology and
           data-driven business applications that help investment professionals
           manage complex investment activities with greater efficiency,
           transparency, and control.

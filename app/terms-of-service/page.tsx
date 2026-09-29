@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import PrivacyPolicyPage from "@/components/legal/PrivacyPolicyPage";
+import TermsOfServicePage from "@/components/legal/TermsOfServicePage";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Investera",
+  title: "Terms of Service | Investera",
   description:
-    "How Investera collects, uses and protects personal information submitted through the Investera website.",
+    "The terms that apply when you use the Investera website, including acceptable use, intellectual property and governing law.",
 };
 
-export default function PrivacyPolicy() {
+export default function TermsOfService() {
   return (
     <div className="min-h-screen bg-white">
       <Header variant="light" />
       <div className="pt-[96px] lg:pt-[112px]">
-        <PrivacyPolicyPage />
+        <TermsOfServicePage />
       </div>
       <Footer />
     </div>

@@ -1,16 +1,13 @@
 import { NextResponse } from "next/server";
 import { sendContactEmail } from "@/lib/mail";
 import type { ContactPayload } from "@/lib/contact-email-template";
-import { isWorkEmail, WORK_EMAIL_ERROR } from "@/lib/work-email";
+import { getDb } from "@/lib/mongodb";
+import { isValidEmail, isWorkEmail, WORK_EMAIL_ERROR } from "@/lib/work-email";
 
 export const runtime = "nodejs";
 
 function asString(value: unknown) {
   return typeof value === "string" ? value.trim() : "";
-}
-
-function isValidEmail(email: string) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
 export async function POST(request: Request) {
@@ -47,15 +44,38 @@ export async function POST(request: Request) {
       );
     }
 
-    await sendContactEmail(payload);
+    let stored = false;
+    try {
+      const db = await getDb();
+      if (db) {
+        await db.collection("contact_submissions").insertOne({
+          ...payload,
+          email: payload.email.toLowerCase(),
+          status: "new",
+          createdAt: new Date(),
+        });
+        stored = true;
+      }
+    } catch (error) {
+      console.error("[contact] Failed to store submission:", error);
+    }
+
+    try {
+      await sendContactEmail(payload);
+    } catch (error) {
+      const code =
+        typeof error === "object" && error && "code" in error
+          ? String((error as { code?: string }).code)
+          : undefined;
+      console.error("[contact] Failed to send email:", code ?? "", error);
+      // The enquiry is still safe if it was stored, so only fail when nothing captured it.
+      if (!stored) {
+        throw error;
+      }
+    }
 
     return NextResponse.json({ ok: true });
-  } catch (error) {
-    const code =
-      typeof error === "object" && error && "code" in error
-        ? String((error as { code?: string }).code)
-        : undefined;
-    console.error("[contact] Failed to send email:", code ?? "", error);
+  } catch {
     return NextResponse.json(
       {
         ok: false,

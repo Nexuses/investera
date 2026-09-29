@@ -8,6 +8,10 @@ import {
   buildThankYouEmailText,
   type ContactPayload,
 } from "@/lib/contact-email-template";
+import {
+  buildSubscriberEmailHtml,
+  buildSubscriberEmailText,
+} from "@/lib/subscribe-email-template";
 
 setDefaultResultOrder("ipv4first");
 
@@ -49,7 +53,7 @@ async function resolveIpv4(hostname: string) {
   return address;
 }
 
-export async function sendContactEmail(payload: ContactPayload) {
+async function createMailer() {
   const mailTo = requiredEnv(
     "Mail_To / MAIL_TO",
     process.env.Mail_To || process.env.MAIL_TO,
@@ -88,6 +92,11 @@ export async function sendContactEmail(payload: ContactPayload) {
     },
   });
 
+  return { transporter, mailTo, fromEmail };
+}
+
+export async function sendContactEmail(payload: ContactPayload) {
+  const { transporter, mailTo, fromEmail } = await createMailer();
   const fullName = `${payload.firstName} ${payload.lastName}`.trim();
 
   await withRetry(() =>
@@ -109,6 +118,21 @@ export async function sendContactEmail(payload: ContactPayload) {
       subject: "Thank you for contacting Investera",
       text: buildThankYouEmailText(payload),
       html: buildThankYouEmailHtml(payload),
+    }),
+  );
+}
+
+export async function sendSubscriberNotification(email: string, source: string) {
+  const { transporter, mailTo, fromEmail } = await createMailer();
+
+  await withRetry(() =>
+    transporter.sendMail({
+      from: `"Investera Website" <${fromEmail}>`,
+      to: mailTo,
+      replyTo: email,
+      subject: `New newsletter subscriber: ${email}`,
+      text: buildSubscriberEmailText(email, source),
+      html: buildSubscriberEmailHtml(email, source),
     }),
   );
 }
