@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import CurrencyExposureCard from "@/components/CurrencyExposureCard";
+import AumCategoryCard from "@/components/AumCategoryCard";
 
 const TABLET =
   "https://investera.s3.us-east-2.amazonaws.com/Group_1000005978_1786688998844_qgh7.png";
@@ -202,7 +202,11 @@ export default function PlatformCtaSection({
                     delay: 0.3,
                   }}
                 >
-                  <CurrencyExposureCard codes={["USD", "EUR", "GBP", "JPY"]} />
+                  <AumCategoryCard
+                  icon="markets"
+                  title="Capital Markets + Cash Portfolio"
+                  value="2,003,892,251,801.1"
+                />
                 </motion.div>
 
                 <motion.div
@@ -215,10 +219,7 @@ export default function PlatformCtaSection({
                     delay: 0.7,
                   }}
                 >
-                  <CurrencyExposureCard
-                    codes={["AED", "SAR", "KWD"]}
-                    startDelayMs={1400}
-                  />
+                  <AumCategoryCard icon="equity" title="Private Equity" value="23,779,854.8" />
                 </motion.div>
               </>
             ) : null}
