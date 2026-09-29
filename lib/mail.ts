@@ -4,6 +4,8 @@ import nodemailer from "nodemailer";
 import {
   buildContactEmailHtml,
   buildContactEmailText,
+  buildThankYouEmailHtml,
+  buildThankYouEmailText,
   type ContactPayload,
 } from "@/lib/contact-email-template";
 
@@ -96,6 +98,17 @@ export async function sendContactEmail(payload: ContactPayload) {
       subject: `New contact enquiry from ${fullName}`,
       text: buildContactEmailText(payload),
       html: buildContactEmailHtml(payload),
+    }),
+  );
+
+  await withRetry(() =>
+    transporter.sendMail({
+      from: `"Investera" <${fromEmail}>`,
+      to: payload.email,
+      replyTo: mailTo[0],
+      subject: "Thank you for contacting Investera",
+      text: buildThankYouEmailText(payload),
+      html: buildThankYouEmailHtml(payload),
     }),
   );
 }

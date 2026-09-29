@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { sendContactEmail } from "@/lib/mail";
 import type { ContactPayload } from "@/lib/contact-email-template";
+import { isWorkEmail, WORK_EMAIL_ERROR } from "@/lib/work-email";
 
 export const runtime = "nodejs";
 
@@ -35,6 +36,13 @@ export async function POST(request: Request) {
     if (!isValidEmail(payload.email)) {
       return NextResponse.json(
         { ok: false, error: "Please provide a valid email address." },
+        { status: 400 },
+      );
+    }
+
+    if (!isWorkEmail(payload.email)) {
+      return NextResponse.json(
+        { ok: false, error: WORK_EMAIL_ERROR },
         { status: 400 },
       );
     }

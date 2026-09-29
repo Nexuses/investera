@@ -356,8 +356,12 @@ export default function ContactPage() {
                   name="email"
                   type="email"
                   required
+                  autoComplete="email"
                   className="h-[42px] w-full border border-[#C9CDD3] px-3 text-[16px] leading-[1.3] text-[#1a1a1a] outline-none focus:border-[#0c2d57]"
                 />
+                <p className="mt-1.5 text-left text-[13px] leading-[1.35] text-[#6B7280]">
+                  Use your work email. Personal addresses are not accepted.
+                </p>
               </div>
 
               <div>
@@ -411,7 +415,7 @@ export default function ContactPage() {
 
               {status === "success" ? (
                 <p className="text-[14px] leading-[1.4] text-[#059669]">
-                  Thanks — your message was sent. Our team will get back to you soon.
+                  Thanks — your message was sent. A confirmation email is on its way, and our team will get back to you soon.
                 </p>
               ) : null}
               {status === "error" ? (

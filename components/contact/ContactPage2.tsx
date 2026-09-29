@@ -65,7 +65,17 @@ export default function ContactPage2() {
               <label htmlFor="email" className={labelClass}>
                 Email <span className="text-[#DC2626]">*</span>
               </label>
-              <input id="email" name="email" type="email" required className={fieldClass} />
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                autoComplete="email"
+                className={fieldClass}
+              />
+              <p className="mt-1.5 text-[13px] leading-[1.35] text-[#6B7280]">
+                Use your work email. Personal addresses are not accepted.
+              </p>
             </div>
 
             <div>
@@ -97,7 +107,7 @@ export default function ContactPage2() {
 
             {status === "success" ? (
               <p className="text-[14px] leading-[1.4] text-[#059669]">
-                Thanks — your message was sent. Our team will get back to you soon.
+                Thanks — your message was sent. A confirmation email is on its way, and our team will get back to you soon.
               </p>
             ) : null}
             {status === "error" ? (

@@ -100,6 +100,87 @@ export function buildContactEmailHtml(payload: ContactPayload) {
 </html>`;
 }
 
+export function buildThankYouEmailHtml(payload: ContactPayload) {
+  const firstName = escapeHtml(payload.firstName.trim() || "there");
+
+  return `<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Thank you for contacting Investera</title>
+  </head>
+  <body style="margin:0;padding:0;background:#F4F5F7;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F4F5F7;padding:32px 16px;">
+      <tr>
+        <td align="center">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:640px;background:#ffffff;border-radius:16px;overflow:hidden;">
+            <tr>
+              <td style="background:#050B1F;padding:24px 32px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td valign="middle" style="font-family:Arial,Helvetica,sans-serif;font-size:26px;line-height:1.25;font-weight:700;color:#ffffff;">
+                      Thank you for contacting us
+                    </td>
+                    <td valign="middle" align="right" width="160" style="width:160px;padding-left:20px;">
+                      <img
+                        src="https://www.investera.com/images/logo-white.png"
+                        alt="Investera"
+                        width="150"
+                        height="32"
+                        style="display:block;border:0;outline:none;text-decoration:none;margin-left:auto;"
+                      />
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:28px 32px 8px;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.6;color:#111111;">
+                <p style="margin:0 0 16px;">Hi ${firstName},</p>
+                <p style="margin:0 0 16px;">
+                  Thank you for getting in touch. We have received your message, and a member of the Investera team will reply to you shortly.
+                </p>
+                <p style="margin:0;">
+                  If you need us sooner, email
+                  <a href="mailto:info@investera.com" style="color:#0c2d57;font-weight:700;text-decoration:none;">info@investera.com</a>
+                  or call
+                  <a href="tel:+97123093880" style="color:#0c2d57;font-weight:700;text-decoration:none;">+971 2 309 3880</a>.
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:8px 32px 32px;">
+                <a href="https://www.investera.com" style="display:inline-block;background:#CCA400;color:#ffffff;text-decoration:none;font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:700;padding:12px 22px;border-radius:999px;">
+                  Visit Investera
+                </a>
+                <p style="margin:18px 0 0;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:1.5;color:#6B7280;">
+                  This confirmation was sent because you submitted the contact form on investera.com.
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>`;
+}
+
+export function buildThankYouEmailText(payload: ContactPayload) {
+  const firstName = payload.firstName.trim() || "there";
+  return [
+    `Hi ${firstName},`,
+    "",
+    "Thank you for getting in touch. We have received your message, and a member of the Investera team will reply to you shortly.",
+    "",
+    "If you need us sooner, email info@investera.com or call +971 2 309 3880.",
+    "",
+    "Investera",
+    "https://www.investera.com",
+  ].join("\n");
+}
+
 export function buildContactEmailText(payload: ContactPayload) {
   return [
     "New Contact Enquiry — Investera",

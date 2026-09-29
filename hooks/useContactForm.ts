@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { isWorkEmail, WORK_EMAIL_ERROR } from "@/lib/work-email";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -15,6 +16,13 @@ export function useContactForm(source: string) {
 
     const form = event.currentTarget;
     const data = new FormData(form);
+    const email = String(data.get("email") || "").trim();
+
+    if (!isWorkEmail(email)) {
+      setStatus("error");
+      setError(WORK_EMAIL_ERROR);
+      return;
+    }
 
     try {
       const response = await fetch("/api/contact", {
@@ -23,7 +31,7 @@ export function useContactForm(source: string) {
         body: JSON.stringify({
           firstName: String(data.get("firstName") || ""),
           lastName: String(data.get("lastName") || ""),
-          email: String(data.get("email") || ""),
+          email,
           phone: String(data.get("phone") || ""),
           message: String(data.get("message") || ""),
           source,
