@@ -45,7 +45,7 @@ export default function Home() {
       <InvestmentFeatureSection />
       <WorkflowGovernanceSection
         matchDashboard
-        image="https://investera.s3.us-east-2.amazonaws.com/Workflow_Requests_1790659277798_em0g.png"
+        image="/images/dashboards/workflow-approval-request.webp"
       />
       <PlatformCtaSection
         titleLine1="Transform How You"
