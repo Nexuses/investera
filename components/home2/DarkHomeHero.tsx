@@ -42,8 +42,8 @@ export default function DarkHomeHero() {
 
         <div className="relative z-10 mx-auto max-w-[900px] px-6 pb-4 pt-10 text-center sm:pb-5 sm:pt-14 lg:pt-16">
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ y: 20 }}
+            animate={{ y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-[42px] font-normal leading-[1.15] tracking-[-0.03em] text-white sm:text-[56px] lg:text-[68px]"
           >
@@ -57,8 +57,8 @@ export default function DarkHomeHero() {
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ y: 16 }}
+            animate={{ y: 0 }}
             transition={{ duration: 0.75, ease: "easeOut", delay: 0.12 }}
             className="mx-auto mt-5 max-w-[620px] text-[16px] leading-[1.3] text-white/70 sm:mt-6"
           >

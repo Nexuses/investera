@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { pageMetadata, softwareJsonLd } from "@/lib/seo";
 import Footer from "@/components/Footer";
 import BusinessDataSection from "@/components/home2/BusinessDataSection";
 import CorePhilosophySection from "@/components/home2/CorePhilosophySection";
@@ -18,15 +20,19 @@ import PlatformCtaSection from "@/components/platform/PlatformCtaSection";
 import GrowthCtaSection from "@/components/about/GrowthCtaSection";
 import BookDemoFormPreload from "@/components/book-demo/BookDemoFormPreload";
 
-export const metadata: Metadata = {
-  title: "Investera | Bringing Investment Management Together",
+export const metadata: Metadata = pageMetadata({
+  title: "Investera | Investment Management Platform for the GCC",
+  absoluteTitle: true,
+  cardTitle: "Bringing Investment Management Together",
   description:
-    "Manage portfolios, deals, transactions, reporting, and investment data through one unified platform built for greater visibility, accuracy, and control.",
-};
+    "Investera Pro unifies portfolios, deals, reporting, documents and workflows in one secure platform for family offices, PE firms and fund managers in the GCC.",
+  path: "/",
+});
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
+      <JsonLd data={softwareJsonLd} />
       <BookDemoFormPreload />
       <DarkHomeHero />
       <LogoSlider />

@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd, pageMetadata, SITE_URL } from "@/lib/seo";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 
-export const metadata: Metadata = {
-  title: "Al Kifah Holding Case Study | Investera",
+export const metadata: Metadata = pageMetadata({
+  title: "Al Kifah Holding Case Study: PMS Implementation",
+  cardTitle: "Al Kifah Holding: Portfolio Management System",
   description:
-    "How Investera implemented a Portfolio Management System for Al Kifah Holding in Saudi Arabia, centralizing investment data, reporting, and governance.",
-};
+    "How Investera implemented a Portfolio Management System for Al Kifah Holding in Saudi Arabia, centralizing investment data, reporting and governance.",
+  path: "/case-study/al-kifah-holding",
+});
 
 const PLATFORM_BG =
   "https://investera.s3.us-east-2.amazonaws.com/Platform_BG_1786612003256_5z5e.png";
@@ -38,6 +42,21 @@ function SectionTitle({
 export default function AlKifahHoldingCaseStudyPage() {
   return (
     <div className="min-h-screen bg-white">
+      <JsonLd data={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: "Al Kifah Holding Case Study: Investera implementation for Al Kifah Holding",
+            url: `${SITE_URL}/case-study/al-kifah-holding`,
+            about: { "@type": "Organization", name: "Al Kifah Holding", address: "Saudi Arabia" },
+            author: { "@id": `${SITE_URL}/#organization` },
+            publisher: { "@id": `${SITE_URL}/#organization` },
+          },
+          breadcrumbJsonLd([
+            { name: "Case Studies", path: "/case-study" },
+            { name: "Al Kifah Holding", path: "/case-study/al-kifah-holding" },
+          ]),
+        ]} />
       <Header variant="dark" />
       <main>
         <section

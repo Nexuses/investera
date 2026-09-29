@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd, pageMetadata, SITE_URL } from "@/lib/seo";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 
-export const metadata: Metadata = {
-  title: "Dimah Capital Case Study | Investera",
+export const metadata: Metadata = pageMetadata({
+  title: "Dimah Capital Case Study: IMS Implementation",
+  cardTitle: "Dimah Capital: Investment Management System",
   description:
-    "How Investera implemented a centralized Investment Management System for Dimah Capital in Kuwait, covering multi-asset portfolios, reporting, and governance.",
-};
+    "How Investera implemented a centralized Investment Management System for Dimah Capital in Kuwait, covering multi-asset portfolios, reporting and governance.",
+  path: "/case-study/dimah-capital",
+});
 
 const PLATFORM_BG =
   "https://investera.s3.us-east-2.amazonaws.com/Platform_BG_1786612003256_5z5e.png";
@@ -38,6 +42,21 @@ function SectionTitle({
 export default function DimahCapitalCaseStudyPage() {
   return (
     <div className="min-h-screen bg-white">
+      <JsonLd data={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: "Dimah Capital Case Study: Investera implementation for Dimah Capital",
+            url: `${SITE_URL}/case-study/dimah-capital`,
+            about: { "@type": "Organization", name: "Dimah Capital", address: "Kuwait" },
+            author: { "@id": `${SITE_URL}/#organization` },
+            publisher: { "@id": `${SITE_URL}/#organization` },
+          },
+          breadcrumbJsonLd([
+            { name: "Case Studies", path: "/case-study" },
+            { name: "Dimah Capital", path: "/case-study/dimah-capital" },
+          ]),
+        ]} />
       <Header variant="dark" />
       <main>
         <section

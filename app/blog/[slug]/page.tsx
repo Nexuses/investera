@@ -5,8 +5,10 @@ import { notFound } from "next/navigation";
 import BookDemoCtaSection from "@/components/BookDemoCtaSection";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import { getInsightBySlug, insights } from "@/components/insights-data";
+import JsonLd from "@/components/JsonLd";
+import { BANNER_SIZE, getInsightBySlug, insights } from "@/components/insights-data";
 import { articles } from "@/lib/blog-articles";
+import { breadcrumbJsonLd, LOGO_URL, pageMetadata, SITE_NAME, SITE_URL } from "@/lib/seo";
 
 export const dynamicParams = false;
 
@@ -24,15 +26,16 @@ export async function generateMetadata({
   if (!insight) {
     return {};
   }
-  return {
-    title: `${insight.description} | Investera`,
-    description: insight.subtitle,
-    openGraph: {
-      title: insight.description,
-      description: insight.subtitle,
-      images: [insight.image],
-    },
-  };
+  return pageMetadata({
+    title: insight.seoTitle ?? insight.description,
+    description: insight.metaDescription,
+    path: insight.href,
+    image: insight.image,
+    imageSize: BANNER_SIZE,
+    imageAlt: insight.imageAlt,
+    type: "article",
+    publishedTime: insight.datePublished,
+  });
 }
 
 export default async function BlogArticlePage({
@@ -48,9 +51,35 @@ export default async function BlogArticlePage({
   }
 
   const related = insights.filter((item) => item.slug !== slug);
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: insight.description,
+    description: insight.subtitle,
+    image: [insight.image],
+    datePublished: insight.datePublished,
+    dateModified: insight.datePublished,
+    articleSection: insight.category,
+    mainEntityOfPage: `${SITE_URL}${insight.href}`,
+    author: { "@type": "Organization", name: `${SITE_NAME} Team`, url: SITE_URL },
+    publisher: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      logo: { "@type": "ImageObject", url: LOGO_URL },
+    },
+  };
 
   return (
     <div className="min-h-screen bg-white">
+      <JsonLd
+        data={[
+          articleJsonLd,
+          breadcrumbJsonLd([
+            { name: "Blog", path: "/blog" },
+            { name: insight.description, path: insight.href },
+          ]),
+        ]}
+      />
       <Header variant="dark" />
       <main>
         <section className="relative overflow-hidden bg-[#050B1F] px-6 pb-16 pt-[132px] sm:pb-20 sm:pt-[148px] lg:px-16 lg:pb-24 lg:pt-[168px]">
@@ -83,7 +112,9 @@ export default async function BlogArticlePage({
               {insight.subtitle}
             </p>
             <p className="mt-6 text-[14px] text-white/60">
-              Investera Team · {insight.date} · {insight.readingTime}
+              Investera Team ·{" "}
+              <time dateTime={insight.datePublished}>{insight.date}</time> ·{" "}
+              {insight.readingTime}
             </p>
           </div>
         </section>

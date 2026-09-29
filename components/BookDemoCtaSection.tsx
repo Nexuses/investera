@@ -18,13 +18,13 @@ export default function BookDemoCtaSection() {
 
           <div className="relative z-[1] grid h-full min-w-0 items-center gap-6 px-6 py-8 sm:gap-8 sm:px-9 sm:py-9 lg:grid-cols-[42%_58%] lg:gap-0 lg:py-0 lg:pl-9 lg:pr-0">
             <div className="flex min-w-0 max-w-[420px] flex-col justify-center">
-              <h1 className="text-[32px] font-normal leading-[1.2] tracking-[-0.01em] text-[#222222] sm:text-[42px] lg:text-[55px] lg:leading-[1.25]">
+              <h2 className="text-[32px] font-normal leading-[1.2] tracking-[-0.01em] text-[#222222] sm:text-[42px] lg:text-[55px] lg:leading-[1.25]">
                 Unlock Better
                 <br />
                 <span className="heading-accent text-[#17477F]">
                   Opportunities.
                 </span>
-              </h1>
+              </h2>
 
               <p className="mt-4 max-w-[360px] text-[15px] leading-[1.35] text-[#555555] sm:text-[16px] sm:leading-[1.3]">
                 Bring portfolios, deals, reporting, workflows, and investment

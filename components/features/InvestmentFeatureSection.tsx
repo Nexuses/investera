@@ -8,7 +8,7 @@ export default function InvestmentFeatureSection() {
           <FeatureCard
             delay={0}
             imageDelay={0.15}
-            background="/images/features/card-bg-1.png"
+            background="/images/features/card-bg-1.webp"
             title={
               <>
                 Portfolio &
@@ -25,7 +25,7 @@ export default function InvestmentFeatureSection() {
           <FeatureCard
             delay={0.2}
             imageDelay={0.15}
-            background="/images/features/card-bg-2.png"
+            background="/images/features/card-bg-2.webp"
             title={
               <>
                 Secure

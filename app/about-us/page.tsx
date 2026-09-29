@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd, pageMetadata, SITE_URL } from "@/lib/seo";
 import AboutHero from "@/components/about/AboutHero";
 import AdvantageSection from "@/components/about/AdvantageSection";
 import CoreValuesSection from "@/components/about/CoreValuesSection";
@@ -10,15 +12,27 @@ import TestimonialsSection from "@/components/about/TestimonialsSection";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 
-export const metadata: Metadata = {
-  title: "About Us | Investera",
+export const metadata: Metadata = pageMetadata({
+  title: "About Investera | Investment Technology for the GCC",
+  absoluteTitle: true,
+  cardTitle: "About Investera",
   description:
-    "Learn about Investera, bringing investment management together with greater visibility, accuracy, and control.",
-};
+    "Meet the team behind Investera Pro, helping family offices, holding companies and fund managers run multi-asset portfolios with clarity and control.",
+  path: "/about-us",
+});
 
 export default function AboutUsPage() {
   return (
     <div className="min-h-screen bg-white">
+      <JsonLd data={[
+          {
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            url: `${SITE_URL}/about-us`,
+            about: { "@id": `${SITE_URL}/#organization` },
+          },
+          breadcrumbJsonLd([{ name: "About Us", path: "/about-us" }]),
+        ]} />
       <Header variant="light" />
       <AboutHero />
       <PrinciplesSection />

@@ -17,11 +17,19 @@ export type Insight = {
   slug: string;
   href: string;
   date: string;
+  /** ISO date for structured data and the sitemap. */
+  datePublished: string;
   readingTime: string;
+  /** Search result title (without brand) when the headline is too long. */
+  seoTitle?: string;
+  metaDescription: string;
 };
 
 const BANNER_BASE =
   "https://d8j0ntlcm91z4.cloudfront.net/user_36eC1lX1QH2gXadY1g4FNdTY2aP/hf_20260929_100359_";
+
+/** Blog banner dimensions (used for social cards and structured data). */
+export const BANNER_SIZE = { width: 2688, height: 1520 };
 
 export const insights: Insight[] = [
   {
@@ -34,8 +42,12 @@ export const insights: Insight[] = [
     imageAlt:
       "Family office boardroom at dusk overlooking a Gulf city skyline, with portfolio dashboards on screen",
     slug: "family-offices-mena-challenges",
+    seoTitle: "Family Office Challenges in the MENA Region",
+    metaDescription:
+      "How MENA family offices can manage diversified portfolios, consolidated reporting and governance as they professionalise, and where technology helps.",
     href: "/blog/family-offices-mena-challenges",
     date: "22 September 2026",
+    datePublished: "2026-09-22",
     readingTime: "4 min read",
   },
   {
@@ -48,8 +60,11 @@ export const insights: Insight[] = [
     imageAlt:
       "Illustration of connected digital asset tokens and network lines above a rising chart",
     slug: "digital-assets-in-fintech",
+    metaDescription:
+      "How tokenisation and regulated digital assets are reshaping FinTech, the opportunities and risks for investors, and how to bring them into one portfolio view.",
     href: "/blog/digital-assets-in-fintech",
     date: "15 September 2026",
+    datePublished: "2026-09-15",
     readingTime: "4 min read",
   },
   {
@@ -62,8 +77,11 @@ export const insights: Insight[] = [
     imageAlt:
       "Architectural model of modern towers with a holographic data overlay representing PropTech",
     slug: "proptech-disruptive-force-real-estate",
+    metaDescription:
+      "How PropTech data, automation and analytics are transforming real estate investment, and what it means for portfolio managers across the GCC.",
     href: "/blog/proptech-disruptive-force-real-estate",
     date: "8 September 2026",
+    datePublished: "2026-09-08",
     readingTime: "4 min read",
   },
 ];
