@@ -145,7 +145,7 @@ export function buildThankYouEmailHtml(payload: ContactPayload) {
                   If you need us sooner, email
                   <a href="mailto:info@investera.com" style="color:#0c2d57;font-weight:700;text-decoration:none;">info@investera.com</a>
                   or call
-                  <a href="tel:+97123093880" style="color:#0c2d57;font-weight:700;text-decoration:none;">+971 2 309 3880</a>.
+                  <a href="tel:+971502114603" style="color:#0c2d57;font-weight:700;text-decoration:none;">+971 50 211 4603</a>.
                 </p>
               </td>
             </tr>
@@ -174,7 +174,7 @@ export function buildThankYouEmailText(payload: ContactPayload) {
     "",
     "Thank you for getting in touch. We have received your message, and a member of the Investera team will reply to you shortly.",
     "",
-    "If you need us sooner, email info@investera.com or call +971 2 309 3880.",
+    "If you need us sooner, email info@investera.com or call +971 50 211 4603.",
     "",
     "Investera",
     "https://www.investera.com",
