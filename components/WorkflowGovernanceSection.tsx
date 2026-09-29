@@ -9,7 +9,7 @@ type WorkflowGovernanceSectionProps = {
 };
 
 export default function WorkflowGovernanceSection({
-  image = "https://investera.s3.us-east-2.amazonaws.com/Workflow___Governance_Controls__1__1790064232144_ffb3.png",
+  image = "/images/dashboards/workflow-approval-request.webp",
   matchDashboard = false,
 }: WorkflowGovernanceSectionProps) {
   return (
@@ -42,7 +42,7 @@ export default function WorkflowGovernanceSection({
               <div className="relative px-4 pt-1 sm:px-6 lg:absolute lg:inset-0 lg:px-0 lg:pt-0">
                 <DashboardPreview
                   src={image}
-                  alt="Workflow requests and governance controls"
+                  alt="Investera approval request showing the approval workflow status from requester to approver, with approve, reject and delegate actions"
                   delay={0.15}
                   width={matchDashboard ? 1400 : 720}
                   height={matchDashboard ? 965 : 480}

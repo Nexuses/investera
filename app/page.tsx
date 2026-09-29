@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { pageMetadata, softwareJsonLd } from "@/lib/seo";
 import Footer from "@/components/Footer";
 import BusinessDataSection from "@/components/home2/BusinessDataSection";
 import CorePhilosophySection from "@/components/home2/CorePhilosophySection";
@@ -18,15 +20,19 @@ import PlatformCtaSection from "@/components/platform/PlatformCtaSection";
 import GrowthCtaSection from "@/components/about/GrowthCtaSection";
 import BookDemoFormPreload from "@/components/book-demo/BookDemoFormPreload";
 
-export const metadata: Metadata = {
-  title: "Investera | Bringing Investment Management Together",
+export const metadata: Metadata = pageMetadata({
+  title: "Investera | Investment Management Platform for the GCC",
+  absoluteTitle: true,
+  cardTitle: "Bringing Investment Management Together",
   description:
-    "Innovating Finance, Empowering Success. Smart financial tools designed to streamline operations and drive better decision-making.",
-};
+    "Investera Pro unifies portfolios, deals, reporting, documents and workflows in one secure platform for family offices, PE firms and fund managers in the GCC.",
+  path: "/",
+});
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
+      <JsonLd data={softwareJsonLd} />
       <BookDemoFormPreload />
       <DarkHomeHero />
       <LogoSlider />
@@ -39,7 +45,7 @@ export default function Home() {
       <InvestmentFeatureSection />
       <WorkflowGovernanceSection
         matchDashboard
-        image="https://investera.s3.us-east-2.amazonaws.com/Workflow_Requests_1790659277798_em0g.png"
+        image="/images/dashboards/workflow-approval-request.webp"
       />
       <PlatformCtaSection
         titleLine1="Transform How You"
@@ -48,10 +54,10 @@ export default function Home() {
         layoutVariant="split"
         backgroundVariant="hero"
         showContactButton={false}
-        primaryCtaLabel="Discover the Platform"
+        primaryCtaLabel="Explore the Platform"
         primaryCtaHref="/platform"
         primaryCtaVariant="link"
-        description="From deal discovery and portfolio management to reporting and collaboration, Investera Pro connects your entire investment ecosystem in one centralized platform built for modern family offices, PE firms, and investment teams."
+        description="From deal discovery and portfolio management to reporting and collaboration, Investera Pro connects your entire investment ecosystem in one centralised platform built for modern family offices, PE firms, and investment teams."
         deviceImage="/images/cta/laptop-phone.png"
         deviceImageAlt="Investera dashboard on a laptop and smartphone showing portfolio performance"
         showOverlayCards={false}
@@ -65,7 +71,7 @@ export default function Home() {
       <InsightsSection />
       <GrowthCtaSection
         titleLine1="Unlock Better"
-        titleLine2="Opportunities."
+        titleLine2="Opportunities"
         backgroundVariant="hero"
         buttonVariant="platform"
         description="Bring portfolios, deals, reporting, workflows, and investment data together in one connected platform built for greater efficiency, visibility, and control."

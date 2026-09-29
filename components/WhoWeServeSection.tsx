@@ -18,7 +18,7 @@ export default function WhoWeServeSection() {
 
           <p className="mt-4 max-w-[1000px] text-[16px] leading-[1.3] text-[#4A4A4A]">
             Purpose-built investment management solutions for professionals and
-            organizations managing complex, multi-asset portfolios.
+            organisations managing complex, multi-asset portfolios.
           </p>
         </div>
       </div>

@@ -54,3 +54,7 @@ export function isWorkEmail(email: string) {
   }
   return !PERSONAL_EMAIL_DOMAINS.has(domain);
 }
+
+export function isValidEmail(email: string) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}

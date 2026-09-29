@@ -40,7 +40,7 @@ export default function InvesteraProSection({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.15 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0 }}
-          className="relative mt-12 overflow-hidden rounded-[28px] bg-[url('/images/investera-pro/dashboard.png')] bg-cover bg-center lg:mt-14 lg:h-[320px]"
+          className="relative mt-12 overflow-hidden rounded-[28px] bg-[url('/images/investera-pro/dashboard.webp')] bg-cover bg-center lg:mt-14 lg:h-[320px]"
         >
           <div className="grid h-full items-center gap-6 lg:grid-cols-[38%_62%] lg:gap-0">
             {/* Left content */}
@@ -52,7 +52,7 @@ export default function InvesteraProSection({
               </h3>
 
               <p className="mt-4 text-[16px] leading-[1.3] text-[#475569] lg:mt-5">
-                Gain clear visibility into portfolio performance with customizable
+                Gain clear visibility into portfolio performance with customisable
                 dashboards, key metrics, and comprehensive investment reports for
                 faster, informed decisions.
               </p>

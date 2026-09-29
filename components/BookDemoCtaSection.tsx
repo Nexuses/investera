@@ -18,13 +18,13 @@ export default function BookDemoCtaSection() {
 
           <div className="relative z-[1] grid h-full min-w-0 items-center gap-6 px-6 py-8 sm:gap-8 sm:px-9 sm:py-9 lg:grid-cols-[42%_58%] lg:gap-0 lg:py-0 lg:pl-9 lg:pr-0">
             <div className="flex min-w-0 max-w-[420px] flex-col justify-center">
-              <h1 className="text-[32px] font-normal leading-[1.2] tracking-[-0.01em] text-[#222222] sm:text-[42px] lg:text-[55px] lg:leading-[1.25]">
+              <h2 className="text-[32px] font-normal leading-[1.2] tracking-[-0.01em] text-[#222222] sm:text-[42px] lg:text-[55px] lg:leading-[1.25]">
                 Unlock Better
                 <br />
                 <span className="heading-accent text-[#17477F]">
-                  Opportunities.
+                  Opportunities
                 </span>
-              </h1>
+              </h2>
 
               <p className="mt-4 max-w-[360px] text-[15px] leading-[1.35] text-[#555555] sm:text-[16px] sm:leading-[1.3]">
                 Bring portfolios, deals, reporting, workflows, and investment
@@ -34,9 +34,9 @@ export default function BookDemoCtaSection() {
 
               <Link
                 href="/book-a-demo"
-                className="mt-5 inline-flex w-fit items-center justify-center rounded-full bg-[#D8A900] px-6 py-2.5 text-[12px] font-semibold tracking-[0.08em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C49A00] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#17477F] sm:mt-6 sm:text-[13px]"
+                className="mt-5 inline-flex w-fit items-center justify-center rounded-full bg-[#D8A900] px-6 py-2.5 text-[12px] font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#C49A00] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#17477F] sm:mt-6 sm:text-[13px]"
               >
-                BOOK A DEMO
+                Book a Demo
               </Link>
             </div>
 

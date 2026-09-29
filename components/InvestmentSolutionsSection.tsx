@@ -16,7 +16,7 @@ const studies = [
       "KUWAIT · INVESTMENT MANAGEMENT & SHARIAH-COMPLIANT REAL ESTATE",
     titleLines: ["One View", "Across a Diversified", "Investment Portfolio"],
     description:
-      "Centralized multi-asset data, reporting, and governance for stronger portfolio visibility and investment oversight.",
+      "Centralised multi-asset data, reporting, and governance for stronger portfolio visibility and investment oversight.",
     challenge:
       "Investment data was spread across multiple portfolios and entities. Complex reporting and governance requirements made oversight difficult.",
     solution:
@@ -37,7 +37,7 @@ const studies = [
       "Better Investment Oversight",
     ],
     description:
-      "A centralized PMS for performance tracking, structured reporting, and more efficient investment decision-making.",
+      "A centralised PMS for performance tracking, structured reporting, and more efficient investment decision-making.",
     challenge:
       "An expanding portfolio increased reporting and monitoring complexity. Manual processes limited visibility and slowed investment decisions.",
     solution:
@@ -158,9 +158,9 @@ function CaseStudyBack({
               ctaHref.startsWith("http") ? "noopener noreferrer" : undefined
             }
             onClick={(event) => event.stopPropagation()}
-            className="inline-flex w-fit items-center gap-1.5 text-[13px] font-bold uppercase tracking-[0.06em] text-[#0c2d57] transition-opacity hover:opacity-70"
+            className="inline-flex w-fit items-center gap-1.5 text-[15px] font-semibold tracking-normal text-[#0c2d57] transition-opacity hover:opacity-70"
           >
-            Read full case study
+            Read Full Case Study
             <span aria-hidden="true">→</span>
           </Link>
         </div>
@@ -228,7 +228,7 @@ function CaseStudyFlipCard({
             moreInfo={
               <button
                 type="button"
-                className="mt-auto inline-flex w-fit items-center gap-1.5 pt-6 text-[13px] font-bold uppercase tracking-[0.06em] text-[#0c2d57] transition-opacity hover:opacity-70 lg:hidden"
+                className="mt-auto inline-flex w-fit items-center gap-1.5 pt-6 text-[15px] font-semibold tracking-normal text-[#0c2d57] transition-opacity hover:opacity-70 lg:hidden"
                 onClick={(event) => {
                   event.stopPropagation();
                   setFlipped(true);

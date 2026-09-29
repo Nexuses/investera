@@ -6,17 +6,17 @@ import { useCallback, useEffect, useRef, useState } from "react";
 const stories = [
   {
     heading: "Portfolio Managers",
-    body: "Track investment pipelines, opportunities, valuations, and portfolio performance. Gain centralized visibility for faster, informed decisions.",
+    body: "Track investment pipelines, opportunities, valuations, and portfolio performance. Gain centralised visibility for faster, informed decisions.",
     image:
       "https://investera.s3.us-east-2.amazonaws.com/image__3__1787224535026_i1d4.png",
     imageAlt: "Portfolio manager reviewing market data on a trading desk",
   },
   {
     heading: "Family Offices",
-    body: "Centralize diverse investments and wealth-management activities in one secure platform. Access a consolidated, real-time view of holdings and performance.",
+    body: "Centralise diverse investments and wealth-management activities in one secure platform. Access a consolidated, real-time view of holdings and performance.",
     image:
       "https://investera.s3.us-east-2.amazonaws.com/image__4__1787224619077_5ly3.png",
-    imageAlt: "Abstract visualization of investment growth and market momentum",
+    imageAlt: "Abstract visualisation of investment growth and market momentum",
   },
   {
     heading: "Private Equity & VC Firms",

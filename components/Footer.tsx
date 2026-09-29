@@ -3,12 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
+import NewsletterForm from "@/components/NewsletterForm";
 
 const WHITE_LOGO = "/images/logo-white.png";
 
 const platformLinks = [
-  { label: "Everything You Need", href: "/platform#platform-features" },
-  { label: "One Platform.", href: "/platform#platform-features" },
+  { label: "Platform Features", href: "/platform#platform-features" },
   { label: "Why Investera?", href: "/platform#why-investera" },
 ];
 
@@ -72,19 +72,7 @@ export default function Footer() {
               reporting, and documents.
             </p>
 
-            <div className="mt-5 flex max-w-[320px] items-center gap-2 rounded-full border border-white/15 bg-white/10 p-1">
-              <input
-                type="email"
-                placeholder="Work email"
-                className="h-[40px] w-full rounded-full bg-transparent px-4 text-[14px] text-white placeholder:text-white/45 focus:outline-none"
-              />
-              <button
-                type="button"
-                className="h-[40px] shrink-0 rounded-full bg-[#CCA400] px-5 text-[14px] font-semibold text-white transition-opacity hover:opacity-90"
-              >
-                Subscribe
-              </button>
-            </div>
+            <NewsletterForm />
 
             <div className="mt-4 flex items-center gap-2.5">
               {socialLinks.map((social) => (
@@ -202,10 +190,10 @@ export default function Footer() {
             <p>© 2026 Investera. All rights reserved.</p>
             <div className="flex items-center gap-6">
               <Link href="/privacy-policy" className="transition-colors hover:text-white/75">
-                Privacy policy
+                Privacy Policy
               </Link>
-              <Link href="/contact" className="transition-colors hover:text-white/75">
-                Terms of service
+              <Link href="/terms-of-service" className="transition-colors hover:text-white/75">
+                Terms of Service
               </Link>
             </div>
           </div>

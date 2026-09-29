@@ -24,7 +24,7 @@ const cards = [
     title: "AI-Powered Insights",
     id: "ai-powered-insights",
     description:
-      "Ask investment questions, summarize deal metrics, and explore portfolio trends through an intuitive AI assistant.",
+      "Ask investment questions, summarise deal metrics, and explore portfolio trends through an intuitive AI assistant.",
     image:
       "https://investera.s3.us-east-2.amazonaws.com/Frame_10000hjk03850_1786626912728_rjlq.png",
     imageAlt: "AI-powered asset allocation insights",
@@ -33,7 +33,7 @@ const cards = [
     title: "See the Full Picture",
     id: "full-picture",
     description:
-      "Replace scattered reports with a centralized dashboard to track AUM, portfolio growth, allocations, investment activity, and insights in one view.",
+      "Replace scattered reports with a centralised dashboard to track AUM, portfolio growth, allocations, investment activity, and insights in one view.",
     image:
       "https://investera.s3.us-east-2.amazonaws.com/Frame_hjk_1786626912728_7jog.png",
     imageAlt: "Investera dashboard with total assets under management",

@@ -174,7 +174,7 @@ export default function Home2Header() {
 
               <p className="mx-auto mt-6 max-w-[560px] text-[18px] leading-[1.75] text-[#64748b]">
                 Discover a suite of smart financial tools designed to streamline
-                your operations, optimize cash flow, and drive better
+                your operations, optimise cash flow, and drive better
                 decision-making.
               </p>
 

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import CurrencyExposureCard from "@/components/CurrencyExposureCard";
+import AumCategoryCard from "@/components/AumCategoryCard";
 
 const TABLET =
   "https://investera.s3.us-east-2.amazonaws.com/Group_1000005978_1786688998844_qgh7.png";
@@ -37,7 +37,7 @@ type PlatformCtaSectionProps = {
 export default function PlatformCtaSection({
   titleLine1 = "Transform Investment",
   titleLine2 = "Data into Strategy",
-  description = "Monitor your portfolio, evaluate exposure, stay ahead of market developments, and capitalize on new opportunities through one connected investor portal.",
+  description = "Monitor your portfolio, evaluate exposure, stay ahead of market developments, and capitalise on new opportunities through one connected investor portal.",
   deviceImage = TABLET,
   deviceImageAlt = "Investera investor portal on tablet",
   deviceImageClassName = "relative z-[1] h-full w-full object-cover object-top mix-blend-screen sm:h-auto sm:object-contain sm:object-center",
@@ -48,7 +48,7 @@ export default function PlatformCtaSection({
   backgroundVariant = "default",
   layoutVariant = "stacked",
   showContactButton = true,
-  primaryCtaLabel = "Start A Free Trial",
+  primaryCtaLabel = "Book a Demo",
   primaryCtaHref = "/book-a-demo",
   primaryCtaVariant = "button",
   deviceComposition,
@@ -101,7 +101,7 @@ export default function PlatformCtaSection({
         {primaryCtaVariant === "link" ? (
           <Link
             href={primaryCtaHref}
-            className="inline-flex w-fit items-center gap-1.5 text-[13px] font-bold uppercase tracking-[0.06em] text-[#CCA400] transition-opacity hover:opacity-70"
+            className="inline-flex w-fit items-center gap-1.5 text-[15px] font-semibold tracking-normal text-[#CCA400] transition-opacity hover:opacity-70"
           >
             {primaryCtaLabel}
             <span aria-hidden="true">→</span>
@@ -202,7 +202,11 @@ export default function PlatformCtaSection({
                     delay: 0.3,
                   }}
                 >
-                  <CurrencyExposureCard codes={["USD", "EUR", "GBP", "JPY"]} />
+                  <AumCategoryCard
+                  icon="markets"
+                  title="Capital Markets + Cash Portfolio"
+                  value="2,003,892,251,801.1"
+                />
                 </motion.div>
 
                 <motion.div
@@ -215,10 +219,7 @@ export default function PlatformCtaSection({
                     delay: 0.7,
                   }}
                 >
-                  <CurrencyExposureCard
-                    codes={["AED", "SAR", "KWD"]}
-                    startDelayMs={1400}
-                  />
+                  <AumCategoryCard icon="equity" title="Private Equity" value="23,779,854.8" />
                 </motion.div>
               </>
             ) : null}

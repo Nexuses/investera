@@ -20,7 +20,7 @@ const cards = [
   {
     title: "Faster Understanding",
     description:
-      "Use interactive visualizations and AI-generated summaries to interpret complex portfolio and deal information more quickly.",
+      "Use interactive visualisations and AI-generated summaries to interpret complex portfolio and deal information more quickly.",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
         <path

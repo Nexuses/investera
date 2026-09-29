@@ -102,13 +102,19 @@ export default function ContactPage2() {
               className="h-[48px] w-full rounded-[4px] px-4 text-[16px] font-medium leading-[1.3] text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-70"
               style={{ backgroundColor: "#CCA400" }}
             >
-              {isLoading ? "Sending..." : "Submit"}
+              {isLoading ? "Sending…" : "Send Message"}
             </button>
 
             {status === "success" ? (
-              <p className="text-[14px] leading-[1.4] text-[#059669]">
-                Thanks — your message was sent. A confirmation email is on its way, and our team will get back to you soon.
-              </p>
+              <div
+                role="status"
+                className="rounded-[6px] border border-[#A7F3D0] bg-[#ECFDF5] px-4 py-3 text-[14px] leading-[1.5] text-[#065F46]"
+              >
+                <p className="font-semibold">Thank you, your message has been received.</p>
+                <p className="mt-1">
+                  A member of the Investera team will contact you within 24 hours.
+                </p>
+              </div>
             ) : null}
             {status === "error" ? (
               <p className="text-[14px] leading-[1.4] text-[#DC2626]">{error}</p>

@@ -172,7 +172,7 @@ export default function Header({ variant = "dark" }: HeaderProps) {
               href="/book-a-demo"
               className="rounded-full bg-[#CCA400] px-5 py-2.5 text-[13px] font-semibold text-white transition-transform hover:scale-[1.03]"
             >
-              Book a demo
+              Book a Demo
             </Link>
           </div>
 

@@ -45,7 +45,7 @@ const teamRowTwo = [
   },
   {
     name: "Sheikha Obaidullah",
-    role: "Operation & Project Implementation Specialist",
+    role: "Operations & Project Implementation Specialist",
     image:
       "https://investera.s3.us-east-2.amazonaws.com/Sheikha_1_1789459795289_8x2z.png",
   },

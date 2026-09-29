@@ -67,7 +67,7 @@ export default function CaseStudyCard({
           href={href}
           className="mt-6 inline-flex items-center gap-1.5 text-[18px] font-semibold tracking-normal text-[#0c2d57] transition-opacity duration-300 hover:opacity-80"
         >
-          READ FULL CASE STUDY
+          Read Full Case Study
           <span aria-hidden="true" className="text-[16px]">
             →
           </span>

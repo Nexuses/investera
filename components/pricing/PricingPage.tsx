@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import FadeIn from "@/components/FadeIn";
 import PricingTimelineSection from "@/components/pricing/PricingTimelineSection";
+import { faqs } from "@/components/pricing/pricing-faqs";
 
 const HERO_DASHBOARD =
   "https://investera.s3.us-east-2.amazonaws.com/Mask_group-1_1787746826818_bu63.png";
@@ -152,36 +153,6 @@ const features = [
   },
 ];
 
-const faqs = [
-  {
-    q: "Why isn't the price on this page?",
-    a: "Because any number we published would be wrong for most of the people reading it. A single-entity family office with four users and a diversified holding group consolidating twenty entities across five currencies are buying very different configurations of the same platform. Rather than post a figure hedged with footnotes, we size it properly once on a call that takes half an hour.",
-  },
-  {
-    q: "Is this a sales pitch dressed up as a pricing call?",
-    a: "No. Come with your asset classes, entity structure and user count, and you'll leave with an indicative range on the call itself and a written proposal within three working days. If Investera isn't the right fit for your operation, we'll say so on the call rather than after a six-week process.",
-  },
-  {
-    q: "How is Investera licensed?",
-    a: "An annual subscription covering the platform, your users and the modules you enable, with implementation quoted separately and upfront. Multi-year terms are available. There are no per-report, per-portfolio or per-transaction charges. Those are the things you should be doing more of, not paying more for.",
-  },
-  {
-    q: "What does implementation involve?",
-    a: "Data migration from your existing spreadsheets and systems, chart-of-accounts and asset-class mapping, workflow and approval configuration, user roles and permissions, integration setup, and team training. Scope and cost are set out line by line in the proposal before you commit.",
-  },
-  {
-    q: "Can we start with part of the portfolio?",
-    a: "Yes. Many clients begin with one asset class or one entity and extend across the group once the team is confident. Because pricing tracks users, entities and modules, the commitment scales with the rollout instead of running ahead of it.",
-  },
-  {
-    q: "Who owns the data, and where does it live?",
-    a: "You do. Investera runs on AWS with encrypted data management, role-based access and granular user permissions, and regional hosting is available on request. Your data is exportable at any point during the term and on exit.",
-  },
-  {
-    q: "Do you work with organisations outside the GCC?",
-    a: "Yes. Our clients are concentrated across the UAE, Saudi Arabia, Kuwait and Oman, with users further afield including Singapore. Multi-currency reporting and configurable governance frameworks are part of the standard platform.",
-  },
-];
 
 const included = [
   "Consolidated multi-asset dashboards",
@@ -266,13 +237,13 @@ export default function PricingPage() {
                   href="/book-a-demo"
                   className="inline-flex items-center justify-center rounded-full bg-[#CCA400] px-7 py-3 text-[14px] font-semibold text-white transition-transform hover:scale-[1.03]"
                 >
-                  Book a pricing call
+                  Book a Pricing Call
                 </Link>
                 <a
                   href="#included"
                   className="inline-flex items-center justify-center rounded-full border border-white/40 bg-transparent px-7 py-3 text-[14px] font-semibold text-white transition-colors hover:border-white hover:bg-white/5"
                 >
-                  See what&apos;s included
+                  See What&apos;s Included
                 </a>
               </div>
               <div className="mt-9 flex flex-wrap gap-x-7 gap-y-2.5 text-[13px] text-white/60">
@@ -466,8 +437,8 @@ export default function PricingPage() {
                 />
                 <div className="relative flex h-full flex-col">
                   <h2 className="text-[32px] font-normal leading-tight tracking-[-0.02em] sm:text-[40px]">
-                    Included In{" "}
-                    <span className="font-bold">Every Plan</span>
+                    Included As{" "}
+                    <span className="font-bold">Standard</span>
                   </h2>
                   <div
                     aria-hidden
@@ -475,8 +446,7 @@ export default function PricingPage() {
                   />
                   <p className="mt-5 max-w-[42ch] text-[16px] leading-[1.3] text-white/70 sm:mt-6">
                     Regardless of size, no capability is held back behind a
-                    higher tier. Implementation is scoped separately and quoted
-                    upfront.
+                    higher tier. Every licence includes the full platform.
                   </p>
 
                   <ul className="mt-5 grid gap-2.5">
@@ -520,7 +490,7 @@ export default function PricingPage() {
                       href="/book-a-demo"
                       className="inline-flex items-center gap-1.5 rounded-full bg-[#CCA400] px-5 py-2.5 text-[13px] font-semibold text-white transition-transform hover:scale-[1.02]"
                     >
-                      Book a pricing call
+                      Book a Pricing Call
                       <span aria-hidden>→</span>
                     </Link>
                   </div>
@@ -595,7 +565,7 @@ export default function PricingPage() {
             </span>
             <h2 className="mt-3.5 text-[32px] font-normal leading-tight tracking-[-0.02em] text-[#111111] sm:text-[40px]">
               Questions We Get{" "}
-              <span className="heading-accent text-[#0c2d57]">Before The Call</span>
+              <span className="heading-accent text-[#0c2d57]">Before the Call</span>
             </h2>
           </FadeIn>
 
@@ -693,8 +663,8 @@ export default function PricingPage() {
         />
         <div className="relative mx-auto max-w-[1440px] px-6 text-center lg:px-16">
           <h2 className="text-[36px] font-normal leading-[1.12] tracking-[-0.03em] text-white sm:text-[48px] lg:text-[56px]">
-            Get A Number You Can{" "}
-            <span className="heading-accent text-white">Take To Your Board.</span>
+            Get a Number You Can{" "}
+            <span className="heading-accent text-white">Take to Your Board</span>
           </h2>
           <p className="mx-auto mt-5 max-w-[640px] text-[16px] leading-[1.45] text-white/80 sm:text-[18px]">
             Thirty minutes on your portfolio, your entities and your team, and a
@@ -706,13 +676,13 @@ export default function PricingPage() {
               href="/book-a-demo"
               className="inline-flex items-center justify-center rounded-full bg-[#CCA400] px-7 py-3 text-[14px] font-semibold text-white transition-transform hover:scale-[1.03]"
             >
-              Book a pricing call
+              Book a Pricing Call
             </Link>
             <Link
               href="/contact"
               className="inline-flex items-center justify-center rounded-full border border-white/40 bg-transparent px-7 py-3 text-[14px] font-semibold text-white transition-colors hover:border-white hover:bg-white/5"
             >
-              Contact us
+              Contact Us
             </Link>
           </div>
         </div>
@@ -732,7 +702,7 @@ export default function PricingPage() {
           href="/book-a-demo"
           className="inline-flex shrink-0 items-center justify-center rounded-full bg-[#CCA400] px-5 py-2.5 text-[13px] font-semibold text-white"
         >
-          Book a call
+          Book a Pricing Call
         </Link>
       </div>
     </>

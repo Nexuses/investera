@@ -29,7 +29,7 @@ const squares = [
 export default function GrowthCtaSection({
   titleLine1 = "Bring Your Investment Operations Into",
   titleLine2 = "One Intelligent Platform",
-  description = "Centralize portfolios, deals, reporting, workflows, and insights with Investera Pro.",
+  description = "Centralise portfolios, deals, reporting, workflows, and insights with Investera Pro.",
   backgroundVariant = "default",
   buttonVariant = "demo",
 }: {
@@ -95,7 +95,7 @@ export default function GrowthCtaSection({
                   href="/book-a-demo"
                   className="rounded-full bg-[#CCA400] px-7 py-3 text-center text-[14px] font-semibold text-white transition-transform hover:scale-[1.03]"
                 >
-                  Start A Free Trial
+                  Book a Demo
                 </Link>
               </div>
             ) : (
