@@ -6,6 +6,7 @@ import BookDemoCtaSection from "@/components/BookDemoCtaSection";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import JsonLd from "@/components/JsonLd";
+import ArticleBody from "@/components/blog/ArticleBody";
 import { BANNER_SIZE, getInsightBySlug, insights } from "@/components/insights-data";
 import { articles } from "@/lib/blog-articles";
 import { breadcrumbJsonLd, LOGO_URL, pageMetadata, SITE_NAME, SITE_URL } from "@/lib/seo";
@@ -82,20 +83,8 @@ export default async function BlogArticlePage({
       />
       <Header variant="dark" />
       <main>
-        <section className="relative overflow-hidden bg-[#050B1F] px-6 pb-16 pt-[132px] sm:pb-20 sm:pt-[148px] lg:px-16 lg:pb-24 lg:pt-[168px]">
-          <Image
-            src={insight.image}
-            alt=""
-            fill
-            unoptimized
-            priority
-            className="object-cover object-center opacity-45"
-          />
-          <div
-            aria-hidden
-            className="absolute inset-0 bg-gradient-to-r from-[#050B1F] via-[#050B1F]/80 to-[#050B1F]/30"
-          />
-          <div className="relative mx-auto max-w-[760px]">
+        <section className="bg-[#050B1F] px-6 pb-40 pt-[132px] sm:pb-48 sm:pt-[148px] lg:px-16 lg:pb-56 lg:pt-[168px]">
+          <div className="mx-auto max-w-[760px]">
             <Link
               href="/blog"
               className="text-[14px] font-medium text-white/70 transition-colors hover:text-white"
@@ -119,35 +108,28 @@ export default async function BlogArticlePage({
           </div>
         </section>
 
+        <div className="mx-auto -mt-28 max-w-[1040px] px-6 sm:-mt-36 lg:-mt-44">
+          <div className="relative aspect-[1920/1086] overflow-hidden rounded-[20px] shadow-[0_24px_60px_rgba(5,11,31,0.35)] sm:rounded-[24px]">
+            <Image
+              src={insight.image}
+              alt={insight.imageAlt}
+              fill
+              unoptimized
+              priority
+              sizes="(max-width: 1040px) 100vw, 1040px"
+              className="object-cover"
+            />
+          </div>
+        </div>
+
         <article className="mx-auto max-w-[760px] px-6 py-14 sm:px-10 sm:py-16 lg:py-20">
           <p className="text-[19px] leading-[1.6] text-[#1f1f1f]">{article.intro}</p>
 
-          {article.sections.map((section) => (
-            <section key={section.heading} className="mt-12">
-              <h2 className="text-[26px] font-semibold leading-[1.25] tracking-[-0.01em] text-[#0c2d57] sm:text-[30px]">
-                {section.heading}
-              </h2>
-              {section.paragraphs.map((paragraph) => (
-                <p
-                  key={paragraph.slice(0, 40)}
-                  className="mt-4 text-[17px] leading-[1.65] text-[#374151]"
-                >
-                  {paragraph}
-                </p>
-              ))}
-              {section.bullets && (
-                <ul className="mt-5 list-disc space-y-2 pl-5 text-[17px] leading-[1.6] text-[#374151] marker:text-[#CCA400]">
-                  {section.bullets.map((bullet) => (
-                    <li key={bullet}>{bullet}</li>
-                  ))}
-                </ul>
-              )}
-            </section>
-          ))}
+          <ArticleBody blocks={article.blocks} />
 
           <div className="mt-14 rounded-[12px] bg-[#0c2d57] px-6 py-6 text-white sm:px-8 sm:py-8">
             <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-[#CCA400]">
-              Key takeaway
+              Key Takeaway
             </p>
             <p className="mt-3 text-[18px] leading-[1.5]">{article.takeaway}</p>
           </div>
@@ -182,7 +164,7 @@ export default async function BlogArticlePage({
                       {item.description}
                     </h3>
                     <span className="mt-4 inline-flex text-[15px] font-semibold text-[#0c2d57] group-hover:opacity-80">
-                      Read more →
+                      Read More →
                     </span>
                   </div>
                 </Link>

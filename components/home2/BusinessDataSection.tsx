@@ -5,7 +5,7 @@ const cards = [
     badgeLabel: "Private investments",
     word: "Private.",
     categories: "Equity · Real Estate · Funds",
-    title: "Every Private Holding, Tracked To The Cent",
+    title: "Every Private Holding, Tracked to the Cent",
     description:
       "Manage private equity, real estate and other private assets with centralised tracking of valuations, cash flows and performance.",
     theme: "private" as const,
@@ -14,7 +14,7 @@ const cards = [
     badgeLabel: "Public investments",
     word: "Public.",
     categories: "Listed · Fixed Income · Funds",
-    title: "Listed Positions, Valued As The Market Moves",
+    title: "Listed Positions, Valued as the Market Moves",
     description:
       "Monitor listed securities, market valuations, transactions and portfolio performance through a unified investment view.",
     theme: "public" as const,
@@ -119,7 +119,7 @@ export default function BusinessDataSection({
         <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
           <FadeIn>
             <h2 className="max-w-[720px] text-[40px] font-normal leading-[1.2] tracking-[-0.02em] text-[#111111]">
-              Multi-Asset-Class
+              Multi-Asset
               <br />
               <span className="heading-accent text-[#143F73]">
                 Investment Management

@@ -28,7 +28,7 @@ const quotes = [
   },
   {
     lead: "Investera has become an important asset for our investment team.",
-    rest: " Its customization, integration, portfolio monitoring, and risk assessment capabilities address our core business requirements.",
+    rest: " Its customisation, integration, portfolio monitoring, and risk assessment capabilities address our core business requirements.",
     name: "Omar",
     role: "CFO",
     org: "UAE",
@@ -72,7 +72,7 @@ export default function RegionalTrustSection() {
       <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
         <FadeIn>
           <h2 className="max-w-[640px] text-[32px] font-normal leading-[1.2] tracking-[-0.02em] sm:text-[40px]">
-            <span className="font-normal text-[#1a1a1a]">Investment Teams Across The Region </span>
+            <span className="font-normal text-[#1a1a1a]">Investment Teams Across the Region </span>
             <span className="heading-accent text-[#0c2d57]">
               Trust Investera
             </span>

@@ -8,7 +8,7 @@ export const metadata: Metadata = pageMetadata({
   title: "Dimah Capital Case Study: IMS Implementation",
   cardTitle: "Dimah Capital: Investment Management System",
   description:
-    "How Investera implemented a centralized Investment Management System for Dimah Capital in Kuwait, covering multi-asset portfolios, reporting and governance.",
+    "How Investera implemented a centralised Investment Management System for Dimah Capital in Kuwait, covering multi-asset portfolios, reporting and governance.",
   path: "/case-study/dimah-capital",
 });
 
@@ -94,7 +94,7 @@ export default function DimahCapitalCaseStudyPage() {
             <div className="mt-4 space-y-4 text-[16px] leading-[1.55] text-[#1f1f1f]">
               <p>Multi-asset portfolio management, reporting, and system consolidation.</p>
               <p>
-                Investera implemented a centralized Investment Management System (IMS)
+                Investera implemented a centralised Investment Management System (IMS)
                 for Dimah Capital in 2019.
               </p>
               <p>
@@ -108,11 +108,11 @@ export default function DimahCapitalCaseStudyPage() {
             <SectionTitle lead="Solution" accent="Approach" />
             <p className="mt-4 text-[16px] leading-[1.55] text-[#1f1f1f]">
               Investera supports Dimah Capital in its investment
-              management operations through a centralized investment management
+              management operations through a centralised investment management
               platform.
             </p>
             <h3 className="mt-8 text-[18px] font-semibold leading-snug text-[#2F6FE4]">
-              What the platform supports
+              What the Platform Supports
             </h3>
             <p className="mt-4 text-[16px] leading-[1.55] text-[#1f1f1f]">
               The platform supports the management of diversified portfolios across
@@ -122,7 +122,7 @@ export default function DimahCapitalCaseStudyPage() {
 
             <div className="mt-8 rounded-[12px] bg-[#0c2d57] px-6 py-6 text-white sm:px-8 sm:py-8">
               <h3 className="text-[18px] font-semibold leading-snug">
-                Key capabilities delivered
+                Key Capabilities Delivered
               </h3>
               <ul className="mt-4 grid list-disc gap-x-10 gap-y-1.5 pl-5 text-[15px] leading-[1.45] text-white/95 sm:grid-cols-2">
                 {capabilities.map((item) => (

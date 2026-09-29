@@ -24,7 +24,7 @@ const testimonials = [
   },
   {
     quote:
-      "Investera has become an important asset for our investment team. Its customization, integration, portfolio monitoring, and risk assessment capabilities address our core business requirements.",
+      "Investera has become an important asset for our investment team. Its customisation, integration, portfolio monitoring, and risk assessment capabilities address our core business requirements.",
     name: "Omar",
     title: "CFO, UAE",
   },
@@ -96,9 +96,9 @@ export default function TestimonialsSection() {
         >
           <h2 className="text-[34px] font-normal leading-[1.2] tracking-[-0.02em] sm:text-[40px]">
             <span className="font-normal text-[#1a1a1a]">
-              Investment teams across the region{" "}
+              Investment Teams Across the Region{" "}
             </span>
-            <span className="heading-accent text-[#0c2d57]">trust Investera</span>
+            <span className="heading-accent text-[#0c2d57]">Trust Investera</span>
           </h2>
         </motion.div>
 

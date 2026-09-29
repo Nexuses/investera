@@ -37,7 +37,7 @@ type PlatformCtaSectionProps = {
 export default function PlatformCtaSection({
   titleLine1 = "Transform Investment",
   titleLine2 = "Data into Strategy",
-  description = "Monitor your portfolio, evaluate exposure, stay ahead of market developments, and capitalize on new opportunities through one connected investor portal.",
+  description = "Monitor your portfolio, evaluate exposure, stay ahead of market developments, and capitalise on new opportunities through one connected investor portal.",
   deviceImage = TABLET,
   deviceImageAlt = "Investera investor portal on tablet",
   deviceImageClassName = "relative z-[1] h-full w-full object-cover object-top mix-blend-screen sm:h-auto sm:object-contain sm:object-center",
@@ -48,7 +48,7 @@ export default function PlatformCtaSection({
   backgroundVariant = "default",
   layoutVariant = "stacked",
   showContactButton = true,
-  primaryCtaLabel = "Request a Free Pilot",
+  primaryCtaLabel = "Book a Demo",
   primaryCtaHref = "/book-a-demo",
   primaryCtaVariant = "button",
   deviceComposition,
@@ -101,7 +101,7 @@ export default function PlatformCtaSection({
         {primaryCtaVariant === "link" ? (
           <Link
             href={primaryCtaHref}
-            className="inline-flex w-fit items-center gap-1.5 text-[13px] font-bold uppercase tracking-[0.06em] text-[#CCA400] transition-opacity hover:opacity-70"
+            className="inline-flex w-fit items-center gap-1.5 text-[15px] font-semibold tracking-normal text-[#CCA400] transition-opacity hover:opacity-70"
           >
             {primaryCtaLabel}
             <span aria-hidden="true">→</span>

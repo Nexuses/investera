@@ -190,10 +190,10 @@ export default function Footer() {
             <p>© 2026 Investera. All rights reserved.</p>
             <div className="flex items-center gap-6">
               <Link href="/privacy-policy" className="transition-colors hover:text-white/75">
-                Privacy policy
+                Privacy Policy
               </Link>
               <Link href="/terms-of-service" className="transition-colors hover:text-white/75">
-                Terms of service
+                Terms of Service
               </Link>
             </div>
           </div>

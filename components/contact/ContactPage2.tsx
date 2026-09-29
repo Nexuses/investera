@@ -102,7 +102,7 @@ export default function ContactPage2() {
               className="h-[48px] w-full rounded-[4px] px-4 text-[16px] font-medium leading-[1.3] text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-70"
               style={{ backgroundColor: "#CCA400" }}
             >
-              {isLoading ? "Sending..." : "Submit"}
+              {isLoading ? "Sending…" : "Send Message"}
             </button>
 
             {status === "success" ? (

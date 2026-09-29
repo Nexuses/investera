@@ -42,7 +42,7 @@ const tabs: FeatureTab[] = [
     points: [
       "Track Account Performance",
       "Review AUM Growth Trends",
-      "Analyze Portfolio Allocation",
+      "Analyse Portfolio Allocation",
     ],
     image:
       "https://investera.s3.us-east-2.amazonaws.com/ChatGPT_Image_Aug_14__2026__10_23_28_AM_2_1786698329768_pfl6.png",
@@ -58,7 +58,7 @@ const tabs: FeatureTab[] = [
     points: [
       "Track Currency Holdings",
       "Monitor FX Movements",
-      "Analyze Treasury AUM Trends",
+      "Analyse Treasury AUM Trends",
     ],
     image:
       "https://investera.s3.us-east-2.amazonaws.com/Group_1000004877dfbd_1786704372324_8rqp.png",
@@ -76,7 +76,7 @@ const tabs: FeatureTab[] = [
     description:
       "Streamline opportunity management with a connected workspace for tracking potential investments, approvals, and deal progress. Keep teams aligned with clear visibility across the investment pipeline.",
     points: [
-      "Visualize Deal Flow",
+      "Visualise Deal Flow",
       "Track Approval Progress",
       "Align Stakeholder Decisions",
     ],
@@ -97,7 +97,7 @@ const tabs: FeatureTab[] = [
     description:
       "Interact with your investment data using natural language and receive actionable insights from connected portfolio information. Simplify analysis, uncover trends, and accelerate investment decision-making.",
     points: [
-      "Summarize Investment Insights",
+      "Summarise Investment Insights",
       "Explore Portfolio Trends",
       "Identify Key Observations",
     ],
@@ -132,10 +132,10 @@ const tabs: FeatureTab[] = [
     label: "AI-Powered Insights",
     titleLines: ["Uncover Insights", "with AI Assistance"],
     description:
-      "Ask investment questions, summarize deal metrics, and explore portfolio trends through an intuitive AI assistant.",
+      "Ask investment questions, summarise deal metrics, and explore portfolio trends through an intuitive AI assistant.",
     points: [
       "Ask Investment Questions",
-      "Summarize Deal Metrics",
+      "Summarise Deal Metrics",
       "Explore Portfolio Trends",
     ],
     image:
@@ -148,9 +148,9 @@ const tabs: FeatureTab[] = [
     label: "See the Full Picture",
     titleLines: ["See the Full", "Investment Picture"],
     description:
-      "Replace scattered reports with a centralized dashboard to track AUM, portfolio growth, allocations, investment activity, and insights in one view.",
+      "Replace scattered reports with a centralised dashboard to track AUM, portfolio growth, allocations, investment activity, and insights in one view.",
     points: [
-      "Centralize AUM & Growth",
+      "Centralise AUM & Growth",
       "Track Allocations & Activity",
       "Unify Insights in One View",
     ],
@@ -432,7 +432,7 @@ export default function PlatformFeatureTabs() {
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-full bg-[#CCA400] px-7 py-3 text-[15px] font-semibold text-white transition-transform hover:scale-[1.03]"
               >
-                Talk to Our Team
+                Contact Us
               </Link>
             </div>
           </div>

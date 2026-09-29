@@ -53,7 +53,7 @@ const steps = [
   },
   {
     n: "Step Three",
-    title: "A Pilot On Your Data",
+    title: "A Pilot on Your Data",
     body: "Before any commitment, we load a slice of your real portfolio so your team can judge the platform on their own numbers rather than on a sample dataset.",
     dur: "Optional, at no cost",
     side: "left" as const,
@@ -277,13 +277,13 @@ export default function PricingTimelineSection() {
             href="/book-a-demo"
             className="inline-flex items-center justify-center rounded-full bg-[#CCA400] px-7 py-3 text-[14px] font-semibold text-white transition-transform hover:scale-[1.03]"
           >
-            Book a pricing call
+            Book a Pricing Call
           </Link>
           <Link
             href="/contact"
             className="inline-flex items-center justify-center rounded-full border border-[#D1D5DB] bg-white px-7 py-3 text-[14px] font-semibold text-[#111111] transition-colors hover:border-[#9CA3AF] hover:bg-[#F9FAFB]"
           >
-            Send a question instead
+            Contact Us
           </Link>
         </div>
       </div>

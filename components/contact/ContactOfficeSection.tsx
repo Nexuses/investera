@@ -8,7 +8,7 @@ export default function ContactOfficeSection() {
           </h2>
           <p className="mt-4 max-w-[480px] text-[16px] leading-[1.3] text-[#4B5563]">
             Visit our headquarters or get in touch for the nearest location to
-            your organization.
+            your organisation.
           </p>
           <div className="mt-6 h-px w-full bg-[#0c2d57]/40" />
 
@@ -53,9 +53,9 @@ export default function ContactOfficeSection() {
             <div>
               <p className="text-[22px] font-semibold leading-[1.25] tracking-[-0.01em] text-[#111111]">Business Hours:</p>
               <p className="mt-2 text-[16px] leading-[1.3] text-[#6B7280]">
-                Monday - Friday: 9:00 AM - 6:00 PM
+                Monday–Friday: 9:00 AM–6:00 PM
                 <br />
-                Saturday: 9:00 AM - 1:00 PM
+                Saturday: 9:00 AM–1:00 PM
                 <br />
                 Sunday: Closed
               </p>

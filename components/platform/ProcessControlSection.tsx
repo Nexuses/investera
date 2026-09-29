@@ -18,7 +18,7 @@ export default function ProcessControlSection() {
               <span className="heading-accent text-[#0c2d57]">Instantly</span>
             </h2>
             <p className="mt-5 text-[16px] leading-[1.3] text-[#4B5563] sm:mt-6">
-              Replace scattered reports and spreadsheets with one centralized
+              Replace scattered reports and spreadsheets with one centralised
               dashboard to track AUM, portfolio growth, sector allocation,
               investment activity, and detailed insights, all from a single view.
             </p>

@@ -49,7 +49,7 @@ function HubSpotMeetingsEmbed() {
             rel="noopener noreferrer"
             className="mt-6 rounded-full bg-[#CCA400] px-6 py-3 text-[15px] font-semibold text-white transition-opacity hover:opacity-90"
           >
-            Open booking calendar
+            Open Booking Calendar
           </a>
           <a
             href="mailto:info@investera.com"

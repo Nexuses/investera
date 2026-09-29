@@ -1,6 +1,6 @@
 import { insights } from "@/components/insights-data";
 import { faqs } from "@/components/pricing/pricing-faqs";
-import { articles } from "@/lib/blog-articles";
+import { articles, articleText } from "@/lib/blog-articles";
 import { DEFAULT_DESCRIPTION, SITE_URL } from "@/lib/seo";
 
 // Plain-text site summaries for AI agents (https://llmstxt.org).
@@ -62,15 +62,7 @@ export function buildLlmsFullTxt() {
       if (!article) {
         return "";
       }
-      const sections = article.sections
-        .map(
-          (section) =>
-            `#### ${section.heading}\n\n${section.paragraphs.join("\n\n")}${
-              section.bullets ? `\n\n${section.bullets.map((b) => `- ${b}`).join("\n")}` : ""
-            }`,
-        )
-        .join("\n\n");
-      return `### ${insight.description}\n\nURL: ${url(insight.href)}\nPublished: ${insight.datePublished}\n\n${article.intro}\n\n${sections}\n\nKey takeaway: ${article.takeaway}`;
+      return `### ${insight.description}\n\nURL: ${url(insight.href)}\nPublished: ${insight.datePublished}\n\n${articleText(article)}`;
     })
     .join("\n\n");
 
@@ -84,7 +76,7 @@ ${companyFacts}
 
 Investera Pro is an end-to-end investment management platform that unifies portfolios, transactions, workflows, reporting and documents in one secure system.
 
-- Dashboards & reporting: customizable dashboards, KPI tracking and performance reporting including IRR, TWR, DPI and TVPI analytics.
+- Dashboards & reporting: customisable dashboards, KPI tracking and performance reporting including IRR, TWR, DPI and TVPI analytics.
 - Portfolio & deal management: holdings, deal pipelines, valuations, transactions, CRM and investor onboarding, from screening to exit.
 - Secure document management: encrypted repository, role-based access, deal-linked approvals and e-signatures.
 - Workflow & governance: approval workflows, maker-checker controls, due diligence tracking and automated alerts.
@@ -109,11 +101,11 @@ More: ${url("/pricing")}
 ## Case studies
 
 ### Dimah Capital (Kuwait)
-Kuwait-based investment management company focused on Shariah-compliant international real estate. Investera implemented a centralized Investment Management System in 2019 covering multi-entity portfolio structure, consolidated reporting across asset classes, data migration, configurable workflows and access controls, on-premises installation and an investor mobile application.
+Kuwait-based investment management company focused on Shariah-compliant international real estate. Investera implemented a centralised Investment Management System in 2019 covering multi-entity portfolio structure, consolidated reporting across asset classes, data migration, configurable workflows and access controls, on-premises installation and an investor mobile application.
 URL: ${url("/case-study/dimah-capital")}
 
 ### Al Kifah Holding (Saudi Arabia)
-Diversified holding group. Investera implemented its Portfolio Management System to centralize investment data, track portfolio performance, automate reporting and provide role-based governance controls.
+Diversified holding group. Investera implemented its Portfolio Management System to centralise investment data, track portfolio performance, automate reporting and provide role-based governance controls.
 URL: ${url("/case-study/al-kifah-holding")}
 
 ## Blog articles

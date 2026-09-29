@@ -74,7 +74,7 @@ export default function IdentityVisionSection() {
                 </h3>
               </div>
               <p className="mt-5 text-[16px] leading-[1.3] text-[#1a1a1a]">
-                Enable investment organizations to manage complex, multi-asset
+                Enable investment organisations to manage complex, multi-asset
                 portfolios with greater visibility, efficiency, transparency,
                 and control.
               </p>
@@ -126,7 +126,7 @@ export default function IdentityVisionSection() {
                 </h3>
               </div>
               <p className="mt-5 text-[16px] leading-[1.3] text-[#1a1a1a]">
-                Centralize investment information, reduce manual processes,
+                Centralise investment information, reduce manual processes,
                 strengthen governance, and support better-informed investment
                 decisions.
               </p>

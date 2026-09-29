@@ -53,7 +53,7 @@ export default function PlatformHero() {
               href="/book-a-demo"
               className="rounded-full bg-[#CCA400] px-7 py-3 text-[14px] font-semibold text-white transition-transform hover:scale-[1.03]"
             >
-              Request a Free Pilot
+              Book a Demo
             </Link>
           </div>
         </div>

@@ -82,7 +82,7 @@ export default function BlogHero({
                   href={featured.href}
                   className="mt-7 inline-flex items-center justify-center rounded-full bg-[#111111] px-7 py-3 text-[15px] font-semibold text-white transition-opacity hover:opacity-90"
                 >
-                  Read more
+                  Read More
                 </Link>
               </div>
             </article>

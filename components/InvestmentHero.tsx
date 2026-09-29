@@ -75,9 +75,9 @@ export default function InvestmentHero() {
             <div className="mt-8 flex flex-wrap items-center gap-5 lg:mt-10 lg:gap-7">
               <Link
                 href="/book-a-demo"
-                className="inline-flex items-center justify-center rounded-full bg-[#C9A227] px-12 py-3.5 text-[15px] font-bold tracking-[0.08em] text-white transition-transform duration-300 hover:scale-[1.03] sm:px-14 sm:py-4 sm:text-[17px]"
+                className="inline-flex items-center justify-center rounded-full bg-[#C9A227] px-12 py-3.5 text-[15px] font-bold text-white transition-transform duration-300 hover:scale-[1.03] sm:px-14 sm:py-4 sm:text-[17px]"
               >
-                BOOK A DEMO
+                Book a Demo
               </Link>
 
               <div className="flex items-center gap-2.5 text-[#0c2d57]">

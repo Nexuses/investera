@@ -7,7 +7,7 @@ const principles = [
   {
     title: "Connected Management",
     description:
-      "Centralize portfolio management, deal tracking, investment reporting, and due diligence activities",
+      "Centralise portfolio management, deal tracking, investment reporting, and due diligence activities",
     icon: "https://investera.s3.us-east-2.amazonaws.com/fi_2889666-1_1786534353217_txg9.png",
   },
   {

@@ -8,7 +8,7 @@ export const metadata: Metadata = pageMetadata({
   title: "Al Kifah Holding Case Study: PMS Implementation",
   cardTitle: "Al Kifah Holding: Portfolio Management System",
   description:
-    "How Investera implemented a Portfolio Management System for Al Kifah Holding in Saudi Arabia, centralizing investment data, reporting and governance.",
+    "How Investera implemented a Portfolio Management System for Al Kifah Holding in Saudi Arabia, centralising investment data, reporting and governance.",
   path: "/case-study/al-kifah-holding",
 });
 
@@ -16,7 +16,7 @@ const PLATFORM_BG =
   "https://investera.s3.us-east-2.amazonaws.com/Platform_BG_1786612003256_5z5e.png";
 
 const capabilities = [
-  "Centralized investment data management",
+  "Centralised investment data management",
   "Portfolio-level performance tracking",
   "Reporting dashboards and analytics",
   "Role-based access and governance controls",
@@ -82,8 +82,8 @@ export default function AlKifahHoldingCaseStudyPage() {
                 across multiple sectors.
               </p>
               <p>
-                As its investment portfolio expanded, the organization required a
-                centralized solution to improve portfolio visibility, strengthen
+                As its investment portfolio expanded, the organisation required a
+                centralised solution to improve portfolio visibility, strengthen
                 governance, and streamline investment reporting.
               </p>
             </div>
@@ -98,7 +98,7 @@ export default function AlKifahHoldingCaseStudyPage() {
               </p>
               <p>
                 Investera implemented its Portfolio Management System (PMS) for Al
-                Kifah Holding to centralize investment data and provide a single
+                Kifah Holding to centralise investment data and provide a single
                 platform for monitoring portfolio performance.
               </p>
             </div>
@@ -115,11 +115,11 @@ export default function AlKifahHoldingCaseStudyPage() {
               </p>
               <p>
                 Investera continues to support Al Kifah Holding in managing its
-                investment portfolio through a centralized PMS platform.
+                investment portfolio through a centralised PMS platform.
               </p>
             </div>
             <h3 className="mt-8 text-[18px] font-semibold leading-snug text-[#2F6FE4]">
-              What the platform supports
+              What the Platform Supports
             </h3>
             <p className="mt-4 text-[16px] leading-[1.55] text-[#1f1f1f]">
               The implementation provides management with portfolio insights,
@@ -128,7 +128,7 @@ export default function AlKifahHoldingCaseStudyPage() {
 
             <div className="mt-8 rounded-[12px] bg-[#0c2d57] px-6 py-6 text-white sm:px-8 sm:py-8">
               <h3 className="text-[18px] font-semibold leading-snug">
-                Key capabilities delivered
+                Key Capabilities Delivered
               </h3>
               <ul className="mt-4 grid list-disc gap-x-10 gap-y-1.5 pl-5 text-[15px] leading-[1.45] text-white/95 sm:grid-cols-2">
                 {capabilities.map((item) => (
@@ -146,7 +146,7 @@ export default function AlKifahHoldingCaseStudyPage() {
                 visibility, and reduced reliance on manual reporting processes.
               </p>
               <p>
-                The centralized platform enabled more efficient investment monitoring,
+                The centralised platform enabled more efficient investment monitoring,
                 strengthened governance, and supported faster, data-driven
                 decision-making.
               </p>

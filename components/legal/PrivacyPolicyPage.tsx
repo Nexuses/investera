@@ -33,7 +33,7 @@ export default function PrivacyPolicyPage() {
       }
     >
       <LegalSection title="1. Information We Collect">
-        <h3>Information you give us</h3>
+        <h3>Information You Give Us</h3>
         <ul>
           <li>
             <strong>Contact form:</strong> your first and last name, work email
@@ -51,7 +51,7 @@ export default function PrivacyPolicyPage() {
             message us, including on WhatsApp.
           </li>
         </ul>
-        <h3>Information collected automatically</h3>
+        <h3>Information Collected Automatically</h3>
         <p>
           Like most websites, our hosting provider records technical information such
           as your IP address, browser type, device type, pages visited and the date

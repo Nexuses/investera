@@ -25,11 +25,11 @@ export type Insight = {
   metaDescription: string;
 };
 
-const BANNER_BASE =
-  "https://d8j0ntlcm91z4.cloudfront.net/user_36eC1lX1QH2gXadY1g4FNdTY2aP/hf_20260929_100359_";
+// Photographic scenes with real Investera Pro dashboards composited on screen.
+const BANNER_BASE = "https://d2ol7oe51mr4n9.cloudfront.net/user_36eC1lX1QH2gXadY1g4FNdTY2aP/";
 
 /** Blog banner dimensions (used for social cards and structured data). */
-export const BANNER_SIZE = { width: 2688, height: 1520 };
+export const BANNER_SIZE = { width: 1920, height: 1086 };
 
 export const insights: Insight[] = [
   {
@@ -37,31 +37,31 @@ export const insights: Insight[] = [
     title: "Investment Trends",
     description: "Family Offices and Their Challenges in the MENA Region",
     subtitle:
-      "Explore the key portfolio, reporting, and governance challenges facing family offices across MENA.",
-    image: `${BANNER_BASE}c193f295-eab2-4f35-8433-a090e7f3e3e4_min.webp`,
+      "Succession, the generation gap, technology, accounting complexity and security: the challenges facing family offices across MENA.",
+    image: `${BANNER_BASE}cdaf4ff5-8587-45da-82ad-a73db3d6af65.webp`,
     imageAlt:
-      "Family office boardroom at dusk overlooking a Gulf city skyline, with portfolio dashboards on screen",
+      "Family office meeting room in Abu Dhabi with the Investera Pro investor dashboard open on a laptop",
     slug: "family-offices-mena-challenges",
     seoTitle: "Family Office Challenges in the MENA Region",
     metaDescription:
-      "How MENA family offices can manage diversified portfolios, consolidated reporting and governance as they professionalise, and where technology helps.",
+      "Why succession planning, the generation gap, technology, accounting complexity and security challenge MENA family offices, and how technology helps.",
     href: "/blog/family-offices-mena-challenges",
     date: "22 September 2026",
     datePublished: "2026-09-22",
-    readingTime: "4 min read",
+    readingTime: "5 min read",
   },
   {
     category: "FinTech",
     title: "FinTech",
     description: "Digital Assets in FinTech",
     subtitle:
-      "Discover how digital assets are reshaping FinTech while creating new risks and opportunities.",
-    image: `${BANNER_BASE}49984796-813e-433d-b7ca-109b79e1a3bc_min.webp`,
+      "What digital assets are, how NFTs, blockchain and cryptocurrency are used, and how regulation is shaping them in the MENA region.",
+    image: `${BANNER_BASE}fd5dcc76-97df-4084-a2ec-2876685f6120.webp`,
     imageAlt:
-      "Illustration of connected digital asset tokens and network lines above a rising chart",
+      "Investment office desk in the evening with the Investera investor app dashboard on a monitor",
     slug: "digital-assets-in-fintech",
     metaDescription:
-      "How tokenisation and regulated digital assets are reshaping FinTech, the opportunities and risks for investors, and how to bring them into one portfolio view.",
+      "What digital assets are, how NFTs, blockchain and cryptocurrency are used, and how UAE regulation such as Dubai's VARA is shaping fintech in MENA.",
     href: "/blog/digital-assets-in-fintech",
     date: "15 September 2026",
     datePublished: "2026-09-15",
@@ -70,19 +70,19 @@ export const insights: Insight[] = [
   {
     category: "Real Estate",
     title: "Real Estate",
-    description: "The Disruptive Force in Real Estate",
+    description: "PropTech: The Disruptive Force in Real Estate",
     subtitle:
-      "Explore how PropTech is transforming real estate through data, automation, and smarter insights.",
-    image: `${BANNER_BASE}1f4257c7-930f-4919-87db-38f86a98eb92_min.webp`,
+      "How property technology is transforming real estate, with examples from the UAE, Saudi Arabia and the wider MENA region.",
+    image: `${BANNER_BASE}bf3e62ed-7c5a-44ea-a9ff-c82bb712d4b3.webp`,
     imageAlt:
-      "Architectural model of modern towers with a holographic data overlay representing PropTech",
+      "Real estate investment desk with an architectural model and the Investera Pro consolidated dashboard on a laptop",
     slug: "proptech-disruptive-force-real-estate",
     metaDescription:
-      "How PropTech data, automation and analytics are transforming real estate investment, and what it means for portfolio managers across the GCC.",
+      "How PropTech is transforming real estate, from smart buildings and AI valuations to Dubai and NEOM, and why the MENA market is growing fast.",
     href: "/blog/proptech-disruptive-force-real-estate",
     date: "8 September 2026",
     datePublished: "2026-09-08",
-    readingTime: "4 min read",
+    readingTime: "6 min read",
   },
 ];
 

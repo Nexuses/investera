@@ -77,13 +77,13 @@ export default function DarkHomeHero() {
               href="/book-a-demo"
               className="rounded-full bg-[#CCA400] px-7 py-3 text-[14px] font-semibold text-white transition-transform hover:scale-[1.03]"
             >
-              Book a demo
+              Book a Demo
             </Link>
             <Link
               href="/platform"
               className="rounded-full border border-white/40 bg-transparent px-7 py-3 text-[14px] font-semibold text-white transition-colors hover:border-white hover:bg-white/5"
             >
-              Discover the platform
+              Explore the Platform
             </Link>
           </motion.div>
 

@@ -54,10 +54,10 @@ export default function Home() {
         layoutVariant="split"
         backgroundVariant="hero"
         showContactButton={false}
-        primaryCtaLabel="Discover the Platform"
+        primaryCtaLabel="Explore the Platform"
         primaryCtaHref="/platform"
         primaryCtaVariant="link"
-        description="From deal discovery and portfolio management to reporting and collaboration, Investera Pro connects your entire investment ecosystem in one centralized platform built for modern family offices, PE firms, and investment teams."
+        description="From deal discovery and portfolio management to reporting and collaboration, Investera Pro connects your entire investment ecosystem in one centralised platform built for modern family offices, PE firms, and investment teams."
         deviceImage="/images/cta/laptop-phone.png"
         deviceImageAlt="Investera dashboard on a laptop and smartphone showing portfolio performance"
         showOverlayCards={false}
@@ -71,7 +71,7 @@ export default function Home() {
       <InsightsSection />
       <GrowthCtaSection
         titleLine1="Unlock Better"
-        titleLine2="Opportunities."
+        titleLine2="Opportunities"
         backgroundVariant="hero"
         buttonVariant="platform"
         description="Bring portfolios, deals, reporting, workflows, and investment data together in one connected platform built for greater efficiency, visibility, and control."

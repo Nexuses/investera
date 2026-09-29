@@ -34,7 +34,7 @@ export default function CorePhilosophySection() {
 
             <p className="mt-6 text-[16px] leading-[1.3] text-[#1f1f1f]">
               Manage diverse asset classes, portfolios, transactions, valuations,
-              and performance through one centralized platform designed for greater
+              and performance through one centralised platform designed for greater
               visibility and control.
             </p>
           </motion.div>

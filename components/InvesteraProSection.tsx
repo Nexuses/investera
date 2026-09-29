@@ -52,7 +52,7 @@ export default function InvesteraProSection({
               </h3>
 
               <p className="mt-4 text-[16px] leading-[1.3] text-[#475569] lg:mt-5">
-                Gain clear visibility into portfolio performance with customizable
+                Gain clear visibility into portfolio performance with customisable
                 dashboards, key metrics, and comprehensive investment reports for
                 faster, informed decisions.
               </p>
