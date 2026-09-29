@@ -56,7 +56,9 @@ export default function PrivacyPolicyPage() {
           Like most websites, our hosting provider records technical information such
           as your IP address, browser type, device type, pages visited and the date
           and time of your visit. We use this to keep the Website secure and working
-          properly. We do not use advertising or cross-site tracking cookies.
+          properly. We also use Google Analytics to understand how visitors use the
+          Website, such as which pages are viewed and how visitors arrived. We do not
+          use advertising or cross-site tracking cookies.
         </p>
       </LegalSection>
 
@@ -82,8 +84,10 @@ export default function PrivacyPolicyPage() {
 
       <LegalSection title="3. Cookies">
         <p>
-          The Website itself uses only cookies that are strictly necessary for it to
-          function. When you open our Book a Demo page, the embedded HubSpot meetings
+          The Website uses cookies that are strictly necessary for it to function, and
+          Google Analytics cookies (such as _ga) that help us measure
+          visits and improve the Website. Google processes this data on our behalf
+          under its own privacy terms. When you open our Book a Demo page, the embedded HubSpot meetings
           calendar may set its own cookies to operate the booking tool. You can block
           or delete cookies in your browser settings; if you block them, the booking
           calendar may not work, and you can instead contact us directly.
@@ -95,8 +99,9 @@ export default function PrivacyPolicyPage() {
         <ul>
           <li>
             <strong>Service providers</strong> who help us run the Website and our
-            communications, such as website hosting, database hosting, email delivery
-            and our meeting-scheduling provider (HubSpot). They may only use your
+            communications, such as website hosting, database hosting, email delivery,
+            website analytics (Google Analytics) and our meeting-scheduling provider
+            (HubSpot). They may only use your
             information to provide their services to us.
           </li>
           <li>
