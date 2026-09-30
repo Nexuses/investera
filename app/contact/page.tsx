@@ -10,7 +10,7 @@ export const metadata: Metadata = pageMetadata({
   absoluteTitle: true,
   cardTitle: "Contact Investera",
   description:
-    "Contact Investera in Abu Dhabi. Email info@investera.com, call +971 2 309 3880 or send us a message and our team will reply within 24 hours.",
+    "Contact Investera in Abu Dhabi. Email info@investera.com, call +971 2 309 3880 or send us a message and our team will get back to you.",
   path: "/contact",
 });
 
