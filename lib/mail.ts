@@ -13,6 +13,8 @@ import {
   buildSubscriberEmailText,
 } from "@/lib/subscribe-email-template";
 
+const NOTIFICATION_EMAIL = "info@investera.com";
+
 setDefaultResultOrder("ipv4first");
 
 function requiredEnv(name: string, value: string | undefined) {
@@ -54,17 +56,16 @@ async function resolveIpv4(hostname: string) {
 }
 
 async function createMailer() {
-  const mailTo = requiredEnv(
-    "Mail_To / MAIL_TO",
-    process.env.Mail_To || process.env.MAIL_TO,
-  )
+  // info@ always receives notifications; Mail_To can add more recipients.
+  const extraRecipients = (process.env.Mail_To || process.env.MAIL_TO || "")
     .split(/[,;]/)
     .map((email) => email.trim())
     .filter(Boolean);
-
-  if (!mailTo.length) {
-    throw new Error("Missing required environment variable: Mail_To / MAIL_TO");
-  }
+  const mailTo = [
+    ...new Map(
+      [NOTIFICATION_EMAIL, ...extraRecipients].map((email) => [email.toLowerCase(), email]),
+    ).values(),
+  ];
   const fromEmail = requiredEnv("FROM_EMAIL", process.env.FROM_EMAIL);
   const host = requiredEnv("SMTP_HOST", process.env.SMTP_HOST);
   const port = Number(requiredEnv("SMTP_PORT", process.env.SMTP_PORT));

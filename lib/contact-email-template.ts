@@ -139,7 +139,7 @@ export function buildThankYouEmailHtml(payload: ContactPayload) {
               <td style="padding:28px 32px 8px;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.6;color:#111111;">
                 <p style="margin:0 0 16px;">Hi ${firstName},</p>
                 <p style="margin:0 0 16px;">
-                  Thank you for getting in touch. We have received your message, and a member of the Investera team will contact you within 24 hours.
+                  Thank you for contacting Investera. Our team will get back to you.
                 </p>
                 <p style="margin:0;">
                   If you need us sooner, email
@@ -172,7 +172,7 @@ export function buildThankYouEmailText(payload: ContactPayload) {
   return [
     `Hi ${firstName},`,
     "",
-    "Thank you for getting in touch. We have received your message, and a member of the Investera team will contact you within 24 hours.",
+    "Thank you for contacting Investera. Our team will get back to you.",
     "",
     "If you need us sooner, email info@investera.com or call +971 50 211 4603.",
     "",
