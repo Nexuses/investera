@@ -17,7 +17,6 @@ function AssetAllocationCard() {
         alt="Total Asset Allocation chart"
         width={600}
         height={520}
-        unoptimized
         className="h-auto w-full"
       />
 
@@ -82,7 +81,6 @@ function GainersCard() {
           alt="Top 5 Gainers and Top 5 Losers chart"
           width={640}
           height={480}
-          unoptimized
           className="h-auto w-full"
         />
       </motion.div>

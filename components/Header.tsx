@@ -106,8 +106,7 @@ export default function Header({ variant = "dark" }: HeaderProps) {
               alt="Investera"
               width={160}
               height={40}
-              priority
-              unoptimized
+              preload
               className="h-[28px] w-auto lg:h-[32px]"
             />
           </Link>
@@ -206,7 +205,6 @@ export default function Header({ variant = "dark" }: HeaderProps) {
                 alt="Investera"
                 width={160}
                 height={40}
-                unoptimized
                 className="h-[28px] w-auto"
               />
             </Link>

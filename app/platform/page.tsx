@@ -6,7 +6,7 @@ import Header from "@/components/Header";
 import PlatformHero from "@/components/platform/PlatformHero";
 import PlatformFeatureTabs from "@/components/platform/PlatformFeatureTabs";
 import WhyInvesteraSection from "@/components/platform/WhyInvesteraSection";
-import PlatformCtaSection from "@/components/platform/PlatformCtaSection";
+import ExpertCtaSection from "@/components/ExpertCtaSection";
 
 export const metadata: Metadata = pageMetadata({
   title: "Investera Pro Platform | Portfolio, Deal & Reporting Software",
@@ -25,7 +25,15 @@ export default function PlatformPage() {
       <PlatformHero />
       <WhyInvesteraSection />
       <PlatformFeatureTabs />
-      <PlatformCtaSection />
+      <ExpertCtaSection
+        titleLine1="Transform Investment"
+        titleLine2="Data into Strategy"
+        description="Monitor your portfolio, evaluate exposure, stay ahead of market developments, and capitalize on new opportunities through one connected investor portal."
+        secondaryCtaLabel="Contact Us"
+        secondaryCtaHref="/contact"
+        ctaLabel="Start A Free Trial"
+        ctaHref="/book-a-demo"
+      />
       <Footer />
     </div>
   );

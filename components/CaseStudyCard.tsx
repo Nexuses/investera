@@ -38,7 +38,6 @@ export default function CaseStudyCard({
           src={image}
           alt={imageAlt}
           fill
-          unoptimized
           className="object-cover"
         />
       </div>
@@ -50,7 +49,6 @@ export default function CaseStudyCard({
             alt={logoAlt ?? ""}
             width={180}
             height={48}
-            unoptimized
             className="h-10 w-auto object-contain sm:h-11"
           />
         ) : (

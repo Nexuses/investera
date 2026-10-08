@@ -1,3 +1,4 @@
+import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 
 const cards = [
@@ -72,14 +73,15 @@ function VisualPanel({
       ) : null}
       {theme === "cash" ? (
         <>
-          <div
-            aria-hidden
-            className="absolute inset-0 bg-cover bg-center"
-            style={{
-              backgroundImage:
-                "url('https://investera.s3.us-east-2.amazonaws.com/2044_1787214052175_37rs.jpg')",
-            }}
-          />
+          <div aria-hidden className="absolute inset-0">
+            <Image
+              src="https://investera.s3.us-east-2.amazonaws.com/2044_1787214052175_37rs.jpg"
+              alt=""
+              fill
+              sizes="(min-width: 1024px) 33vw, 100vw"
+              className="object-cover object-center"
+            />
+          </div>
           <div aria-hidden className="absolute inset-0 bg-[#0c2d57]/35" />
         </>
       ) : null}

@@ -11,7 +11,6 @@ export default function BookDemoCtaSection() {
             src="/images/cta/card-bg.png"
             alt=""
             fill
-            unoptimized
             aria-hidden="true"
             className="object-cover object-center"
           />
@@ -47,7 +46,6 @@ export default function BookDemoCtaSection() {
                   alt="Laptop and mobile showing Investera investment dashboard and AI assistant"
                   width={594}
                   height={449}
-                  unoptimized
                   className="h-auto max-h-[280px] w-full origin-bottom object-contain object-bottom sm:max-h-[360px] sm:origin-bottom-right sm:object-right-bottom lg:max-h-[390px]"
                 />
               </div>

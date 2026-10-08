@@ -52,7 +52,6 @@ export default function DashboardImage({
           alt={alt}
           width={width}
           height={height}
-          unoptimized
           className={imageClassName}
         />
       </motion.div>

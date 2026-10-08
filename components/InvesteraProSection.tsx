@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import BackgroundImage from "@/components/BackgroundImage";
 
 const defaultDashboardImage =
   "https://investera.s3.us-east-2.amazonaws.com/Dashboards___Reporting__1__1790064098158_3f8a.png";
@@ -40,8 +41,9 @@ export default function InvesteraProSection({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.15 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0 }}
-          className="relative mt-12 overflow-hidden rounded-[28px] bg-[url('/images/investera-pro/dashboard.webp')] bg-cover bg-center lg:mt-14 lg:h-[320px]"
+          className="relative isolate mt-12 overflow-hidden rounded-[28px] lg:mt-14 lg:h-[320px]"
         >
+          <BackgroundImage src="/images/investera-pro/dashboard.webp" />
           <div className="grid h-full items-center gap-6 lg:grid-cols-[38%_62%] lg:gap-0">
             {/* Left content */}
             <div className="flex flex-col justify-center px-8 py-8 sm:px-8 sm:py-8 lg:py-0">
@@ -81,7 +83,6 @@ export default function InvesteraProSection({
                     alt="Investera Pro dashboard showing portfolio performance and reporting"
                     width={1400}
                     height={965}
-                    unoptimized
                     className={
                       dashboardImage
                         ? "aspect-[1400/965] h-auto w-full translate-x-2 object-cover object-top lg:translate-x-4 lg:translate-y-[46%]"

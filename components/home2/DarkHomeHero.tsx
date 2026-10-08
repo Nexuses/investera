@@ -104,7 +104,6 @@ export default function DarkHomeHero() {
                     src={avatar.src}
                     alt={avatar.alt}
                     fill
-                    unoptimized
                     className="object-cover"
                   />
                 </div>
@@ -132,8 +131,7 @@ export default function DarkHomeHero() {
                 alt="Investera dashboard showing total assets under management and 30-day live trend"
                 width={1920}
                 height={1200}
-                priority
-                unoptimized
+                preload
                 className="h-auto w-full"
               />
             </div>

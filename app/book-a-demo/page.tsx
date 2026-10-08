@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import BackgroundImage from "@/components/BackgroundImage";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 import BookDemoPage from "@/components/book-demo/BookDemoPage";
@@ -15,13 +16,11 @@ export const metadata: Metadata = pageMetadata({
 
 export default function BookADemo() {
   return (
-    <div
-      className="min-h-screen bg-[#050B1F] bg-cover bg-center bg-no-repeat"
-      style={{
-        backgroundImage:
-          "url('https://investera.s3.us-east-2.amazonaws.com/Platform_BG_1786612003256_5z5e.png')",
-      }}
-    >
+    <div className="relative isolate min-h-screen bg-[#050B1F]">
+      <BackgroundImage
+        src="/images/platform/platform-bg.png"
+        preload
+      />
       <JsonLd data={breadcrumbJsonLd([{ name: "Book a Demo", path: "/book-a-demo" }])} />
       <Header variant="dark" />
       <div className="pt-[96px] lg:pt-[112px]">

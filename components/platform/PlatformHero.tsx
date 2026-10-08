@@ -3,7 +3,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import BackgroundImage from "@/components/BackgroundImage";
 
+const PLATFORM_BG =
+  "/images/platform/platform-bg.png";
 const UAE_US_GROUP =
   "https://investera.s3.us-east-2.amazonaws.com/Group_1000002886_1786617498790_2iaw.png";
 const ASSET_ALLOCATION =
@@ -21,13 +24,8 @@ const MOBILE_HERO =
 
 export default function PlatformHero() {
   return (
-    <section
-      className="relative overflow-hidden bg-[#050B1F] bg-cover bg-center bg-no-repeat pt-[118px]"
-      style={{
-        backgroundImage:
-          "url('https://investera.s3.us-east-2.amazonaws.com/Platform_BG_1786612003256_5z5e.png')",
-      }}
-    >
+    <section className="relative isolate overflow-hidden bg-[#050B1F] pt-[118px]">
+      <BackgroundImage src={PLATFORM_BG} preload />
       <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
         <div className="mx-auto flex max-w-[980px] flex-col items-center text-center">
           <h1 className="text-[40px] font-normal leading-[1.12] tracking-[-0.03em] text-white sm:text-[56px] lg:text-[64px]">
@@ -69,8 +67,7 @@ export default function PlatformHero() {
             alt="Investment professional reviewing portfolios with floating analytics"
             width={1040}
             height={1200}
-            priority
-            unoptimized
+            preload
             className="h-auto w-full"
           />
         </motion.div>
@@ -87,7 +84,6 @@ export default function PlatformHero() {
               alt=""
               width={391}
               height={110}
-              unoptimized
               className="h-auto w-full mix-blend-screen"
             />
           </motion.div>
@@ -103,7 +99,6 @@ export default function PlatformHero() {
               alt=""
               width={183}
               height={186}
-              unoptimized
               className="h-auto w-full mix-blend-screen"
             />
           </motion.div>
@@ -128,7 +123,6 @@ export default function PlatformHero() {
                 alt="UAE and US allocation cards"
                 width={555}
                 height={404}
-                unoptimized
                 className="h-auto w-full mix-blend-screen"
               />
             </motion.div>
@@ -154,7 +148,6 @@ export default function PlatformHero() {
                 alt="Asset allocation"
                 width={558}
                 height={430}
-                unoptimized
                 className="h-auto w-full mix-blend-screen"
               />
             </motion.div>
@@ -171,8 +164,7 @@ export default function PlatformHero() {
               alt="Investment professional reviewing portfolios on a laptop"
               width={830}
               height={906}
-              priority
-              unoptimized
+              preload
               className="h-auto w-full mix-blend-screen"
             />
           </motion.div>
@@ -197,7 +189,6 @@ export default function PlatformHero() {
                 alt="Sector distribution"
                 width={389}
                 height={292}
-                unoptimized
                 className="h-auto w-full mix-blend-screen"
               />
             </motion.div>

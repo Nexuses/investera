@@ -72,7 +72,6 @@ function CaseStudyFront({
           alt={study.name}
           width={study.logoWidth}
           height={study.logoHeight}
-          unoptimized
           className="h-14 w-auto max-w-[85%] object-contain sm:h-16 lg:h-[72px]"
         />
       </div>

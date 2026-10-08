@@ -62,8 +62,7 @@ export default function BlogHero({
                   src={featured.image}
                   alt={featured.imageAlt}
                   fill
-                  unoptimized
-                  priority
+                  preload
                   className="object-cover object-center"
                 />
               </div>

@@ -70,7 +70,6 @@ export default function CoreValuesSection() {
                   src={value.icon}
                   alt=""
                   fill
-                  unoptimized
                   className="object-contain"
                 />
               </div>

@@ -3,8 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
-import NewsletterForm from "@/components/NewsletterForm";
-
 const WHITE_LOGO = "/images/logo-white.png";
 
 const platformLinks = [
@@ -62,7 +60,6 @@ export default function Footer() {
                 alt="Investera"
                 width={156}
                 height={34}
-                unoptimized
                 className="h-8 w-auto object-contain"
               />
             </Link>
@@ -72,9 +69,7 @@ export default function Footer() {
               reporting, and documents.
             </p>
 
-            <NewsletterForm />
-
-            <div className="mt-4 flex items-center gap-2.5">
+            <div className="mt-5 flex items-center gap-2.5">
               {socialLinks.map((social) => (
                 <Link
                   key={social.label}
@@ -117,7 +112,6 @@ export default function Footer() {
                       alt=""
                       width={18}
                       height={18}
-                      unoptimized
                       aria-hidden="true"
                       className="h-4 w-4 object-contain"
                       style={{

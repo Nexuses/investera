@@ -103,10 +103,8 @@ export default function TestimonialsSection() {
         </motion.div>
 
         <div className="mx-auto mt-10 max-w-[820px] sm:mt-12">
-          <PaginationDots active={active} onSelect={setActive} />
-
           <div
-            className="relative mt-6 flex items-center gap-3 sm:mt-8 sm:gap-5"
+            className="relative flex items-center gap-3 sm:gap-5"
             onMouseEnter={() => setPaused(true)}
             onMouseLeave={() => setPaused(false)}
           >

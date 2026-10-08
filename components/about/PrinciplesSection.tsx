@@ -70,7 +70,6 @@ export default function PrinciplesSection() {
                   src={item.icon}
                   alt=""
                   fill
-                  unoptimized
                   className="object-cover"
                 />
               </div>

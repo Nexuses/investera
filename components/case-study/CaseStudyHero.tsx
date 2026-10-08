@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import BackgroundImage from "@/components/BackgroundImage";
 
 const AUM =
   "https://investera.s3.us-east-2.amazonaws.com/Frame_2147255962zxcz_1786967280007_zzwr.png";
@@ -17,7 +18,7 @@ const MOBILE_HERO =
   "https://investera.s3.us-east-2.amazonaws.com/Frame_2147255962_1787832463327_nt1m.png";
 
 const PLATFORM_BG =
-  "https://investera.s3.us-east-2.amazonaws.com/Platform_BG_1786612003256_5z5e.png";
+  "/images/platform/platform-bg.png";
 
 function Card({
   src,
@@ -59,7 +60,6 @@ function Card({
           alt={alt}
           width={width}
           height={height}
-          unoptimized
           className="h-auto w-full mix-blend-screen"
         />
       </motion.div>
@@ -69,10 +69,8 @@ function Card({
 
 export default function CaseStudyHero() {
   return (
-    <section
-      className="relative overflow-hidden bg-[#050B1F] bg-cover bg-center bg-no-repeat pt-[88px]"
-      style={{ backgroundImage: `url('${PLATFORM_BG}')` }}
-    >
+    <section className="relative isolate overflow-hidden bg-[#050B1F] pt-[88px]">
+      <BackgroundImage src={PLATFORM_BG} preload />
       <div className="relative z-10 mx-auto grid max-w-[1440px] items-center gap-10 px-6 py-12 lg:grid-cols-[0.42fr_0.58fr] lg:gap-6 lg:px-16 lg:py-8 xl:py-6">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -105,8 +103,7 @@ export default function CaseStudyHero() {
             alt="Total assets under management with allocation, market intelligence, and regional exposure"
             width={1120}
             height={1200}
-            priority
-            unoptimized
+            preload
             className="h-auto w-full"
           />
         </motion.div>
@@ -128,8 +125,7 @@ export default function CaseStudyHero() {
               src={AUM}
               alt="Total assets under management AED 1,425.59M with 30-day live trend"
               fill
-              priority
-              unoptimized
+              preload
               className="object-contain object-center mix-blend-screen"
             />
           </motion.div>

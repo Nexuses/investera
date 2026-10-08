@@ -69,7 +69,6 @@ export default function InsightsSection({
                       src={insight.image}
                       alt={insight.imageAlt}
                       fill
-                      unoptimized
                       loading="lazy"
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover object-center transition-transform duration-300 motion-safe:group-hover:scale-[1.03]"

@@ -87,7 +87,6 @@ export default function PlatformInsightCards() {
                       alt={card.imageAlt}
                       width={640}
                       height={480}
-                      unoptimized
                       className={
                         card.imageClass ??
                         "h-full w-auto max-w-full object-contain object-bottom"

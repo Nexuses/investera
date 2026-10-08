@@ -89,7 +89,6 @@ export default function AdvantageSection() {
                   src={card.image}
                   alt={card.imageAlt}
                   fill
-                  unoptimized
                   className="object-cover object-center"
                 />
               </div>

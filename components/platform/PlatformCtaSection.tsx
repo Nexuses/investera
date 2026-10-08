@@ -161,7 +161,6 @@ export default function PlatformCtaSection({
                   alt="Investera dashboard on laptop"
                   width={1400}
                   height={980}
-                  unoptimized
                   className="relative z-[1] h-auto w-[82%] object-contain mix-blend-screen"
                 />
                 <div className="absolute bottom-0 right-[0%] z-[2] w-[30%] sm:right-[2%] sm:w-[28%] lg:right-[4%] lg:w-[26%]">
@@ -170,7 +169,6 @@ export default function PlatformCtaSection({
                     alt="Investera dashboard on smartphone"
                     width={420}
                     height={860}
-                    unoptimized
                     className="h-auto w-full object-contain mix-blend-screen drop-shadow-[0_20px_40px_rgba(0,0,0,0.5)]"
                   />
                 </div>
@@ -181,7 +179,6 @@ export default function PlatformCtaSection({
                 alt={deviceImageAlt}
                 width={1400}
                 height={980}
-                unoptimized
                 className={
                   isSplit
                     ? "relative z-[1] h-auto w-full object-contain object-bottom"

@@ -319,8 +319,7 @@ export default function PricingPage() {
                       alt="Investera dashboard showing total assets under management and live trend"
                       width={1884}
                       height={1358}
-                      priority
-                      unoptimized
+                      preload
                       className="h-auto w-full drop-shadow-[0_24px_60px_rgba(0,0,0,0.45)]"
                     />
                   </motion.div>
@@ -350,8 +349,7 @@ export default function PricingPage() {
                       alt="Asset allocation breakdown with total AUM"
                       width={1205}
                       height={684}
-                      priority
-                      unoptimized
+                      preload
                       className="h-auto w-full drop-shadow-[0_18px_40px_rgba(0,0,0,0.55)]"
                     />
                   </motion.div>

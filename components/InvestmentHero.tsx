@@ -18,7 +18,6 @@ function QuoteBlock({
         alt=""
         width={150}
         height={109}
-        unoptimized
         aria-hidden="true"
         className="mb-3 h-auto w-[52px] sm:w-[64px] lg:w-[68px]"
       />
@@ -113,8 +112,6 @@ export default function InvestmentHero() {
                 alt="Investment professional"
                 width={565}
                 height={595}
-                unoptimized
-                priority
                 className="mx-auto h-auto w-full max-w-[565px] object-contain object-bottom lg:h-[595px] lg:w-[565px]"
               />
             </motion.div>

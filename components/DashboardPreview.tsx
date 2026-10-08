@@ -50,7 +50,6 @@ export default function DashboardPreview({
           alt={alt}
           width={width}
           height={height}
-          unoptimized
           className={imageClassName}
         />
       </motion.div>

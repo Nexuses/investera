@@ -31,7 +31,6 @@ export default function ProcessControlSection() {
                 alt="Investera dashboard with total assets under management"
                 width={725}
                 height={441}
-                unoptimized
                 className="h-auto w-full rounded-t-[12px]"
               />
               <div className="pointer-events-none absolute left-[16%] top-[18%] z-[2] w-[78%] sm:left-[18%] sm:top-[16%] sm:w-[74%]">
@@ -40,7 +39,6 @@ export default function ProcessControlSection() {
                   alt="Total assets under management"
                   width={664}
                   height={364}
-                  unoptimized
                   className="h-auto w-full drop-shadow-[0_18px_40px_rgba(5,11,31,0.28)]"
                 />
               </div>

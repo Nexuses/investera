@@ -1,5 +1,6 @@
 "use client";
 
+import BackgroundImage from "@/components/BackgroundImage";
 import ContactOfficeSection from "@/components/contact/ContactOfficeSection";
 import { useContactForm } from "@/hooks/useContactForm";
 
@@ -18,17 +19,17 @@ export default function ContactPage2() {
     <div className="bg-[#F7F8FA] pt-[88px]">
       <div className="relative mx-auto max-w-[1440px] px-6 pt-[30px] lg:px-16">
         <div
-          className="relative overflow-hidden rounded-t-[24px] bg-[#050B1F] bg-cover bg-center bg-no-repeat px-6 pb-20 pt-14 sm:px-10 sm:pb-24 sm:pt-16 lg:min-h-[400px] lg:px-16 lg:py-[72px]"
-          style={{
-            backgroundImage:
-              "url('https://investera.s3.us-east-2.amazonaws.com/Platform_BG_1786612003256_5z5e.png')",
-          }}
+          className="relative isolate overflow-hidden rounded-t-[24px] bg-[#050B1F] px-6 pb-20 pt-14 sm:px-10 sm:pb-24 sm:pt-16 lg:min-h-[400px] lg:px-16 lg:py-[72px]"
         >
+          <BackgroundImage
+            src="/images/platform/platform-bg.png"
+            preload
+          />
           <div
             aria-hidden
             className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_left,rgba(47,111,228,0.28)_0%,transparent_55%)]"
           />
-          <div className="relative z-10 max-w-[560px] lg:max-w-[54%]">
+          <div className="relative z-10 max-w-[560px] xl:max-w-[calc(100%-480px)]">
             <h1 className="text-[36px] font-normal leading-tight tracking-[-0.03em] text-white sm:text-[44px] lg:text-[48px]">
               <span className="font-normal">Let&apos;s Transform the Way</span>
               <br />
@@ -44,7 +45,7 @@ export default function ContactPage2() {
 
         <form
           onSubmit={handleSubmit}
-          className="relative z-20 mx-auto -mt-12 w-full max-w-[480px] rounded-[16px] bg-white px-6 py-7 shadow-[0_18px_50px_rgba(15,23,42,0.16)] sm:-mt-14 sm:px-8 sm:py-8 lg:absolute lg:right-24 lg:top-[118px] lg:mx-0 lg:mt-0 lg:w-[440px] xl:right-28"
+          className="relative z-20 mx-auto -mt-12 w-full max-w-[480px] rounded-[16px] bg-white px-6 py-7 shadow-[0_18px_50px_rgba(15,23,42,0.16)] sm:-mt-14 sm:px-8 sm:py-8 xl:absolute xl:right-28 xl:top-[118px] xl:mx-0 xl:mt-0 xl:w-[440px]"
         >
           <div className="space-y-4">
             <div>
@@ -63,7 +64,7 @@ export default function ContactPage2() {
 
             <div>
               <label htmlFor="email" className={labelClass}>
-                Email <span className="text-[#DC2626]">*</span>
+                Work Email <span className="text-[#DC2626]">*</span>
               </label>
               <input
                 id="email"
@@ -121,9 +122,9 @@ export default function ContactPage2() {
         </form>
 
         {/* Desktop contact details — kept left of the floating form */}
-        <div className="hidden min-h-[420px] rounded-b-[24px] bg-white lg:block">
-          <div className="mx-auto max-w-[1440px] px-6 pb-14 pt-16 lg:px-16">
-            <div className="grid w-full max-w-[min(640px,calc(100%-480px))] grid-cols-2 gap-x-10 gap-y-10">
+        <div className="hidden min-h-[420px] rounded-b-[24px] bg-white xl:block">
+          <div className="mx-auto max-w-[1440px] px-16 pb-14 pt-16">
+            <div className="grid w-full max-w-[min(640px,calc(100%-500px))] grid-cols-2 gap-x-10 gap-y-10">
               <div className="flex flex-col">
                 <p className="text-[22px] font-semibold leading-[1.25] tracking-[-0.01em] text-[#111111]">
                   Email
@@ -219,7 +220,7 @@ export default function ContactPage2() {
                     href="https://wa.me/971502114603"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2.5 text-[16px] leading-[1.3] text-[#0c2d57] transition-opacity hover:opacity-80"
+                    className="inline-flex items-center gap-2.5 whitespace-nowrap text-[16px] leading-[1.3] text-[#0c2d57] transition-opacity hover:opacity-80"
                   >
                     <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#0c2d57]">
                       <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4 text-white" aria-hidden>
@@ -236,8 +237,8 @@ export default function ContactPage2() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-[1440px] px-6 pb-10 pt-8 lg:hidden lg:px-16">
-        <div className="grid grid-cols-1 gap-6 rounded-[16px] bg-white p-6 shadow-[0_10px_30px_rgba(15,23,42,0.08)] sm:grid-cols-2">
+      <div className="mx-auto max-w-[1440px] px-6 pb-10 pt-8 lg:px-16 xl:hidden">
+        <div className="mx-auto grid max-w-[880px] grid-cols-1 gap-6 rounded-[16px] bg-white p-6 shadow-[0_10px_30px_rgba(15,23,42,0.08)] sm:grid-cols-2 sm:gap-8 sm:p-8">
           <div>
             <p className="text-[18px] font-semibold text-[#111111]">Email</p>
             <a href="mailto:info@investera.com" className="mt-1 block text-[16px] text-[#0c2d57]">
@@ -256,7 +257,7 @@ export default function ContactPage2() {
               href="https://wa.me/971502114603"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-1 inline-flex items-center gap-2.5 text-[16px] text-[#0c2d57]"
+              className="mt-1 inline-flex items-center gap-2.5 whitespace-nowrap text-[16px] text-[#0c2d57]"
             >
               <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#0c2d57]">
                 <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4 text-white" aria-hidden>

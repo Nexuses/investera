@@ -28,32 +28,27 @@ const teamRowTwo = [
   {
     name: "Sureshkumar Natarajan",
     role: "Engineering Lead",
-    image:
-      "https://investera.s3.us-east-2.amazonaws.com/Suresh_1789459764005_pt48.png",
+    image: "/images/team/suresh.png",
   },
   {
     name: "Ramprakash Kalyanasundaram",
     role: "Full Stack Developer",
-    image:
-      "https://investera.s3.us-east-2.amazonaws.com/Ram.jpg_1_1789459745243_i2jt.png",
+    image: "/images/team/ram.png",
   },
   {
     name: "Harisundar Shanmugasundaram",
     role: "Software Engineer",
-    image:
-      "https://investera.s3.us-east-2.amazonaws.com/Hari_1_1789459715374_wjc6.png",
+    image: "/images/team/hari.png",
   },
   {
     name: "Sheikha Obaidullah",
     role: "Operations & Project Implementation Specialist",
-    image:
-      "https://investera.s3.us-east-2.amazonaws.com/Sheikha_1_1789459795289_8x2z.png",
+    image: "/images/team/sheikha.png",
   },
   {
     name: "Amany Sulaiman",
     role: "UI/UX Designer",
-    image:
-      "https://investera.s3.us-east-2.amazonaws.com/Amany_1_1789459780306_l91d.png",
+    image: "/images/team/amany.png",
   },
 ];
 
@@ -81,7 +76,7 @@ function TeamMemberCard({
           src={member.image}
           alt={`${member.name}, ${member.role}`}
           fill
-          unoptimized
+          sizes="140px"
           className="object-cover object-center"
         />
       </div>

@@ -62,7 +62,6 @@ function StoryCard({
         src={story.image}
         alt={story.imageAlt}
         fill
-        unoptimized
         className="object-cover"
       />
       <div aria-hidden className="absolute inset-0 bg-black/20" />

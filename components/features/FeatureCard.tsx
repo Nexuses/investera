@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
+import BackgroundImage from "@/components/BackgroundImage";
 import DashboardImage from "./DashboardImage";
 
 type FeatureCardProps = {
@@ -31,12 +32,12 @@ export default function FeatureCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.8, ease: "easeOut", delay }}
-      className="relative flex h-auto min-h-0 flex-col overflow-hidden rounded-[28px] border border-[#eeeeee] px-8 pt-8 pb-0 lg:h-[520px]"
+      className="relative isolate flex h-auto min-h-0 flex-col overflow-hidden rounded-[28px] border border-[#eeeeee] px-8 pt-8 pb-0 lg:h-[520px]"
     >
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[length:100%_100%] bg-no-repeat"
-        style={{ backgroundImage: `url(${background})` }}
+      <BackgroundImage
+        src={background}
+        sizes="(min-width: 1024px) 50vw, 100vw"
+        className="object-fill"
       />
 
       <div className="relative z-[1] flex min-h-0 flex-1 flex-col">
