@@ -8,7 +8,7 @@ import BackgroundImage from "@/components/BackgroundImage";
 const PLATFORM_BG =
   "/images/platform/platform-bg.png";
 const UAE_US_GROUP =
-  "https://investera.s3.us-east-2.amazonaws.com/Group_1000002886_1786617498790_2iaw.png";
+  "https://investera.s3.us-east-2.amazonaws.com/Group_1000002886_1791536267478_p9mk.png";
 const ASSET_ALLOCATION =
   "https://investera.s3.us-east-2.amazonaws.com/Group_1000002879_1786617498790_0u37.png";
 const SECTOR_DISTRIBUTION =
@@ -120,10 +120,10 @@ export default function PlatformHero() {
             >
               <Image
                 src={UAE_US_GROUP}
-                alt="UAE and US allocation cards"
-                width={555}
-                height={404}
-                className="h-auto w-full mix-blend-screen"
+                alt="Deals value and average deal size cards"
+                width={607}
+                height={346}
+                className="h-auto w-full"
               />
             </motion.div>
           </motion.div>

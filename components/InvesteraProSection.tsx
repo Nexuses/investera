@@ -85,7 +85,7 @@ export default function InvesteraProSection({
                     height={965}
                     className={
                       dashboardImage
-                        ? "aspect-[1400/965] h-auto w-full translate-x-2 object-cover object-top lg:translate-x-4 lg:translate-y-[46%]"
+                        ? "aspect-[1360/692] h-auto w-full translate-x-2 object-cover object-top lg:translate-x-4 lg:translate-y-[27%]"
                         : "h-auto w-full translate-x-2 object-contain object-right-bottom lg:translate-x-4 lg:translate-y-[18%]"
                     }
                   />

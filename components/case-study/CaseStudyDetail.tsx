@@ -73,7 +73,7 @@ export default function CaseStudyDetail({ study }: { study: CaseStudy }) {
   return (
     <main>
       <section
-        className="bg-[#050B1F] bg-cover bg-center bg-no-repeat px-6 pb-40 pt-[132px] sm:pb-48 sm:pt-[148px] lg:px-16 lg:pb-56 lg:pt-[168px]"
+        className="bg-[#050B1F] bg-cover bg-center bg-no-repeat px-6 pb-16 pt-[132px] sm:pb-20 sm:pt-[148px] lg:px-16 lg:pb-24 lg:pt-[168px]"
         style={{ backgroundImage: `url('${PLATFORM_BG}')` }}
       >
         <div className="mx-auto max-w-[1040px]">
@@ -102,28 +102,6 @@ export default function CaseStudyDetail({ study }: { study: CaseStudy }) {
           </dl>
         </div>
       </section>
-
-      <figure className="mx-auto -mt-28 max-w-[1040px] px-6 sm:-mt-36 lg:-mt-44">
-        <div className="overflow-hidden rounded-[18px] border border-[#E5E7EB] bg-white shadow-[0_24px_60px_rgba(5,11,31,0.35)] sm:rounded-[22px]">
-          <div aria-hidden className="flex items-center gap-1.5 bg-[#F3F5F8] px-4 py-2.5">
-            <span className="h-2.5 w-2.5 rounded-full bg-[#F87171]" />
-            <span className="h-2.5 w-2.5 rounded-full bg-[#FBBF24]" />
-            <span className="h-2.5 w-2.5 rounded-full bg-[#34D399]" />
-          </div>
-          <Image
-            src={study.image.src}
-            alt={study.image.alt}
-            width={study.image.width}
-            height={study.image.height}
-            priority
-            sizes="(max-width: 1040px) 100vw, 1040px"
-            className="h-auto w-full"
-          />
-        </div>
-        <figcaption className="mt-3 text-center text-[13px] text-[#6B7280]">
-          Investera platform (illustrative view)
-        </figcaption>
-      </figure>
 
       <div className="mx-auto grid max-w-[1200px] gap-12 px-6 py-14 sm:px-10 sm:py-16 lg:grid-cols-[300px_1fr] lg:gap-16 lg:px-12 lg:py-20">
         <aside className="lg:sticky lg:top-[120px] lg:self-start">

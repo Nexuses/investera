@@ -64,13 +64,13 @@ function StoryCard({
         fill
         className="object-cover"
       />
-      <div aria-hidden className="absolute inset-0 bg-black/20" />
+      <div aria-hidden className="absolute inset-0 bg-black/45" />
       <div
         aria-hidden
         className={`absolute inset-0 transition-colors duration-300 ${
           active
-            ? "bg-gradient-to-t from-black/80 via-black/25 to-black/45"
-            : "bg-gradient-to-t from-black/75 via-black/20 to-black/40"
+            ? "bg-gradient-to-t from-black/95 via-black/55 to-black/75"
+            : "bg-gradient-to-t from-black/90 via-black/50 to-black/70"
         }`}
       />
       <h3

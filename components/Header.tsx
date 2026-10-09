@@ -18,7 +18,7 @@ const mobileNavLinks = [
   { label: "Platform", href: "/platform" },
   { label: "Pricing", href: "/pricing" },
   { label: "Blog", href: "/blog" },
-  { label: "Case Study", href: "/case-study" },
+  { label: "Case Studies", href: "/case-study" },
   { label: "Contact", href: "/contact" },
   { label: "Book a Demo", href: "/book-a-demo" },
 ];

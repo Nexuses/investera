@@ -20,7 +20,7 @@ const pricingLinks = [
 const companyLinks = [
   { label: "About Us", href: "/about-us" },
   { label: "Blog", href: "/blog" },
-  { label: "Case Study", href: "/case-study" },
+  { label: "Case Studies", href: "/case-study" },
   { label: "Contact", href: "/contact" },
   { label: "Book a Demo", href: "/book-a-demo" },
 ];

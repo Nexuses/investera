@@ -47,7 +47,7 @@ export default function InsightsSection({
               href={allInsightsHref}
               className="inline-flex w-fit shrink-0 items-center justify-center rounded-full border border-[#D1D5DB] bg-white px-5 py-2.5 text-[14px] font-semibold text-[#111111] transition-colors hover:border-[#9CA3AF] hover:bg-[#F9FAFB]"
             >
-              View All Articles
+              Explore more
             </Link>
           </FadeIn>
         )}

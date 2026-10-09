@@ -40,7 +40,7 @@ export default function Home() {
       <BusinessDataSection />
       <InvesteraProSection
         className="bg-white pt-16 pb-0 lg:pt-24 lg:pb-0"
-        dashboardImage="https://investera.s3.us-east-2.amazonaws.com/2.Investor_Dashboard_1790658611691_8q3h.png"
+        dashboardImage="/images/home/dashboards-reporting.png"
       />
       <InvestmentFeatureSection />
       <WorkflowGovernanceSection

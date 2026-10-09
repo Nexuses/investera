@@ -20,6 +20,37 @@ type FeatureTab = {
 
 const tabs: FeatureTab[] = [
   {
+    label: "See the Full Picture",
+    titleLines: ["See the Full", "Investment Picture"],
+    description:
+      "Replace scattered reports with a centralised dashboard to track AUM, portfolio growth, allocations, investment activity, and insights in one view.",
+    points: [
+      "Centralise AUM & Growth",
+      "Track Allocations & Activity",
+      "Unify Insights in One View",
+    ],
+    image:
+      "https://investera.s3.us-east-2.amazonaws.com/Frame_hjk_1786626912728_7jog.png",
+    imageAlt: "Investera dashboard with total assets under management",
+    panel: "#BEDBFF",
+    align: "corner" as const,
+  },
+  {
+    label: "Portfolio Performance",
+    titleLines: ["Track Portfolio", "Performance Clearly"],
+    description:
+      "Track total assets, portfolio growth, allocation, and performance through clear, interactive dashboards.",
+    points: [
+      "Monitor Total Assets & AUM",
+      "Track Portfolio Growth Trends",
+      "Review Allocation Dashboards",
+    ],
+    image:
+      "https://investera.s3.us-east-2.amazonaws.com/portfolio_1787227241834_mv7q.png",
+    imageAlt: "Portfolio breakdown table with market values",
+    panel: "#E9F2FE",
+  },
+  {
     label: "Market Intelligence",
     titleLines: ["Understand Markets", "Through Your Portfolio"],
     description:
@@ -33,42 +64,6 @@ const tabs: FeatureTab[] = [
       "https://investera.s3.us-east-2.amazonaws.com/Frame_ghk_1786626912728_a6v7.png",
     imageAlt: "Market intelligence trend chart",
     panel: "#E9F2FE",
-  },
-  {
-    label: "Investments Hub",
-    titleLines: ["Manage All Investments", "in One Connected View"],
-    description:
-      "Bring diverse investment categories into a unified portfolio hub. Monitor portfolio value, asset allocation, performance, and exposure across treasury, capital markets, real estate, private equity, commodities, and other investments from a single platform.",
-    points: [
-      "Track Account Performance",
-      "Review AUM Growth Trends",
-      "Analyse Portfolio Allocation",
-    ],
-    image:
-      "https://investera.s3.us-east-2.amazonaws.com/ChatGPT_Image_Aug_14__2026__10_23_28_AM_2_1786698329768_pfl6.png",
-    imageAlt: "Investments hub dashboard",
-    panel: "#FFF3DF",
-    align: "center" as const,
-  },
-  {
-    label: "Treasury Exposure",
-    titleLines: ["Monitor Currency Exposure", "and Treasury Performance"],
-    description:
-      "Gain visibility into treasury holdings and foreign exchange movements through a connected dashboard. Track currency allocation, balances, FX trends, and treasury AUM to understand portfolio-level currency exposure.",
-    points: [
-      "Track Currency Holdings",
-      "Monitor FX Movements",
-      "Analyse Treasury AUM Trends",
-    ],
-    image:
-      "https://investera.s3.us-east-2.amazonaws.com/Group_1000004877dfbd_1786704372324_8rqp.png",
-    imageAlt: "Treasury and currency exposure dashboard",
-    panel: "#BEDBFF",
-    align: "inset" as const,
-    overlay: {
-      src: "https://investera.s3.us-east-2.amazonaws.com/Group_1000004877sdf_1786704530103_wojw.png",
-      alt: "Currency breakdown table",
-    },
   },
   {
     label: "Opportunities Module",
@@ -115,19 +110,40 @@ const tabs: FeatureTab[] = [
     },
   },
   {
-    label: "Portfolio Performance",
-    titleLines: ["Track Portfolio", "Performance Clearly"],
+    label: "Investments Hub",
+    titleLines: ["Manage All Investments", "in One Connected View"],
     description:
-      "Track total assets, portfolio growth, allocation, and performance through clear, interactive dashboards.",
+      "Bring diverse investment categories into a unified portfolio hub. Monitor portfolio value, asset allocation, performance, and exposure across treasury, capital markets, real estate, private equity, commodities, and other investments from a single platform.",
     points: [
-      "Monitor Total Assets & AUM",
-      "Track Portfolio Growth Trends",
-      "Review Allocation Dashboards",
+      "Track Account Performance",
+      "Review AUM Growth Trends",
+      "Analyse Portfolio Allocation",
     ],
     image:
-      "https://investera.s3.us-east-2.amazonaws.com/portfolio_1787227241834_mv7q.png",
-    imageAlt: "Portfolio breakdown table with market values",
-    panel: "#E9F2FE",
+      "https://investera.s3.us-east-2.amazonaws.com/ChatGPT_Image_Aug_14__2026__10_23_28_AM_2_1786698329768_pfl6.png",
+    imageAlt: "Investments hub dashboard",
+    panel: "#FFF3DF",
+    align: "center" as const,
+  },
+  {
+    label: "Treasury Exposure",
+    titleLines: ["Monitor Currency Exposure", "and Treasury Performance"],
+    description:
+      "Gain visibility into treasury holdings and foreign exchange movements through a connected dashboard. Track currency allocation, balances, FX trends, and treasury AUM to understand portfolio-level currency exposure.",
+    points: [
+      "Track Currency Holdings",
+      "Monitor FX Movements",
+      "Analyse Treasury AUM Trends",
+    ],
+    image:
+      "https://investera.s3.us-east-2.amazonaws.com/Group_1000004877dfbd_1786704372324_8rqp.png",
+    imageAlt: "Treasury and currency exposure dashboard",
+    panel: "#BEDBFF",
+    align: "inset" as const,
+    overlay: {
+      src: "https://investera.s3.us-east-2.amazonaws.com/Group_1000004877sdf_1786704530103_wojw.png",
+      alt: "Currency breakdown table",
+    },
   },
   {
     label: "AI-Powered Insights",
@@ -144,22 +160,6 @@ const tabs: FeatureTab[] = [
     imageAlt: "AI-powered asset allocation insights",
     panel: "#E3F2FD",
     align: "center" as const,
-  },
-  {
-    label: "See the Full Picture",
-    titleLines: ["See the Full", "Investment Picture"],
-    description:
-      "Replace scattered reports with a centralised dashboard to track AUM, portfolio growth, allocations, investment activity, and insights in one view.",
-    points: [
-      "Centralise AUM & Growth",
-      "Track Allocations & Activity",
-      "Unify Insights in One View",
-    ],
-    image:
-      "https://investera.s3.us-east-2.amazonaws.com/Frame_hjk_1786626912728_7jog.png",
-    imageAlt: "Investera dashboard with total assets under management",
-    panel: "#BEDBFF",
-    align: "corner" as const,
   },
 ];
 
