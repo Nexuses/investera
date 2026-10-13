@@ -13,8 +13,9 @@ type FeatureTab = {
   imageAlt: string;
   panel: string;
   align?: "center" | "inset" | "corner";
-  overlay?: { src: string; alt: string; className?: string };
+  overlay?: { src: string; alt: string; className?: string; imageClassName?: string };
   shift?: string;
+  imageShift?: string;
   panelHeight?: string;
 };
 
@@ -166,10 +167,17 @@ const tabs: FeatureTab[] = [
       "Explore Portfolio Trends",
     ],
     image:
-      "https://investera.s3.us-east-2.amazonaws.com/Frame_10000hjk03850_1786626912728_rjlq.png",
-    imageAlt: "AI-powered asset allocation insights",
+      "https://investera.s3.us-east-2.amazonaws.com/image__81__1791900860797_djca.png",
+    imageAlt: "AI investment assistant",
     panel: "#E3F2FD",
     align: "center" as const,
+    imageShift: "translate-x-8 sm:translate-x-14 rounded-[16px]",
+    overlay: {
+      src: "https://investera.s3.us-east-2.amazonaws.com/image__79__1791900318439_hxe1.png",
+      alt: "AI assistant answer for the current total AUM",
+      className: "left-[-16%] top-[22%] w-[92%] sm:left-[-20%] sm:top-[18%] sm:w-[88%]",
+      imageClassName: "rounded-[16px]",
+    },
   },
 ];
 
@@ -254,7 +262,7 @@ function FeaturePanel({ tab }: { tab: FeatureTab }) {
               tab.align === "inset"
                 ? "drop-shadow-[0_24px_50px_rgba(12,45,87,0.28)]"
                 : ""
-            }`}
+            } ${tab.imageShift ?? ""}`}
           />
           {tab.overlay ? (
             <motion.div
@@ -275,7 +283,7 @@ function FeaturePanel({ tab }: { tab: FeatureTab }) {
                 alt={tab.overlay.alt}
                 width={720}
                 height={420}
-                className="h-auto w-full drop-shadow-[0_28px_55px_rgba(5,11,31,0.42)]"
+                className={`h-auto w-full drop-shadow-[0_28px_55px_rgba(5,11,31,0.42)] ${tab.overlay.imageClassName ?? ""}`}
               />
             </motion.div>
           ) : null}
@@ -290,9 +298,9 @@ export default function PlatformFeatureTabs() {
     <section id="platform-features" className="relative overflow-x-clip bg-white py-14 sm:py-16 lg:py-20">
       <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-16">
         <h2 className="text-center text-[32px] font-normal leading-[1.15] tracking-[-0.02em] text-[#111111] sm:text-[40px]">
-          One Platform.{" "}
+          One Platform for{" "}
           <span className="heading-accent text-[#0c2d57]">
-            Complete Investment Intelligence.
+            Smarter Investment Management
           </span>
         </h2>
 

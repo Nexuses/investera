@@ -11,7 +11,7 @@ import ExpertCtaSection from "@/components/ExpertCtaSection";
 export const metadata: Metadata = pageMetadata({
   title: "Investera Pro Platform | Portfolio, Deal & Reporting Software",
   absoluteTitle: true,
-  cardTitle: "One Platform. Complete Investment Intelligence.",
+  cardTitle: "One Platform for Smarter Investment Management",
   description:
     "Explore Investera Pro: dashboards, portfolio and deal management, secure documents, workflows, treasury exposure and AI insights in one investment platform.",
   path: "/platform",
