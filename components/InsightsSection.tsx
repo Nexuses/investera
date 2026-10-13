@@ -5,20 +5,24 @@ import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import {
   filterInsights,
+  type Insight,
   type InsightFilter,
 } from "@/components/insights-data";
+import { canOptimizeImage } from "@/lib/image-hosts";
 
 export default function InsightsSection({
+  insights,
   allInsightsHref = "/blog",
   compact = false,
   activeFilter = "All",
 }: {
+  insights: Insight[];
   allInsightsHref?: string;
   compact?: boolean;
   activeFilter?: InsightFilter;
 }) {
   // On the blog page (compact) the first post is already shown as the featured article.
-  const filtered = filterInsights(activeFilter);
+  const filtered = filterInsights(insights, activeFilter);
   const visibleInsights = compact ? filtered.slice(1) : filtered;
 
   if (compact && visibleInsights.length === 0) {
@@ -69,6 +73,7 @@ export default function InsightsSection({
                       src={insight.image}
                       alt={insight.imageAlt}
                       fill
+                      unoptimized={!canOptimizeImage(insight.image)}
                       loading="lazy"
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover object-center transition-transform duration-300 motion-safe:group-hover:scale-[1.03]"

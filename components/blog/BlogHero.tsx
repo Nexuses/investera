@@ -6,19 +6,23 @@ import FadeIn from "@/components/FadeIn";
 import {
   filterInsights,
   insightFilters,
+  type Insight,
   type InsightFilter,
 } from "@/components/insights-data";
+import { canOptimizeImage } from "@/lib/image-hosts";
 
 type BlogHeroProps = {
+  insights: Insight[];
   activeFilter: InsightFilter;
   onFilterChange: (filter: InsightFilter) => void;
 };
 
 export default function BlogHero({
+  insights,
   activeFilter,
   onFilterChange,
 }: BlogHeroProps) {
-  const filtered = filterInsights(activeFilter);
+  const filtered = filterInsights(insights, activeFilter);
   const featured = filtered[0] ?? null;
 
   return (
@@ -62,6 +66,7 @@ export default function BlogHero({
                   src={featured.image}
                   alt={featured.imageAlt}
                   fill
+                  unoptimized={!canOptimizeImage(featured.image)}
                   preload
                   className="object-cover object-center"
                 />

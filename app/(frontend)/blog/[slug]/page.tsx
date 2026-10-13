@@ -7,13 +7,12 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import JsonLd from "@/components/JsonLd";
 import ArticleBody from "@/components/blog/ArticleBody";
-import { BANNER_SIZE, getInsightBySlug, insights } from "@/components/insights-data";
-import { articles } from "@/lib/blog-articles";
+import { BANNER_SIZE } from "@/components/insights-data";
+import { absoluteUrl, getPublishedInsights, getPublishedPost } from "@/lib/blog";
 import { breadcrumbJsonLd, LOGO_URL, pageMetadata, SITE_NAME, SITE_URL } from "@/lib/seo";
 
-export const dynamicParams = false;
-
-export function generateStaticParams() {
+export async function generateStaticParams() {
+  const insights = await getPublishedInsights();
   return insights.map((insight) => ({ slug: insight.slug }));
 }
 
@@ -23,10 +22,11 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const insight = getInsightBySlug(slug);
-  if (!insight) {
+  const post = await getPublishedPost(slug);
+  if (!post) {
     return {};
   }
+  const { insight } = post;
   return pageMetadata({
     title: insight.seoTitle ?? insight.description,
     description: insight.metaDescription,
@@ -45,19 +45,19 @@ export default async function BlogArticlePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const insight = getInsightBySlug(slug);
-  const article = articles[slug];
-  if (!insight || !article) {
+  const post = await getPublishedPost(slug);
+  if (!post) {
     notFound();
   }
 
-  const related = insights.filter((item) => item.slug !== slug);
+  const { insight, article } = post;
+  const related = (await getPublishedInsights()).filter((item) => item.slug !== slug).slice(0, 2);
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: insight.description,
     description: insight.subtitle,
-    image: [insight.image],
+    image: [absoluteUrl(insight.image)],
     datePublished: insight.datePublished,
     dateModified: insight.datePublished,
     articleSection: insight.category,

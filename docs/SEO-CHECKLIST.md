@@ -128,7 +128,7 @@ Targets: LCP ≤ 2.5 s, INP ≤ 200 ms, CLS ≤ 0.1 (at the 75th percentile of r
 ## 9. Maintenance routine
 
 - **Every new page:** use `pageMetadata()` from `lib/seo.ts`, add breadcrumb JSON-LD, add it to `app/sitemap.ts`, and mention it in `lib/llms.ts` if important.
-- **Every new blog post:** add it to `components/insights-data.ts` (with `datePublished`, `metaDescription` and optionally `seoTitle`) and `lib/blog-articles.ts`. The sitemap, llms files, social card and schema update automatically.
+- **Every new blog post:** create and publish it in the Payload admin at `/admin` (fill in the meta description and optionally the SEO title on the SEO tab). The blog page, sitemap, llms files, social card and schema update automatically on publish.
 - **Monthly:** check Search Console coverage and Core Web Vitals, run a Semrush Site Audit / Ahrefs Site Audit, and fix new issues.
 - **Quarterly:** refresh top pages and statistics, review keyword rankings and AI visibility.
 

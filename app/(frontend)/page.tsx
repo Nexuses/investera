@@ -19,6 +19,7 @@ import WorkflowGovernanceSection from "@/components/WorkflowGovernanceSection";
 import PlatformCtaSection from "@/components/platform/PlatformCtaSection";
 import GrowthCtaSection from "@/components/about/GrowthCtaSection";
 import BookDemoFormPreload from "@/components/book-demo/BookDemoFormPreload";
+import { getPublishedInsights } from "@/lib/blog";
 
 export const metadata: Metadata = pageMetadata({
   title: "Investera | Investment Management Platform for the GCC",
@@ -29,7 +30,9 @@ export const metadata: Metadata = pageMetadata({
   path: "/",
 });
 
-export default function Home() {
+export default async function Home() {
+  const insights = await getPublishedInsights();
+
   return (
     <div className="min-h-screen bg-white">
       <JsonLd data={softwareJsonLd} />
@@ -68,7 +71,7 @@ export default function Home() {
       <InvestorStoriesSection />
       <ConnectivitySection />
       <RegionalTrustSection />
-      <InsightsSection />
+      <InsightsSection insights={insights.slice(0, 3)} />
       <GrowthCtaSection
         titleLine1="Unlock Better"
         titleLine2="Opportunities"

@@ -1,6 +1,6 @@
-import { insights } from "@/components/insights-data";
 import { faqs } from "@/components/pricing/pricing-faqs";
-import { articles, articleText } from "@/lib/blog-articles";
+import { getPublishedPosts } from "@/lib/blog";
+import { articleText } from "@/lib/blog-articles";
 import { DEFAULT_DESCRIPTION, SITE_URL } from "@/lib/seo";
 
 // Plain-text site summaries for AI agents (https://llmstxt.org).
@@ -27,7 +27,8 @@ const companyFacts = `## Company facts
 - Serves: family offices, private equity and VC firms, holding companies, portfolio managers, investment and fund managers
 - Contact: info@investera.com, +971 2 309 3880`;
 
-export function buildLlmsTxt() {
+export async function buildLlmsTxt() {
+  const insights = (await getPublishedPosts()).map((post) => post.insight);
   return `# Investera
 
 > ${DEFAULT_DESCRIPTION}
@@ -55,15 +56,12 @@ ${insights.map((i) => `- [${i.description}](${url(i.href)}): ${i.subtitle}`).joi
 `;
 }
 
-export function buildLlmsFullTxt() {
-  const blog = insights
-    .map((insight) => {
-      const article = articles[insight.slug];
-      if (!article) {
-        return "";
-      }
-      return `### ${insight.description}\n\nURL: ${url(insight.href)}\nPublished: ${insight.datePublished}\n\n${articleText(article)}`;
-    })
+export async function buildLlmsFullTxt() {
+  const blog = (await getPublishedPosts())
+    .map(
+      ({ insight, article }) =>
+        `### ${insight.description}\n\nURL: ${url(insight.href)}\nPublished: ${insight.datePublished}\n\n${articleText(article)}`,
+    )
     .join("\n\n");
 
   return `# Investera – full content

@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { insights } from "@/components/insights-data";
+import { absoluteUrl, getPublishedInsights } from "@/lib/blog";
 import { SITE_URL } from "@/lib/seo";
 
 // Date the page content last changed meaningfully; update when a page is edited.
@@ -24,7 +24,8 @@ const pages: {
   { path: "/terms-of-service", priority: 0.2, changeFrequency: "yearly" },
 ];
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const insights = await getPublishedInsights();
   return [
     ...pages.map(({ path, priority, changeFrequency }) => ({
       url: `${SITE_URL}${path}`,
@@ -37,7 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(insight.datePublished),
       changeFrequency: "yearly" as const,
       priority: 0.6,
-      images: [insight.image],
+      images: [absoluteUrl(insight.image)],
     })),
   ];
 }

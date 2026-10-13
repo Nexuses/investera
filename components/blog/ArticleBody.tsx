@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 import type { ArticleBlock } from "@/lib/blog-articles";
+import { canOptimizeImage } from "@/lib/image-hosts";
 
 /** Renders **bold** markers as <strong>. */
 function rich(text: string): ReactNode[] {
@@ -111,6 +112,7 @@ export default function ArticleBody({ blocks }: { blocks: ArticleBlock[] }) {
                     alt={block.alt}
                     width={block.width}
                     height={block.height}
+                    unoptimized={!canOptimizeImage(block.src)}
                     sizes="(max-width: 1024px) 100vw, 960px"
                     className="h-auto w-full"
                   />

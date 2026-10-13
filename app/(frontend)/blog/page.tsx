@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import JsonLd from "@/components/JsonLd";
-import { insights } from "@/components/insights-data";
+import { absoluteUrl, getPublishedInsights } from "@/lib/blog";
 import { breadcrumbJsonLd, pageMetadata, SITE_URL } from "@/lib/seo";
 import BookDemoCtaSection from "@/components/BookDemoCtaSection";
 import BlogContent from "@/components/blog/BlogContent";
@@ -15,7 +15,9 @@ export const metadata: Metadata = pageMetadata({
   path: "/blog",
 });
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  const insights = await getPublishedInsights();
+
   return (
     <div className="min-h-screen bg-white">
       <JsonLd data={[
@@ -30,14 +32,14 @@ export default function BlogPage() {
               headline: insight.description,
               url: `${SITE_URL}${insight.href}`,
               datePublished: insight.datePublished,
-              image: insight.image,
+              image: absoluteUrl(insight.image),
             })),
           },
           breadcrumbJsonLd([{ name: "Blog", path: "/blog" }]),
         ]} />
       <Header variant="light" />
       <div className="pt-[96px] lg:pt-[112px]">
-        <BlogContent />
+        <BlogContent insights={insights} />
         <BookDemoCtaSection />
       </div>
       <Footer />

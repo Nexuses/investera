@@ -1,24 +1,20 @@
+import { withPayload } from "@payloadcms/next/withPayload";
 import type { NextConfig } from "next";
+import { OPTIMIZED_IMAGE_HOSTS } from "./lib/image-hosts";
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  turbopack: {
+    root: process.cwd(),
+  },
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "investera.s3.us-east-2.amazonaws.com",
-        port: "",
-        pathname: "/**",
-        search: "",
-      },
-      {
-        protocol: "https",
-        hostname: "d2ol7oe51mr4n9.cloudfront.net",
-        port: "",
-        pathname: "/**",
-        search: "",
-      },
-    ],
+    remotePatterns: OPTIMIZED_IMAGE_HOSTS.map((hostname) => ({
+      protocol: "https" as const,
+      hostname,
+      port: "",
+      pathname: "/**",
+      search: "",
+    })),
     formats: ["image/avif", "image/webp"],
     qualities: [75],
     minimumCacheTTL: 2678400,
@@ -46,4 +42,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withPayload(nextConfig, { devBundleServerPackages: false });
