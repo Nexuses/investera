@@ -101,7 +101,9 @@ export default function CurrencyExposureCard({
             />
           </svg>
           <motion.span
-            className="absolute inset-0 flex items-center justify-center text-[10cqw] font-semibold"
+            className={`absolute inset-0 flex items-center justify-center font-semibold ${
+              displayed >= 100 ? "text-[7.5cqw] tracking-[-0.02em]" : "text-[10cqw]"
+            }`}
             animate={{ color: current.color }}
             transition={{ duration: 0.8 }}
           >
@@ -126,19 +128,21 @@ export default function CurrencyExposureCard({
               USD {current.amount}
             </p>
           </motion.div>
-          <div className="mt-[4cqw] flex gap-[1.8cqw]">
-            {items.map((item, itemIndex) => (
-              <span
-                key={item.code}
-                className="h-[2.2cqw] rounded-full transition-all duration-500"
-                style={{
-                  width: itemIndex === index ? "7cqw" : "2.2cqw",
-                  backgroundColor:
-                    itemIndex === index ? item.color : "rgba(255,255,255,0.2)",
-                }}
-              />
-            ))}
-          </div>
+          {items.length > 1 && (
+            <div className="mt-[4cqw] flex gap-[1.8cqw]">
+              {items.map((item, itemIndex) => (
+                <span
+                  key={item.code}
+                  className="h-[2.2cqw] rounded-full transition-all duration-500"
+                  style={{
+                    width: itemIndex === index ? "7cqw" : "2.2cqw",
+                    backgroundColor:
+                      itemIndex === index ? item.color : "rgba(255,255,255,0.2)",
+                  }}
+                />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>

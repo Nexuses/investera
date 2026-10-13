@@ -152,7 +152,7 @@ export default function DarkHomeHero() {
                   delay: 0.3,
                 }}
               >
-                <CurrencyExposureCard codes={["USD", "EUR", "GBP", "JPY"]} />
+                <CurrencyExposureCard codes={["USD"]} />
               </motion.div>
             </motion.div>
 
@@ -171,10 +171,7 @@ export default function DarkHomeHero() {
                   delay: 0.7,
                 }}
               >
-                <CurrencyExposureCard
-                  codes={["AED", "SAR", "KWD"]}
-                  startDelayMs={1400}
-                />
+                <CurrencyExposureCard codes={["AED"]} />
               </motion.div>
             </motion.div>
           </div>
