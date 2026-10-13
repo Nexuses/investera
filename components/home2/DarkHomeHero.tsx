@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import AumCategoryCard from "@/components/AumCategoryCard";
+import CurrencyExposureCard from "@/components/CurrencyExposureCard";
 import Header from "@/components/Header";
 
 const trustAvatars = [
@@ -152,11 +152,7 @@ export default function DarkHomeHero() {
                   delay: 0.3,
                 }}
               >
-                <AumCategoryCard
-                  icon="markets"
-                  title="Capital Markets + Cash Portfolio"
-                  value="2,003,892,251,801.1"
-                />
+                <CurrencyExposureCard codes={["USD", "EUR", "GBP", "JPY"]} />
               </motion.div>
             </motion.div>
 
@@ -175,7 +171,10 @@ export default function DarkHomeHero() {
                   delay: 0.7,
                 }}
               >
-                <AumCategoryCard icon="equity" title="Private Equity" value="23,779,854.8" />
+                <CurrencyExposureCard
+                  codes={["AED", "SAR", "KWD"]}
+                  startDelayMs={1400}
+                />
               </motion.div>
             </motion.div>
           </div>

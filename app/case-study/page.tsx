@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 import BookDemoCtaSection from "@/components/BookDemoCtaSection";
-import CaseStudyHero from "@/components/case-study/CaseStudyHero";
+import CaseStudyHeroLight from "@/components/case-study/CaseStudyHeroLight";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import InvestmentSolutionsSection from "@/components/InvestmentSolutionsSection";
@@ -20,8 +20,8 @@ export default function CaseStudyPage() {
   return (
     <div className="min-h-screen bg-white">
       <JsonLd data={breadcrumbJsonLd([{ name: "Case Studies", path: "/case-study" }])} />
-      <Header variant="dark" />
-      <CaseStudyHero />
+      <Header variant="light" />
+      <CaseStudyHeroLight />
       <InvestmentSolutionsSection />
       <BookDemoCtaSection />
       <Footer />

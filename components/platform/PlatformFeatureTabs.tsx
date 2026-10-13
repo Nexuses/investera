@@ -46,9 +46,14 @@ const tabs: FeatureTab[] = [
       "Review Allocation Dashboards",
     ],
     image:
-      "https://investera.s3.us-east-2.amazonaws.com/portfolio_1787227241834_mv7q.png",
-    imageAlt: "Portfolio breakdown table with market values",
+      "https://investera.s3.us-east-2.amazonaws.com/Portfolio_Performance_01_1791873662622_sv0o.png",
+    imageAlt: "Live FX and treasury AUM trend chart",
     panel: "#E9F2FE",
+    overlay: {
+      src: "https://investera.s3.us-east-2.amazonaws.com/Portfolio_Performance_02_1791874138894_gtxh.png",
+      alt: "Currency allocation of treasury holdings",
+      className: "left-0 top-0 w-full",
+    },
   },
   {
     label: "Market Intelligence",
@@ -61,9 +66,15 @@ const tabs: FeatureTab[] = [
       "Identify Emerging Trends",
     ],
     image:
-      "https://investera.s3.us-east-2.amazonaws.com/Frame_ghk_1786626912728_a6v7.png",
-    imageAlt: "Market intelligence trend chart",
+      "https://investera.s3.us-east-2.amazonaws.com/Market_Intelligence_01_1791873662622_t12f.png",
+    imageAlt: "Sector distribution chart with proportional allocation blocks",
     panel: "#E9F2FE",
+    align: "center" as const,
+    overlay: {
+      src: "https://investera.s3.us-east-2.amazonaws.com/Market_Intelligence_02_1791874138894_hsix.png",
+      alt: "Asset allocation across sectors",
+      className: "left-0 top-0 w-full",
+    },
   },
   {
     label: "Opportunities Module",
@@ -76,15 +87,14 @@ const tabs: FeatureTab[] = [
       "Align Stakeholder Decisions",
     ],
     image:
-      "https://investera.s3.us-east-2.amazonaws.com/Frame_2147255960345_1786705843268_rvjl.png",
-    imageAlt: "Investment opportunities pipeline",
+      "https://investera.s3.us-east-2.amazonaws.com/Opportunities_01_1791873662622_lin2.png",
+    imageAlt: "Opportunities pipeline board with deals by stage",
     panel: "#FFF3DF",
-    align: "inset" as const,
-    panelHeight: "h-[270px] sm:h-[350px] lg:h-[410px]",
+    align: "center" as const,
     overlay: {
-      src: "https://investera.s3.us-east-2.amazonaws.com/image_830_1786707045583_jb6d.png",
-      alt: "5-year AUM trend",
-      className: "right-[-2%] top-[calc(6%+80px)] w-[56%] sm:top-[calc(4%+80px)] sm:w-[52%]",
+      src: "https://investera.s3.us-east-2.amazonaws.com/Opportunities_02_1791874138895_25pj.png",
+      alt: "Total deals value and average deal size",
+      className: "left-0 top-0 w-full",
     },
   },
   {

@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import PlatformHero from "@/components/platform/PlatformHero";
 import PlatformFeatureTabs from "@/components/platform/PlatformFeatureTabs";
-import WhyInvesteraSection from "@/components/platform/WhyInvesteraSection";
+import WhyInvesteraLightSection from "@/components/platform/WhyInvesteraLightSection";
 import ExpertCtaSection from "@/components/ExpertCtaSection";
 
 export const metadata: Metadata = pageMetadata({
@@ -23,7 +23,7 @@ export default function PlatformPage() {
       <JsonLd data={[softwareJsonLd, breadcrumbJsonLd([{ name: "Platform", path: "/platform" }])]} />
       <Header variant="dark" />
       <PlatformHero />
-      <WhyInvesteraSection />
+      <WhyInvesteraLightSection />
       <PlatformFeatureTabs />
       <ExpertCtaSection
         titleLine1="Transform Investment"

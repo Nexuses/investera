@@ -5,7 +5,7 @@ import ContactOfficeSection from "@/components/contact/ContactOfficeSection";
 import { useContactForm } from "@/hooks/useContactForm";
 
 const fieldClass =
-  "h-[42px] w-full border border-[#C9CDD3] px-3 text-[16px] leading-[1.3] text-[#1a1a1a] outline-none focus:border-[#0c2d57]";
+  "h-[42px] w-full border border-[#C9CDD3] px-3 text-[16px] leading-[1.3] text-[#1a1a1a] outline-none placeholder:text-[#9CA3AF] focus:border-[#0c2d57]";
 
 const labelClass =
   "mb-1.5 block text-left text-[16px] font-medium leading-[1.3] text-[#1a1a1a]";
@@ -52,14 +52,28 @@ export default function ContactPage2() {
               <label htmlFor="first-name" className={labelClass}>
                 First Name <span className="text-[#DC2626]">*</span>
               </label>
-              <input id="first-name" name="firstName" required className={fieldClass} />
+              <input
+                id="first-name"
+                name="firstName"
+                required
+                autoComplete="given-name"
+                placeholder="Enter your first name"
+                className={fieldClass}
+              />
             </div>
 
             <div>
               <label htmlFor="last-name" className={labelClass}>
                 Last Name <span className="text-[#DC2626]">*</span>
               </label>
-              <input id="last-name" name="lastName" required className={fieldClass} />
+              <input
+                id="last-name"
+                name="lastName"
+                required
+                autoComplete="family-name"
+                placeholder="Enter your last name"
+                className={fieldClass}
+              />
             </div>
 
             <div>
@@ -72,6 +86,7 @@ export default function ContactPage2() {
                 type="email"
                 required
                 autoComplete="email"
+                placeholder="Enter your work email"
                 className={fieldClass}
               />
               <p className="mt-1.5 text-[13px] leading-[1.35] text-[#6B7280]">
@@ -83,7 +98,14 @@ export default function ContactPage2() {
               <label htmlFor="phone" className={labelClass}>
                 Phone Number
               </label>
-              <input id="phone" name="phone" type="tel" className={fieldClass} />
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                autoComplete="tel"
+                placeholder="Enter your phone number"
+                className={fieldClass}
+              />
             </div>
 
             <div>
@@ -93,7 +115,8 @@ export default function ContactPage2() {
               <textarea
                 id="message"
                 name="message"
-                className="min-h-[90px] w-full resize-y border border-[#C9CDD3] px-3 py-2 text-[16px] leading-[1.3] text-[#1a1a1a] outline-none focus:border-[#0c2d57]"
+                placeholder="Enter your message"
+                className="min-h-[90px] w-full resize-y border border-[#C9CDD3] px-3 py-2 text-[16px] leading-[1.3] text-[#1a1a1a] outline-none placeholder:text-[#9CA3AF] focus:border-[#0c2d57]"
               />
             </div>
 
