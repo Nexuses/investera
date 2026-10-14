@@ -4,7 +4,7 @@ import FadeIn from "@/components/FadeIn";
 
 export default function BookDemoCtaSection() {
   return (
-    <section className="bg-white py-16 lg:py-24">
+    <section className="bg-white py-12 lg:py-16">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
         <FadeIn className="relative overflow-hidden rounded-[16px] border border-[#F0E8DA] bg-[#F6EFE3] lg:h-[430px]">
           <Image

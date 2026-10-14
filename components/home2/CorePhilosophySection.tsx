@@ -18,16 +18,10 @@ export default function CorePhilosophySection() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="w-full max-w-[660px] lg:max-w-none"
           >
-            <h2 className="text-[40px] font-normal leading-[1.15] tracking-[-0.02em] text-[#111111]">
-              Comprehensive
-              <br />
-              Investment{" "}
+            <h2 className="text-balance text-[28px] font-normal leading-[1.2] tracking-[-0.02em] text-[#111111] sm:text-[34px] lg:text-[28px] xl:text-[40px]">
+              Comprehensive Investment{" "}
               <span className="heading-accent text-[#143F73]">
-                Management Across
-              </span>
-              <br />
-              <span className="heading-accent text-[#143F73]">
-                the Complete Investment Lifecycle
+                Management Across the Complete Investment Lifecycle
               </span>
             </h2>
 

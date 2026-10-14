@@ -127,10 +127,10 @@ export default function DarkHomeHero() {
           <div className="relative mx-auto">
             <div className="overflow-hidden rounded-t-[20px] sm:rounded-t-[28px] lg:rounded-t-[32px]">
               <Image
-                src="/images/home/hero-dashboard.png"
+                src="/images/home/Dashboard-update.png"
                 alt="Investera consolidated dashboard showing total AUM, IRR and asset breakdown"
-                width={3380}
-                height={1866}
+                width={2042}
+                height={1136}
                 sizes="(min-width: 1100px) 1004px, 100vw"
                 preload
                 className="h-auto w-full"

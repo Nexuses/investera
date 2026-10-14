@@ -1,8 +1,9 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 type FeatureTab = {
   label: string;
@@ -12,8 +13,10 @@ type FeatureTab = {
   image: string;
   imageAlt: string;
   panel: string;
-  align?: "center" | "inset" | "corner";
+  align?: "center" | "inset" | "corner" | "bottom" | "middle";
   overlay?: { src: string; alt: string; className?: string; imageClassName?: string };
+  floaters?: { src: string; alt: string; className?: string }[];
+  flipFloaters?: boolean;
   shift?: string;
   imageShift?: string;
   panelHeight?: string;
@@ -30,11 +33,10 @@ const tabs: FeatureTab[] = [
       "Track Allocations & Activity",
       "Unify Insights in One View",
     ],
-    image:
-      "https://investera.s3.us-east-2.amazonaws.com/Frame_hjk_1786626912728_7jog.png",
+    image: "/images/platform/dash-1.png",
     imageAlt: "Investera dashboard with total assets under management",
     panel: "#BEDBFF",
-    align: "corner" as const,
+    align: "bottom" as const,
   },
   {
     label: "Portfolio Performance",
@@ -50,11 +52,27 @@ const tabs: FeatureTab[] = [
       "https://investera.s3.us-east-2.amazonaws.com/Portfolio_Performance_01_1791873662622_sv0o.png",
     imageAlt: "Live FX and treasury AUM trend chart",
     panel: "#E9F2FE",
+    align: "middle" as const,
     overlay: {
       src: "https://investera.s3.us-east-2.amazonaws.com/Portfolio_Performance_02_1791874138894_gtxh.png",
       alt: "Currency allocation of treasury holdings",
-      className: "left-0 top-0 w-full",
+      className: "left-[-7%] top-1/2 w-full -translate-y-1/2",
     },
+    floaters: [
+      {
+        src: "/images/platform/asset-1.png",
+        alt: "Treasury holding, AED 126.33M",
+      },
+      {
+        src: "/images/platform/asset-2.png",
+        alt: "Real Estate holding, AED 333.01M",
+      },
+      {
+        src: "/images/platform/asset-3.png",
+        alt: "Capital Markets holding, AED 927.39M",
+      },
+    ],
+    flipFloaters: true,
   },
   {
     label: "Market Intelligence",
@@ -66,9 +84,8 @@ const tabs: FeatureTab[] = [
       "Stay Updated with Global Insights",
       "Identify Emerging Trends",
     ],
-    image:
-      "https://investera.s3.us-east-2.amazonaws.com/Market_Intelligence_01_1791873662622_t12f.png",
-    imageAlt: "Sector distribution chart with proportional allocation blocks",
+    image: "/images/platform/market.png",
+    imageAlt: "Market Intelligence dashboard with live prices and global news",
     panel: "#E9F2FE",
     align: "center" as const,
     overlay: {
@@ -171,11 +188,11 @@ const tabs: FeatureTab[] = [
     imageAlt: "AI investment assistant",
     panel: "#E3F2FD",
     align: "center" as const,
-    imageShift: "translate-x-8 sm:translate-x-14 rounded-[16px]",
+    imageShift: "translate-x-16 sm:translate-x-28 rounded-[16px]",
     overlay: {
       src: "https://investera.s3.us-east-2.amazonaws.com/image__79__1791900318439_hxe1.png",
       alt: "AI assistant answer for the current total AUM",
-      className: "left-[-16%] top-[22%] w-[92%] sm:left-[-20%] sm:top-[18%] sm:w-[88%]",
+      className: "left-[-30%] top-[22%] w-[92%] sm:left-[-40%] sm:top-[18%] sm:w-[88%]",
       imageClassName: "rounded-[16px]",
     },
   },
@@ -217,6 +234,10 @@ function panelClassFor(tab: FeatureTab) {
       }`;
     case "inset":
       return `${base} items-center justify-center overflow-visible p-5`;
+    case "bottom":
+      return `${base} items-end justify-center overflow-hidden px-[30px]`;
+    case "middle":
+      return `${base} items-center justify-center overflow-hidden`;
     case "corner":
       return `${base} items-end justify-end overflow-hidden`;
     default:
@@ -224,23 +245,90 @@ function panelClassFor(tab: FeatureTab) {
   }
 }
 
+const overlayFloat = {
+  duration: 4.4,
+  repeat: Infinity,
+  ease: "easeInOut" as const,
+  delay: 0.35,
+};
+
+function FlippingAssetCards({
+  cards,
+}: {
+  cards: NonNullable<FeatureTab["floaters"]>;
+}) {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setIndex((current) => (current + 1) % cards.length);
+    }, 3200);
+    return () => window.clearInterval(timer);
+  }, [cards.length]);
+
+  const card = cards[index];
+
+  return (
+    <div className="pointer-events-none absolute right-[4%] top-1/2 z-20 w-[44%] -translate-y-1/2">
+      <motion.div
+        animate={{ y: [0, 14, 0] }}
+        transition={overlayFloat}
+      >
+        <div className="[perspective:900px]">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={card.src}
+              initial={{ rotateY: -90, opacity: 0 }}
+              animate={{ rotateY: 0, opacity: 1 }}
+              exit={{ rotateY: 90, opacity: 0 }}
+              transition={{ duration: 0.55, ease: "easeInOut" }}
+              style={{ transformStyle: "preserve-3d" }}
+            >
+              <Image
+                src={card.src}
+                alt={card.alt}
+                width={330}
+                height={190}
+                className="h-auto w-full drop-shadow-[0_16px_28px_rgba(12,45,87,0.28)]"
+              />
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </motion.div>
+    </div>
+  );
+}
+
 function FeaturePanel({ tab }: { tab: FeatureTab }) {
   return (
-    <div className={panelClassFor(tab)} style={{ backgroundColor: tab.panel }}>
+    <div
+      className={`${panelClassFor(tab)} ${tab.floaters ? "relative" : ""}`}
+      style={{ backgroundColor: tab.panel }}
+    >
       <div
         className={
           tab.align === "center"
             ? `relative flex h-full w-full max-w-[90%] items-end justify-center ${tab.shift ?? ""}`
-            : `relative flex h-full w-full items-end justify-end ${tab.shift ?? ""}`
+            : tab.align === "bottom"
+              ? `relative flex h-full w-full items-end justify-center ${tab.shift ?? ""}`
+              : tab.align === "middle"
+                ? `relative flex h-full w-full items-center justify-center ${tab.shift ?? ""}`
+                : `relative flex h-full w-full items-end justify-end ${tab.shift ?? ""}`
         }
       >
         <motion.div
-          className={`relative flex h-full max-h-full items-end ${
+          className={`relative flex h-full max-h-full ${
+            tab.align === "middle" ? "items-center justify-center" : "items-end"
+          } ${
             tab.align === "corner"
               ? "w-full justify-end"
-              : tab.align === "center" || tab.align === "inset"
-                ? "justify-center"
-                : "justify-end"
+              : tab.align === "bottom"
+                ? "h-full w-full items-end justify-center"
+                : tab.align === "middle"
+                  ? ""
+                  : tab.align === "center" || tab.align === "inset"
+                    ? "justify-center"
+                    : "justify-end"
           }`}
           animate={tab.align === "inset" ? { y: [0, -10, 0] } : undefined}
           transition={
@@ -257,7 +345,11 @@ function FeaturePanel({ tab }: { tab: FeatureTab }) {
             className={`max-h-full max-w-full object-contain ${
               tab.align === "corner"
                 ? "h-full w-full object-right-bottom drop-shadow-[0_24px_50px_rgba(12,45,87,0.28)]"
-                : "h-full w-auto object-bottom"
+                : tab.align === "bottom"
+                  ? "h-full w-full object-contain object-bottom drop-shadow-[0_24px_50px_rgba(12,45,87,0.28)]"
+                  : tab.align === "middle"
+                    ? "h-auto max-h-full w-auto object-center"
+                    : "h-full w-auto object-bottom"
             } ${
               tab.align === "inset"
                 ? "drop-shadow-[0_24px_50px_rgba(12,45,87,0.28)]"
@@ -271,12 +363,7 @@ function FeaturePanel({ tab }: { tab: FeatureTab }) {
                 "right-0 top-[22%] w-[58%] sm:top-[20%] sm:w-[54%]"
               }`}
               animate={{ y: [0, -14, 0] }}
-              transition={{
-                duration: 4.4,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 0.35,
-              }}
+              transition={overlayFloat}
             >
               <Image
                 src={tab.overlay.src}
@@ -289,6 +376,23 @@ function FeaturePanel({ tab }: { tab: FeatureTab }) {
           ) : null}
         </motion.div>
       </div>
+      {tab.flipFloaters && tab.floaters ? (
+        <FlippingAssetCards cards={tab.floaters} />
+      ) : tab.floaters ? (
+        <div className="pointer-events-none absolute inset-0">
+          {tab.floaters.map((floater) => (
+            <div key={floater.src} className={`absolute ${floater.className ?? ""}`}>
+              <Image
+                src={floater.src}
+                alt={floater.alt}
+                width={330}
+                height={190}
+                className="h-auto w-full drop-shadow-[0_16px_28px_rgba(12,45,87,0.28)]"
+              />
+            </div>
+          ))}
+        </div>
+      ) : null}
     </div>
   );
 }

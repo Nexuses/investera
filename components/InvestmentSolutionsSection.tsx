@@ -258,7 +258,7 @@ export default function InvestmentSolutionsSection({
   return (
     <section id="case-studies" className="bg-white">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-16">
-        <div className="pt-16 pb-[50px] lg:pt-24 lg:pb-[50px]">
+        <div className="pt-8 pb-[50px] lg:pt-12 lg:pb-[50px]">
           <FadeIn>
             <h2 className="text-center text-[40px] font-normal leading-tight text-[#111111]">
               Investment Management{" "}
@@ -274,7 +274,7 @@ export default function InvestmentSolutionsSection({
           </FadeIn>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 pb-16 lg:grid-cols-2 lg:gap-8 lg:pb-24">
+        <div className="grid grid-cols-1 gap-6 pb-6 lg:grid-cols-2 lg:gap-8 lg:pb-10">
           {studies.map((study, index) => (
             <FadeIn key={study.name} delay={index * 0.08}>
               <CaseStudyFlipCard
