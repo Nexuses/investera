@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-const lifecycleImage = "/images/home/investment-lifecycle-dashboard.png";
+const lifecycleImage = "/images/home/investment.png";
 
 export default function CorePhilosophySection() {
   return (
@@ -42,9 +42,9 @@ export default function CorePhilosophySection() {
           >
             <Image
               src={lifecycleImage}
-              alt="Investera dashboard showing category allocation, IRR, new investments and portfolio totals"
-              width={2078}
-              height={1556}
+              alt="Investera consolidated dashboard showing IRR, category allocation and portfolio totals"
+              width={750}
+              height={562}
               sizes="(min-width: 1024px) 680px, 100vw"
               className="h-auto w-full"
             />

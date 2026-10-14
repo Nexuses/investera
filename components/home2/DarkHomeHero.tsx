@@ -129,8 +129,8 @@ export default function DarkHomeHero() {
               <Image
                 src="/images/home/Dashboard-update.png"
                 alt="Investera consolidated dashboard showing total AUM, IRR and asset breakdown"
-                width={2042}
-                height={1136}
+                width={1021}
+                height={568}
                 sizes="(min-width: 1100px) 1004px, 100vw"
                 preload
                 className="h-auto w-full"
