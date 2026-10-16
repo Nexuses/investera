@@ -398,6 +398,10 @@ function FeaturePanel({ tab }: { tab: FeatureTab }) {
 }
 
 export default function PlatformFeatureTabs() {
+  const visibleTabs = tabs.slice(0, 5);
+  const [active, setActive] = useState(0);
+  const tab = visibleTabs[active];
+
   return (
     <section id="platform-features" className="relative overflow-x-clip bg-white py-14 sm:py-16 lg:py-20">
       <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-16">
@@ -408,68 +412,78 @@ export default function PlatformFeatureTabs() {
           </span>
         </h2>
 
-        <div className="mt-12 flex flex-col gap-20 sm:mt-14 sm:gap-24 lg:mt-20 lg:gap-32">
-          {tabs.map((tab, index) => {
-            const imageFirst = index % 2 === 1;
+        <div
+          role="tablist"
+          aria-label="Platform features"
+          className="mx-auto mt-8 flex max-w-[1100px] flex-wrap justify-center gap-2 sm:mt-10"
+        >
+          {visibleTabs.map((item, index) => {
+            const selected = index === active;
             return (
-              <div
-                key={`${tab.label}-${index}`}
-                className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16"
+              <button
+                key={item.label}
+                type="button"
+                role="tab"
+                aria-selected={selected}
+                onClick={() => setActive(index)}
+                className={`rounded-full px-4 py-2.5 text-[13px] font-semibold transition-colors sm:px-5 sm:text-[14px] ${
+                  selected
+                    ? "bg-[#0c2d57] text-white"
+                    : "bg-[#F3F6FB] text-[#0c2d57] hover:bg-[#E6EEF8]"
+                }`}
               >
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.35 }}
-                  transition={{ duration: 0.6, ease: "easeOut" }}
-                  className={`mx-auto max-w-[560px] text-center lg:mx-0 lg:text-left ${
-                    imageFirst ? "lg:order-2" : ""
-                  }`}
-                >
-                  <p className="text-[13px] font-semibold uppercase tracking-[0.08em] text-[#2F6FE4]">
-                    {tab.label}
-                  </p>
-                  <h3 className="mt-3 text-[32px] font-normal leading-tight tracking-[-0.02em] sm:text-[40px]">
-                    <span className="font-normal text-[#1a1a1a]">{tab.titleLines[0]}</span>
-                    <br />
-                    <span className="heading-accent text-[#0c2d57]">{tab.titleLines[1]}</span>
-                  </h3>
-                  <p className="mt-5 text-[16px] leading-[1.3] text-[#4B5563] sm:mt-6">
-                    {tab.description}
-                  </p>
-                  <ul className="mt-6 inline-flex flex-col items-center space-y-3 lg:items-start">
-                    {tab.points.map((point) => (
-                      <li
-                        key={point}
-                        className="flex items-start gap-3 text-[16px] leading-[1.3] text-[#0c2d57]"
-                      >
-                        <CheckIcon />
-                        <span>{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="mt-8 flex justify-center lg:justify-start">
-                    <Link
-                      href="/contact"
-                      className="inline-flex items-center justify-center rounded-full bg-[#CCA400] px-7 py-3 text-[15px] font-semibold text-white transition-transform hover:scale-[1.03]"
-                    >
-                      Contact Us
-                    </Link>
-                  </div>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 28, scale: 0.96 }}
-                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                  viewport={{ once: true, amount: 0.25 }}
-                  transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                  className={imageFirst ? "lg:order-1" : ""}
-                >
-                  <FeaturePanel tab={tab} />
-                </motion.div>
-              </div>
+                {item.label}
+              </button>
             );
           })}
         </div>
+
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={tab.label}
+            role="tabpanel"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.35, ease: "easeOut" }}
+            className="mt-12 grid items-center gap-10 lg:mt-16 lg:grid-cols-2 lg:gap-16"
+          >
+            <div className="mx-auto max-w-[560px] text-center lg:mx-0 lg:text-left">
+              <p className="text-[13px] font-semibold uppercase tracking-[0.08em] text-[#2F6FE4]">
+                {tab.label}
+              </p>
+              <h3 className="mt-3 text-[32px] font-normal leading-tight tracking-[-0.02em] sm:text-[40px]">
+                <span className="font-normal text-[#1a1a1a]">{tab.titleLines[0]}</span>
+                <br />
+                <span className="heading-accent text-[#0c2d57]">{tab.titleLines[1]}</span>
+              </h3>
+              <p className="mt-5 text-[16px] leading-[1.3] text-[#4B5563] sm:mt-6">
+                {tab.description}
+              </p>
+              <ul className="mt-6 inline-flex flex-col items-center space-y-3 lg:items-start">
+                {tab.points.map((point) => (
+                  <li
+                    key={point}
+                    className="flex items-start gap-3 text-[16px] leading-[1.3] text-[#0c2d57]"
+                  >
+                    <CheckIcon />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-8 flex justify-center lg:justify-start">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center rounded-full bg-[#CCA400] px-7 py-3 text-[15px] font-semibold text-white transition-transform hover:scale-[1.03]"
+                >
+                  Contact Us
+                </Link>
+              </div>
+            </div>
+
+            <FeaturePanel tab={tab} />
+          </motion.div>
+        </AnimatePresence>
       </div>
     </section>
   );

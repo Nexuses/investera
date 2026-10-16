@@ -11,7 +11,7 @@ type Exposure = {
   color: string;
 };
 
-// Portfolio split in base currency (USD); the hero shows USD and AED only, which sum to 100.
+// Illustrative portfolio exposures. Each hero card cycles through its own set.
 const EXPOSURES: Record<string, Exposure> = {
   USD: { code: "USD", name: "US Dollar", percent: 0, amount: "0.00M", color: "#22D3EE" },
   EUR: { code: "EUR", name: "Euro", percent: 18, amount: "223.20M", color: "#A78BFA" },
@@ -36,11 +36,12 @@ export default function CurrencyExposureCard({
 }) {
   const items = codes.map((code) => EXPOSURES[code]).filter(Boolean);
   const [index, setIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
   const [displayed, setDisplayed] = useState(items[0]?.percent ?? 0);
   const current = items[index];
 
   useEffect(() => {
-    if (items.length < 2) return;
+    if (items.length < 2 || paused) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     let interval: number | undefined;
@@ -54,7 +55,7 @@ export default function CurrencyExposureCard({
       window.clearTimeout(start);
       if (interval !== undefined) window.clearInterval(interval);
     };
-  }, [items.length, intervalMs, startDelayMs]);
+  }, [items.length, intervalMs, startDelayMs, paused]);
 
   useEffect(() => {
     if (!current) return;
@@ -71,7 +72,11 @@ export default function CurrencyExposureCard({
   if (!current) return null;
 
   return (
-    <div className="@container w-full">
+    <div
+      className="@container w-full"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
       <div className="flex items-center gap-[7cqw] rounded-[7cqw] border border-white/10 bg-[#0B1220]/95 p-[6cqw] shadow-[0_18px_40px_rgba(0,0,0,0.45)] backdrop-blur-md">
         <div className="relative aspect-square w-[36cqw] shrink-0">
           <svg viewBox="0 0 100 100" className="h-full w-full -rotate-90">
@@ -131,8 +136,12 @@ export default function CurrencyExposureCard({
           {items.length > 1 && (
             <div className="mt-[4cqw] flex gap-[1.8cqw]">
               {items.map((item, itemIndex) => (
-                <span
+                <button
                   key={item.code}
+                  type="button"
+                  aria-label={`Show ${item.name}`}
+                  aria-current={itemIndex === index}
+                  onClick={() => setIndex(itemIndex)}
                   className="h-[2.2cqw] rounded-full transition-all duration-500"
                   style={{
                     width: itemIndex === index ? "7cqw" : "2.2cqw",

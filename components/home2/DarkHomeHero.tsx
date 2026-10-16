@@ -138,7 +138,7 @@ export default function DarkHomeHero() {
             </div>
 
             <motion.div
-              className="pointer-events-none absolute right-[-2%] top-[18%] z-20 w-[32%] sm:right-[-4%] sm:top-[16%] sm:w-[28%] lg:w-[24%]"
+              className="absolute right-[-2%] top-[18%] z-20 w-[32%] sm:right-[-4%] sm:top-[16%] sm:w-[28%] lg:w-[24%]"
               initial={{ opacity: 0, y: 16, scale: 0.96 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.55, ease: "easeOut" }}
@@ -152,12 +152,12 @@ export default function DarkHomeHero() {
                   delay: 0.3,
                 }}
               >
-                <CurrencyExposureCard codes={["USD"]} />
+                <CurrencyExposureCard codes={["USD", "EUR", "GBP", "JPY"]} />
               </motion.div>
             </motion.div>
 
             <motion.div
-              className="pointer-events-none absolute right-[0%] top-[calc(36%+40px)] z-20 w-[30%] sm:right-[-1%] sm:top-[calc(34%+40px)] sm:w-[26%] lg:w-[22%]"
+              className="absolute right-[0%] top-[calc(36%+40px)] z-20 w-[30%] sm:right-[-1%] sm:top-[calc(34%+40px)] sm:w-[26%] lg:w-[22%]"
               initial={{ opacity: 0, y: 16, scale: 0.96 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.7, ease: "easeOut" }}
@@ -171,7 +171,10 @@ export default function DarkHomeHero() {
                   delay: 0.7,
                 }}
               >
-                <CurrencyExposureCard codes={["AED"]} />
+                <CurrencyExposureCard
+                  codes={["AED", "SAR", "KWD"]}
+                  startDelayMs={1400}
+                />
               </motion.div>
             </motion.div>
           </div>
