@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
@@ -17,6 +17,7 @@ type FeatureTab = {
   overlay?: { src: string; alt: string; className?: string; imageClassName?: string };
   floaters?: { src: string; alt: string; className?: string }[];
   flipFloaters?: boolean;
+  containerRow?: boolean;
   shift?: string;
   imageShift?: string;
   panelHeight?: string;
@@ -84,15 +85,11 @@ const tabs: FeatureTab[] = [
       "Stay Updated with Global Insights",
       "Identify Emerging Trends",
     ],
-    image: "/images/platform/market.png",
+    image: "/images/platform/market-2.png",
     imageAlt: "Market Intelligence dashboard with live prices and global news",
     panel: "#E9F2FE",
     align: "center" as const,
-    overlay: {
-      src: "https://investera.s3.us-east-2.amazonaws.com/Market_Intelligence_02_1791874138894_hsix.png",
-      alt: "Asset allocation across sectors",
-      className: "left-0 top-0 w-full",
-    },
+    containerRow: true,
   },
   {
     label: "Opportunities Module",
@@ -299,6 +296,47 @@ function FlippingAssetCards({
   );
 }
 
+const MARKET_CARDS = [
+  { src: "/images/platform/container.png", alt: "S&P 500 quote" },
+  { src: "/images/platform/container-1.png", alt: "Market quote" },
+  { src: "/images/platform/container-2.png", alt: "Market quote" },
+  { src: "/images/platform/container-3.png", alt: "Market quote" },
+  { src: "/images/platform/container-4.png", alt: "Market quote" },
+];
+
+function RotatingMarketCards() {
+  const [order, setOrder] = useState(MARKET_CARDS);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const timer = window.setInterval(() => {
+      setOrder((cards) => [...cards.slice(1), cards[0]]);
+    }, 2600);
+    return () => window.clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="pointer-events-none absolute -left-[5%] -right-[5%] top-[30%] z-10 flex items-start gap-[10px]">
+      {order.map((card) => (
+        <motion.div
+          key={card.src}
+          layout
+          transition={{ duration: 0.65, ease: "easeInOut" }}
+          className="min-w-0 flex-1"
+        >
+          <Image
+            src={card.src}
+            alt={card.alt}
+            width={403}
+            height={252}
+            className="h-auto w-full drop-shadow-[0_12px_24px_rgba(5,11,31,0.35)]"
+          />
+        </motion.div>
+      ))}
+    </div>
+  );
+}
+
 function FeaturePanel({ tab }: { tab: FeatureTab }) {
   return (
     <div
@@ -337,11 +375,12 @@ function FeaturePanel({ tab }: { tab: FeatureTab }) {
               : undefined
           }
         >
+          <div className="relative h-full w-fit max-w-full">
           <Image
             src={tab.image}
             alt={tab.imageAlt}
-            width={900}
-            height={640}
+            width={tab.containerRow ? 1648 : 900}
+            height={tab.containerRow ? 951 : 640}
             className={`max-h-full max-w-full object-contain ${
               tab.align === "corner"
                 ? "h-full w-full object-right-bottom drop-shadow-[0_24px_50px_rgba(12,45,87,0.28)]"
@@ -356,6 +395,7 @@ function FeaturePanel({ tab }: { tab: FeatureTab }) {
                 : ""
             } ${tab.imageShift ?? ""}`}
           />
+          {tab.containerRow ? <RotatingMarketCards /> : null}
           {tab.overlay ? (
             <motion.div
               className={`pointer-events-none absolute z-10 ${
@@ -374,6 +414,7 @@ function FeaturePanel({ tab }: { tab: FeatureTab }) {
               />
             </motion.div>
           ) : null}
+          </div>
         </motion.div>
       </div>
       {tab.flipFloaters && tab.floaters ? (
@@ -399,12 +440,69 @@ function FeaturePanel({ tab }: { tab: FeatureTab }) {
 
 export default function PlatformFeatureTabs() {
   const visibleTabs = tabs.slice(0, 5);
+  const sectionRef = useRef<HTMLElement>(null);
   const [active, setActive] = useState(0);
+  const [scrollDriven, setScrollDriven] = useState(true);
   const tab = visibleTabs[active];
 
+  useEffect(() => {
+    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => setScrollDriven(!media.matches);
+    update();
+    media.addEventListener("change", update);
+    return () => media.removeEventListener("change", update);
+  }, []);
+
+  useEffect(() => {
+    if (!scrollDriven) return;
+    const onScroll = () => {
+      const section = sectionRef.current;
+      if (!section) return;
+      const distance = section.offsetHeight - window.innerHeight;
+      if (distance <= 0) return;
+      const scrolled = Math.min(Math.max(-section.getBoundingClientRect().top, 0), distance);
+      const index = Math.min(
+        visibleTabs.length - 1,
+        Math.floor((scrolled / distance) * visibleTabs.length),
+      );
+      setActive((current) => (current === index ? current : index));
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, [scrollDriven, visibleTabs.length]);
+
+  const selectTab = (index: number) => {
+    if (!scrollDriven || !sectionRef.current) {
+      setActive(index);
+      return;
+    }
+    const section = sectionRef.current;
+    const distance = section.offsetHeight - window.innerHeight;
+    const top = section.getBoundingClientRect().top + window.scrollY;
+    const slice = distance / visibleTabs.length;
+    window.scrollTo({ top: top + slice * index + 1, behavior: "smooth" });
+  };
+
   return (
-    <section id="platform-features" className="relative overflow-x-clip bg-white py-14 sm:py-16 lg:py-20">
-      <div className="mx-auto w-full max-w-[1440px] px-6 lg:px-16">
+    <section
+      id="platform-features"
+      ref={sectionRef}
+      className="relative bg-white"
+      style={scrollDriven ? { height: `${visibleTabs.length * 100}vh` } : undefined}
+    >
+      <div
+        className={
+          scrollDriven
+            ? "sticky top-[72px] flex h-[calc(100svh-72px)] flex-col justify-center overflow-hidden px-6 pb-4 lg:px-16"
+            : "relative overflow-x-clip px-6 py-14 sm:py-16 lg:px-16 lg:py-20"
+        }
+      >
+      <div className="mx-auto w-full max-w-[1440px]">
         <h2 className="text-center text-[32px] font-normal leading-[1.15] tracking-[-0.02em] text-[#111111] sm:text-[40px]">
           One Platform for{" "}
           <span className="heading-accent text-[#0c2d57]">
@@ -425,7 +523,7 @@ export default function PlatformFeatureTabs() {
                 type="button"
                 role="tab"
                 aria-selected={selected}
-                onClick={() => setActive(index)}
+                onClick={() => selectTab(index)}
                 className={`rounded-full px-4 py-2.5 text-[13px] font-semibold transition-colors sm:px-5 sm:text-[14px] ${
                   selected
                     ? "bg-[#0c2d57] text-white"
@@ -446,7 +544,7 @@ export default function PlatformFeatureTabs() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.35, ease: "easeOut" }}
-            className="mt-12 grid items-center gap-10 lg:mt-16 lg:grid-cols-2 lg:gap-16"
+            className="mt-8 grid items-center gap-8 lg:mt-10 lg:grid-cols-2 lg:gap-16"
           >
             <div className="mx-auto max-w-[560px] text-center lg:mx-0 lg:text-left">
               <p className="text-[13px] font-semibold uppercase tracking-[0.08em] text-[#2F6FE4]">
@@ -484,6 +582,7 @@ export default function PlatformFeatureTabs() {
             <FeaturePanel tab={tab} />
           </motion.div>
         </AnimatePresence>
+      </div>
       </div>
     </section>
   );
