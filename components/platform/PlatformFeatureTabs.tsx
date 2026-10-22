@@ -493,7 +493,11 @@ export default function PlatformFeatureTabs() {
       id="platform-features"
       ref={sectionRef}
       className="relative bg-white"
-      style={scrollDriven ? { height: `${visibleTabs.length * 100}vh` } : undefined}
+      style={
+        scrollDriven
+          ? { height: `${100 + (visibleTabs.length - 1) * 24}vh` }
+          : undefined
+      }
     >
       <div
         className={

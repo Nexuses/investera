@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import { motion } from "framer-motion";
 
@@ -66,20 +65,6 @@ const cards = [
     ),
   },
 ];
-
-function ArrowUpRight({ className = "" }: { className?: string }) {
-  return (
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden className={className}>
-      <path
-        d="M4 10L10 4M5 4h5v5"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
 
 export default function WhyInvesteraLightSection() {
   const [active, setActive] = useState(0);
@@ -159,16 +144,6 @@ export default function WhyInvesteraLightSection() {
               </motion.article>
             );
           })}
-        </div>
-
-        <div className="mt-12 flex justify-center sm:mt-14">
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 rounded-[10px] bg-gradient-to-b from-[#D9B21A] to-[#B99400] px-6 py-3.5 text-[15px] font-semibold text-[#0b1426] shadow-[0_10px_30px_rgba(204,164,0,0.30)] transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2F6FE4] focus-visible:ring-offset-2"
-          >
-            Contact Us
-            <ArrowUpRight />
-          </Link>
         </div>
       </div>
     </section>
