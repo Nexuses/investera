@@ -55,9 +55,7 @@ export default function ContactOfficeSection() {
               <p className="mt-2 text-[16px] leading-[1.3] text-[#6B7280]">
                 Monday–Friday: 9:00 AM–6:00 PM
                 <br />
-                Saturday: 9:00 AM–1:00 PM
-                <br />
-                Sunday: Closed
+                Saturday–Sunday: Closed
               </p>
             </div>
           </div>
